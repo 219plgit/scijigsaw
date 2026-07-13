@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the paper."
+title: "scijigsaw: interface geometry as a constraint on protein-assembly order"
+version: 1.0.0
+date-released: 2026-01-01
+license: MIT
+repository-code: "https://github.com/219plgit/scijigsaw"
+doi: "INSERT-ZENODO-DOI"
+authors:
+  - family-names: "Liò"
+    given-names: "Pietro"
+    affiliation: "Department of Computer Science and Technology, University of Cambridge"
+    orcid: "https://orcid.org/INSERT-ORCID"
+  - family-names: "Liò"
+    given-names: "Maria Teresa"
+    affiliation: "Department of Computer Science and Technology, University of Cambridge"
+preferred-citation:
+  type: article
+  title: "The Scientific Jigsaw: interface geometry constrains protein-assembly space"
+  journal: "Bioinformatics Advances"
+  year: 2026
+  authors:
+    - family-names: "Liò"
+      given-names: "Pietro"
+      affiliation: "Department of Computer Science and Technology, University of Cambridge"
+    - family-names: "Liò"
+      given-names: "Maria Teresa"
+      affiliation: "Department of Computer Science and Technology, University of Cambridge"

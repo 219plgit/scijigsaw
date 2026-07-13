@@ -1,0 +1,12 @@
+name: scijigsaw
+channels: [conda-forge]
+dependencies:
+  - python>=3.9
+  - numpy>=1.22
+  - pandas>=1.4
+  - matplotlib>=3.5
+  - networkx>=2.8
+  - biopython>=1.80
+  - pytest>=7.0
+  - pip
+  - pip: [-e .]

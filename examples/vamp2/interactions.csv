@@ -1,0 +1,6 @@
+protein_a,protein_b,kd_nM,site_on_a,site_on_b
+VAMP2,AP180,800.0,site1_29-51,AP180_iface
+VAMP2,Complexin,2000.0,,
+VAMP2,SNAP25,0.5,site1_29-51,SNAP25_iface
+VAMP2,SNCA,50000.0,site2_1-13,SNCA_iface
+VAMP2,Synaptophysin,600.0,site3_54-60,Synaptophysin_iface

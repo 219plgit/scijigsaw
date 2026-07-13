@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scijigsaw"
+version = "1.0.0"
+description = "Interface geometry as a constraint on the assembly order of protein complexes"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Pietro Liò", email = "pl219@cam.ac.uk" },
+  { name = "Maria Teresa Liò" },
+]
+keywords = ["structural bioinformatics", "protein interfaces",
+            "assembly order", "visualisation", "linear extensions"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+  "numpy>=1.22",
+  "pandas>=1.4",
+  "matplotlib>=3.5",
+  "networkx>=2.8",
+  "biopython>=1.80",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov"]
+
+[project.scripts]
+scijigsaw-count   = "scijigsaw.cli:_assembly"
+scijigsaw-bench   = "scijigsaw.cli:_bench"
+scijigsaw-extract = "scijigsaw.cli:_extract"
+scijigsaw-render  = "scijigsaw.cli:_render"
+
+[project.urls]
+Repository = "https://github.com/219plgit/scijigsaw"
+Issues     = "https://github.com/219plgit/scijigsaw/issues"
+Archive    = "https://doi.org/INSERT-ZENODO-DOI"  # filled after the first Zenodo release
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

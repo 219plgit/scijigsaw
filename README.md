@@ -34,7 +34,7 @@ in the code as well as the paper:
 
 ```bash
 pip install -e ".[dev]"      # or: conda env create -f environment.yml
-pytest -q                    # 18 tests
+pytest -q                    # 24 tests
 ```
 
 ## Use
@@ -136,7 +136,14 @@ Pietro Liò and Maria Teresa Liò
 
 ## Citation
 
-See `CITATION.cff`. Please cite both the software (archived DOI) and the paper.
+Cite the tagged release and the paper:
+
+> Lio, P. and Lio, M.T. (2026) *scijigsaw: interface geometry as a constraint on
+> protein-assembly order*, v1.0.0.
+> https://github.com/219plgit/scijigsaw/releases/tag/v1.0.0
+
+See `CITATION.cff`. A Zenodo DOI can be minted later by enabling the Zenodo-GitHub
+hook and cutting a new release; nothing in the code needs to change.
 
 ## Licence
 

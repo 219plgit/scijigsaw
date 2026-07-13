@@ -42,7 +42,7 @@ scijigsaw-render  = "scijigsaw.cli:_render"
 [project.urls]
 Repository = "https://github.com/219plgit/scijigsaw"
 Issues     = "https://github.com/219plgit/scijigsaw/issues"
-Archive    = "https://doi.org/INSERT-ZENODO-DOI"  # filled after the first Zenodo release
+Release    = "https://github.com/219plgit/scijigsaw/releases/tag/v1.0.0"  # filled after the first Zenodo release
 
 [tool.setuptools.packages.find]
 where = ["src"]

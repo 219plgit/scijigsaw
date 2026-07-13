@@ -5,12 +5,11 @@ version: 1.0.0
 date-released: 2026-01-01
 license: MIT
 repository-code: "https://github.com/219plgit/scijigsaw"
-doi: "INSERT-ZENODO-DOI"
+url: "https://github.com/219plgit/scijigsaw/releases/tag/v1.0.0"
 authors:
   - family-names: "Liò"
     given-names: "Pietro"
     affiliation: "Department of Computer Science and Technology, University of Cambridge"
-    orcid: "https://orcid.org/INSERT-ORCID"
   - family-names: "Liò"
     given-names: "Maria Teresa"
     affiliation: "Department of Computer Science and Technology, University of Cambridge"

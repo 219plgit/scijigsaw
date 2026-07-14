@@ -11,8 +11,8 @@ def test_vamp2_matches_the_paper():
     assert s["n"] == 7
     assert s["depth"] == 3
     assert s["total"] == 5040
-    assert s["permitted"] == 336           # 93.3 % eliminated
-    assert round(s["reduction"]) == 15
+    assert s["permitted"] == 252           # 95.0 % eliminated (corrected by 1KIL)
+    assert round(s["reduction"]) == 20
 
 
 def test_inflammasome_matches_the_paper():

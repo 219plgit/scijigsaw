@@ -70,7 +70,7 @@ INFLAMMASOME.summary()
 | assembly | units | depth | permitted / n! | reduction |
 |---|---:|---:|---|---:|
 | NLRP3 inflammasome | 10 | 9 | 2 / 3,628,800 | 1,814,400× |
-| VAMP2 board | 7 | 3 | 336 / 5,040 | 15× |
+| VAMP2 board | 7 | 3 | 252 / 5,040 | 20× |
 | 30S ribosomal subunit | 20 | 3 | 4.2×10¹⁷ / 2.4×10¹⁸ | **6×** |
 
 The 30S has **three times** the subunits of the inflammasome and prunes **six-fold**.
@@ -174,7 +174,7 @@ Cite the tagged release and the paper:
 
 > Liò, P. and Liò, M.T. (2026) *scijigsaw: interface geometry as a constraint on
 > protein-assembly order*, v1.2.0.
-> https://github.com/219plgit/scijigsaw/releases/tag/v1.3.0
+> https://github.com/219plgit/scijigsaw/releases/tag/v1.4.0
 
 See `CITATION.cff`. A Zenodo DOI can be minted later by enabling the Zenodo–GitHub
 hook and cutting a new release; nothing in the code needs to change.

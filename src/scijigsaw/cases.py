@@ -32,9 +32,17 @@ INFLAMMASOME = Assembly({
 VAMP2 = Assembly(
     requires={
         "SNAP25":        {"VAMP2"},                  # SNARE motif
-        "Syntaxin-1A":   {"SNAP25"},
+        # 1KIL also shows a DIRECT VAMP2-syntaxin contact (34 residues): the SNARE
+        # core is a four-helix bundle, not a chain. Precedence is unchanged, since
+        # syntaxin already requires SNAP25 which requires VAMP2.
+        "Syntaxin-1A":   {"VAMP2", "SNAP25"},
         "Munc18-1":      {"Syntaxin-1A"},
-        "Complexin":     {"VAMP2", "SNAP25"},        # bridge
+        # CORRECTED BY STRUCTURE (1KIL, Chen et al. 2002). Our literature-derived
+        # encoding said {VAMP2, SNAP25}. The deposited complexin-SNARE complex shows
+        # complexin's central helix contacting the SYNAPTOBREVIN (13 res) and SYNTAXIN
+        # (10 res) helices and NOT SNAP25 at all. The extractor found this; we had it
+        # wrong. Permitted orders fall from 336 to 252 (93.3% -> 95.0% eliminated).
+        "Complexin":     {"VAMP2", "Syntaxin-1A"},   # bridge
         "Syt-1":         {"SNAP25", "Syntaxin-1A"},  # bridge
         "Synaptophysin": {"VAMP2"},                  # vesicle face
         "SNCA":          {"VAMP2"},                  # N-terminus, aa 1-28

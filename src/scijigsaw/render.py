@@ -87,26 +87,56 @@ class Board:
             self.site[(r.protein_a, r.protein_b)] = getattr(r, "site_on_a", None)
             self.site[(r.protein_b, r.protein_a)] = getattr(r, "site_on_b", None)
 
-        # ORDER MATTERS. Contenders leave the graph first, then bridges, and only
-        # then is the backbone the longest path through what remains. Deriving the
-        # backbone first swallows the bridges into the chain.
+        # The CORE comes first. A four-helix bundle such as the SNARE complex is a
+        # CLIQUE, not a chain -- every helix contacts every other -- so a rule of the
+        # form "its partners are mutually adjacent, therefore it bridges them" fires on
+        # every member of a clique and dissolves the board. We therefore find the core
+        # as the largest clique (falling back to the longest path when no triangle
+        # exists, as in a strictly nucleated cascade), and only then call a piece a
+        # BRIDGE if it binds two or more core members from outside the core.
         self.contenders = self._contenders()
         benched = {c for c, _ in self.contenders}
-        self.bridges = self._bridges_free(benched)
-        removed = benched | set(self.bridges)
+        avail = {p for p in self.adj if p not in benched}
 
-        # the backbone runs through proteins that BIND AT LEAST TWO others; a piece
-        # with a single partner is a pendant, not part of the chain.
-        core = {p for p in self.adj
-                if p not in removed and len(self.adj[p] - removed) >= 2}
-        self.backbone = self._longest_path(core, removed)
+        self.backbone = self._core(avail, benched)
+        core = set(self.backbone)
 
-        seated = set(self.backbone) | set(self.bridges) | benched
-        self.pendants = {p: sorted(self.adj[p] & set(self.backbone))[0]
-                         for p in sorted(self.adj)
-                         if p not in seated and self.adj[p] & set(self.backbone)}
+        self.bridges = {}
+        self.pendants = {}
+        for p in sorted(avail - core):
+            hits = sorted(self.adj[p] & core, key=self.backbone.index)
+            if len(hits) >= 2:
+                self.bridges[p] = (hits[0], hits[1])
+            elif len(hits) == 1:
+                self.pendants[p] = hits[0]
 
     # ------------------------------------------------------------- topology
+    def _core(self, avail, benched) -> List[str]:
+        """The largest clique, or the longest path if there is no triangle.
+
+        A SNARE bundle is a clique; a nucleated cascade is a chain. Both must work."""
+        cliques: List[List[str]] = []
+
+        def grow(clique, cands):
+            if len(clique) >= 3:
+                cliques.append(list(clique))
+            for v in sorted(cands):
+                grow(clique + [v], {u for u in cands if u > v and u in self.adj[v]})
+
+        grow([], set(avail))
+        if not cliques:
+            return self._longest_path(avail, benched)
+
+        # More than one clique may exist (the SNARE bundle and the complexin-bound
+        # bundle are both triangles). The CORE is the largest, and among equals the
+        # most tightly bound -- ranked by total interface contact coverage. A weakly
+        # engaged accessory must not be mistaken for the core it decorates.
+        def weight(c):
+            return sum(self._cov(a, b)
+                       for i, a in enumerate(c) for b in c[i + 1:])
+
+        return max(cliques, key=lambda c: (len(c), weight(c)))
+
     def _longest_path(self, nodes, removed) -> List[str]:
         best: List[str] = []
 

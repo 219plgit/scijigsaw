@@ -1,9 +1,10 @@
 protein_a,protein_b,kd_nM,site_on_a,site_on_b
 VAMP2,SNAP25,0.5,SNARE_motif,SN1_for_VAMP2
 SNAP25,Syntaxin-1A,0.5,SN2_for_Stx,SNARE_helix
+VAMP2,Syntaxin-1A,0.5,SNARE_motif_face,Stx_helix_face
 Syntaxin-1A,Munc18-1,5.0,Habc_closed,SM_cleft
 VAMP2,Complexin,2000.0,helix_groove,CPX_central
-SNAP25,Complexin,2000.0,SN_groove,CPX_central
+Syntaxin-1A,Complexin,2000.0,Stx_groove,CPX_central
 SNAP25,Syt-1,3000.0,SN_polybasic,C2B_primary
 Syntaxin-1A,Syt-1,3000.0,Stx_polybasic,C2B_primary
 VAMP2,Synaptophysin,600.0,TM_vesicle_face,MARVEL

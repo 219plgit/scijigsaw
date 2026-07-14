@@ -1,11 +1,11 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite both the software and the paper."
 title: "scijigsaw: interface geometry as a constraint on protein-assembly order"
-version: 1.3.0
+version: 1.4.0
 date-released: 2026-07-13
 license: MIT
 repository-code: "https://github.com/219plgit/scijigsaw"
-url: "https://github.com/219plgit/scijigsaw/releases/tag/v1.3.0"
+url: "https://github.com/219plgit/scijigsaw/releases/tag/v1.4.0"
 authors:
   - family-names: "Liò"
     given-names: "Pietro"

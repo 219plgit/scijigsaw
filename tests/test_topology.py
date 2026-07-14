@@ -20,17 +20,25 @@ def board():
                  pd.read_csv(os.path.join(EX, "interactions.csv")))
 
 
-def test_backbone_is_the_snare_chain(board):
+def test_core_is_the_snare_bundle(board):
+    """The SNARE core is a four-helix BUNDLE -- a clique, not a chain. 1KIL shows a
+    direct VAMP2-syntaxin contact (34 residues) that our first encoding omitted."""
     assert set(board.backbone) == {"VAMP2", "SNAP25", "Syntaxin-1A"}
-    # SNAP25 must lie between VAMP2 and syntaxin
-    assert board.backbone.index("SNAP25") == 1
+    assert "Complexin" not in board.backbone, (
+        "complexin also forms a triangle with VAMP2 and syntaxin; the core must be "
+        "the MOST TIGHTLY BOUND clique, not merely the first one found")
 
 
 def test_bridges_are_derived_not_declared(board):
-    """A bridge binds two ADJACENT proteins, so it cannot be seated until the seam
-    between them closes. This is the constraint that does the combinatorial work."""
+    """A bridge binds two core proteins and cannot be seated until the seam between
+    them closes. This is the constraint that does the combinatorial work.
+
+    NOTE the complexin parents. Our literature-derived encoding said {VAMP2, SNAP25}.
+    The deposited complexin-SNARE structure (1KIL) shows complexin's central helix
+    contacting the synaptobrevin and SYNTAXIN helices and never SNAP25. The extractor
+    found this; we had it wrong. See scripts/simple_real_test.py."""
     assert set(board.bridges) == {"Complexin", "Syt-1"}
-    assert set(board.bridges["Complexin"]) == {"VAMP2", "SNAP25"}
+    assert set(board.bridges["Complexin"]) == {"VAMP2", "Syntaxin-1A"}
     assert set(board.bridges["Syt-1"]) == {"SNAP25", "Syntaxin-1A"}
 
 
@@ -52,7 +60,7 @@ def test_competition_requires_non_adjacent_partners(board):
         assert host == "VAMP2" and site == "SNARE_motif" and winner == "SNAP25"
 
 
-def test_pendants_bind_exactly_one_backbone_protein(board):
+def test_pendants_bind_exactly_one_core_protein(board):
     assert board.pendants == {"Munc18-1": "Syntaxin-1A",
                               "SNCA": "VAMP2",
                               "Synaptophysin": "VAMP2"}

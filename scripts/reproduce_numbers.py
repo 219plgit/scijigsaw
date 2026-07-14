@@ -27,7 +27,7 @@ def main():
 
     print("RESULTS 1 -- three encoded assemblies")
     v, i, r = VAMP2.summary(), INFLAMMASOME.summary(), count_30S()
-    check("VAMP2 permitted / 5040", v["permitted"], 336)
+    check("VAMP2 permitted / 5040", v["permitted"], 252)
     check("VAMP2 depth", v["depth"], 3)
     check("inflammasome permitted / 3,628,800", i["permitted"], 2)
     check("inflammasome depth", i["depth"], 9)

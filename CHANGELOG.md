@@ -60,3 +60,11 @@ First public release.
   process with no static tab-and-socket representation.
 - Contact coverage (n/N) proxies buried interface extent, not affinity.
 - The extractor has not been benchmarked against curated interface annotations.
+
+## v1.5.0
+
+- `scijigsaw.results.all_results()` — a single source of truth for every number the paper
+  reports. The 336→252 correction had to be applied by hand in four documents and was missed
+  in three; the manuscript, supplement, README and cover letter are now generated from one
+  computed record.
+- Test pinning the 1KIL structural correction, so it cannot silently regress.

@@ -34,7 +34,7 @@ in the code as well as the paper:
 
 ```bash
 pip install -e ".[dev]"      # or: conda env create -f environment.yml
-pytest -q                    # 42 tests
+pytest -q                    # 43 tests
 ```
 
 ## Use
@@ -57,7 +57,7 @@ scijigsaw-bench
 from scijigsaw import Assembly, VAMP2, INFLAMMASOME
 
 VAMP2.summary()
-# {'n': 7, 'depth': 3, 'total': 5040, 'permitted': 336, 'reduction': 15.0}
+# {'n': 7, 'depth': 3, 'total': 5040, 'permitted': 252, 'reduction': 20.0}
 
 INFLAMMASOME.summary()
 # {'n': 10, 'depth': 9, 'total': 3628800, 'permitted': 2, ...}
@@ -155,7 +155,7 @@ src/scijigsaw/
   cases.py       the three encoded assemblies
   benchmark.py   random-poset generator + regression/collinearity analysis
   cli.py         scijigsaw-render / -extract / -count / -bench
-tests/           42 tests; the paper's numbers are pinned here
+tests/           43 tests; the paper's numbers are pinned here
 scripts/         reproduce_numbers.py, reproduce_figures.py, benchmark_runtime.py
 examples/        VAMP2 input tables; synthetic test structures
 ```
@@ -173,8 +173,8 @@ Pietro Liò and Maria Teresa Liò
 Cite the tagged release and the paper:
 
 > Liò, P. and Liò, M.T. (2026) *scijigsaw: interface geometry as a constraint on
-> protein-assembly order*, v1.2.0.
-> https://github.com/219plgit/scijigsaw/releases/tag/v1.4.0
+> protein-assembly order*, v1.4.0.
+> https://github.com/219plgit/scijigsaw/releases/tag/v1.5.0
 
 See `CITATION.cff`. A Zenodo DOI can be minted later by enabling the Zenodo–GitHub
 hook and cutting a new release; nothing in the code needs to change.

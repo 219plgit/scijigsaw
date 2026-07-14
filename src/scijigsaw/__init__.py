@@ -23,9 +23,10 @@ from .assembly import Assembly
 from .cases import (INFLAMMASOME, VAMP2, ALL_CASES, count_30S,
                     RIBOSOME_30S_SPECIFIC)
 from .geometry import Piece, coverage, TAB, SOCKET, FLAT
+from .results import all_results
 from .render import Board, render
 
-__version__ = "1.4.0"
+__version__ = "1.5.0"
 __all__ = ["Assembly", "Piece", "Board", "render", "coverage", "TAB", "SOCKET", "FLAT",
            "INFLAMMASOME", "VAMP2", "ALL_CASES", "count_30S",
-           "RIBOSOME_30S_SPECIFIC", "__version__"]
+           "RIBOSOME_30S_SPECIFIC", "all_results", "__version__"]

@@ -108,3 +108,23 @@ def test_30S_result_is_not_an_artefact_of_a_weak_encoding():
     # half the subunits, more than an order of magnitude more pruning
     assert infl["n"] < strict["n"]
     assert infl["reduction"] > 10 * strict["reduction"]
+
+
+def test_the_structural_correction_is_recorded():
+    """The 1KIL correction is a reported RESULT and must not silently regress.
+
+    Our literature encoding had Complexin bridging VAMP2 and SNAP25. The deposited
+    complexin-SNARE complex shows complexin contacting synaptobrevin (13 residues) and
+    syntaxin (10), and NOT SNAP25. Permitted orders fell from 336 to 252.
+    """
+    from scijigsaw import VAMP2, all_results
+
+    assert VAMP2.requires["Complexin"] == {"VAMP2", "Syntaxin-1A"}
+    assert "VAMP2" in VAMP2.requires["Syntaxin-1A"], (
+        "1KIL shows a direct VAMP2-syntaxin contact (34 residues); the SNARE core is "
+        "a four-helix bundle, not a chain")
+    assert VAMP2.summary()["permitted"] == 252
+
+    r = all_results(60, 0)["structural_correction"]
+    assert r["permitted_before"] == 336 and r["permitted_after"] == 252
+    assert r["complexin_contacts_snap25_residues"] == 0

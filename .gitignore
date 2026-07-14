@@ -9,4 +9,3 @@ geo_cache/
 outputs/
 *.pdf
 !examples/**/*.pdf
-.DS_Store

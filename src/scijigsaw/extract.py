@@ -73,16 +73,69 @@ def load_chains(path, hub_chain, par_chain):
                  f"not found. Present: {ch}. Use --chains.")
 
 
+# Modified residues that ARE amino acids but are written as HETATM. Dropping
+# them silently deletes interface residues -- selenomethionine alone appears in a
+# large fraction of crystal structures.
+MODIFIED_AA = {
+    "MSE",  # selenomethionine
+    "SEP", "TPO", "PTR",            # phospho- Ser / Thr / Tyr
+    "CSO", "CME", "CSD", "OCS",     # oxidised / modified cysteine
+    "MLY", "M3L", "ALY", "KCX",     # modified lysine
+    "HIC", "MHS", "NEP",            # modified histidine
+    "PCA", "HYP", "LLP", "SAC",
+}
+
+
 def atoms_of(chain):
+    """Atoms of the polymer chain.
+
+    Two things that synthetic test files never exercise, and real ones always do:
+
+    * MODIFIED RESIDUES are written as HETATM. Skipping all HETATM deletes them
+      from the interface. We keep any residue whose name is a known modified
+      amino acid (MSE above all), and any HETATM residue bearing a CA atom.
+    * INSERTION CODES matter. Kabat-numbered antibodies carry 52, 52A, 52B, which
+      are DISTINCT residues. Keying on res.id[1] alone conflates them, so the
+      residue key here is (number, insertion code).
+    """
     out = []
     for res in chain:
-        if res.id[0] != " ":                     # skip waters/hetero
+        het, num, icode = res.id
+        if het.startswith("W"):                       # water
             continue
+        if het != " ":                                # HETATM
+            if res.get_resname().strip() not in MODIFIED_AA and "CA" not in res:
+                continue                              # a ligand or ion: skip
+        key = (num, icode.strip())                    # insertion code preserved
         for a in res:
             if a.element != "H":
-                out.append((res.id[1], res.get_resname(), a.coord,
+                out.append((key, res.get_resname(), a.coord,
                             float(a.get_bfactor())))
     return out
+
+
+def looks_predicted(path):
+    """Is this a predicted model (B-factor = pLDDT) or an experimental structure
+    (B-factor = temperature factor)?
+
+    Reading a crystallographic B-factor as a confidence score is catastrophic: a
+    well-ordered structure with B ~ 28 A^2 is scored as pLDDT 28 and REFUSED. We
+    therefore detect rather than assume, and default to treating a file as
+    experimental unless it shows the signature of a predicted model.
+
+    AlphaFold and similar predictors emit no CRYST1 record and confine B-factors
+    to [0, 100] with a high mean. Experimental structures carry CRYST1 (or, for
+    NMR, an EXPDTA record) and B-factors that are rarely near 100.
+    """
+    try:
+        head = open(path, "r", errors="ignore").read(200_000)
+    except OSError:
+        return False
+    if "ALPHAFOLD" in head.upper() or "PREDICTED" in head.upper():
+        return True
+    if "CRYST1" in head or "EXPDTA" in head:
+        return False
+    return "CRYST1" not in head          # no unit cell -> most likely a model
 
 
 def interface_residues(hub, par, cutoff):
@@ -148,7 +201,12 @@ def cluster_sites(faces, overlap):
     for members in groups.values():
         # name the site by the residue range its members share
         allres = set().union(*[faces[m] for m in members if faces[m]])
-        label = (f"site{i}_{min(allres)}-{max(allres)}" if allres else f"site{i}")
+
+        def fmt(k):
+            return f"{k[0]}{k[1]}" if isinstance(k, tuple) else str(k)
+
+        label = (f"site{i}_{fmt(min(allres))}-{fmt(max(allres))}"
+                 if allres else f"site{i}")
         for m in members:
             site_of[m] = label
         i += 1
@@ -248,7 +306,7 @@ def _cli():
 
 # ------------------------------------------------------------------ public API
 def extract(structure_dir, contact_cutoff=5.0, overlap=0.20,
-            min_confidence=70.0, chains="A,B"):
+            min_confidence=70.0, chains="A,B", confidence="auto"):
     """Derive interfaces, sites and overlaps from HUB__PARTNER complexes.
 
     Returns a DataFrame with one row per partner:
@@ -276,7 +334,7 @@ def extract(structure_dir, contact_cutoff=5.0, overlap=0.20,
     if not files:
         raise FileNotFoundError(f"no HUB__PARTNER.pdb files in {structure_dir}")
 
-    faces, conf, hub_name = {}, {}, None
+    faces, conf, modelled, hub_name = {}, {}, {}, None
     for f in files:
         base = os.path.basename(f).rsplit(".", 1)[0]
         hub, partner = base.split("__", 1)
@@ -285,7 +343,14 @@ def extract(structure_dir, contact_cutoff=5.0, overlap=0.20,
             raise ValueError(f"mixed hubs: {hub_name} vs {hub}; one hub per run")
         hc, pc = load_chains(f, hub_chain, par_chain)
         res, c = interface_residues(hc, pc, contact_cutoff)
-        faces[partner], conf[partner] = res, c
+        # B-factor is pLDDT ONLY for predicted models. For an experimental
+        # structure it is a temperature factor, and scoring it as confidence
+        # would refuse every well-ordered crystal structure ever deposited.
+        predicted = (confidence == "plddt" or
+                     (confidence == "auto" and looks_predicted(f)))
+        faces[partner] = res
+        conf[partner] = c if predicted else 100.0
+        modelled[partner] = predicted
 
     refused = {p for p, c in conf.items() if c < min_confidence}
     kept = {p: f for p, f in faces.items() if p not in refused}
@@ -297,6 +362,7 @@ def extract(structure_dir, contact_cutoff=5.0, overlap=0.20,
                          site_on_a="" if p in refused else site_of[p],
                          site_on_b="" if p in refused else f"{p}_iface",
                          n_interface_res=len(faces[p]),
-                         mean_plddt=round(conf[p], 1),
+                         confidence=round(conf[p], 1),
+                         source="predicted" if modelled[p] else "experimental",
                          refused=p in refused))
     return pd.DataFrame(rows), pairs

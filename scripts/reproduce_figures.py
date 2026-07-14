@@ -94,13 +94,12 @@ def main():
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
 
-    print("Figure 2 -- the VAMP2 board, rendered FROM THE CSVs")
-    render(os.path.join(ROOT, "examples/vamp2/proteins.csv"),
-           os.path.join(ROOT, "examples/vamp2/interactions.csv"),
-           os.path.join(a.out, "Figure2_VAMP2.pdf"))
-    render(os.path.join(ROOT, "examples/vamp2/proteins.csv"),
-           os.path.join(ROOT, "examples/vamp2/interactions.csv"),
-           os.path.join(a.out, "Figure2_VAMP2.png"))
+    print("Figure 2 -- the VAMP2 board, rendered FROM THE CSVs by the renderer")
+    for ext in ("pdf", "png"):
+        b, _ = render(os.path.join(ROOT, "examples/vamp2/proteins.csv"),
+                      os.path.join(ROOT, "examples/vamp2/interactions.csv"),
+                      os.path.join(a.out, f"Figure2_VAMP2.{ext}"))
+    print("  " + b.report().replace("\n", "\n  "))
     print("  wrote Figure2_VAMP2.pdf / .png")
 
     print("Figure 3 -- depth, not size")

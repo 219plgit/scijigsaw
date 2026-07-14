@@ -34,7 +34,7 @@ in the code as well as the paper:
 
 ```bash
 pip install -e ".[dev]"      # or: conda env create -f environment.yml
-pytest -q                    # 24 tests
+pytest -q                    # 42 tests
 ```
 
 ## Use
@@ -102,13 +102,47 @@ not defaults to be ignored. In the bundled example the α-synuclein interface is
 at 5 Å and present at 8 Å** — the rendered claim depends on an analytical threshold, not
 on the biology switching on. Report the value you used, and sweep it.
 
+## Reading real structures
+
+Three things that every real structure has, and no synthetic test file does. Each broke
+the extractor; each is now tested in `tests/test_structure_formats.py`.
+
+- **A B-factor is not a confidence score.** In an experimental structure it is a
+  temperature factor (~28 Å² for a well-ordered crystal). Read as pLDDT, that scores
+  below any sane confidence floor, and the tool would **refuse every PDB entry ever
+  deposited**. Predicted models are now detected from the header (`--confidence auto`),
+  and experimental structures are never refused for low B. Override with
+  `--confidence plddt|none`.
+- **Modified residues are HETATM but are still amino acids.** Selenomethionine (MSE)
+  and phospho-Ser/Thr/Tyr sit in interfaces all the time. Skipping all HETATM silently
+  deletes them: six MSE residues vanished from a sixteen-residue interface.
+- **Insertion codes are distinct residues.** Kabat-numbered antibodies carry 52, 52A,
+  52B. Keying on the residue number alone conflates them.
+
 ## Status of validation
 
-The bundled structures in `examples/structures/` are **synthetic**, built with known
-interfaces to verify that the extractor recovers what it is given. That is a correctness
-check, **not** evidence of accuracy on real structures. Benchmarking against curated
-interface annotations (precision/recall, site-clustering agreement, cutoff sensitivity)
-across real complexes **remains to be done**, and is stated as such in the paper.
+**The boards in the paper are hand-encodings of published interface assignments, not
+structure-derived results.** The extractor has never been run on the deposited structures
+of the assemblies it depicts.
+
+`scripts/validate_board_from_structures.py` is the test that would change that: it applies
+the extractor to the SNARE structures themselves (1SFC, 3C98, 1KIL, 5CCG) and asks whether
+the derived interfaces reproduce the board — whether VAMP2's SNARE motif really does contact
+SNAP25 and syntaxin, whether Munc18-1 really does contact syntaxin and *not* VAMP2, whether
+complexin really does touch two chains at once and is therefore a bridge. **That test has not
+been run.** Run it before believing the board.
+
+Two edges cannot be settled this way at all: AP180/CALM competing for VAMP2's SNARE motif has
+no deposited complex known to us, and α-synuclein is intrinsically disordered, so its VAMP2
+N-terminal interface is not crystallographically resolved. Those remain literature-encoded.
+
+## Parser robustness (a lesser thing)
+
+The bundled structures are **synthetic**, built with known interfaces to verify that the
+extractor recovers what it is given, plus the three realistic stress cases above. That is
+a correctness check, **not** evidence of accuracy on real structures. Benchmarking against
+curated interface annotations (precision/recall, site-clustering agreement, cutoff
+sensitivity) across experimental complexes **remains to be done**, and the paper says so.
 
 ## Layout
 
@@ -121,7 +155,7 @@ src/scijigsaw/
   cases.py       the three encoded assemblies
   benchmark.py   random-poset generator + regression/collinearity analysis
   cli.py         scijigsaw-render / -extract / -count / -bench
-tests/           24 tests; the paper's numbers are pinned here
+tests/           42 tests; the paper's numbers are pinned here
 scripts/         reproduce_numbers.py, reproduce_figures.py, benchmark_runtime.py
 examples/        VAMP2 input tables; synthetic test structures
 ```
@@ -138,11 +172,11 @@ Pietro Liò and Maria Teresa Liò
 
 Cite the tagged release and the paper:
 
-> Lio, P. and Lio, M.T. (2026) *scijigsaw: interface geometry as a constraint on
-> protein-assembly order*, v1.0.0.
-> https://github.com/219plgit/scijigsaw/releases/tag/v1.0.0
+> Liò, P. and Liò, M.T. (2026) *scijigsaw: interface geometry as a constraint on
+> protein-assembly order*, v1.2.0.
+> https://github.com/219plgit/scijigsaw/releases/tag/v1.3.0
 
-See `CITATION.cff`. A Zenodo DOI can be minted later by enabling the Zenodo-GitHub
+See `CITATION.cff`. A Zenodo DOI can be minted later by enabling the Zenodo–GitHub
 hook and cutting a new release; nothing in the code needs to change.
 
 ## Licence

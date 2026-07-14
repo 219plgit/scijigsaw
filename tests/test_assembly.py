@@ -84,3 +84,27 @@ def test_unsatisfiable_constraints_raise():
     assert A.n_orders_permitted() == 0
     with pytest.raises(ValueError, match="unsatisfiable"):
         A.reduction()
+
+
+def test_30S_result_is_not_an_artefact_of_a_weak_encoding():
+    """The paper's headline contrast must survive the STRONGER encoding.
+
+    The conservative 'any-of' tier encoding gives 6x. The published map names
+    specific parents and gives 45,545x -- a 7,500-fold difference. If the contrast
+    with the inflammasome depended on the conservative choice, there would be no
+    result. It does not.
+    """
+    from scijigsaw import INFLAMMASOME, RIBOSOME_30S_SPECIFIC, count_30S
+
+    loose = count_30S()["reduction"]
+    strict = RIBOSOME_30S_SPECIFIC.summary()
+    infl = INFLAMMASOME.summary()
+
+    assert 5.5 < loose < 6.5                       # the conservative encoding
+    assert 4e4 < strict["reduction"] < 5e4         # the published dependencies
+    assert strict["depth"] == 3                    # still SHALLOW either way
+    assert strict["n"] == 20
+
+    # half the subunits, more than an order of magnitude more pruning
+    assert infl["n"] < strict["n"]
+    assert infl["reduction"] > 10 * strict["reduction"]

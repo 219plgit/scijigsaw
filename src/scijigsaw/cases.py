@@ -89,4 +89,31 @@ def count_30S():
                 reduction=total / permitted)
 
 
-ALL_CASES = {"inflammasome": INFLAMMASOME, "vamp2": VAMP2}
+
+
+# ---------------------------------------------------------------------------
+# 30S, SPECIFIC dependencies (Held et al., JBC 249:3103, 1974, Fig. 2).
+#
+# The conservative "any-of" encoding above understates the pruning by ~7,500x:
+# 6x vs 45,545x. We report BOTH, because the choice matters and hiding it would
+# make the headline contrast depend on a favourable reading. The conclusion is
+# unchanged either way -- which is the point of reporting both:
+#
+#     inflammasome  10 subunits, depth 9  ->  1,814,400x
+#     30S (specific) 20 subunits, depth 3 ->     45,545x
+#
+# Half the subunits, forty times the pruning. Depth, not size.
+# ---------------------------------------------------------------------------
+RIBOSOME_30S_SPECIFIC = Assembly({
+    "S4": set(), "S7": set(), "S8": set(), "S15": set(), "S17": set(), "S20": set(),
+    "S16": {"S4"}, "S5": {"S4", "S8"}, "S12": {"S4"},
+    "S6": {"S8", "S15"}, "S18": {"S6"},
+    "S9": {"S7"}, "S19": {"S7"}, "S13": {"S7"},
+    "S2": {"S5"}, "S3": {"S5"}, "S10": {"S9"}, "S14": {"S19"},
+    "S11": {"S6"}, "S21": {"S13"},
+}, seed="16S")
+
+
+ALL_CASES = {"inflammasome": INFLAMMASOME,
+             "vamp2": VAMP2,
+             "30S_specific": RIBOSOME_30S_SPECIFIC}

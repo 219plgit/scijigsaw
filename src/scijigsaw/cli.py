@@ -71,11 +71,15 @@ def _extract(argv=None):
     ap.add_argument("--overlap", type=float, default=0.20)
     ap.add_argument("--min-confidence", type=float, default=70.0)
     ap.add_argument("--chains", default="A,B")
+    ap.add_argument("--confidence", choices=["auto", "plddt", "none"], default="auto",
+                    help="how to read the B-factor column. 'plddt': predicted model. "
+                         "'none': experimental structure (B is a temperature factor, "
+                         "NOT a confidence). 'auto': detect from the file header.")
     a = ap.parse_args(argv)
 
     from .extract import extract
     df, pairs = extract(a.structures, a.contact_cutoff, a.overlap,
-                        a.min_confidence, a.chains)
+                        a.min_confidence, a.chains, a.confidence)
     df.to_csv(a.out, index=False)
     print(df.to_string(index=False))
     print(f"\nwrote {a.out}")
@@ -91,11 +95,10 @@ def _render(argv=None):
     ap.add_argument("proteins")
     ap.add_argument("interactions")
     ap.add_argument("--out", default="board.svg")
-    ap.add_argument("--title", default=None)
     ap.add_argument("--dpi", type=int, default=300)
     a = ap.parse_args(argv)
 
     from .render import render
-    board, path = render(a.proteins, a.interactions, a.out, a.title, a.dpi)
+    board, path = render(a.proteins, a.interactions, a.out, a.dpi)
     print(board.report())
     print(f"\nwrote {path}")

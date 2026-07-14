@@ -1,44 +1,43 @@
 """Board renderer: an interaction table in, a jigsaw board out.
 
-This is the second tier of the architecture. `extract.py` derives interfaces from
-structures and writes an interaction table; this module lays that table out as a
-board and draws it. The two are decoupled deliberately: a curated table renders
-without any structure at all.
-
     scijigsaw-render examples/vamp2/proteins.csv examples/vamp2/interactions.csv \
-        --out vamp2_board.svg
+        --out board.pdf
 
-WHAT THE GEOMETRY ENCODES
-    shape     tabs and sockets: a piece mates only where an interface is mapped
-    colour    functional class
-    rings     evolutionary age (more rings = older)
-    n/N       interface contact coverage -- subsites engaged, NOT affinity
+This renders a GENERAL interaction graph, not merely a hub with spokes. The paper's
+central mechanic is the BRIDGE PIECE -- a partner binding two proteins that are
+themselves adjacent, and which therefore cannot be seated until the seam between them
+is closed. A renderer that cannot draw a bridge cannot express the argument, so the
+topology is DERIVED from the table rather than hard-coded:
 
-WHAT IT REFUSES
-    A partner with no site assignment is drawn dashed and flagged: a private site
-    is ASSUMED, not measured. Partners sharing a site cannot be seated together;
-    the board shows one admissible occupancy and the alternatives sit beside it,
-    because overlap establishes non-simultaneity, not competition (an enzyme may
-    drive succession instead).
+    BACKBONE   the longest chain of mutually binding proteins. Drawn interlocking.
+    BRIDGE     a piece binding two ADJACENT backbone proteins. Drawn above, spanning
+               the seam, carrying a socket over each. This is precisely the precedence
+               constraint that assembly.py counts.
+    PENDANT    a piece binding exactly one backbone protein.
+    CONTENDER  a piece whose site on a partner is already occupied. Benched -- overlap
+               establishes NON-SIMULTANEITY, not competition; an enzyme may drive
+               succession instead.
+
+Encoding: shape = what binds where; colour = function; rings = evolutionary age;
+n/N = interface contact coverage (extent of interface engaged, NOT affinity).
 """
 from __future__ import annotations
 
+import itertools
 import math
 from collections import defaultdict
-from typing import Dict
+from typing import Dict, List
 
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Polygon
+from matplotlib.patches import FancyBboxPatch, Polygon
 
-from .geometry import SOCKET, TAB, KNOB, SUB, Piece
+from .geometry import KNOB, SOCKET, TAB, Piece
 
-# ----------------------------------------------------------------- appearance
-INK, MUTED, RULE = "#1a1d24", "#5b6675", "#c7cdd6"
-STOP = "#c0392b"
+INK, MUTED, STOP = "#1a1d24", "#5b6675", "#c0392b"
 PALETTE: Dict[str, tuple] = {
     "fusion":     ("#d7dbe2", "#78828f"),
     "regulation": ("#cfe0f2", "#3d7ab8"),
@@ -48,202 +47,283 @@ PALETTE: Dict[str, tuple] = {
     "other":      ("#e6e8ec", "#8b95a7"),
 }
 AGE_RINGS = {"ancient": 3, "metazoan": 2, "vertebrate": 1}
-
 N_SUB = 5
-# Kd (nM) -> subsites engaged.  A DECLARED CONVENTION, not a law of nature:
-# contact coverage proxies buried interface, not affinity.
 KD_LADDER = [(1.0, 5), (100.0, 4), (1_000.0, 3), (100_000.0, 2), (math.inf, 1)]
 
 
-def kd_to_coverage(kd_nM) -> int | None:
-    if kd_nM is None or (isinstance(kd_nM, float) and math.isnan(kd_nM)):
+def kd_to_coverage(kd):
+    """Kd -> subsites engaged. A DECLARED CONVENTION: contact coverage proxies the
+    extent of interface engaged, not affinity."""
+    if kd is None or (isinstance(kd, float) and math.isnan(kd)):
         return None
     for limit, n in KD_LADDER:
-        if float(kd_nM) < limit:
+        if float(kd) < limit:
             return n
     return 1
 
 
-def _rings(ax, x, y, n, colour=INK, r0=0.042, z=9):
-    ax.add_patch(plt.Circle((x, y), r0 * (n + 1), facecolor="white",
-                            edgecolor=colour, lw=0.7, zorder=z))
+def _rings(ax, x, y, n, col=INK, r0=0.042, z=9):
+    ax.add_patch(plt.Circle((x, y), r0 * (n + 1), facecolor="white", edgecolor=col,
+                            lw=0.7, zorder=z))
     for k in range(1, n + 1):
-        ax.add_patch(plt.Circle((x, y), r0 * k, facecolor="none",
-                                edgecolor=colour, lw=0.8, zorder=z + 1))
+        ax.add_patch(plt.Circle((x, y), r0 * k, facecolor="none", edgecolor=col,
+                                lw=0.8, zorder=z + 1))
 
 
 class Board:
-    """Lay out and draw a hub-and-partner board from a table."""
-
     def __init__(self, proteins: pd.DataFrame, interactions: pd.DataFrame):
         self.meta = proteins.set_index("name")
-        self.edges = interactions.copy()
-        if "kd_nM" in self.edges:
-            self.edges["coverage"] = self.edges["kd_nM"].apply(kd_to_coverage)
-        else:
-            self.edges["coverage"] = None
-        for col in ("site_on_a", "site_on_b"):
-            if col not in self.edges:
-                self.edges[col] = np.nan
-        self.edges["assumed_site"] = (self.edges["site_on_a"].isna()
-                                      | (self.edges["site_on_a"] == ""))
-        self.hub = self._pick_hub()
-        self.sites = self._sites_on_hub()
+        e = interactions.copy()
+        e["coverage"] = e["kd_nM"].apply(kd_to_coverage) if "kd_nM" in e else None
+        self.edges = e
 
-    # ---------------------------------------------------------------- model
-    def _pick_hub(self) -> str:
-        deg: Dict[str, int] = defaultdict(int)
+        self.adj: Dict[str, set] = defaultdict(set)
+        self.cov: Dict[frozenset, int] = {}
+        self.site: Dict[tuple, str] = {}
+        for r in e.itertuples():
+            self.adj[r.protein_a].add(r.protein_b)
+            self.adj[r.protein_b].add(r.protein_a)
+            self.cov[frozenset((r.protein_a, r.protein_b))] = r.coverage
+            self.site[(r.protein_a, r.protein_b)] = getattr(r, "site_on_a", None)
+            self.site[(r.protein_b, r.protein_a)] = getattr(r, "site_on_b", None)
+
+        # ORDER MATTERS. Contenders leave the graph first, then bridges, and only
+        # then is the backbone the longest path through what remains. Deriving the
+        # backbone first swallows the bridges into the chain.
+        self.contenders = self._contenders()
+        benched = {c for c, _ in self.contenders}
+        self.bridges = self._bridges_free(benched)
+        removed = benched | set(self.bridges)
+
+        # the backbone runs through proteins that BIND AT LEAST TWO others; a piece
+        # with a single partner is a pendant, not part of the chain.
+        core = {p for p in self.adj
+                if p not in removed and len(self.adj[p] - removed) >= 2}
+        self.backbone = self._longest_path(core, removed)
+
+        seated = set(self.backbone) | set(self.bridges) | benched
+        self.pendants = {p: sorted(self.adj[p] & set(self.backbone))[0]
+                         for p in sorted(self.adj)
+                         if p not in seated and self.adj[p] & set(self.backbone)}
+
+    # ------------------------------------------------------------- topology
+    def _longest_path(self, nodes, removed) -> List[str]:
+        best: List[str] = []
+
+        def walk(node, path):
+            nonlocal best
+            if len(path) > len(best):
+                best = list(path)
+            for n in sorted(self.adj[node] & nodes):
+                if n not in path:
+                    walk(n, path + [n])
+
+        for start in sorted(nodes):
+            walk(start, [start])
+        return best
+
+    def _bridges_free(self, benched) -> Dict[str, tuple]:
+        """A BRIDGE binds two proteins that are themselves adjacent -- so it cannot
+        be seated until the seam between them closes. Derived from the graph, not
+        declared. Detected BEFORE the backbone, or it would be absorbed into it."""
+        out = {}
+        for p in sorted(self.adj):
+            if p in benched:
+                continue
+            ns = sorted(self.adj[p] - benched)
+            for a, b in itertools.combinations(ns, 2):
+                if b in self.adj[a] and len(self.adj[a]) > 2 and len(self.adj[b]) > 2:
+                    out[p] = (a, b)      # a and b are adjacent AND better connected
+                    break
+        return out
+
+    def _contenders(self) -> List[tuple]:
+        """Two partners sharing one site on X are NOT necessarily competing.
+
+        If they are ADJACENT to one another, X lies in the groove BETWEEN them: X is
+        a bridge, and both partners are present simultaneously. Complexin's central
+        helix binds in the groove between two SNARE helices -- one interface, two
+        partners, and that is exactly what makes it a bridge.
+
+        They compete only if they are NOT adjacent, i.e. they cannot both be there.
+        AP180's ANTH domain and SNAP25 both take VAMP2's SNARE motif, and AP180 does
+        not bind SNAP25 -- so one excludes the other.
+        """
+        users: Dict[tuple, list] = defaultdict(list)
         for r in self.edges.itertuples():
-            deg[r.protein_a] += 1
-            deg[r.protein_b] += 1
-        return max(deg, key=deg.get)
+            for me, other in ((r.protein_a, r.protein_b), (r.protein_b, r.protein_a)):
+                st = self.site.get((me, other))
+                if isinstance(st, str) and st:
+                    users[(me, st)].append(other)
 
-    def _sites_on_hub(self) -> Dict[str, list]:
-        sites: Dict[str, list] = defaultdict(list)
-        for r in self.edges.itertuples():
-            for me, other, site in ((r.protein_a, r.protein_b, r.site_on_a),
-                                    (r.protein_b, r.protein_a, r.site_on_b)):
-                if me != self.hub:
-                    continue
-                key = site if isinstance(site, str) and site else f"__assumed__{other}"
-                sites[key].append((other, r.coverage, bool(r.assumed_site)))
-        return dict(sites)
+        out, seen = [], set()
+        for (host, st), partners in users.items():
+            if len(partners) < 2:
+                continue
+            # partners that are mutually adjacent coexist (a bridge sits between them)
+            competing = [p for p in partners
+                         if not any(q in self.adj[p] for q in partners if q != p)]
+            if len(competing) < 2:
+                continue
+            winner = max(competing, key=lambda p: self.cov[frozenset((host, p))] or 0)
+            for p in competing:
+                if p != winner and p not in seen:
+                    seen.add(p)
+                    out.append((p, (host, st, winner)))
+        return out
 
-    def contested(self) -> Dict[str, list]:
-        return {s: v for s, v in self.sites.items() if len(v) > 1}
+    def _style(self, n):
+        f = self.meta.loc[n, "function"] if n in self.meta.index else "other"
+        return PALETTE.get(f, PALETTE["other"])
 
-    def _style(self, name):
-        fn = self.meta.loc[name, "function"] if name in self.meta.index else "other"
-        return PALETTE.get(fn, PALETTE["other"])
+    def _age(self, n):
+        return AGE_RINGS.get(self.meta.loc[n, "age"], 1) if n in self.meta.index else 1
 
-    def _age(self, name):
-        if name not in self.meta.index:
-            return 1
-        return AGE_RINGS.get(self.meta.loc[name, "age"], 1)
+    def _cov(self, a, b):
+        return self.cov.get(frozenset((a, b))) or 0
 
-    # ---------------------------------------------------------------- render
-    def draw(self, out: str, title: str | None = None, dpi: int = 300):
-        fig, ax = plt.subplots(figsize=(11, 7), facecolor="white")
-        ax.set_xlim(0, 16); ax.set_ylim(0, 10)
-        ax.set_aspect("equal"); ax.axis("off")
+    # --------------------------------------------------------------- drawing
+    def draw(self, out: str, dpi: int = 300):
+        bb = self.backbone
+        W, H, y0, x0 = 1.9, 1.55, 4.5, 1.2
+        xs = {p: x0 + i * W for i, p in enumerate(bb)}
+        yM = y0 + H / 2
+        right = x0 + len(bb) * W
 
-        HX, HY, HW, HH = 6.4, 4.6, 3.0, 2.0
-        yM = HY + HH / 2
+        fig, ax = plt.subplots(figsize=(max(11.0, 0.95 * right + 2.4), 7.8),
+                               facecolor="white")
+        ax.set_xlim(0.3, right + 1.2)
+        ax.set_ylim(0.5, 8.6)
+        ax.set_aspect("equal")
+        ax.axis("off")
 
-        # one hub edge per site (up to four)
-        slots = ["left", "right", "top", "bottom"]
-        site_slot = {s: slots[i % 4] for i, s in enumerate(self.sites)}
+        SY = [y0 + H * f for f in (0.20, 0.35, 0.50, 0.65, 0.80)]
 
-        def ladder_coords(edge):
-            if edge in ("left", "right"):
-                return [HY + HH * f for f in (0.20, 0.35, 0.50, 0.65, 0.80)]
-            return [HX + HW * f for f in (0.20, 0.35, 0.50, 0.65, 0.80)]
+        def SX(p):
+            return [xs[p] + W * f for f in (0.20, 0.35, 0.50, 0.65, 0.80)]
 
-        hub = Piece(HX, HY, HW, HH)
-        for s, slot in site_slot.items():
-            hub.ladder(slot, ladder_coords(slot), set(range(N_SUB)), SOCKET)
-        fc, ec = self._style(self.hub)
-        ax.add_patch(Polygon(hub.polygon(), closed=True, facecolor=fc,
-                             edgecolor=ec, lw=1.8, zorder=3))
-        ax.text(HX + HW / 2, yM, self.hub, color=INK, fontsize=13, ha="center",
-                va="center", fontweight="bold", zorder=6)
-        _rings(ax, HX + 0.30, HY + HH - 0.30, self._age(self.hub))
+        for i, p in enumerate(bb):
+            pc = Piece(xs[p], y0, W, H)
+            if i > 0:
+                pc.ladder("left", SY, set(range(self._cov(bb[i - 1], p))), SOCKET)
+            if i < len(bb) - 1:
+                pc.ladder("right", SY, set(range(self._cov(p, bb[i + 1]))), TAB)
+            for b, (a, c) in self.bridges.items():
+                if p == a:
+                    pc.top(xs[p] + W * 0.72, TAB, KNOB)
+                if p == c:
+                    pc.top(xs[p] + W * 0.28, TAB, KNOB)
+            kids = sorted(k for k, h in self.pendants.items() if h == p)
+            for j, pd in enumerate(kids):
+                lo = 0.10 + j * (0.80 / max(len(kids), 1))
+                coords = [xs[p] + W * (lo + f * (0.80 / max(len(kids), 1)) * 0.8)
+                          for f in (0.15, 0.35, 0.5, 0.65, 0.85)]
+                pc.ladder("bottom", coords, set(range(self._cov(p, pd))), SOCKET)
+            fc, ec = self._style(p)
+            ax.add_patch(Polygon(pc.polygon(), closed=True, facecolor=fc,
+                                 edgecolor=ec, lw=1.6, zorder=3))
+            ax.text(xs[p] + W / 2, yM + 0.02, p, color=INK, fontsize=8.6,
+                    ha="center", va="center", fontweight="bold", zorder=6)
+            if i > 0:
+                ax.text(xs[p] + W / 2, yM - 0.30,
+                        f"{self._cov(bb[i - 1], p)}/{N_SUB}", color=ec,
+                        fontsize=7.0, ha="center", fontweight="bold", zorder=6)
+            _rings(ax, xs[p] + 0.26, y0 + H - 0.26, self._age(p))
 
-        PW, PH = 2.8, 1.9                    # partner size
-        # partners must be FLUSH with the hub: a tab has to enter a socket.
-        anchor = {"left":   (HX - PW,      HY + (HH - PH) / 2, "right"),
-                  "right":  (HX + HW,      HY + (HH - PH) / 2, "left"),
-                  "top":    (HX + (HW - PW) / 2, HY + HH,      "bottom"),
-                  "bottom": (HX + (HW - PW) / 2, HY - PH,      "top")}
+        for b, (a, c) in self.bridges.items():
+            if a not in xs or c not in xs:
+                continue
+            if bb.index(a) > bb.index(c):
+                a, c = c, a
+            bx = xs[a] + W * 0.50
+            bw = (xs[c] - xs[a]) + W * 0.40
+            pc = Piece(bx, y0 + H, bw, 0.92)
+            pc.bottom(xs[a] + W * 0.72, SOCKET, KNOB)
+            pc.bottom(xs[c] + W * 0.28, SOCKET, KNOB)
+            fc, ec = self._style(b)
+            ax.add_patch(Polygon(pc.polygon(), closed=True, facecolor=fc,
+                                 edgecolor=ec, lw=1.5, zorder=2))
+            ax.text(bx + bw / 2 + 0.18, y0 + H + 0.64, b, color=INK, fontsize=8.0,
+                    ha="center", va="center", fontweight="bold", zorder=6)
+            _rings(ax, bx + 0.24, y0 + H + 0.64, self._age(b))
 
-        bench = []
-        for s, users in self.sites.items():
-            seated, *others = sorted(users, key=lambda t: -(t[1] or 0))
-            name, cov, assumed = seated
-            px, py, pedge = anchor[site_slot[s]]
-            p = Piece(px, py, PW, PH)
-            coords = (ladder_coords("left") if pedge in ("left", "right")
-                      else ladder_coords("top"))
-            # partner tabs must sit at the hub's world coordinates
-            # the partner's tabs must sit at the HUB's socket coordinates
-            coords = ladder_coords(site_slot[s])
-            p.ladder(pedge, coords, set(range(cov or 0)), TAB)
-            f2, e2 = self._style(name)
-            ax.add_patch(Polygon(p.polygon(), closed=True, facecolor=f2,
-                                 edgecolor=e2, lw=1.5,
-                                 linestyle=(0, (5, 3)) if assumed else "-",
-                                 zorder=2))
-            ax.text(px + PW / 2, py + PH * 0.72, name, color=INK, fontsize=10,
-                    ha="center", fontweight="bold", zorder=6)
-            ax.text(px + PW / 2, py + PH * 0.47, f"{cov or 0}/{N_SUB}", color=e2,
-                    fontsize=8.4, ha="center", fontweight="bold", zorder=6)
-            label = "site assumed" if assumed else s
-            ax.text(px + PW / 2, py + PH * 0.28, label, color=MUTED, fontsize=6.6,
-                    ha="center", style="italic", zorder=6)
-            _rings(ax, px + 0.30, py + PH - 0.28, self._age(name))
-            for on, oc, oa in others:
-                bench.append((on, oc, s, name))
+        if self.bridges:
+            ax.text(x0, y0 + H + 1.38, "BRIDGE PIECES \u2014 two sockets: unplaceable "
+                    "until the seam beneath them closes", color="#3d7ab8",
+                    fontsize=7.4, fontweight="bold")
 
-        # alternatives: same site, other occupancy (NOT losers)
-        if bench:
-            ax.add_patch(FancyBboxPatch((0.5, 0.35), 15.0, 1.6,
-                                        boxstyle="round,pad=0.08",
-                                        facecolor="white", edgecolor=STOP,
-                                        lw=1.3, linestyle=(0, (5, 3)), zorder=1))
-            ax.text(0.8, 1.66, "ALTERNATIVE OCCUPANCY \u2014 the same site, another state",
-                    color=STOP, fontsize=8.6, fontweight="bold", zorder=6)
-            ax.text(0.8, 1.40, "overlap establishes that these cannot be seated "
-                    "SIMULTANEOUSLY; it does not say whether that is competition "
-                    "or temporal succession.", color=MUTED, fontsize=6.8, zorder=6)
-            for i, (name, cov, s, occ) in enumerate(bench[:4]):
-                bx = 0.9 + i * 3.7
-                q = Piece(bx, 0.55, 2.6, 0.72)
-                q.ladder("left", [0.55 + 0.72 * f for f in
-                                  (0.20, 0.35, 0.50, 0.65, 0.80)],
-                         set(range(cov or 0)), TAB)
-                f2, e2 = self._style(name)
-                ax.add_patch(Polygon(q.polygon(), closed=True, facecolor=f2,
-                                     edgecolor=e2, lw=1.2, alpha=0.7, zorder=3))
-                ax.text(bx + 1.35, 1.02, name, color=INK, fontsize=8.4,
+        by_host: Dict[str, list] = defaultdict(list)
+        for pd, host in self.pendants.items():
+            by_host[host].append(pd)
+        for host, pds in by_host.items():
+            k = len(pds)
+            pw = (W + 0.5) / k if k > 1 else W + 0.56
+            for j, pd in enumerate(sorted(pds)):
+                px = xs[host] - 0.25 + j * pw
+                pc = Piece(px, y0 - 1.14, pw - 0.04, 1.08)
+                # tabs must sit under the host's own sockets
+                lo = 0.10 + j * (0.80 / k)
+                coords = [xs[host] + W * (lo + f * (0.80 / k) * 0.8)
+                          for f in (0.15, 0.35, 0.5, 0.65, 0.85)]
+                pc.ladder("top", coords, set(range(self._cov(host, pd))), TAB)
+                fc, ec = self._style(pd)
+                ax.add_patch(Polygon(pc.polygon(), closed=True, facecolor=fc,
+                                     edgecolor=ec, lw=1.5, zorder=2))
+                ax.text(px + pw / 2 - 0.02, y0 - 0.52, pd, color=INK,
+                        fontsize=7.0 if k > 1 else 7.8, ha="center", va="center",
+                        fontweight="bold", zorder=6)
+                ax.text(px + pw / 2 - 0.02, y0 - 0.82,
+                        f"{self._cov(host, pd)}/{N_SUB}", color=ec, fontsize=6.8,
                         ha="center", fontweight="bold", zorder=6)
-                ax.text(bx + 1.35, 0.72, f"{cov or 0}/{N_SUB} \u00b7 \u2297 not with {occ}",
-                        color=STOP, fontsize=6.4, ha="center", zorder=6)
+                _rings(ax, px + 0.22, y0 - 0.32, self._age(pd))
 
-        if title:
-            ax.text(0.5, 9.5, title, color=INK, fontsize=14, fontweight="bold")
+        if self.contenders:
+            bw = max(len(self.contenders) * 2.6 + 0.5, 5.5)
+            ax.add_patch(FancyBboxPatch((x0, 0.95), bw, 1.85,
+                                        boxstyle="round,pad=0.07", facecolor="white",
+                                        edgecolor=STOP, lw=1.3, ls=(0, (5, 3)), zorder=1))
+            ax.text(x0 + 0.2, 2.52, "ALTERNATIVE OCCUPANCY \u2014 the same site, "
+                    "another state", color=STOP, fontsize=7.6, fontweight="bold", zorder=6)
+            ax.text(x0 + 0.2, 2.26, "overlap establishes NON-simultaneity; it does not "
+                    "say whether that is competition or succession",
+                    color=MUTED, fontsize=6.4, zorder=6)
+            for i, (c, (host, site, occ)) in enumerate(self.contenders):
+                cx = x0 + 0.25 + i * 2.6
+                pc = Piece(cx, 1.15, 2.3, 0.85)
+                pc.ladder("left", [1.15 + 0.85 * f
+                                   for f in (0.2, 0.35, 0.5, 0.65, 0.8)],
+                          set(range(self._cov(host, c))), TAB)
+                fc, ec = self._style(c)
+                ax.add_patch(Polygon(pc.polygon(), closed=True, facecolor=fc,
+                                     edgecolor=ec, lw=1.3, zorder=3))
+                ax.text(cx + 1.2, 1.74, c, color=INK, fontsize=8.0, ha="center",
+                        fontweight="bold", zorder=6)
+                ax.text(cx + 1.2, 1.42,
+                        f"{self._cov(host, c)}/{N_SUB} \u00b7 \u2297 not with {occ}",
+                        color=STOP, fontsize=6.4, ha="center", zorder=6)
+                _rings(ax, cx + 0.24, 1.84, self._age(c))
 
         fig.tight_layout()
         fig.savefig(out, dpi=dpi, facecolor="white", bbox_inches="tight")
         plt.close(fig)
         return out
 
-    # ------------------------------------------------------------- reporting
     def report(self) -> str:
-        lines = [f"hub: {self.hub}", ""]
-        lines.append("sites on the hub")
-        for s, users in self.sites.items():
-            tag = "   <-- CONTESTED" if len(users) > 1 else ""
-            shown = s if not s.startswith("__assumed__") else "(site assumed)"
-            lines.append("  " + f"{shown:26}" +
-                         ", ".join(f"{u} {c or 0}/{N_SUB}" for u, c, _ in users) + tag)
-        con = self.contested()
-        if con:
-            lines += ["", "not simultaneous (same site):"]
-            for s, users in con.items():
-                lines.append("  " + "  XOR  ".join(u for u, _, _ in users))
-            lines += ["", "  Overlap says these cannot bind AT THE SAME TIME.",
-                      "  It does NOT say why: competition and temporal succession",
-                      "  give identical geometry."]
-        assumed = self.edges[self.edges.assumed_site]
-        if len(assumed):
-            lines += ["", f"[!] {len(assumed)} edge(s) have no site annotation.",
-                      "    A private site is ASSUMED and drawn dashed."]
-        return "\n".join(lines)
+        L = [f"backbone : {' - '.join(self.backbone)}",
+             "bridges  : " + (", ".join(f"{b} over {a}|{c}"
+                                        for b, (a, c) in self.bridges.items()) or "none"),
+             "pendants : " + (", ".join(f"{p} on {h}"
+                                        for p, h in self.pendants.items()) or "none"),
+             "benched  : " + (", ".join(f"{c} (site {s} on {h} held by {o})"
+                                        for c, (h, s, o) in self.contenders) or "none"),
+             "",
+             "  A bridge binds two ADJACENT backbone proteins and cannot be seated",
+             "  until the seam between them closes. That is the precedence constraint",
+             "  counted in assembly.py -- derived here from the table, not declared."]
+        return "\n".join(L)
 
 
-def render(proteins_csv: str, interactions_csv: str, out: str,
-           title: str | None = None, dpi: int = 300):
-    """Render a board from an interaction table. Returns (Board, path)."""
+def render(proteins_csv, interactions_csv, out, dpi=300):
     b = Board(pd.read_csv(proteins_csv), pd.read_csv(interactions_csv))
-    b.draw(out, title=title, dpi=dpi)
+    b.draw(out, dpi=dpi)
     return b, out

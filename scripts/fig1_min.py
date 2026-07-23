@@ -4,6 +4,8 @@ lives in the caption."""
 import os, sys
 import matplotlib
 matplotlib.use('Agg')
+matplotlib.rcParams['pdf.fonttype'] = 42  # embed TrueType (no Type 3)
+matplotlib.rcParams['ps.fonttype'] = 42
 import matplotlib.pyplot as plt
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else 'figures'
@@ -69,9 +71,9 @@ ax.add_patch(Polygon(pc(2.55, 8.15, 1.45, 1.30, l=[(0.5, +1)]), closed=True,
                      facecolor=SPEC, edgecolor=SPEC_ED, lw=1.4, zorder=3))
 ax.text(2.48, 7.70, "\u2713", color=SPEC_ED, fontsize=15, ha="center", zorder=6)
 
-ax.add_patch(Polygon(pc(4.75, 8.15, 1.45, 1.30), closed=True, facecolor="white",
-                     edgecolor=STOP_ED, lw=1.4, ls=(0, (3, 2)), zorder=3))
-ax.text(5.48, 7.70, "\u2717", color=STOP_ED, fontsize=15, ha="center", zorder=6)
+ax.add_patch(Polygon(pc(4.75, 8.15, 1.45, 1.30), closed=True, facecolor="#e6e6e6",
+                     edgecolor="#9aa0a6", lw=1.4, zorder=3))
+ax.text(5.48, 7.70, "\u2717", color="#9aa0a6", fontsize=15, ha="center", zorder=6)
 
 # ---------------- B : four channels -----------------------------------------
 ax.add_patch(FancyBboxPatch((7.15, 7.10), 8.5, 3.35, boxstyle="round,pad=0.05",
@@ -109,7 +111,7 @@ ax.text(0.62, 6.15, "C", color=INK, fontsize=11, fontweight="bold", zorder=6)
 ax.add_patch(FancyBboxPatch((0.85, 3.55), 6.6, 2.05, boxstyle="round,pad=0.05",
                             facecolor="white", edgecolor=RETR_ED, lw=1.2,
                             ls=(0, (5, 3)), zorder=2))
-ax.text(1.15, 5.30, "advanced", color=RETR_ED, fontsize=8.6, fontweight="bold",
+ax.text(1.15, 5.30, "structure-derived", color=RETR_ED, fontsize=6.6, fontweight="bold",
         zorder=6)
 for x, w, lab, fc in [(1.15, 1.60, "structures", "white"),
                       (3.25, 2.35, "jigsaw_extract", RETR),
@@ -128,7 +130,7 @@ ax.add_patch(FancyArrowPatch((7.55, 4.27), (8.75, 4.27), arrowstyle="-|>",
 ax.add_patch(FancyBboxPatch((8.90, 3.55), 6.4, 2.05, boxstyle="round,pad=0.05",
                             facecolor="white", edgecolor=SPEC_ED, lw=1.2,
                             ls=(0, (5, 3)), zorder=2))
-ax.text(9.20, 5.30, "simple", color=SPEC_ED, fontsize=8.6, fontweight="bold",
+ax.text(9.20, 5.30, "curated-table", color=SPEC_ED, fontsize=6.6, fontweight="bold",
         zorder=6)
 for x, w, lab, fc in [(9.20, 1.85, "interactions", "white"),
                       (11.45, 2.05, "jigsaw", SPEC),

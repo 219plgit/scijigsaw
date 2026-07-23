@@ -35,16 +35,31 @@ def edge_path(p0, p1, features=(), n_arc: int = 32) -> list:
     u = v / L
     normal = np.array([u[1], -u[0]])          # outward
     pts, cursor = [], 0.0
-    for f in sorted(features):
+    for f in sorted(features, key=lambda g: g[0]):
         s, kind = f[0], f[1]
         knob = f[2] if len(f) > 2 else KNOB
+        shape = f[3] if len(f) > 3 else "round"
         r = knob * L
         pts += [p0 + u * (L * t) for t in np.linspace(cursor, max(s - knob, cursor), 4)]
         c = p0 + u * (L * s)
-        th = (np.linspace(np.pi, 0, n_arc) if kind > 0
-              else np.linspace(np.pi, 2 * np.pi, n_arc))
-        pts += [c + u * (r * np.cos(t)) + normal * (kind * r * np.sin(t) * 1.30)
-                for t in th]
+        if shape == "round":
+            # same sweep for tab and socket; `kind` flips the bulge direction, so
+            # a tab (+1) is convex (out) and a socket (-1) is concave (a notch in)
+            th = np.linspace(np.pi, 0, n_arc)
+            pts += [c + u * (r * np.cos(t)) + normal * (kind * r * np.sin(t) * 1.30)
+                    for t in th]
+        elif shape == "wedge":
+            # an isosceles tab/socket: a triangle keyed by size
+            pts += [c - u * r,
+                    c + normal * (kind * r * 1.45),
+                    c + u * r]
+        elif shape == "square":
+            # a rectangular tab/socket with a slight neck, keyed by size
+            d = normal * (kind * r * 1.30)
+            pts += [c - u * r, c - u * (r * 0.62) + d,
+                    c + u * (r * 0.62) + d, c + u * r]
+        else:
+            raise ValueError(f"unknown connector shape {shape!r}")
         cursor = s + knob
     pts += [p0 + u * (L * t) for t in np.linspace(cursor, 1.0, 4)]
     return pts
@@ -60,17 +75,17 @@ class Piece:
         self.edges = {"bottom": [], "right": [], "top": [], "left": []}
 
     # -- one feature at a world coordinate --------------------------------
-    def bottom(self, X, kind, knob=SUB):
-        self.edges["bottom"].append(((X - self.x) / self.w, kind, knob)); return self
+    def bottom(self, X, kind, knob=SUB, shape="round"):
+        self.edges["bottom"].append(((X - self.x) / self.w, kind, knob, shape)); return self
 
-    def right(self, Y, kind, knob=SUB):
-        self.edges["right"].append(((Y - self.y) / self.h, kind, knob)); return self
+    def right(self, Y, kind, knob=SUB, shape="round"):
+        self.edges["right"].append(((Y - self.y) / self.h, kind, knob, shape)); return self
 
-    def top(self, X, kind, knob=SUB):
-        self.edges["top"].append(((self.x + self.w - X) / self.w, kind, knob)); return self
+    def top(self, X, kind, knob=SUB, shape="round"):
+        self.edges["top"].append(((self.x + self.w - X) / self.w, kind, knob, shape)); return self
 
-    def left(self, Y, kind, knob=SUB):
-        self.edges["left"].append(((self.y + self.h - Y) / self.h, kind, knob)); return self
+    def left(self, Y, kind, knob=SUB, shape="round"):
+        self.edges["left"].append(((self.y + self.h - Y) / self.h, kind, knob, shape)); return self
 
     # -- an interface as a ladder of subsites ------------------------------
     def ladder(self, edge: str, coords, engaged, kind, knob=SUB):

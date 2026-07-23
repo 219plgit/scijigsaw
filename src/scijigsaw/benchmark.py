@@ -64,12 +64,29 @@ def run(n_posets: int = 900, seed: int = 0,
     return np.array(rows)
 
 
+def _rank_avg(a: np.ndarray) -> np.ndarray:
+    """Average (tie-corrected) ranks, matching scipy.stats.rankdata."""
+    a = np.asarray(a, float)
+    order = a.argsort(kind="mergesort")
+    ranks = np.empty(len(a), float)
+    ranks[order] = np.arange(1, len(a) + 1)
+    uniq, inv, cnt = np.unique(a, return_inverse=True, return_counts=True)
+    sums = np.zeros(len(uniq))
+    np.add.at(sums, inv, ranks)
+    return (sums / cnt)[inv]
+
+
+def _spearman(x: np.ndarray, y: np.ndarray) -> float:
+    return float(np.corrcoef(_rank_avg(x), _rank_avg(y))[0, 1])
+
+
 def analyse(A: np.ndarray) -> dict:
     n_, d_, w_, dens_, br_, y = A.T
+    cols = [("n", n_), ("depth", d_), ("width", w_),
+            ("density", dens_), ("bridge_frac", br_)]
     out = {"n_posets": len(A),
-           "pearson": {k: float(np.corrcoef(x, y)[0, 1]) for k, x in
-                       [("n", n_), ("depth", d_), ("width", w_),
-                        ("density", dens_), ("bridge_frac", br_)]}}
+           "pearson": {k: float(np.corrcoef(x, y)[0, 1]) for k, x in cols},
+           "spearman": {k: _spearman(x, y) for k, x in cols}}
     X = np.column_stack([np.ones(len(A)), n_, d_, w_, dens_])
     beta, *_ = np.linalg.lstsq(X, y, rcond=None)
     resid = y - X @ beta

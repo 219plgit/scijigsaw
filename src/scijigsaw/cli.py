@@ -70,6 +70,7 @@ def _extract(argv=None):
     ap.add_argument("--contact-cutoff", type=float, default=5.0)
     ap.add_argument("--overlap", type=float, default=0.20)
     ap.add_argument("--min-confidence", type=float, default=70.0)
+    ap.add_argument("--min-interface-residues", type=int, default=3)
     ap.add_argument("--chains", default="A,B")
     ap.add_argument("--confidence", choices=["auto", "plddt", "none"], default="auto",
                     help="how to read the B-factor column. 'plddt': predicted model. "
@@ -79,7 +80,7 @@ def _extract(argv=None):
 
     from .extract import extract
     df, pairs = extract(a.structures, a.contact_cutoff, a.overlap,
-                        a.min_confidence, a.chains, a.confidence)
+                    a.min_confidence, a.min_interface_residues, a.chains)
     df.to_csv(a.out, index=False)
     print(df.to_string(index=False))
     print(f"\nwrote {a.out}")
@@ -102,3 +103,31 @@ def _render(argv=None):
     board, path = render(a.proteins, a.interactions, a.out, a.dpi)
     print(board.report())
     print(f"\nwrote {path}")
+
+
+def _tiles(argv=None):
+    """scijigsaw-tiles : interaction table -> printable cut-out kit(s)."""
+    ap = argparse.ArgumentParser(
+        description="Print an easy-to-cut set of tiles for building the complex by hand.")
+    ap.add_argument("proteins")
+    ap.add_argument("interactions")
+    ap.add_argument("--out", default="tiles.pdf",
+                    help="output file; .pdf gives multi-page A4 with an instruction/key "
+                         "page, .svg a single stacked sheet")
+    ap.add_argument("--variant", choices=["student", "teacher", "both"], default="both",
+                    help="'student' = names only (a puzzle); 'teacher' = the answer key "
+                         "with connector numbers, coverage and precedence/exclusion cues; "
+                         "'both' writes _student and _teacher files")
+    ap.add_argument("--title", default=None)
+    a = ap.parse_args(argv)
+
+    from .tiles import tiles
+    kit, paths = tiles(a.proteins, a.interactions, a.out, a.variant, a.title)
+    print(f"pieces     {len(kit.tiles)}")
+    print(f"connectors {len(kit.connectors)}  "
+          f"(each interface has its own connector shape; a tab fits only its socket)")
+    for p in paths:
+        print(f"wrote {p}")
+    print("\n  Print at 100% and cut on the solid lines. The student set carries only")
+    print("  protein names; matching connector shapes make it self-correcting. The")
+    print("  teacher set adds the numbers, coverage and the precedence/exclusion answer.")

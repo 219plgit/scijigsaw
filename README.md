@@ -34,7 +34,7 @@ in the code as well as the paper:
 
 ```bash
 pip install -e ".[dev]"      # or: conda env create -f environment.yml
-pytest -q                    # 43 tests
+pytest -q                    # 51 tests
 ```
 
 ## Use
@@ -48,10 +48,40 @@ scijigsaw-render examples/vamp2/proteins.csv examples/vamp2/interactions.csv \
 scijigsaw-extract examples/structures --contact-cutoff 5.0 --out interactions.csv
 scijigsaw-render  examples/vamp2/proteins.csv interactions.csv --out board.svg
 
+# PRINT & BUILD -- an easy-to-cut set of tiles you assemble by hand
+scijigsaw-tiles examples/vamp2/proteins.csv examples/vamp2/interactions.csv \
+    --out vamp2_kit.pdf
+
 # exact counting and the benchmark
 scijigsaw-count all
 scijigsaw-bench
 ```
+
+## Print a physical kit
+
+`scijigsaw-render` draws the board already assembled; `scijigsaw-tiles` does the
+opposite. It lays every protein out as a **separate tile** on A4 pages, so you
+can print (at 100%), cut along the solid outlines, and build the complex by hand.
+Each interface is a complementary **tab (protrudes) and socket (indents) with its
+own keyed shape** — round / wedge / square, in four sizes — so a tab fits *only*
+its true partner. A piece that will not fit signals an interface it does not
+match: the kit is self-correcting.
+
+Two sets come out of the same cut geometry, so a solved model and a class set are
+the same physical pieces:
+
+- **student** — each tile carries only the protein name. Learners build the
+  complex by matching connector shapes and reasoning about the biology.
+- **teacher** — the answer key: adds the connector number on every tab/socket,
+  the interface contact coverage *n/N*, and the precedence (bridge, *seat last*)
+  and exclusion (dashed, *either/or*) cues, plus an assembly-key page.
+
+```bash
+scijigsaw-tiles examples/vamp2/proteins.csv examples/vamp2/interactions.csv \
+    --out vamp2_kit.pdf --variant both      # writes _student.pdf and _teacher.pdf
+```
+
+Output is vector and true-to-scale (`.pdf` multi-page A4, or `.svg` single sheet).
 
 ```python
 from scijigsaw import Assembly, VAMP2, INFLAMMASOME
@@ -155,7 +185,7 @@ src/scijigsaw/
   cases.py       the three encoded assemblies
   benchmark.py   random-poset generator + regression/collinearity analysis
   cli.py         scijigsaw-render / -extract / -count / -bench
-tests/           43 tests; the paper's numbers are pinned here
+tests/           51 tests; the paper's numbers are pinned here
 scripts/         reproduce_numbers.py, reproduce_figures.py, benchmark_runtime.py
 examples/        VAMP2 input tables; synthetic test structures
 ```
@@ -173,8 +203,8 @@ Pietro Liò and Maria Teresa Liò
 Cite the tagged release and the paper:
 
 > Liò, P. and Liò, M.T. (2026) *scijigsaw: interface geometry as a constraint on
-> protein-assembly order*, v1.4.0.
-> https://github.com/219plgit/scijigsaw/releases/tag/v1.5.0
+> protein-assembly order*, v1.6.0.
+> https://github.com/219plgit/scijigsaw/releases/tag/v1.6.0
 
 See `CITATION.cff`. A Zenodo DOI can be minted later by enabling the Zenodo–GitHub
 hook and cutting a new release; nothing in the code needs to change.

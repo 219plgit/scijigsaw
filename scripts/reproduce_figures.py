@@ -14,7 +14,10 @@ import argparse, math, os, subprocess, sys
 
 import matplotlib
 matplotlib.use("Agg")
+matplotlib.rcParams['pdf.fonttype'] = 42  # embed TrueType (no Type 3)
+matplotlib.rcParams['ps.fonttype'] = 42
 import matplotlib.pyplot as plt
+import math
 import numpy as np
 
 from scijigsaw import INFLAMMASOME, VAMP2, count_30S, render
@@ -42,17 +45,17 @@ def fig3_depth(out):
         ax.scatter(s["depth"], s["reduction"], s=130, color=col, zorder=3,
                    edgecolor="white", linewidth=1.4)
         ax.annotate(f"{name}\n(n={s['n']})", (s["depth"], s["reduction"]),
-                    textcoords="offset points", xytext=(12, -4), fontsize=8, color=INK)
+                    textcoords="offset points", xytext=(12, -4), fontsize=11, color=INK)
     ax.scatter(r30["depth"], r30["reduction"], s=130, color="#c0392b", zorder=3,
                edgecolor="white", linewidth=1.4)
     ax.annotate(f"30S ribosomal subunit\n(n={r30['n']})",
                 (r30["depth"], r30["reduction"]), textcoords="offset points",
-                xytext=(12, -4), fontsize=8, color=INK)
+                xytext=(12, -4), fontsize=11, color=INK)
     ax.set_yscale("log"); ax.set_xlim(1.5, 11.5)
-    ax.set_xlabel("depth of the dependency poset  (longest chain)", fontsize=10)
-    ax.set_ylabel("assembly orders eliminated  (n! / permitted)", fontsize=10)
+    ax.set_xlabel("depth of the dependency poset  (longest chain)", fontsize=12)
+    ax.set_ylabel("assembly orders eliminated  (n! / permitted)", fontsize=12)
     ax.grid(alpha=.25, which="both", lw=.6)
-    ax.tick_params(labelsize=9, colors=MUTED)
+    ax.tick_params(labelsize=11, colors=MUTED)
     for sp in ("top", "right"): ax.spines[sp].set_visible(False)
     for sp in ("left", "bottom"): ax.spines[sp].set_color("#c7cdd6")
     fig.tight_layout(); save(fig, out, "Figure3_depth")
@@ -69,17 +72,46 @@ def fig4_benchmark(out):
     cb = fig.colorbar(sc, ax=ax, pad=0.02); cb.set_label("poset depth", fontsize=9)
     cb.ax.tick_params(labelsize=8)
     ax.set_xlabel("number of units, n", fontsize=10)
-    ax.set_ylabel("orders eliminated,  log$_{10}$(n! / L)", fontsize=10)
-    ax.set_title("(a)  size alone does not determine pruning", fontsize=9.5, color=INK)
+    ax.set_ylabel("log$_{10}$ reduction factor,  log$_{10}$(n! / L)", fontsize=10)
+    ax.set_title("(A)  component count alone does not predict pruning", fontsize=9.5, color=INK)
     ax = axes[1]
+    bs = np.random.default_rng(0)
     for n0, col in [(10, "#9ecae1"), (12, "#4292c6"), (14, "#08519c")]:
         m = n_ == n0
-        ds = sorted(set(d_[m].astype(int)))
-        ax.plot(ds, [y[m & (d_ == d)].mean() for d in ds], "o-", color=col,
-                ms=4.5, lw=1.6, label=f"n = {n0}")
+        xs, means, lo, hi = [], [], [], []
+        for d in sorted(set(d_[m].astype(int))):
+            vals = y[m & (d_ == d)]
+            if len(vals) < 5:            # report only (n, depth) cells with >= 5 graphs
+                continue
+            boot = np.array([bs.choice(vals, len(vals), replace=True).mean()
+                             for _ in range(2000)])
+            xs.append(d); means.append(vals.mean())
+            lo.append(np.percentile(boot, 2.5)); hi.append(np.percentile(boot, 97.5))
+        means = np.array(means)
+        ax.errorbar(xs, means, yerr=[means - np.array(lo), np.array(hi) - means],
+                    fmt="o-", color=col, ms=4.5, lw=1.6, capsize=2.5,
+                    elinewidth=1.0, label=f"n = {n0}")
+    # --- the three encoded biological assemblies, on the same axes ---
+    # Do the real boards behave like random posets of the same depth?
+    import scijigsaw.cases as _C
+    _bio = []
+    for _nm, _lab in (("VAMP2", "VAMP2"), ("INFLAMMASOME", "NLRP3")):
+        _A = getattr(_C, _nm)
+        _n = len(_A.units); _perm = _A.n_orders_permitted()
+        _bio.append((_lab, _A.depth(), math.log10(math.factorial(_n) / _perm), _n))
+    _s = _C.count_30S()
+    _bio.append(("30S", _s["depth"], math.log10(_s["total"] / _s["permitted"]), _s["n"]))
+    ax.scatter([b[1] for b in _bio], [b[2] for b in _bio], marker="*", s=170,
+               facecolor="#c0392b", edgecolor="white", lw=0.8, zorder=6,
+               label="encoded assemblies")
+    for _lab, _d, _y, _n in _bio:
+        _dy = 0.42 if _lab != "30S" else -0.62
+        ax.annotate(f"{_lab} (n={_n})", (_d, _y), textcoords="offset points",
+                    xytext=(0, 9 if _dy > 0 else -16), ha="center",
+                    fontsize=7.4, color="#c0392b", fontweight="bold", zorder=6)
     ax.set_xlabel("poset depth (longest chain)", fontsize=10)
-    ax.set_ylabel("mean orders eliminated,  log$_{10}$", fontsize=10)
-    ax.set_title("(b)  depth does, at every n", fontsize=9.5, color=INK)
+    ax.set_ylabel("mean log$_{10}$ reduction factor", fontsize=10)
+    ax.set_title("(B)  mean pruning increases with realised depth at fixed n", fontsize=9.5, color=INK)
     ax.legend(fontsize=8.5, frameon=False)
     for ax in axes:
         ax.grid(alpha=.25, lw=.6); ax.tick_params(labelsize=8.5, colors=MUTED)

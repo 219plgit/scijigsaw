@@ -224,6 +224,8 @@ def _cli():
     ap.add_argument("--min-confidence", type=float, default=70.0,
                     help="mean interface pLDDT below which NO socket is cut")
     ap.add_argument("--n-sub", type=int, default=5)
+    ap.add_argument("--min-interface-residues", type=int, default=3,
+                    help="discard chain-pair interfaces with fewer qualifying residues")
     ap.add_argument("--chains", default="A,B", help="hub,partner chain ids")
     ap.add_argument("--affinities", help="optional csv: protein_a,protein_b,kd_nM")
     a = ap.parse_args()
@@ -254,7 +256,8 @@ def _cli():
 
     # refusal: low-confidence faces are DISCARDED, not merely loosened
     refused = {p for p, c in conf.items() if c < a.min_confidence}
-    kept = {p: f for p, f in faces.items() if p not in refused}
+    kept = {p: f for p, f in faces.items()
+            if p not in refused and len(f) >= a.min_interface_residues}
 
     site_of, pairs = cluster_sites(kept, a.overlap)
 
@@ -306,7 +309,8 @@ def _cli():
 
 # ------------------------------------------------------------------ public API
 def extract(structure_dir, contact_cutoff=5.0, overlap=0.20,
-            min_confidence=70.0, chains="A,B", confidence="auto"):
+            min_confidence=70.0, min_interface_residues=3, chains="A,B",
+            confidence="auto"):
     """Derive interfaces, sites and overlaps from HUB__PARTNER complexes.
 
     Returns a DataFrame with one row per partner:
@@ -353,15 +357,31 @@ def extract(structure_dir, contact_cutoff=5.0, overlap=0.20,
         modelled[partner] = predicted
 
     refused = {p for p, c in conf.items() if c < min_confidence}
-    kept = {p: f for p, f in faces.items() if p not in refused}
+    kept = {p: f for p, f in faces.items()
+            if p not in refused and len(f) >= min_interface_residues}
     site_of, pairs = cluster_sites(kept, overlap)
+
+    # structural footprint: |I_j| / |union of I over the partner's overlap group|
+    groups = defaultdict(list)
+    for pr, lab in site_of.items():
+        groups[lab].append(pr)
+    union_n = {lab: len(set().union(*[kept[m] for m in members]) if members else set())
+               for lab, members in groups.items()}
 
     rows = []
     for p in faces:
+        lab = site_of.get(p)
+        NC = union_n.get(lab) if p not in refused else None
+        nj = len(faces[p]) if p not in refused else None
         rows.append(dict(protein_a=hub_name, protein_b=p,
                          site_on_a="" if p in refused else site_of[p],
                          site_on_b="" if p in refused else f"{p}_iface",
                          n_interface_res=len(faces[p]),
+                         hub_interface_residue_count=nj,
+                         overlap_group_union_residue_count=NC,
+                         structural_footprint_fraction=(round(nj / NC, 3)
+                             if nj is not None and NC else None),
+                         coverage=nj, coverage_denom=NC,
                          confidence=round(conf[p], 1),
                          source="predicted" if modelled[p] else "experimental",
                          refused=p in refused))

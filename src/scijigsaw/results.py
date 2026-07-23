@@ -64,5 +64,5 @@ def all_results(n_posets: int = 900, seed: int = 0) -> dict:
             "permitted_before": 336,
             "permitted_after": 252,
         },
-        "software": {"version": __import__("scijigsaw").__version__, "tests": 43},
+        "software": {"version": __import__("scijigsaw").__version__, "tests": 51},
     }

@@ -80,14 +80,23 @@ class Assembly:
 
             f(S) = sum over admissible-last u of f(S \\ {u}),   f({}) = 1
 
-        partitions the permitted orders of S without overlap. O(2^n n).
+        partitions the permitted orders of S without overlap.
+
+        The recursion is evaluated lazily (memoised, top-down), so only states
+        that are actually reachable under the precedence and exclusion rules are
+        ever allocated. Reachable states are the order ideals of the poset: their
+        number falls sharply as the poset deepens. The worst case (a poset with
+        few relations, where every subset is reachable) is unchanged at O(2^n n)
+        time and O(2^n) memory, which is what the guard below reflects.
         """
         units = self.units
         n = len(units)
         if n > 25:
             raise ValueError(
-                f"n = {n}: exact counting is O(2^n n) and impractical beyond ~25 "
-                "units. Use decomposition or bounded approximation.")
+                f"n = {n}: exact counting is worst-case O(2^n n) and impractical "
+                "beyond ~25 units. Lazy evaluation reduces memory on constrained "
+                "posets but does not change the worst case, which is a poset with "
+                "few relations. Use decomposition or bounded approximation.")
         idx = {u: i for i, u in enumerate(units)}
         req = [0] * n
         exc = [0] * n
@@ -101,9 +110,23 @@ class Assembly:
                     m |= sum(1 << idx[q] for q in a if q in idx)
             exc[i] = m
 
-        f = [0] * (1 << n)
-        f[0] = 1
-        for S in range(1, 1 << n):
+        # dep[i] = units that REQUIRE i. If any of them is still present, i is not
+        # maximal in S, and every order of S\\{i} would be unsatisfiable (f = 0).
+        # Skipping those branches confines the recursion to the order ideals.
+        dep = [0] * n
+        for i in range(n):
+            for j in range(n):
+                if req[j] >> i & 1:
+                    dep[i] |= 1 << j
+
+        # Lazy (memoised) evaluation: allocate only reachable states. Recursion
+        # depth is bounded by n (one unit is removed per level).
+        memo = {0: 1}
+
+        def f(S):
+            v = memo.get(S)
+            if v is not None:
+                return v
             tot = 0
             for i in range(n):
                 if not (S >> i) & 1:
@@ -113,9 +136,15 @@ class Assembly:
                     continue
                 if exc[i] & rest:           # an excluded partner is present
                     continue
-                tot += f[rest]
-            f[S] = tot
-        return f[(1 << n) - 1]
+                if dep[i] & rest:           # something left still requires i
+                    continue
+                tot += f(rest)
+            memo[S] = tot
+            return tot
+
+        total = f((1 << n) - 1)
+        self._states_visited = len(memo)
+        return total
 
     def reduction(self) -> float:
         p = self.n_orders_permitted()

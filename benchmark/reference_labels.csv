@@ -1,0 +1,19 @@
+pdb,chain_a,chain_b,label,note_verify_against_structure_paper
+1SFC,VAMP2,Syntaxin-1A,positive,four-helix SNARE bundle (Sutton et al. 1998)
+1SFC,VAMP2,SNAP25,positive,four-helix SNARE bundle
+1SFC,Syntaxin-1A,SNAP25,positive,four-helix SNARE bundle
+1KIL,VAMP2,Syntaxin-1A,positive,SNARE core in complexin-SNARE complex (Chen et al. 2002)
+1KIL,VAMP2,SNAP25,positive,SNARE core
+1KIL,Syntaxin-1A,SNAP25,positive,SNARE core
+1KIL,Complexin,VAMP2,positive,complexin central helix contacts VAMP2 (13 residues)
+1KIL,Complexin,Syntaxin-1A,positive,complexin central helix contacts syntaxin (10 residues)
+1KIL,Complexin,SNAP25,negative,KEY NEGATIVE: no qualifying complexin-SNAP25 contact
+5W5C,VAMP2,Syntaxin-1A,positive,primed SNARE-complexin-Syt1 (Zhou et al. 2017)
+5W5C,VAMP2,SNAP25,positive,SNARE core
+5W5C,Syntaxin-1A,SNAP25,positive,SNARE core
+5W5C,Complexin,VAMP2,positive,complexin bridge
+5W5C,Complexin,Syntaxin-1A,positive,complexin bridge
+5W5C,Syt-1,SNAP25,positive,synaptotagmin-1 primary interface (verify)
+5W5C,Syt-1,Syntaxin-1A,positive,synaptotagmin-1 interface (verify)
+5W5C,Syt-1,Complexin,negative,not a reported direct interface (verify)
+3C98,Munc18-1,Syntaxin-1A,positive,Munc18a-syntaxin-1 closed complex (Misura et al. 2000)

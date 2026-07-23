@@ -16,6 +16,8 @@ Assembly (Lu et al., Cell 2014; Xiao et al., Annu Rev Immunol 2023):
 import os, sys
 import matplotlib
 matplotlib.use('Agg')
+matplotlib.rcParams['pdf.fonttype'] = 42  # embed TrueType (no Type 3)
+matplotlib.rcParams['ps.fonttype'] = 42
 import matplotlib.pyplot as plt
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else 'figures'
@@ -92,12 +94,12 @@ for i, (name, sub, fc, ec) in enumerate(chain):
 
 # ---- the fork: two substrates, both requiring the catalytic domain ----------
 yb = y - H - GAP - 0.28
-for k, (nm, sb) in enumerate([("GSDMD", "pore \u00b7 pyroptosis"),
-                              ("pro-IL-1\u03b2", "cytokine")]):
+for k, (nm, sb) in enumerate([("GSDMD-N", "pore \u00b7 pyroptosis"),
+                              ("mature IL-1\u03b2", "cytokine")]):
     xb = X - 0.55 + k * 2.05
     ax.add_patch(Polygon(piece(xb, yb, 1.60, H, top=-1), closed=True,
                          facecolor=SUBST, edgecolor=SUBST_ED, lw=1.4, zorder=3))
-    ax.text(xb + 0.80, yb + H / 2 + 0.04, nm, color="#3a2c00", fontsize=8.4,
+    ax.text(xb + 0.80, yb + H / 2 + 0.04, nm, color="#3a2c00", fontsize=7.4,
             ha="center", va="center", fontweight="bold", zorder=6)
 for k in range(2):
     xb = X - 0.55 + k * 2.05 + 0.80
@@ -110,20 +112,20 @@ for k in range(2):
 ax.annotate("", xy=(0.95, 1.30), xytext=(0.95, 9.95),
             arrowprops=dict(arrowstyle="-|>", lw=1.5, color="#9aa4b4",
                             mutation_scale=14))
-ax.text(0.62, 5.6, "each piece can only be placed\nonce the one above it is present",
-        color=MUTED, fontsize=7.4, rotation=90, ha="center", va="center",
+ax.text(0.62, 5.6, "Within this illustrative encoding,\neach downstream state requires the\nprerequisite state(s) shown above",
+        color=MUTED, fontsize=6.7, rotation=90, ha="center", va="center",
         linespacing=1.5)
 
 ax.add_patch(FancyBboxPatch((4.75, 8.15), 2.65, 1.85, boxstyle="round,pad=0.07",
                             facecolor="#f6f7f9", edgecolor="#c7cdd6", lw=1.0,
                             zorder=1))
-ax.text(6.08, 9.72, "a CHAIN, not a hub", color=INK, fontsize=8.8,
+ax.text(6.08, 9.72, "a DEEP CASCADE", color=INK, fontsize=8.8,
         ha="center", fontweight="bold", zorder=6)
-for j, (k, v) in enumerate([("subunits", "10"), ("poset depth", "9"),
+for j, (k, v) in enumerate([("components/states", "10"), ("longest chain", "9 states"),
                             ("orders n!", "3,628,800"),
                             ("permitted", "2")]):
     yy = 9.38 - j * 0.30
-    ax.text(4.92, yy, k, color=MUTED, fontsize=7.4, va="center", zorder=6)
+    ax.text(4.92, yy, k, color=MUTED, fontsize=6.7, va="center", zorder=6)
     ax.text(7.25, yy, v, color=INK, fontsize=7.6, va="center", ha="right",
             fontweight="bold", zorder=6)
 

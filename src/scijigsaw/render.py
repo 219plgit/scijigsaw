@@ -38,6 +38,8 @@ from matplotlib.patches import FancyBboxPatch, Polygon
 from .geometry import KNOB, SOCKET, TAB, Piece
 
 INK, MUTED, STOP = "#1a1d24", "#5b6675", "#c0392b"
+PANEL_LABELS = True   # set False to render the assembled board without A/B panel letters
+SHOW_ALT_OCCUPANCY = True   # set False to render only the assembled complex (no alt-occupancy box)
 PALETTE: Dict[str, tuple] = {
     "fusion":     ("#d7dbe2", "#78828f"),
     "regulation": ("#cfe0f2", "#3d7ab8"),
@@ -74,16 +76,28 @@ class Board:
     def __init__(self, proteins: pd.DataFrame, interactions: pd.DataFrame):
         self.meta = proteins.set_index("name")
         e = interactions.copy()
-        e["coverage"] = e["kd_nM"].apply(kd_to_coverage) if "kd_nM" in e else None
+        # n/N is a STRUCTURAL footprint fraction, supplied only for structure-derived
+        # relations (extractor columns below). It is never derived from affinity; a
+        # curated interactions.csv without these columns shows no n/N.
+        have = "coverage" in e.columns
+        e["coverage"] = e["coverage"] if have else None
+        e["coverage_denom"] = (e["coverage_denom"] if "coverage_denom" in e.columns
+                               else (N_SUB if have else None))
         self.edges = e
 
         self.adj: Dict[str, set] = defaultdict(set)
         self.cov: Dict[frozenset, int] = {}
+        self.covN: Dict[frozenset, int] = {}
         self.site: Dict[tuple, str] = {}
         for r in e.itertuples():
             self.adj[r.protein_a].add(r.protein_b)
             self.adj[r.protein_b].add(r.protein_a)
-            self.cov[frozenset((r.protein_a, r.protein_b))] = r.coverage
+            key = frozenset((r.protein_a, r.protein_b))
+            cv = getattr(r, "coverage", None)
+            if cv is not None and not (isinstance(cv, float) and math.isnan(cv)):
+                self.cov[key] = int(cv)
+                cn = getattr(r, "coverage_denom", None)
+                self.covN[key] = int(cn) if cn and not (isinstance(cn, float) and math.isnan(cn)) else N_SUB
             self.site[(r.protein_a, r.protein_b)] = getattr(r, "site_on_a", None)
             self.site[(r.protein_b, r.protein_a)] = getattr(r, "site_on_b", None)
 
@@ -129,11 +143,12 @@ class Board:
 
         # More than one clique may exist (the SNARE bundle and the complexin-bound
         # bundle are both triangles). The CORE is the largest, and among equals the
-        # most tightly bound -- ranked by total interface contact coverage. A weakly
-        # engaged accessory must not be mistaken for the core it decorates.
+        # most functionally homogeneous -- the bundle whose members share a single
+        # functional class (the fusion SNAREs), rather than a core decorated by a
+        # regulator. This uses declared function metadata, not affinity.
         def weight(c):
-            return sum(self._cov(a, b)
-                       for i, a in enumerate(c) for b in c[i + 1:])
+            funcs = [self.meta.loc[v, "function"] for v in c if v in self.meta.index]
+            return max((funcs.count(f) for f in set(funcs)), default=0)
 
         return max(cliques, key=lambda c: (len(c), weight(c)))
 
@@ -195,7 +210,9 @@ class Board:
                          if not any(q in self.adj[p] for q in partners if q != p)]
             if len(competing) < 2:
                 continue
-            winner = max(competing, key=lambda p: self.cov[frozenset((host, p))] or 0)
+            # the occupant is the most-integrated competitor (highest interface degree);
+            # for the VAMP2 SNARE motif this is SNAP25. No coverage/affinity is used.
+            winner = max(competing, key=lambda p: len(self.adj[p]))
             for p in competing:
                 if p != winner and p not in seen:
                     seen.add(p)
@@ -210,7 +227,10 @@ class Board:
         return AGE_RINGS.get(self.meta.loc[n, "age"], 1) if n in self.meta.index else 1
 
     def _cov(self, a, b):
-        return self.cov.get(frozenset((a, b))) or 0
+        return self.cov.get(frozenset((a, b)))
+
+    def _covN(self, a, b):
+        return self.covN.get(frozenset((a, b)), N_SUB)
 
     # --------------------------------------------------------------- drawing
     def draw(self, out: str, dpi: int = 300):
@@ -226,37 +246,58 @@ class Board:
         ax.set_ylim(0.5, 8.6)
         ax.set_aspect("equal")
         ax.axis("off")
+        if PANEL_LABELS:
+            ax.text(0.5, 8.35, "A", fontsize=16, fontweight="bold", color=INK, va="top", zorder=10)
 
         SY = [y0 + H * f for f in (0.20, 0.35, 0.50, 0.65, 0.80)]
 
         def SX(p):
             return [xs[p] + W * f for f in (0.20, 0.35, 0.50, 0.65, 0.80)]
 
+        _R = 0.22                      # absolute connector radius (clean single tabs/sockets)
+        _kn = lambda edge: _R / edge   # -> knob as a fraction of that edge length
+
+        # pendant layout: centred under each host, clear gaps, no cross-host overlap
+        _PGAP = 0.16
+        _byh: Dict[str, list] = defaultdict(list)
+        for _pd, _host in self.pendants.items():
+            _byh[_host].append(_pd)
+        pend_layout: Dict[str, list] = {}
+        for _host, _pds in _byh.items():
+            _pds = sorted(_pds); _k = len(_pds)
+            _span = W * 0.86
+            _pw = (_span - (_k - 1) * _PGAP) / _k
+            _sx = xs[_host] + (W - _span) / 2.0
+            _rows = []
+            for _j, _pd in enumerate(_pds):
+                _px = _sx + _j * (_pw + _PGAP)
+                _cx = _px + _pw / 2.0
+                _half = _pw * 0.31
+                _co = [_cx - _half + 2 * _half * _t for _t in (0.0, 0.25, 0.5, 0.75, 1.0)]
+                _rows.append((_pd, _px, _pw, _co))
+            pend_layout[_host] = _rows
+
         for i, p in enumerate(bb):
             pc = Piece(xs[p], y0, W, H)
             if i > 0:
-                pc.ladder("left", SY, set(range(self._cov(bb[i - 1], p))), SOCKET)
+                pc.left(yM, SOCKET, _kn(H))
             if i < len(bb) - 1:
-                pc.ladder("right", SY, set(range(self._cov(p, bb[i + 1]))), TAB)
+                pc.right(yM, TAB, _kn(H))
             for b, (a, c) in self.bridges.items():
                 if p == a:
-                    pc.top(xs[p] + W * 0.72, TAB, KNOB)
+                    pc.top(xs[p] + W * 0.72, TAB, _kn(W))
                 if p == c:
-                    pc.top(xs[p] + W * 0.28, TAB, KNOB)
-            kids = sorted(k for k, h in self.pendants.items() if h == p)
-            for j, pd in enumerate(kids):
-                lo = 0.10 + j * (0.80 / max(len(kids), 1))
-                coords = [xs[p] + W * (lo + f * (0.80 / max(len(kids), 1)) * 0.8)
-                          for f in (0.15, 0.35, 0.5, 0.65, 0.85)]
-                pc.ladder("bottom", coords, set(range(self._cov(p, pd))), SOCKET)
+                    pc.top(xs[p] + W * 0.28, TAB, _kn(W))
+            for _pd, _px, _pw, _co in pend_layout.get(p, []):
+                pc.bottom(_px + _pw / 2.0, TAB, _kn(W))
             fc, ec = self._style(p)
             ax.add_patch(Polygon(pc.polygon(), closed=True, facecolor=fc,
                                  edgecolor=ec, lw=1.6, zorder=3))
             ax.text(xs[p] + W / 2, yM + 0.02, p, color=INK, fontsize=8.6,
                     ha="center", va="center", fontweight="bold", zorder=6)
-            if i > 0:
+            if i > 0 and self._cov(bb[i - 1], p) is not None:
                 ax.text(xs[p] + W / 2, yM - 0.30,
-                        f"{self._cov(bb[i - 1], p)}/{N_SUB}", color=ec,
+                        f"{self._cov(bb[i - 1], p)}/{self._covN(bb[i - 1], p)}", color=ec,
                         fontsize=7.0, ha="center", fontweight="bold", zorder=6)
             _rings(ax, xs[p] + 0.26, y0 + H - 0.26, self._age(p))
 
@@ -268,8 +309,8 @@ class Board:
             bx = xs[a] + W * 0.50
             bw = (xs[c] - xs[a]) + W * 0.40
             pc = Piece(bx, y0 + H, bw, 0.92)
-            pc.bottom(xs[a] + W * 0.72, SOCKET, KNOB)
-            pc.bottom(xs[c] + W * 0.28, SOCKET, KNOB)
+            pc.bottom(xs[a] + W * 0.72, SOCKET, _kn(bw))
+            pc.bottom(xs[c] + W * 0.28, SOCKET, _kn(bw))
             fc, ec = self._style(b)
             ax.add_patch(Polygon(pc.polygon(), closed=True, facecolor=fc,
                                  edgecolor=ec, lw=1.5, zorder=2))
@@ -282,56 +323,97 @@ class Board:
                     "until the seam beneath them closes", color="#3d7ab8",
                     fontsize=7.4, fontweight="bold")
 
-        by_host: Dict[str, list] = defaultdict(list)
-        for pd, host in self.pendants.items():
-            by_host[host].append(pd)
-        for host, pds in by_host.items():
-            k = len(pds)
-            pw = (W + 0.5) / k if k > 1 else W + 0.56
-            for j, pd in enumerate(sorted(pds)):
-                px = xs[host] - 0.25 + j * pw
-                pc = Piece(px, y0 - 1.14, pw - 0.04, 1.08)
-                # tabs must sit under the host's own sockets
-                lo = 0.10 + j * (0.80 / k)
-                coords = [xs[host] + W * (lo + f * (0.80 / k) * 0.8)
-                          for f in (0.15, 0.35, 0.5, 0.65, 0.85)]
-                pc.ladder("top", coords, set(range(self._cov(host, pd))), TAB)
+        for host, rows in pend_layout.items():
+            single = len(rows) == 1
+            for pd, px, pw, coords in rows:
+                pc = Piece(px, y0 - 1.14, pw, 1.14)
+                pc.top(px + pw / 2.0, SOCKET, _kn(pw))
                 fc, ec = self._style(pd)
                 ax.add_patch(Polygon(pc.polygon(), closed=True, facecolor=fc,
                                      edgecolor=ec, lw=1.5, zorder=2))
-                ax.text(px + pw / 2 - 0.02, y0 - 0.52, pd, color=INK,
-                        fontsize=7.0 if k > 1 else 7.8, ha="center", va="center",
+                cx = px + pw / 2.0
+                ax.text(cx, y0 - 0.52, pd, color=INK,
+                        fontsize=7.6 if single else 6.6, ha="center", va="center",
                         fontweight="bold", zorder=6)
-                ax.text(px + pw / 2 - 0.02, y0 - 0.82,
-                        f"{self._cov(host, pd)}/{N_SUB}", color=ec, fontsize=6.8,
-                        ha="center", fontweight="bold", zorder=6)
-                _rings(ax, px + 0.22, y0 - 0.32, self._age(pd))
+                if self._cov(host, pd) is not None:
+                    ax.text(cx, y0 - 0.82, f"{self._cov(host, pd)}/{self._covN(host, pd)}",
+                            color=ec, fontsize=6.8, ha="center", fontweight="bold", zorder=6)
+                _rings(ax, px + 0.20, y0 - 0.32, self._age(pd))
 
-        if self.contenders:
-            bw = max(len(self.contenders) * 2.6 + 0.5, 5.5)
-            ax.add_patch(FancyBboxPatch((x0, 0.95), bw, 1.85,
-                                        boxstyle="round,pad=0.07", facecolor="white",
-                                        edgecolor=STOP, lw=1.3, ls=(0, (5, 3)), zorder=1))
-            ax.text(x0 + 0.2, 2.52, "ALTERNATIVE OCCUPANCY \u2014 the same site, "
-                    "another state", color=STOP, fontsize=7.6, fontweight="bold", zorder=6)
-            ax.text(x0 + 0.2, 2.26, "overlap establishes NON-simultaneity; it does not "
-                    "say whether that is competition or succession",
-                    color=MUTED, fontsize=6.4, zorder=6)
-            for i, (c, (host, site, occ)) in enumerate(self.contenders):
-                cx = x0 + 0.25 + i * 2.6
-                pc = Piece(cx, 1.15, 2.3, 0.85)
-                pc.ladder("left", [1.15 + 0.85 * f
-                                   for f in (0.2, 0.35, 0.5, 0.65, 0.8)],
-                          set(range(self._cov(host, c))), TAB)
-                fc, ec = self._style(c)
-                ax.add_patch(Polygon(pc.polygon(), closed=True, facecolor=fc,
-                                     edgecolor=ec, lw=1.3, zorder=3))
-                ax.text(cx + 1.2, 1.74, c, color=INK, fontsize=8.0, ha="center",
-                        fontweight="bold", zorder=6)
-                ax.text(cx + 1.2, 1.42,
-                        f"{self._cov(host, c)}/{N_SUB} \u00b7 \u2297 not with {occ}",
-                        color=STOP, fontsize=6.4, ha="center", zorder=6)
-                _rings(ax, cx + 0.24, 1.84, self._age(c))
+        if self.contenders and SHOW_ALT_OCCUPANCY:
+            sites = {(h, s) for _, (h, s, o) in self.contenders}
+            winners = {o for _, (h, s, o) in self.contenders}
+            shared = len(sites) == 1 and len(winners) == 1
+            if shared:
+                h0, s0 = next(iter(sites)); w0 = next(iter(winners))
+                sh = s0.replace("_", " ")
+                chips = [(w0, True)] + [(c, False) for c, _ in self.contenders]
+                bw = max(len(chips) * 2.05 + 0.5, 5.5)
+                by, bh = 0.7, 2.35
+                ax.add_patch(FancyBboxPatch((x0, by), bw, bh, boxstyle="round,pad=0.07",
+                             facecolor="white", edgecolor=STOP, lw=1.3, ls=(0, (5, 3)), zorder=1))
+                if PANEL_LABELS:
+                    ax.text(0.5, by + bh, "B", fontsize=16, fontweight="bold", color=INK, va="top", zorder=10)
+                ax.text(x0 + 0.2, by + bh - 0.24,
+                        "ALTERNATIVE OCCUPANCY \u2014 one socket on %s\u2019s %s" % (h0, sh),
+                        color=STOP, fontsize=7.3, fontweight="bold", zorder=6)
+                ax.text(x0 + 0.2, by + bh - 0.50,
+                        "%s fills it in the fusion complex; the others (marked \u2297) take the "
+                        "same socket only in the retrieval state \u2014 one occupant at a time" % w0,
+                        color=MUTED, fontsize=6.1, zorder=6)
+                # the one shared socket, drawn as a labelled slot
+                bx0, bx1 = x0 + 0.4, x0 + bw - 0.4
+                sy = by + bh - 1.02
+                ax.add_patch(FancyBboxPatch((bx0, sy - 0.17), bx1 - bx0, 0.34,
+                             boxstyle="round,pad=0.02", facecolor=PALETTE["fusion"][0],
+                             edgecolor=INK, lw=1.3, zorder=3))
+                ax.text((bx0 + bx1) / 2, sy, "%s socket on %s" % (sh, h0), color=INK,
+                        fontsize=6.7, ha="center", va="center", fontweight="bold", zorder=5)
+                # candidates below, each with an arrow up into the one socket
+                cyc = by + 0.5
+                span = bx1 - bx0
+                for i, (nm, win) in enumerate(chips):
+                    cx = bx0 + span * (i + 0.5) / len(chips)
+                    fc, ec = self._style(nm)
+                    ax.add_patch(FancyBboxPatch((cx - 0.85, cyc - 0.29), 1.7, 0.58,
+                                 boxstyle="round,pad=0.02", facecolor=fc, edgecolor=ec,
+                                 lw=1.4 if win else 1.2,
+                                 ls="solid" if win else (0, (3, 2)), zorder=3))
+                    ax.text(cx, cyc + 0.04, nm, color=INK, fontsize=6.9, ha="center",
+                            va="center", fontweight="bold", zorder=5)
+                    ax.text(cx, cyc - 0.16, "fusion \u2013 occupies" if win else "retrieval",
+                            color=(INK if win else STOP), fontsize=5.1, ha="center",
+                            va="center", zorder=5)
+                    ax.annotate("", xy=(cx, sy - 0.19), xytext=(cx, cyc + 0.31),
+                                arrowprops=dict(arrowstyle="-|>", lw=1.2,
+                                color=INK if win else STOP,
+                                linestyle="solid" if win else "dashed"), zorder=4)
+                    if not win:
+                        ax.text(cx + 0.2, (sy - 0.19 + cyc + 0.31) / 2, "\u2297", color=STOP,
+                                fontsize=8.5, ha="center", va="center", zorder=6)
+            else:
+                bw = max(len(self.contenders) * 2.6 + 0.5, 5.5)
+                ax.add_patch(FancyBboxPatch((x0, 0.95), bw, 1.85, boxstyle="round,pad=0.07",
+                             facecolor="white", edgecolor=STOP, lw=1.3, ls=(0, (5, 3)), zorder=1))
+                ax.text(x0 + 0.2, 2.55, "ALTERNATIVE OCCUPANCY \u2014 a site already held, "
+                        "another state", color=STOP, fontsize=7.3, fontweight="bold", zorder=6)
+                ax.text(x0 + 0.2, 2.30, "each piece binds a site an occupant already holds \u2014 "
+                        "only one at a time", color=MUTED, fontsize=6.3, zorder=6)
+                for i, (c, (host, site, occ)) in enumerate(self.contenders):
+                    cx = x0 + 0.25 + i * 2.6
+                    pc = Piece(cx, 1.10, 2.3, 0.82)
+                    pc.left(1.10 + 0.82 / 2.0, TAB, _kn(0.82))
+                    fc, ec = self._style(c)
+                    ax.add_patch(Polygon(pc.polygon(), closed=True, facecolor=fc,
+                                         edgecolor=ec, lw=1.3, zorder=3))
+                    ax.text(cx + 1.28, 1.72, c, color=INK, fontsize=8.0, ha="center",
+                            fontweight="bold", zorder=6)
+                    ax.text(cx + 1.28, 1.47, "binds %s \u00b7 %s" % (host, site.replace("_", " ")),
+                            color=MUTED, fontsize=5.9, ha="center", zorder=6)
+                    ax.text(cx + 1.28, 1.25, "\u2297 excludes %s" % occ, color=STOP,
+                            fontsize=6.2, ha="center", zorder=6)
+                    _rings(ax, cx + 0.24, 1.82, self._age(c))
+
 
         fig.tight_layout()
         fig.savefig(out, dpi=dpi, facecolor="white", bbox_inches="tight")

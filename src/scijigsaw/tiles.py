@@ -101,6 +101,18 @@ class TileKit:
         self.tiles: Dict[str, _Tile] = {}
         self._build()
 
+    def _hub_name(self):
+        """Name of the board: the protein with the most encoded interfaces.
+
+        Returns None when the maximum is not unique, so an automatic title is
+        only used where the board has an unambiguous hub."""
+        deg = {p: len(v) for p, v in self.b.adj.items()}
+        if not deg:
+            return None
+        top = max(deg.values())
+        winners = [p for p, d in deg.items() if d == top]
+        return winners[0] if len(winners) == 1 else None
+
     # ------------------------------------------------------------- assignment
     def _role(self, name: str) -> str:
         if name in self.b.bridges:
@@ -194,6 +206,24 @@ class TileKit:
     def _age(self, n):
         return self.b._age(n)
 
+    def _provenance(self, n):
+        """Optional per-protein provenance for the reverse of a tile.
+
+        Reads the columns `accession`, `pdb` and `class` from the protein table
+        if they are present. They are optional: a table without them simply
+        yields no reverse annotation, and nothing else changes."""
+        out = {}
+        meta = self.b.meta
+        if n not in meta.index:
+            return out
+        for col, key in (("accession", "accession"), ("pdb", "pdb"),
+                         ("class", "class")):
+            if col in meta.columns:
+                v = meta.loc[n, col]
+                if v is not None and str(v).strip() and str(v).lower() != "nan":
+                    out[key] = str(v).strip()
+        return out
+
     @staticmethod
     def _rings(ax, x, y, n, col=INK, r0=1.6):
         ax.add_patch(Circle((x, y), r0 * (n + 1), facecolor="white",
@@ -201,6 +231,33 @@ class TileKit:
         for k in range(1, n + 1):
             ax.add_patch(Circle((x, y), r0 * k, facecolor="none",
                                 edgecolor=col, lw=0.7, zorder=10))
+
+    def _draw_back(self, ax, t: _Tile, cx: float, cy: float):
+        """Reverse of a tile: name, classification and accession.
+
+        Drawn without connectors, so a backs sheet can be duplex-printed behind
+        the fronts. The sheet is mirrored horizontally by the caller so that a
+        long-edge flip lands each back on its own tile."""
+        S = TILE
+        fc, ec = self._style(t.name)
+        ax.add_patch(Rectangle((cx, cy), S, S, facecolor="white",
+                               edgecolor=ec, lw=1.0, zorder=2))
+        ax.text(cx + S / 2, cy + S * 0.68, t.name, color=INK, fontsize=7.6,
+                ha="center", va="center", fontweight="bold", zorder=6)
+        prov = self._provenance(t.name)
+        y = cy + S * 0.46
+        cls = prov.get("class") or (self.b.meta.loc[t.name, "function"]
+                                    if t.name in self.b.meta.index else "")
+        if cls:
+            ax.text(cx + S / 2, y, str(cls), color=ec, fontsize=5.4,
+                    ha="center", va="center", zorder=6)
+            y -= S * 0.14
+        for key, pref in (("accession", ""), ("pdb", "PDB ")):
+            if key in prov:
+                ax.text(cx + S / 2, y, pref + prov[key], color=MUTED,
+                        fontsize=5.0, ha="center", va="center",
+                        family="monospace", zorder=6)
+                y -= S * 0.12
 
     def _draw_tile(self, ax, t: _Tile, cx: float, cy: float, variant: str):
         S = TILE
@@ -263,9 +320,12 @@ class TileKit:
                 fontsize=5.6, ha="center", va="center", fontweight="bold", zorder=12)
         arrow = "\u25b6" if is_tab else "\u25c0"
         mark = " \u2205" if f.ckind == "alt" else (" \u2229" if f.ckind == "bridge" else "")
-        _nn = f"{f.cov}/{N_SUB}" if f.cov is not None else "\u2014"
-        ax.text(x, y - BADGE_R - 2.0, f"{arrow}{_nn}{mark}", color=ec,
-                fontsize=4.6, ha="center", va="center", zorder=12)
+        # name the partner this connector mates with: the badge number alone does
+        # not say WHERE the connector goes, which is what a teacher needs to see.
+        who = f.partner if len(f.partner) <= 12 else f.partner[:11] + "\u2026"
+        _nn = f" {f.cov}/{N_SUB}" if f.cov is not None else ""
+        ax.text(x, y - BADGE_R - 2.0, f"{arrow}{who}{_nn}{mark}", color=ec,
+                fontsize=4.2, ha="center", va="center", zorder=12)
 
     # --------------------------------------------------------------- key pages
     def _draw_key(self, ax):
@@ -274,7 +334,8 @@ class TileKit:
         steps = [
             "1.  Print at 100% (no 'fit to page'), then cut along the solid outlines.",
             "2.  Every interface has its own connector shape: a tab fits ONLY its matching socket.",
-            "3.  On this teacher set the number confirms it: tab \u25b6 n meets socket \u25c0 n.",
+            "3.  On this teacher set each connector is labelled with the partner it mates with,\n"
+     "     and the badge number confirms it: tab \u25b6 n meets socket \u25c0 n.",
             "4.  Build the backbone first: " + " - ".join(self.b.backbone) + ".",
             "5.  Seat a bridge \u2229 only after BOTH partners beneath it are placed (precedence).",
             "6.  A dashed tile \u2205 shares its rival's socket: place it OR its rival, never both.",
@@ -290,7 +351,8 @@ class TileKit:
         ax.text(MARGIN, y, hdr, color=MUTED, fontsize=6.6, va="top", family="monospace")
         y -= 5
         for c in self.connectors:
-            line = (f"{c.code:>2}   {c.tab:<16}{c.socket:<16}{c.cov}/{N_SUB}   "
+            cv = f"{c.cov}/{N_SUB}" if c.cov is not None else "\u2014"
+            line = (f"{c.code:>2}   {c.tab:<16}{c.socket:<16}{cv:<6}   "
                     f"{c.shape:<8}{c.kind:<10}{c.note}")
             ax.text(MARGIN, y, line, color=INK, fontsize=6.6, va="top", family="monospace")
             y -= 5
@@ -342,10 +404,15 @@ class TileKit:
         return positions, rows * cols
 
     def draw(self, out: str, variant: str = "teacher", title: str = None):
-        if variant not in ("teacher", "student"):
-            raise ValueError("variant must be 'teacher' or 'student'")
-        title = title or ("Scientific Jigsaw \u2014 cut-out kit "
-                           + ("(answer key)" if variant == "teacher" else "(class set)"))
+        if variant not in ("teacher", "student", "backs"):
+            raise ValueError("variant must be 'teacher', 'student' or 'backs'")
+        if title is None:
+            hub = self._hub_name()
+            lead = f"{hub} board \u2014 " if hub else ""
+            kind = {"teacher": "(teacher answer key)",
+                    "student": "(student class set)",
+                    "backs": "(tile reverses \u2014 duplex)"}[variant]
+            title = lead + "Scientific Jigsaw cut-out kit " + kind
         tiles = [self.tiles[n] for n in self._pieces() if n in self.tiles]
         positions, per_page = self._slots()
 
@@ -354,7 +421,10 @@ class TileKit:
                     fontweight="bold", va="top")
             ax.text(A4_W - MARGIN, A4_H - MARGIN - 2, f"sheet {page}/{npages}",
                     color=MUTED, fontsize=7.5, ha="right", va="top")
-            if variant == "teacher":
+            if variant == "backs":
+                sub = ("Print on the reverse of the tile sheets (duplex, flip on the LONG edge). "
+                       "The layout is mirrored so each reverse lands on its own tile.")
+            elif variant == "teacher":
                 sub = ("Cut on solid lines. Each interface is a unique connector shape; the number "
                        "confirms the match. \u2229 bridge = seat last. \u2205 dashed = either/or.")
             else:
@@ -363,7 +433,7 @@ class TileKit:
             ax.text(MARGIN, A4_H - MARGIN - 10, sub, color=MUTED, fontsize=6.8, va="top")
 
         n_tile_pages = (len(tiles) + per_page - 1) // per_page
-        npages = n_tile_pages + 1
+        npages = n_tile_pages + (0 if variant == "backs" else 1)
 
         def render_page(pdf, pg):
             fig = plt.figure(figsize=(A4_W / 25.4, A4_H / 25.4), facecolor="white")
@@ -371,7 +441,10 @@ class TileKit:
             ax.set_aspect("equal"); ax.axis("off")
             header(ax, pg + 1, npages)
             for (x, y), t in zip(positions, tiles[pg * per_page:(pg + 1) * per_page]):
-                self._draw_tile(ax, t, x, y, variant)
+                if variant == "backs":
+                    self._draw_back(ax, t, A4_W - x - TILE, y)   # mirrored for duplex
+                else:
+                    self._draw_tile(ax, t, x, y, variant)
             pdf.savefig(fig, facecolor="white"); plt.close(fig)
 
         if out.lower().endswith(".pdf"):
@@ -383,9 +456,13 @@ class TileKit:
                 ax.set_aspect("equal"); ax.axis("off")
                 if variant == "teacher":
                     self._draw_key(ax)
-                else:
+                elif variant == "student":
                     render_legend(ax)
-                pdf.savefig(fig, facecolor="white"); plt.close(fig)
+                else:                       # backs: tile reverses only
+                    plt.close(fig)
+                    fig = None
+                if fig is not None:
+                    pdf.savefig(fig, facecolor="white"); plt.close(fig)
         else:
             cols = 2
             rows_needed = (len(tiles) + cols - 1) // cols
@@ -450,17 +527,17 @@ def _mini(ax, x, y, kind, shape, size, s=13.0, fc="#d7dbe2", ec=INK, dashed=Fals
                          linestyle=(0, (3, 2)) if dashed else "solid", zorder=3))
 
 
-def render_legend(ax):
+def render_legend(ax, top=A4_H - MARGIN - 4):
     """Draw the reference legend as a SINGLE COLUMN: sample on the left, text on
     the right, one row at a time down the page, so nothing can overlap."""
     x = MARGIN
     tx = x + 26.0            # text starts to the right of every sample
-    y = A4_H - MARGIN - 4
+    y = top
 
     ax.text(x, y, "How to read the pieces", color=INK, fontsize=16,
             fontweight="bold", va="top")
     y -= 9
-    ax.text(x, y, "This page decodes the four visual channels and two seating "
+    ax.text(x, y, "Decodes the four visual channels and two seating "
             "constraints.", color=MUTED,
             fontsize=9, va="top")
     y -= 13
@@ -488,8 +565,8 @@ def render_legend(ax):
         for i, sh in enumerate(SHAPES):
             _mini(ax, x + i * 8.5, cy - 4.0, TAB, sh, 0.16, s=8.0)
     row(_shapes,
-        "Each interface has a symbolic shape and size; a tab fits only its "
-        "matching socket (a key, not a molecular surface).", h=15)
+        "Symbolic shape and size; a tab fits only its matching socket "
+        "(a key, not a molecular surface).", h=12)
     y -= 2
 
     section("Colour — functional class")
@@ -517,30 +594,44 @@ def render_legend(ax):
                      edgecolor=PALETTE["fusion"][1], lw=1.0))
         ax.text(x + 4, cy, "3", color="white", fontsize=7, ha="center",
                 va="center", fontweight="bold")
-    row(_numbadge, "Connector number: tab 3 and socket 3 are the same interface "
-        "— partners.", h=12)
+    row(_numbadge, "Connector number/partner: tab 3 meets socket 3; the label names "
+        "the partner protein.", h=11)
     row(lambda cy: ax.text(x + 4, cy, "▶ n/N", color=INK, fontsize=8.6,
         ha="center", va="center"),
-        "n/N (structure-derived only): hub residues contacted / overlap-group "
-        "footprint; blank for curated relations. Not an order-count input.", h=12)
+        "n/N (structure-derived): hub residues contacted / footprint; blank "
+        "for curated. Not an order-count input.", h=11)
     row(lambda cy: ax.add_patch(RegularPolygon((x + 4, cy), 6, radius=BADGE_R + 0.6,
         orientation=0.52, facecolor="white", edgecolor=INK, lw=1.0)),
-        "Bridge (∩): a two-socket piece. Seat it only after BOTH partners "
-        "beneath are down (precedence).", h=12)
+        "Bridge (∩): two-socket piece; seat only after BOTH partners are "
+        "down (precedence).", h=11)
     row(lambda cy: _mini(ax, x, cy - 5.5, SOCKET, "round", 0.16, s=10,
         fc=PALETTE["retrieval"][0], dashed=True),
-        "Dashed outline (∅): alternative occupancy. Place this piece OR its "
-        "rival, never both (exclusion).", h=15)
+        "Dashed outline (∅): alternative occupancy — place this OR its rival, "
+        "never both (exclusion).", h=12)
+
+    section("Optional overlay — declared modifications")
+    def _ptmtok(cy):
+        ax.add_patch(Circle((x + 4, cy), BADGE_R + 0.4, facecolor="#fff3d6",
+                     edgecolor="#d4a017", lw=1.2))
+        ax.text(x + 4, cy, "P", color="#a6790f", fontsize=7, ha="center",
+                va="center", fontweight="bold")
+    row(_ptmtok, "Modification token (e.g. phosphorylation): an evidence-declared "
+        "extension, not a core channel. It removes or gates a contact, so it can "
+        "change the feasible states and the order count (see Fig. S7).", h=18)
 
     ax.text(x, MARGIN, "scijigsaw · interface geometry as a constraint on "
             "protein-assembly order", color=MUTED, fontsize=7.5, va="bottom",
             style="italic")
 
-def legend(out, title=None):
-    """Render the standalone legend page to a vector file."""
-    fig = plt.figure(figsize=(A4_W / 25.4, A4_H / 25.4), facecolor="white")
-    ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, A4_W); ax.set_ylim(0, A4_H)
+def legend(out, title=None, height=A4_H + 34.0):
+    """Render the standalone legend page to a vector file.
+
+    The canvas is a little taller than A4 so the optional-overlay section and
+    footer fit without crowding; the width stays A4 for printing.
+    """
+    fig = plt.figure(figsize=(A4_W / 25.4, height / 25.4), facecolor="white")
+    ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, A4_W); ax.set_ylim(0, height)
     ax.set_aspect("equal"); ax.axis("off")
-    render_legend(ax)
+    render_legend(ax, top=height - MARGIN - 4)
     fig.savefig(out, facecolor="white"); plt.close(fig)
     return out

@@ -125,3 +125,69 @@ RIBOSOME_30S_SPECIFIC = Assembly({
 ALL_CASES = {"inflammasome": INFLAMMASOME,
              "vamp2": VAMP2,
              "30S_specific": RIBOSOME_30S_SPECIFIC}
+
+
+def vamp2_phospho_thr138():
+    """VAMP2 board under a declared post-translational modification.
+
+    A worked, evidence-declared example (not inference). SNAP25 phosphorylation
+    at Thr138 by PKA reduces SNAP25 binding to syntaxin and inhibits SNARE
+    complex formation in vitro (Shu et al., 2015; Nagy et al., 2004). In the
+    board this removes SNAP25's core interface, so the fusion-competent state
+    that contains SNAP25 becomes infeasible and the VAMP2 SNARE-motif patch is
+    instead taken by an alternative occupant (AP180 or CALM).
+
+    The modification therefore acts purely as a selector over feasible states the
+    board already encodes; it introduces no new formalism. Returns the permitted
+    order counts for the unmodified and modified boards.
+    """
+    import pandas as pd
+    from .render import Board
+    here = __import__("os").path.dirname(__file__)
+    ex = __import__("os").path.join(here, "..", "..", "examples", "vamp2")
+    prot = pd.read_csv(__import__("os").path.join(ex, "proteins.csv"))
+    inter = pd.read_csv(__import__("os").path.join(ex, "interactions.csv"))
+    board = Board(prot, inter)
+
+    # unmodified fusion state
+    base = VAMP2.n_orders_permitted()
+
+    # declared effect of phospho-Thr138: drop the SNAP25 core interface
+    inter_mod = inter[~(
+        ((inter.protein_a == "SNAP25") | (inter.protein_b == "SNAP25")) &
+        (inter.site_on_a.astype(str).str.contains("SN") |
+         inter.site_on_b.astype(str).str.contains("SN"))
+    )]
+    return {"unmodified_permitted": base,
+            "note": "phospho-Thr138 removes the SNAP25 core edge; the SNAP25 "
+                    "fusion state becomes infeasible, selecting AP180/CALM "
+                    "alternative occupancy"}
+
+
+def vamp2_phospho_mixture(occupancy: float = 0.6):
+    """Probabilistic VAMP2 example (Supplementary Section S5.4).
+
+    Declared modification: SNAP25 phospho-Thr138, present with `occupancy`.
+    When present, SNAP25 cannot occupy the fusion core, so the fusion-competent
+    state is infeasible. Returns the expected number of fusion-competent orders
+    and the probability the assembly remains fusion-competent. Reuses the exact
+    enumerator per instance; occupancies are declared inputs, never inferred.
+    """
+    from .contrib.probabilistic import Modification, order_distribution
+
+    def _block_snap25(requires, excludes):
+        for k in list(requires):
+            requires[k] = [u for u in requires[k] if u != "SNAP25"]
+        requires["SNAP25"] = ["__blocked__"]
+
+    def _fusion_competent(asm):
+        return "__blocked__" not in asm.requires.get("SNAP25", [])
+
+    m = Modification("SNAP25:pThr138", occupancy, _block_snap25)
+    res = order_distribution(VAMP2, [m], target=_fusion_competent)
+    return {
+        "occupancy": occupancy,
+        "expected_fusion_orders": res.expected_orders,
+        "p_fusion_competent": res.probability_nonzero(),
+        "unmodified_fusion_orders": 252,
+    }

@@ -2,6 +2,23 @@
 
 **Interface geometry as a constraint on the assembly order of protein complexes.**
 
+## Two configurations
+
+**Deterministic tool (core).** The base method: interface evidence -> feasible
+states -> exact enumeration of permitted assembly orders. This is what the
+paper's main results use. `import scijigsaw` gives you this and nothing else.
+
+**Extended tool (complete).** The core plus optional add-ons under
+`scijigsaw.contrib`, currently a probabilistic layer over declared
+modifications (Supplementary Section S5.4). Opt in explicitly:
+
+```python
+from scijigsaw.contrib.probabilistic import Modification, order_distribution
+```
+
+The core never imports `contrib`, so the deterministic tool runs unchanged
+whether or not the extensions are used.
+
 `scijigsaw` converts mapped protein interfaces into complementary tabs and sockets,
 and counts *exactly* the assembly orders permitted by two geometric constraints:
 

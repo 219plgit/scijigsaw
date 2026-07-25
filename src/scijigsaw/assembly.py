@@ -70,6 +70,27 @@ class Assembly:
     def n_orders_total(self) -> int:
         return math.factorial(len(self.units))
 
+    def dependency_graph(self, include_seed=False):
+        """Undirected graph of the precedence relation.
+
+        For assemblies that are enumerated but not rendered as a tile board this
+        is the graph a physical layout would have to realise. The seed is
+        excluded by default because it is present before assembly begins;
+        `include_seed=True` adds it as a physical component."""
+        import networkx as nx
+        G = nx.Graph()
+        for unit, reqs in self.requires.items():
+            G.add_node(unit)
+            for r in reqs:
+                if r == self.seed and not include_seed:
+                    continue
+                G.add_edge(unit, r)
+        if include_seed and self.seed is not None:
+            for unit, reqs in self.requires.items():
+                if self.seed in reqs or not (set(reqs) - {self.seed}):
+                    G.add_edge(unit, self.seed)
+        return G
+
     def n_orders_permitted(self) -> int:
         """Exact count of linear extensions, restricted by exclusion.
 

@@ -1,5 +1,95 @@
 # Changelog
 
+## v2.0.0
+
+- **Two configurations.** The deterministic core and an extended (complete)
+  configuration that adds optional extensions under `scijigsaw.contrib`.
+- Moved the probabilistic layer to `scijigsaw.contrib.probabilistic`; the
+  core no longer imports or exports it, so the deterministic tool is
+  unchanged. Major version bump reflects the new capability and the
+  reorganised import path.
+
+## v1.6.1
+
+Fixes the real-structure benchmark harness, which had never been executed.
+
+- `benchmark/run_benchmark.py` looked for structures with the extensions
+  `.cif/.mmcif/.pdf/.ent`; `.pdf` was a typo for `.pdb`, so downloaded PDB files
+  were never found and every structure was skipped, yielding all-NaN results.
+- It shelled out to `scijigsaw-extract` with `--min-residues`, which is not a
+  flag of that command (`--min-interface-residues`), and passed a single
+  multi-chain file where the extractor expects a directory of two-chain
+  hub/partner complexes.
+- The labels name proteins while structures contain chains, and no mapping
+  existed. The harness now takes `--chain-map` (columns pdb,chain,protein) and
+  provides `--list-chains`, which prints every chain with its header description
+  so the mapping can be checked against the deposited file rather than assumed.
+- Interface detection now calls `scijigsaw.extract.interface_residues` directly,
+  the same function the extractor uses, over all chain combinations for each
+  labelled protein pair, sweeping contact cutoff and minimum interface size.
+- No library code changed; reported manuscript values are unaffected.
+- The documented protein-table schema did not match the one the code read: the
+  supplement listed `protein_id`, `functional_class` and `conservation_tier`
+  while the reader required `name`, `function` and `age`, so a table written
+  from the manuscript could not be loaded. Both spellings are now accepted,
+  `conservation_tier`/`age` is genuinely optional as documented (it previously
+  raised `KeyError`), and a table missing a required column now reports which
+  column and what was found instead of a pandas error.
+- Command-line entry points report missing files and malformed tables as a
+  message rather than a traceback.
+- Added `scijigsaw.probabilistic`: a probabilistic layer over declared
+  modifications (Supplementary S5.4). Each modification carries a declared
+  occupancy; `order_distribution` enumerates the 2^k instances (or samples
+  for large k) and reuses the exact enumerator on each, returning the
+  expected order count and P(target feasible). `cases.vamp2_phospho_mixture`
+  reproduces the VAMP2 result (E=100.8 fusion-competent orders at p=0.6).
+  Occupancies are declared inputs, never inferred.
+- Legend ("How to read the pieces") gains an Optional-overlay section for
+  declared modifications, shown as an extension point rather than a core
+  channel; the legend canvas is slightly taller to fit it. render_legend
+  now takes a `top` argument and legend() a `height` argument.
+- Added `cases.vamp2_phospho_thr138`, a worked, evidence-declared example of a
+  post-translational modification. SNAP25 Thr138 phosphorylation (PKA) is
+  declared to remove the SNAP25 core interface; the fusion-competent state
+  becomes infeasible and the board selects an AP180/CALM alternative-occupancy
+  state. Modifications are represented from declared evidence, never inferred.
+- Figure 3(A) now plots order-space reduction against poset DEPTH with component
+  count shown as colour and a least-squares trend line, replacing a plot against
+  component count that stacked ~130 points at each integer n and hid the depth
+  signal. reproduce_numbers.py additionally reports the lazy-evaluation reach.
+- Planarity is now checked on the CONNECTOR graph the renderer lays out, per
+  feasible state, rather than on the precedence poset. These are different
+  graphs: for the VAMP2 example the connector graph has 10 nodes and 12 edges
+  (the printed tile set) against the poset's 8 and 10, because the alternative
+  occupants AP180 and CALM are tiles but not enumerated units. New
+  `Board.connector_graph`, `Board.exclusion_pairs`, `Board.feasible_states` and
+  `Assembly.dependency_graph` give the script and the tests one construction
+  path. Node and edge counts are pinned, so a dropped edge fails the test even
+  though the graph would remain planar. The 30S dependency graph is reported
+  both without the 16S seed (20/16) and with it (21/22).
+- `scripts/reproduce_numbers.py` also reports the planarity of each encoded board,
+  and the test suite asserts it. The manuscript states that one flat tile layer
+  suffices for the assemblies presented; that holds only while their interaction
+  graphs are planar, so the claim is now checked rather than asserted. This also
+  puts the declared `networkx` dependency to use, which no module had imported.
+- New `--variant backs` emits a reverse sheet for the tiles, carrying the protein
+  name, its classification and, where the protein table provides them, a sequence
+  accession and a structure identifier. The layout is mirrored horizontally so a
+  long-edge duplex flip lands each reverse on its own tile. The three columns
+  (`accession`, `pdb`, `class`) are optional additions to the protein table.
+- Teacher tiles now label each connector with the partner protein it mates with.
+  Previously a connector showed only a numbered, coloured badge, so the sheet said
+  which connector it was but not where it went, and the pairing had to be looked
+  up in the key table.
+- The teacher key page printed "None/5" in the n/N column for boards without
+  structure-derived coverage (that is, for every curated board, including the
+  VAMP2 example). It now prints an em dash, matching the tiles themselves.
+- Printable kits now carry the board name in the sheet header, so the teacher
+  and student sets read "VAMP2 board \u2014 Scientific Jigsaw cut-out kit
+  (teacher answer key / student class set)" rather than a generic title. The
+  name is the protein with the most encoded interfaces and is used only when
+  that maximum is unique; `--title` still overrides it.
+
 ## v1.6.0
 
 Structural-meaning and enumeration release accompanying the revised manuscript.

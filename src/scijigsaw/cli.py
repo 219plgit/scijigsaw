@@ -1,11 +1,28 @@
 """Command-line entry points."""
 from __future__ import annotations
 
+def _friendly(fn):
+    """Report input problems as a message, not a traceback."""
+    import functools
+    import sys
+
+    @functools.wraps(fn)
+    def wrapper(argv=None):
+        try:
+            return fn(argv)
+        except FileNotFoundError as e:
+            sys.exit(f"error: cannot open {e.filename}")
+        except ValueError as e:
+            sys.exit(f"error: {e}")
+    return wrapper
+
+
 import argparse
 import json
 import sys
 
 
+@_friendly
 def _assembly(argv=None):
     """scijigsaw-count : exact assembly-order counts for the encoded cases."""
     ap = argparse.ArgumentParser(
@@ -38,6 +55,7 @@ def _assembly(argv=None):
     print("  characterisation of them (see assembly.py).")
 
 
+@_friendly
 def _bench(argv=None):
     """scijigsaw-bench : the random-poset benchmark."""
     ap = argparse.ArgumentParser(description="Random-poset benchmark.")
@@ -62,6 +80,7 @@ def _bench(argv=None):
     print("  measures of one property, the sequentiality of the assembly.")
 
 
+@_friendly
 def _extract(argv=None):
     """scijigsaw-extract : structures -> interaction table."""
     ap = argparse.ArgumentParser(description="Derive interfaces from structures.")
@@ -90,6 +109,7 @@ def _extract(argv=None):
     print("  the cutoff and report the value used.")
 
 
+@_friendly
 def _render(argv=None):
     """scijigsaw-render : interaction table -> jigsaw board."""
     ap = argparse.ArgumentParser(description="Render a board from an interaction table.")
@@ -105,6 +125,7 @@ def _render(argv=None):
     print(f"\nwrote {path}")
 
 
+@_friendly
 def _tiles(argv=None):
     """scijigsaw-tiles : interaction table -> printable cut-out kit(s)."""
     ap = argparse.ArgumentParser(
@@ -114,7 +135,7 @@ def _tiles(argv=None):
     ap.add_argument("--out", default="tiles.pdf",
                     help="output file; .pdf gives multi-page A4 with an instruction/key "
                          "page, .svg a single stacked sheet")
-    ap.add_argument("--variant", choices=["student", "teacher", "both"], default="both",
+    ap.add_argument("--variant", choices=["student", "teacher", "backs", "both"], default="both",
                     help="'student' = names only (a puzzle); 'teacher' = the answer key "
                          "with connector numbers, coverage and precedence/exclusion cues; "
                          "'both' writes _student and _teacher files")

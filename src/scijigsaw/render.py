@@ -72,8 +72,47 @@ def _rings(ax, x, y, n, col=INK, r0=0.042, z=9):
                                 lw=0.8, zorder=z + 1))
 
 
+# Column aliases. The manuscript schema (Supplementary Section S3) and the
+# example files use different names for the same fields; accept both so a table
+# written from either source loads. Canonical names are the first in each list.
+PROTEIN_ALIASES = {
+    "name": ("name", "protein_id", "protein", "label"),
+    "function": ("function", "functional_class"),
+    "age": ("age", "conservation_tier", "conservation"),
+}
+INTERACTION_ALIASES = {
+    "protein_a": ("protein_a", "source", "a"),
+    "protein_b": ("protein_b", "target", "b"),
+}
+
+
+def _canonicalise(df, aliases, required, what):
+    """Rename recognised aliases to canonical names and check what is required."""
+    out = df.copy()
+    for canon, names in aliases.items():
+        if canon in out.columns:
+            continue
+        for alt in names:
+            if alt in out.columns:
+                out = out.rename(columns={alt: canon})
+                break
+    missing = [c for c in required if c not in out.columns]
+    if missing:
+        accepted = {c: aliases.get(c, (c,)) for c in missing}
+        detail = "; ".join(f"{c} (or {', '.join(a)})" for c, a in accepted.items())
+        raise ValueError(
+            f"{what} is missing required column(s): {detail}. "
+            f"Found: {list(out.columns)}. See Supplementary Section S3 for the schema.")
+    return out
+
+
 class Board:
     def __init__(self, proteins: pd.DataFrame, interactions: pd.DataFrame):
+        proteins = _canonicalise(proteins, PROTEIN_ALIASES, ("name", "function"),
+                                 "The protein table")
+        interactions = _canonicalise(interactions, INTERACTION_ALIASES,
+                                     ("protein_a", "protein_b"),
+                                     "The interaction table")
         self.meta = proteins.set_index("name")
         e = interactions.copy()
         # n/N is a STRUCTURAL footprint fraction, supplied only for structure-derived
@@ -182,6 +221,59 @@ class Board:
                     break
         return out
 
+    def connector_graph(self, subset=None):
+        """The undirected connector graph the renderer lays out.
+
+        Nodes are components, edges are encoded interfaces, i.e. exactly the
+        connectors drawn between tiles. This is the object whose planarity
+        decides whether a board can be laid out in one flat layer; the
+        precedence poset used for counting is a different graph.
+
+        `subset` restricts the graph to one feasible state."""
+        import networkx as nx
+        G = nx.Graph()
+        for p, partners in self.adj.items():
+            if subset is not None and p not in subset:
+                continue
+            G.add_node(p)
+            for q in partners:
+                if subset is None or q in subset:
+                    G.add_edge(p, q)
+        return G
+
+    def exclusion_pairs(self):
+        """Pairs of components that cannot be placed simultaneously.
+
+        Derived from the same shared-site logic as the drawn alternative
+        occupancy, so states built from this agree with the rendering."""
+        users = defaultdict(list)
+        for r in self.edges.itertuples():
+            for me, other in ((r.protein_a, r.protein_b), (r.protein_b, r.protein_a)):
+                st = self.site.get((me, other))
+                if isinstance(st, str) and st:
+                    users[(me, st)].append(other)
+        pairs = set()
+        for (_host, _st), partners in users.items():
+            if len(partners) < 2:
+                continue
+            competing = [p for p in partners
+                         if not any(q in self.adj[p] for q in partners if q != p)]
+            for i, a in enumerate(competing):
+                for b in competing[i + 1:]:
+                    pairs.add(frozenset((a, b)))
+        return pairs
+
+    def feasible_states(self):
+        """Maximal sets of components with no excluded pair (independent sets
+        of the incompatibility graph)."""
+        import networkx as nx
+        inc = nx.Graph()
+        inc.add_nodes_from(self.adj.keys())
+        for pair in self.exclusion_pairs():
+            a, b = tuple(pair)
+            inc.add_edge(a, b)
+        return [set(c) for c in nx.find_cliques(nx.complement(inc))]
+
     def _contenders(self) -> List[tuple]:
         """Two partners sharing one site on X are NOT necessarily competing.
 
@@ -224,7 +316,9 @@ class Board:
         return PALETTE.get(f, PALETTE["other"])
 
     def _age(self, n):
-        return AGE_RINGS.get(self.meta.loc[n, "age"], 1) if n in self.meta.index else 1
+        if "age" not in self.meta.columns or n not in self.meta.index:
+            return 1                      # conservation tier is optional
+        return AGE_RINGS.get(self.meta.loc[n, "age"], 1)
 
     def _cov(self, a, b):
         return self.cov.get(frozenset((a, b)))

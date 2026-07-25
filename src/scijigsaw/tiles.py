@@ -347,7 +347,7 @@ class TileKit:
         y -= 3
         ax.text(MARGIN, y, "Connectors", color=INK, fontsize=9, fontweight="bold", va="top")
         y -= 7
-        hdr = f"{'#':>2}   {'tab \u25b6':<16}{'socket \u25c0':<16}{'n/N':<6}{'shape':<8}{'type':<10}note"
+        hdr = f"{'#':>2}   {'tab ▶':<16}{'socket ◀':<16}{'n/N':<6}{'shape':<8}{'type':<10}note"
         ax.text(MARGIN, y, hdr, color=MUTED, fontsize=6.6, va="top", family="monospace")
         y -= 5
         for c in self.connectors:

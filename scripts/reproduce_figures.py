@@ -67,13 +67,22 @@ def fig4_benchmark(out):
     fig, axes = plt.subplots(1, 2, figsize=(9.6, 4.0), facecolor="white")
     ax = axes[0]
     rng = np.random.default_rng(0)
-    sc = ax.scatter(n_ + rng.uniform(-.18, .18, len(n_)), y, c=d_, s=16,
-                    cmap="viridis", alpha=.85, edgecolor="none")
-    cb = fig.colorbar(sc, ax=ax, pad=0.02); cb.set_label("poset depth", fontsize=9)
+    # Depth on the x-axis (the strong predictor), n shown as colour (the weak one),
+    # so the eye reads the relationship that matters rather than vertical stripes at
+    # each integer n. A least-squares guide line summarises the trend.
+    sc = ax.scatter(d_ + rng.uniform(-.16, .16, len(d_)), y, c=n_, s=16,
+                    cmap="cividis", alpha=.85, edgecolor="none")
+    cb = fig.colorbar(sc, ax=ax, pad=0.02); cb.set_label("number of units, n", fontsize=9)
     cb.ax.tick_params(labelsize=8)
-    ax.set_xlabel("number of units, n", fontsize=10)
+    b1, b0 = np.polyfit(d_, y, 1)
+    xs = np.array([d_.min(), d_.max()])
+    ax.plot(xs, b0 + b1 * xs, color="#c0392b", lw=1.5, zorder=5)
+    rho = np.corrcoef(d_, y)[0, 1]
+    ax.text(0.04, 0.94, f"$r = {rho:.2f}$", transform=ax.transAxes,
+            fontsize=9, color="#c0392b", va="top")
+    ax.set_xlabel("poset depth (longest chain)", fontsize=10)
     ax.set_ylabel("log$_{10}$ reduction factor,  log$_{10}$(n! / L)", fontsize=10)
-    ax.set_title("(A)  component count alone does not predict pruning", fontsize=9.5, color=INK)
+    ax.set_title("(A)  pruning tracks depth more strongly than component count", fontsize=9.5, color=INK)
     ax = axes[1]
     bs = np.random.default_rng(0)
     for n0, col in [(10, "#9ecae1"), (12, "#4292c6"), (14, "#08519c")]:

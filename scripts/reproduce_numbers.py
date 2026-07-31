@@ -58,6 +58,47 @@ def main():
     json.dump({"vamp2": v, "inflammasome": i, "ribosome_30S": r, "benchmark": B},
               open(os.path.join(a.out, "results.json"), "w"), indent=2, default=float)
 
+    # --- planarity of what is physically laid out ---------------------------
+    # The manuscript states that one flat tile layer suffices. That is a claim
+    # about the CONNECTOR graph the renderer draws, not about the precedence
+    # poset used for counting, so test the connector graph. Node and edge counts
+    # are pinned: a planarity-only assertion would still pass if an edge were
+    # accidentally dropped.
+    import networkx as nx
+    import pandas as pd
+    from scijigsaw.render import Board
+    import scijigsaw.cases as C
+
+    print("\n  planarity of the rendered connector graph (one flat layer suffices iff planar)")
+    board = Board(pd.read_csv(os.path.join("examples", "vamp2", "proteins.csv")),
+                  pd.read_csv(os.path.join("examples", "vamp2", "interactions.csv")))
+    G = board.connector_graph()
+    ok, _ = nx.check_planarity(G)
+    assert (G.number_of_nodes(), G.number_of_edges()) == (10, 12), \
+        f"VAMP2 connector graph is {G.number_of_nodes()}/{G.number_of_edges()}, manuscript says 10/12"
+    assert ok, "VAMP2 connector graph is no longer planar"
+    print(f"    VAMP2 tile set   nodes={G.number_of_nodes():>3} "
+          f"edges={G.number_of_edges():>3}  planar={ok}")
+    for state in sorted(board.feasible_states(), key=lambda s: -len(s)):
+        g = board.connector_graph(state)
+        ok_s, _ = nx.check_planarity(g)
+        assert ok_s, f"a feasible state is no longer planar: {sorted(state)}"
+        omits = sorted(set(G.nodes()) - state)
+        print(f"      state        nodes={g.number_of_nodes():>3} "
+              f"edges={g.number_of_edges():>3}  planar={ok_s}  omits {omits}")
+
+    # NLRP3 and the 30S map are enumerated but not rendered as tile boards; the
+    # dependency graph is what a physical layout would have to realise.
+    print("  planarity of the dependency graph (cases not rendered as tile boards)")
+    for label, case, seeded in (("NLRP3", C.INFLAMMASOME, False),
+                                ("30S", C.RIBOSOME_30S_SPECIFIC, False),
+                                ("30S +16S seed", C.RIBOSOME_30S_SPECIFIC, True)):
+        g = case.dependency_graph(include_seed=seeded)
+        ok_d, _ = nx.check_planarity(g)
+        assert ok_d, f"{label} dependency graph is no longer planar"
+        print(f"    {label:<14} nodes={g.number_of_nodes():>3} "
+              f"edges={g.number_of_edges():>3}  planar={ok_d}")
+
     bad = [c for c in CHECKS if not c[3]]
     print()
     if bad:

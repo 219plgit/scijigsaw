@@ -116,19 +116,6 @@ ax.text(0.62, 5.6, "Within this illustrative encoding,\neach downstream state re
         color=MUTED, fontsize=6.7, rotation=90, ha="center", va="center",
         linespacing=1.5)
 
-ax.add_patch(FancyBboxPatch((4.75, 8.15), 2.65, 1.85, boxstyle="round,pad=0.07",
-                            facecolor="#f6f7f9", edgecolor="#c7cdd6", lw=1.0,
-                            zorder=1))
-ax.text(6.08, 9.72, "a DEEP CASCADE", color=INK, fontsize=8.8,
-        ha="center", fontweight="bold", zorder=6)
-for j, (k, v) in enumerate([("components/states", "10"), ("longest chain", "9 states"),
-                            ("orders n!", "3,628,800"),
-                            ("permitted", "2")]):
-    yy = 9.38 - j * 0.30
-    ax.text(4.92, yy, k, color=MUTED, fontsize=6.7, va="center", zorder=6)
-    ax.text(7.25, yy, v, color=INK, fontsize=7.6, va="center", ha="right",
-            fontweight="bold", zorder=6)
-
 fig.savefig(os.path.join(OUT, "FigureS1_inflammasome.png"), dpi=300, facecolor="white", bbox_inches="tight")
 fig.savefig(os.path.join(OUT, "FigureS1_inflammasome.pdf"), facecolor="white", bbox_inches="tight")
 print(f"  wrote FigureS1_inflammasome.pdf / .png")

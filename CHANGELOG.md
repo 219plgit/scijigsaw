@@ -2,6 +2,27 @@
 
 ## v2.0.0
 
+- Probabilistic layer (`contrib.probabilistic`) now reports P_competent,
+  E[L], E[L/N], Var(L) and E[L | competent] via `MixtureResult.summary`;
+  adds `order_distribution_joint` (declared correlated modifications) and
+  `occupancy_uncertainty` (Beta-distributed occupancy, credible intervals).
+- Counterfactual histories: `order_distribution_counterfactual` treats a
+  declared prior over alternative constraint graphs as the S5.5 mixture
+  (additive over exclusive histories); `linext_factorizes_disjoint`
+  implements the exact disjoint-union identity
+  L(P u Q) = C(n_P+n_Q, n_P) * L(P) * L(Q) for independent sub-posets.
+- New analysis scripts: `analyse_disassembly.py` (dual-poset disassembly
+  counts + counterfactual demo), `analyse_crowding.py` (q = L/n! as the
+  probability a random arrival order is admissible), and
+  `analyse_gtex_abundance.py` (abundance-weighted order distribution from
+  user-provided GTEx TPM, with age-monotone overlap and donor-age
+  stratification; GTEx data files are not shipped).
+- `analyse_ordering_checks.py` adds the exact tier-label permutation test,
+  complementary fractions, enrichment, edge concordance and Kendall tau-b.
+- Renderer: removed the in-figure BRIDGE PIECES and ALTERNATIVE OCCUPANCY
+  annotations (now described in figure captions) and tightened the board /
+  alternative-occupancy panel spacing.
+
 - **Two configurations.** The deterministic core and an extended (complete)
   configuration that adds optional extensions under `scijigsaw.contrib`.
 - Moved the probabilistic layer to `scijigsaw.contrib.probabilistic`; the

@@ -337,11 +337,11 @@ class Board:
         fig, ax = plt.subplots(figsize=(max(11.0, 0.95 * right + 2.4), 7.8),
                                facecolor="white")
         ax.set_xlim(0.3, right + 1.2)
-        ax.set_ylim(0.5, 8.6)
+        ax.set_ylim(0.5, 7.3)
         ax.set_aspect("equal")
         ax.axis("off")
         if PANEL_LABELS:
-            ax.text(0.5, 8.35, "A", fontsize=16, fontweight="bold", color=INK, va="top", zorder=10)
+            ax.text(0.5, 7.15, "A", fontsize=16, fontweight="bold", color=INK, va="top", zorder=10)
 
         SY = [y0 + H * f for f in (0.20, 0.35, 0.50, 0.65, 0.80)]
 
@@ -412,10 +412,7 @@ class Board:
                     ha="center", va="center", fontweight="bold", zorder=6)
             _rings(ax, bx + 0.24, y0 + H + 0.64, self._age(b))
 
-        if self.bridges:
-            ax.text(x0, y0 + H + 1.38, "BRIDGE PIECES \u2014 two sockets: unplaceable "
-                    "until the seam beneath them closes", color="#3d7ab8",
-                    fontsize=7.4, fontweight="bold")
+        # (BRIDGE PIECES annotation removed; explained in the caption/text instead)
 
         for host, rows in pend_layout.items():
             single = len(rows) == 1
@@ -443,21 +440,15 @@ class Board:
                 sh = s0.replace("_", " ")
                 chips = [(w0, True)] + [(c, False) for c, _ in self.contenders]
                 bw = max(len(chips) * 2.05 + 0.5, 5.5)
-                by, bh = 0.7, 2.35
+                by, bh = 0.7, 1.75
                 ax.add_patch(FancyBboxPatch((x0, by), bw, bh, boxstyle="round,pad=0.07",
                              facecolor="white", edgecolor=STOP, lw=1.3, ls=(0, (5, 3)), zorder=1))
                 if PANEL_LABELS:
                     ax.text(0.5, by + bh, "B", fontsize=16, fontweight="bold", color=INK, va="top", zorder=10)
-                ax.text(x0 + 0.2, by + bh - 0.24,
-                        "ALTERNATIVE OCCUPANCY \u2014 one socket on %s\u2019s %s" % (h0, sh),
-                        color=STOP, fontsize=7.3, fontweight="bold", zorder=6)
-                ax.text(x0 + 0.2, by + bh - 0.50,
-                        "%s fills it in the fusion complex; the others (marked \u2297) take the "
-                        "same socket only in the retrieval state \u2014 one occupant at a time" % w0,
-                        color=MUTED, fontsize=6.1, zorder=6)
+                # (ALTERNATIVE OCCUPANCY header and explanatory line removed; covered in the caption)
                 # the one shared socket, drawn as a labelled slot
                 bx0, bx1 = x0 + 0.4, x0 + bw - 0.4
-                sy = by + bh - 1.02
+                sy = by + bh - 0.42
                 ax.add_patch(FancyBboxPatch((bx0, sy - 0.17), bx1 - bx0, 0.34,
                              boxstyle="round,pad=0.02", facecolor=PALETTE["fusion"][0],
                              edgecolor=INK, lw=1.3, zorder=3))

@@ -623,7 +623,7 @@ def render_legend(ax, top=A4_H - MARGIN - 4):
             "protein-assembly order", color=MUTED, fontsize=7.5, va="bottom",
             style="italic")
 
-def legend(out, title=None, height=A4_H + 34.0):
+def legend(out, title=None, height=A4_H + 60.0):
     """Render the standalone legend page to a vector file.
 
     The canvas is a little taller than A4 so the optional-overlay section and

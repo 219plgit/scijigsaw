@@ -40,14 +40,59 @@ from typing import Dict, Iterable, Set, Tuple
 class Assembly:
     """A constraint poset: precedence plus exclusion."""
 
-    def __init__(self, requires: Dict[str, Iterable[str]],
+    def __init__(self, requires: Dict[str, Iterable[str]] | None = None,
                  excludes: Iterable[Tuple[Set[str], Set[str]]] = (),
-                 seed: str | None = None):
-        self.requires = {k: set(v) for k, v in requires.items()}
+                 seed: str | None = None,
+                 contacts: Iterable[Tuple[str, str]] = (),
+                 prerequisites: Iterable[Tuple[str, str]] = (),
+                 units: Iterable[str] | None = None,
+                 provenance: Dict[Tuple[str, str], str] | None = None,
+                 observed_subcomplexes: Iterable[Iterable[str]] = ()):
+        """A constraint poset: precedence plus exclusion.
+
+        `requires` retains its original meaning: every listed partner is a
+        PREREQUISITE, and implicitly also a contact. Encodings and counts
+        published under that model are unchanged.
+
+        Typed relations may be declared instead of, or in addition to,
+        `requires`:
+          contacts       undirected (u, v): u and v can form an interface;
+                         no claim about order.
+          prerequisites  directed (u, v): u must precede v.
+          units          components that must exist even if they appear in no
+                         relation. Without this a declared component that has
+                         no relation is silently absent from the assembly.
+          provenance     {(u, v): evidence_kind}; raises warnings only, and
+                         never reassigns a relation type.
+        """
+        self.requires = {k: set(v) for k, v in (requires or {}).items()}
         self.excludes = [(set(a), set(b)) for a, b in excludes]
         self.seed = seed
+        self.provenance = dict(provenance or {})
+        self.observed = [set(e) for e in observed_subcomplexes]
+
+        # contacts implied by `requires`, plus any declared directly
+        self._contacts = {frozenset((u, p))
+                          for u, ps in self.requires.items() for p in ps}
+        for u, v in contacts:
+            self._contacts.add(frozenset((u, v)))
+        for u, v in prerequisites:            # u must precede v
+            self.requires.setdefault(v, set()).add(u)
+            self.requires.setdefault(u, set())
+            self._contacts.add(frozenset((u, v)))
+
+        # components declared explicitly, or introduced by a typed relation,
+        # become units. A legacy call (requires only) is unaffected.
+        declared = set(units or ())
+        if contacts or prerequisites:
+            for fs in self._contacts:
+                declared |= set(fs)
+        for u in declared:
+            self.requires.setdefault(u, set())
+
         self.units = list(self.requires)
         self._check_acyclic()
+        self._warnings = self._provenance_warnings()
 
     def _check_acyclic(self):
         colour = {u: 0 for u in self.units}
@@ -65,6 +110,32 @@ class Assembly:
 
         for u in self.units:
             visit(u)
+
+    _PROVENANCE_SUGGESTION = {
+        "structure": "contact", "pisa": "contact",
+        "predicted_structure": "contact", "crosslinking": "contact",
+        "pulldown": "contact", "native_ms": "observed_subcomplex",
+        "time_resolved": "prerequisite", "nucleated_cascade": "prerequisite",
+        "curated": None,
+    }
+
+    def _provenance_warnings(self) -> list:
+        """Flag prerequisites whose declared provenance suggests a contact.
+
+        Warnings only: no relation is ever reassigned automatically."""
+        out = []
+        for v, ps in self.requires.items():
+            for u in ps:
+                kind = (self.provenance.get(tuple(sorted((u, v))))
+                        or self.provenance.get((u, v)))
+                if kind and self._PROVENANCE_SUGGESTION.get(kind) == "contact":
+                    out.append(f"relation {u}-{v} has provenance {kind!r} "
+                               f"(suggests contact) but is encoded as a "
+                               f"temporal prerequisite")
+        return out
+
+    def warnings(self) -> list:
+        return list(self._warnings)
 
     # ---------------------------------------------------------------- counts
     def n_orders_total(self) -> int:
@@ -202,3 +273,159 @@ class Assembly:
                     total=self.n_orders_total(),
                     permitted=self.n_orders_permitted(),
                     reduction=self.reduction())
+
+    # ------------------------------------------------- assembly-tree layer
+    def _tree_units(self):
+        """Units for the tree layer. The seed IS a component here: a merger
+        model needs the scaffold's interfaces, whereas the seed-anchored count
+        treats it as present from the start and excludes it from the units."""
+        u = list(self.units)
+        if self.seed is not None and self.seed not in u:
+            u.append(self.seed)
+        return u
+
+    def _tree_masks(self):
+        tu = self._tree_units()
+        idx = {u: i for i, u in enumerate(tu)}
+        n = len(tu)
+        con = [0] * n
+        pre = [0] * n
+        exc = [0] * n
+        for fs in self._contacts:
+            t = tuple(fs)
+            if len(t) == 2 and t[0] in idx and t[1] in idx:
+                con[idx[t[0]]] |= 1 << idx[t[1]]
+                con[idx[t[1]]] |= 1 << idx[t[0]]
+        for v, ps in self.requires.items():
+            if v in idx:
+                pre[idx[v]] = sum(1 << idx[p] for p in ps if p in idx)
+        for x, y in self.excludes:
+            for u in x:
+                if u in idx:
+                    exc[idx[u]] |= sum(1 << idx[q] for q in y if q in idx)
+            for q in y:
+                if q in idx:
+                    exc[idx[q]] |= sum(1 << idx[u] for u in x if u in idx)
+        return idx, n, con, pre, exc
+
+    @staticmethod
+    def _connected(S, con):
+        if S == 0:
+            return False
+        f = (S & -S).bit_length() - 1
+        seen = 1 << f
+        stack = [f]
+        while stack:
+            i = stack.pop()
+            nb = con[i] & S & ~seen
+            while nb:
+                j = (nb & -nb).bit_length() - 1
+                seen |= 1 << j
+                stack.append(j)
+                nb &= nb - 1
+        return seen == S
+
+    @staticmethod
+    def _merge_ok(A, B, con, pre, exc):
+        C = A | B
+        linked = False
+        m = A
+        while m:
+            i = (m & -m).bit_length() - 1
+            if con[i] & B:
+                linked = True
+            if exc[i] & B:
+                return False
+            m &= m - 1
+        if not linked:
+            return False
+        m = C
+        while m:
+            i = (m & -m).bit_length() - 1
+            if pre[i] & ~C:
+                return False
+            m &= m - 1
+        return True
+
+    def n_trees(self, subset: Iterable[str] | None = None) -> int:
+        """Exact count of admissible binary assembly trees.
+
+        A subcomplex is a connected subset of the contact graph; an event is a
+        binary merger, permitted when a contact links the two parts, no
+        exclusion is violated between them, and every prerequisite of every
+        component of the merged subcomplex lies within it:
+
+            F({i}) = 1,   F(S) = sum over unordered splits of F(A) F(B)
+
+        The seed-anchored count of `n_orders_permitted` is recovered when every
+        relation is a prerequisite and every merger adds one component to the
+        subcomplex containing the seed. Verified against exhaustive enumeration
+        on all connected contact graphs up to five components.
+        """
+        idx, n, con, pre, exc = self._tree_masks()
+        S0 = ((1 << n) - 1) if subset is None \
+            else sum(1 << idx[u] for u in subset if u in idx)
+        memo = {}
+
+        def F(S):
+            if S & (S - 1) == 0:
+                return 1
+            v = memo.get(S)
+            if v is not None:
+                return v
+            tot = 0
+            low = S & -S
+            sub = (S - 1) & S
+            while sub:
+                if sub & low:
+                    A, B = sub, S ^ sub
+                    if B and self._connected(A, con) \
+                       and self._connected(B, con) \
+                       and self._merge_ok(A, B, con, pre, exc):
+                        tot += F(A) * F(B)
+                sub = (sub - 1) & S
+            memo[S] = tot
+            return tot
+
+        r = F(S0)
+        self._tree_states = len(memo)
+        return r
+
+    def formable(self, subset: Iterable[str]) -> bool:
+        """Can this subset form as an admissible subcomplex?"""
+        idx, n, con, pre, exc = self._tree_masks()
+        S = sum(1 << idx[u] for u in subset if u in idx)
+        return self._connected(S, con) and self.n_trees(subset) > 0
+
+    def coverage(self) -> dict:
+        """Which declared observed subcomplexes are formable?"""
+        return {frozenset(e): self.formable(e) for e in self.observed}
+
+    def check_contact_graph(self, strict: bool = False):
+        """Tree enumeration needs a connected contact graph; the seed-anchored
+        count does not. Returns a message, or None if the graph is usable."""
+        idx, n, con, pre, exc = self._tree_masks()
+        iso = [u for u in self._tree_units() if con[idx[u]] == 0]
+        msg = None
+        if iso:
+            msg = (f"contact graph has isolated units {sorted(iso)}: no merger "
+                   f"can incorporate them, so tree enumeration yields 0. "
+                   f"Supply contact evidence for these units.")
+        elif n and not self._connected((1 << n) - 1, con):
+            msg = ("contact graph is disconnected: tree enumeration yields 0. "
+                   "Supply contacts linking the components.")
+        if msg and strict:
+            raise ValueError(msg)
+        return msg
+
+    def diagnose(self):
+        """Explain a zero tree count, or return None if trees exist."""
+        m = self.check_contact_graph()
+        if m:
+            return m
+        if self.n_trees() > 0:
+            return None
+        if self.excludes:
+            return ("no admissible assembly tree: the declared exclusions "
+                    "leave no compatible merger sequence")
+        return "no admissible assembly tree under the declared relations"

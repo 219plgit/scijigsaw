@@ -542,8 +542,13 @@ def render_legend(ax, top=A4_H - MARGIN - 4):
             fontsize=9, va="top")
     y -= 13
 
-    def section(title):
+    def section(title, lead=7.0):
+        """Section heading. `lead` is clearance ABOVE the heading: rows may
+        draw glyphs that overrun their nominal box (the dashed alternative-
+        occupancy tile does), so a heading placed flush against the previous
+        row collides with it."""
         nonlocal y
+        y -= lead
         ax.text(x, y, title, color=INK, fontsize=11, fontweight="bold", va="top")
         y -= 10
 
@@ -607,7 +612,7 @@ def render_legend(ax, top=A4_H - MARGIN - 4):
     row(lambda cy: _mini(ax, x, cy - 5.5, SOCKET, "round", 0.16, s=10,
         fc=PALETTE["retrieval"][0], dashed=True),
         "Dashed outline (∅): alternative occupancy — place this OR its rival, "
-        "never both (exclusion).", h=12)
+        "never both (exclusion).", h=16)
 
     section("Optional overlay — declared modifications")
     def _ptmtok(cy):

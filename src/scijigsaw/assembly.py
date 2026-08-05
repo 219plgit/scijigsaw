@@ -77,9 +77,14 @@ class Assembly:
         for u, v in contacts:
             self._contacts.add(frozenset((u, v)))
         for u, v in prerequisites:            # u must precede v
+            # A temporal prerequisite is NOT evidence of a physical interface:
+            # u may enable v indirectly. Declared prerequisites therefore do not
+            # create contacts. (A legacy `requires` entry does imply both, for
+            # backward compatibility.) If a prerequisite-only encoding is passed
+            # to the tree layer, check_contact_graph() reports the missing
+            # contacts rather than silently inventing them.
             self.requires.setdefault(v, set()).add(u)
             self.requires.setdefault(u, set())
-            self._contacts.add(frozenset((u, v)))
 
         # components declared explicitly, or introduced by a typed relation,
         # become units. A legacy call (requires only) is unaffected.
@@ -396,6 +401,103 @@ class Assembly:
         idx, n, con, pre, exc = self._tree_masks()
         S = sum(1 << idx[u] for u in subset if u in idx)
         return self._connected(S, con) and self.n_trees(subset) > 0
+
+    # ------------------------------------------- experimental support queries
+    def _trees_containing(self, E_mask, S, con, pre, exc, memoF, memoG):
+        """G(S) = number of admissible trees producing S in which the subset E
+        appears as a subcomplex (an internal node or leaf of the tree).
+
+        A proper subset E can lie on at most one side of any root split, because
+        the two sides are disjoint. Hence
+
+            G(S) = sum over splits {A,B} of
+                     G(A)*F(B)  if E subset A
+                   + F(A)*G(B)  if E subset B
+                   + F(A)*F(B)  if S == E   (the root node itself is E)
+
+        F is the unrestricted tree count computed by the same recursion."""
+        if S == E_mask:
+            return self._F(S, con, pre, exc, memoF)
+        v = memoG.get(S)
+        if v is not None:
+            return v
+        if E_mask & ~S:                       # E not contained in S at all
+            memoG[S] = 0
+            return 0
+        if S & (S - 1) == 0:                  # singleton, and S != E
+            memoG[S] = 0
+            return 0
+        tot = 0
+        low = S & -S
+        sub = (S - 1) & S
+        while sub:
+            if sub & low:
+                A, B = sub, S ^ sub
+                if B and self._connected(A, con) and self._connected(B, con) \
+                   and self._merge_ok(A, B, con, pre, exc):
+                    if not (E_mask & ~A):     # E subset of A
+                        tot += self._trees_containing(E_mask, A, con, pre, exc,
+                                                      memoF, memoG) \
+                               * self._F(B, con, pre, exc, memoF)
+                    elif not (E_mask & ~B):   # E subset of B
+                        tot += self._F(A, con, pre, exc, memoF) \
+                               * self._trees_containing(E_mask, B, con, pre,
+                                                        exc, memoF, memoG)
+            sub = (sub - 1) & S
+        memoG[S] = tot
+        return tot
+
+    def _F(self, S, con, pre, exc, memo):
+        if S & (S - 1) == 0:
+            return 1
+        v = memo.get(S)
+        if v is not None:
+            return v
+        tot = 0
+        low = S & -S
+        sub = (S - 1) & S
+        while sub:
+            if sub & low:
+                A, B = sub, S ^ sub
+                if B and self._connected(A, con) and self._connected(B, con) \
+                   and self._merge_ok(A, B, con, pre, exc):
+                    tot += self._F(A, con, pre, exc, memo) \
+                           * self._F(B, con, pre, exc, memo)
+            sub = (sub - 1) & S
+        memo[S] = tot
+        return tot
+
+    def support(self, subset) -> dict:
+        """Exact fraction of admissible assembly trees in which `subset` appears
+        as a subcomplex.
+
+        Returns n_containing, n_total and support = n_containing / n_total, with
+        a categorical reading: support 0 means the subcomplex is impossible under
+        the declared model; 0 < support < 1 means it is optional, occurring on
+        some admissible routes and not others; support 1 means every admissible
+        assembly passes through it, so it is necessary.
+        """
+        idx, n, con, pre, exc = self._tree_masks()
+        full = (1 << n) - 1
+        E = sum(1 << idx[u] for u in subset if u in idx)
+        memoF, memoG = {}, {}
+        total = self._F(full, con, pre, exc, memoF)
+        if total == 0:
+            return dict(subset=sorted(subset), n_containing=0, n_total=0,
+                        support=float("nan"), reading="no admissible tree")
+        if not self._connected(E, con):
+            k = 0
+        else:
+            k = self._trees_containing(E, full, con, pre, exc, memoF, memoG)
+        f = k / total
+        reading = ("impossible" if k == 0 else
+                   "necessary" if k == total else "optional")
+        return dict(subset=sorted(subset), n_containing=k, n_total=total,
+                    support=f, reading=reading)
+
+    def support_table(self) -> list:
+        """Exact support for every declared observed subcomplex."""
+        return [self.support(e) for e in self.observed]
 
     def coverage(self) -> dict:
         """Which declared observed subcomplexes are formable?"""

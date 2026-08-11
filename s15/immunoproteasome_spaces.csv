@@ -1,0 +1,8 @@
+condition,compositions,omega,verdict,mixed
+control: constitutive only,1,6,formable,0
+full switch: inducible only,1,6,formable,0
+mixed: all six available,8,48,formable,6
+partial: b5i induced,2,12,formable,1
+partial: b5i + b1i induced,4,24,formable,3
+"PSMB6 lost, no b1i available",0,0,IMPOSSIBLE: position b1 unfillable,0
+"PSMB5 lost, b5i available",1,6,formable,1

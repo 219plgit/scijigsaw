@@ -1,0 +1,184 @@
+% =====================================================================
+% REPLACEMENT FOR SUPPLEMENTARY SECTION S15
+%
+% Every number marked \NUM{} is a PLACEHOLDER produced by the pipeline in
+% scripts/. Run the three scripts, then substitute. Do not submit with
+% \NUM{} markers present -- they render in bold red by design.
+%
+% \providecommand{\NUM}[1]{\textbf{\textcolor{red}{[#1]}}}   % add to preamble
+% =====================================================================
+
+\section*{S15. Perturbation as a model index: rapamycin and mTORC1}
+
+Sections~S13.6 identifies biomedical agents as a prospective upstream layer.
+A second is large-scale perturbation transcriptomics. Tahoe-100M is a
+single-cell perturbation atlas of roughly 100 million transcriptomic profiles
+measuring the response of 50 cancer cell lines to approximately 1{,}100
+small-molecule perturbations (Zhang et al., 2025). This section shows how such
+a resource enters Scientific Jigsaw, and --- more importantly --- the sharp
+distinction between the two ways it can legitimately do so.
+
+\subsection*{S15.1 Two roles for a perturbation, and the rule separating them}
+
+A perturbation can enter a declared model in exactly two ways, and they are not
+interchangeable.
+
+\begin{enumerate}
+\item \textbf{As a model index} (Section~S11.11). When independent structural or
+biochemical evidence establishes that a drug creates or destroys a molecular
+relation, the treated and untreated conditions are \emph{different declared
+models} with \emph{different admissible spaces}:
+\[
+\Omega_{\mathrm{control}} \;\neq\; \Omega_{\mathrm{drug}}.
+\]
+\item \textbf{As an external weight} (Section~S11.12). When the perturbation
+changes only relative component abundance, the admissible set is unchanged and
+only the distribution over it moves:
+\[
+\Omega_{\mathrm{control}} = \Omega_{\mathrm{drug}}, \qquad
+p(\omega \mid \mathrm{control}) \neq p(\omega \mid \mathrm{drug}).
+\]
+\end{enumerate}
+
+\noindent In neither case does the transcriptional response itself supply a
+contact, a prerequisite or an exclusion. Co-regulation is not co-assembly, and a
+differential-expression statistic is not a temporal claim. What the atlas
+supplies is the \emph{condition label} that selects a declared model variant,
+and the \emph{component availability} that fixes the board's component set.
+Everything mechanistic is declared separately and cited separately.
+
+\subsection*{S15.2 The rapamycin model index}
+
+Rapamycin is the clearest available case of role~1 because its mechanism is a
+molecular assembly event, established independently of any transcriptomic
+measurement. Rapamycin binds FKBP12, and the FKBP12--rapamycin complex binds the
+FRB domain of mTOR (PDB 1FAP; and within the complex, PDB 5FLC). Binding
+additionally \emph{disrupts} the mTOR--RAPTOR association and the mTORC1 dimer
+--- a result from the biochemical and cryo-EM literature, not from any single
+deposited structure, and cited as such.
+
+Two declared model variants follow over the mTORC1 board
+$\{\mathrm{mTOR}, \mathrm{RAPTOR}, \mathrm{mLST8}, \mathrm{PRAS40},
+\mathrm{DEPTOR}\}$:
+
+\begin{itemize}
+\item $M_0$ (untreated): contacts extracted from apo mTORC1 coordinates
+(PDB 6BCX; cross-checked against 6BCU) under the criterion used throughout ---
+heavy-atom separation within 5~\AA, minimum three unique interface residues.
+\item $M_{\mathrm{Rapa}}$ (rapamycin): $M_0$ plus one declared
+\emph{contact}, FKBP12--mTOR(FRB), conditional on rapamycin; minus one declared
+\emph{exclusion}, mTOR--RAPTOR.
+\end{itemize}
+
+\noindent This is the first case in the manuscript in which a single declared
+change exercises two relation types at once, and the first in which an exclusion
+is the mechanistically decisive relation.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrrl}
+\hline
+model & components & merger trees & fragments \\
+\hline
+$M_0$ (untreated)          & 5 & \NUM{n0} & \NUM{frag0} \\
+$M_{\mathrm{Rapa}}$        & 6 & \NUM{nR} & \NUM{fragR} \\
+\hline
+\end{tabular}
+\caption{Exact consequence of the declared rapamycin relations. The perturbation
+does not reweight the untreated space: it changes which histories exist.}
+\label{tab:rapaspaces}
+\end{table}
+
+The mechanistically informative output is not the change in count but the
+change in \emph{connectivity}. The declared exclusion severs mTOR from RAPTOR,
+so the contact graph of the treated model is disconnected and the holo-complex
+is not merely less probable but \textbf{impossible}; the space resolves into
+independently formable fragments. Because the merger-tree enumerator requires a
+connected contact graph (Section~S11.5), the framework reports this as an exact
+structural verdict and names the excluded relation responsible. This recovers
+the known biochemistry --- rapamycin releases RAPTOR from the mTOR core --- as a
+consequence of the declared model rather than as an input to it.
+
+\subsection*{S15.3 Cellular context as a second axis}
+
+Tahoe's design is a grid of compounds against cell lines, and Scientific Jigsaw
+consumes both axes. The compound indexes the model variant, as above. The cell
+line fixes the component set: a subunit not expressed in a given line is not
+available for assembly and is removed from the board, which changes the
+admissible histories rather than their weights.
+
+The evidential asymmetry here is important and works in the framework's favour.
+Absence of transcript is strong evidence --- no transcript implies no protein,
+hence no component. Presence is weak --- transcript may not yield
+assembly-competent protein. Verdicts of the form \emph{impossible in this
+context} are therefore robust, and verdicts of the form \emph{formable} are
+permissive only. Exact enumeration delivers impossibility most confidently, so
+the negative calls are reported and the positive ones are not treated as
+predictions.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrrl}
+\hline
+context & $M_0$ trees & $M_{\mathrm{Rapa}}$ trees & mTOR:RAPTOR:mLST8 \\
+\hline
+reference (all subunits expressed) & \NUM{c0} & \NUM{cR} & \NUM{v0} \\
+\NUM{line-specific rows from tahoe\_availability.py} & & & \\
+\hline
+\end{tabular}
+\caption{Perturbation and cellular context act on the admissible space
+independently and exactly. Rows are generated by the pipeline in the
+reproducibility release; the expression threshold is swept as in Section~S5.2.}
+\label{tab:rapacontexts}
+\end{table}
+
+\subsection*{S15.4 The contrasting null: coordinated regulation}
+
+The proteasome provides the contrasting case, and it is instructive precisely
+because the answer is that nothing happens. Proteasome inhibition triggers the
+NRF1 (NFE2L1)-mediated ``bounce-back'', in which proteasome subunit genes are
+\emph{coordinately} upregulated (Radhakrishnan et al., 2010). Under the
+encounter-order prior of Section~S5.9, a uniform fold-change is exactly
+invariant: replacing every weight $w_x$ by $cw_x$ leaves
+$w_{x_k} / \sum_{j \in R_k} w_j$ unchanged at every step, so every history
+probability, the entropy and every subcomplex support are identical to control.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+condition & $N_{\mathrm{eff}}$ & $13\mathrm{S}{+}\beta_1$
+ & $13\mathrm{S}{+}\beta_5$ & $13\mathrm{S}{+}\beta_1{+}\beta_5$ \\
+\hline
+control $(1,1,1)$                & 6.00 & 0.333 & 0.333 & 0.333 \\
+coordinated $\times 3$ $(3,3,3)$ & 6.00 & 0.333 & 0.333 & 0.333 \\
+differential $(1,3,1)$           & 4.91 & 0.200 & 0.600 & 0.450 \\
+\hline
+\end{tabular}
+\caption{Synthetic illustration on the six admissible 20S orders of
+Section~S14.2. Coordinated upregulation --- the response actually elicited by
+proteasome inhibition --- is the exact null: only a change in \emph{relative}
+subunit availability moves the distribution. The admissible set is six orders in
+every row. These values are invented for exposition and are not measurements.}
+\label{tab:weightnull}
+\end{table}
+
+Taken together the two cases delimit what perturbational data can do. Rapamycin
+changes the model; coordinated regulation changes nothing; only differential
+availability reweights. Reporting a reweighted support as though a route had
+been excluded --- or a coordinated fold-change as though it had any effect at
+all --- would be precisely the conflation the framework exists to prevent.
+
+\subsection*{S15.5 Scope and what would strengthen this}
+
+The rapamycin relations are declared, not inferred, and the analysis inherits
+their status: the FKBP12--FRB contact is structurally grounded, whereas the
+mTOR--RAPTOR exclusion is a declared idealisation of a disruption reported as
+weakening rather than abolition, and is queried with that qualification. The
+board treats the mTORC1 monomer and does not represent the dimer, so
+dimer-specific consequences are outside its scope. Transcript abundance is a
+weak proxy for assembly-competent protein, dose and exposure time condition
+every availability call, and the analysis is unweighted throughout.
+Reciprocal validation --- testing whether rapamycin-insensitive lines are those
+in which the declared exclusion leaves the observed intermediates formable ---
+remains the natural next test and is not attempted here.

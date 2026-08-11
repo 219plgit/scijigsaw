@@ -1,0 +1,32 @@
+1026 shards to fetch; free disk 603 GB
+  25/1026  4,770 rows  2.2 GB  3 min  ETA 134 min  free 603 GB
+  50/1026  9,537 rows  4.4 GB  7 min  ETA 141 min  free 603 GB
+  75/1026  14,304 rows  6.7 GB  12 min  ETA 148 min  free 603 GB
+  100/1026  19,071 rows  9.1 GB  15 min  ETA 135 min  free 603 GB
+  125/1026  23,838 rows  11.4 GB  17 min  ETA 126 min  free 603 GB
+  150/1026  28,605 rows  13.6 GB  20 min  ETA 118 min  free 603 GB
+  175/1026  33,372 rows  15.8 GB  23 min  ETA 113 min  free 603 GB
+  200/1026  38,141 rows  18.0 GB  27 min  ETA 113 min  free 603 GB
+  225/1026  42,909 rows  20.3 GB  31 min  ETA 110 min  free 603 GB
+  250/1026  47,676 rows  22.4 GB  34 min  ETA 106 min  free 603 GB
+    shard 261: TimeoutError; retry 1/4 in 5s
+  275/1026  52,443 rows  24.7 GB  79 min  ETA 215 min  free 603 GB
+Traceback (most recent call last):
+  File "/Users/pietrolio/scijigsaw-sync/s15/tahoe_fetch_resumable.py", line 169, in <module>
+    main()
+    ~~~~^^
+  File "/Users/pietrolio/scijigsaw-sync/s15/tahoe_fetch_resumable.py", line 128, in main
+    df = con.execute(f"""
+         ~~~~~~~~~~~^^^^^
+        SELECT {', '.join(COLS)}
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+        FROM read_parquet('{tmp}')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHERE gene_name IN ('{genes}') AND log2FoldChange IS NOT NULL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    """).df()
+    ^^^^
+_duckdb.InvalidInputException: Invalid Input Error: No magic bytes found at end of file '/var/folders/np/hh4qpq6d65b7fxdr_xc1nkcm0000gn/T/tahoe_5ymmyo0k/shard.parquet'
+
+LINE 3:                 FROM read_parquet('/var/folders/np/hh4qpq6d65b7fxdr_xc1nkcm0000gn...
+                             ^

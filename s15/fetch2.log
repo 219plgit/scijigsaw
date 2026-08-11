@@ -1,0 +1,80 @@
+resuming: 275 shards already processed
+751 shards to fetch; free disk 603 GB
+    shard 290: OSError: truncated/corrupt download (73659851 bytes, expected 81968334); retry 1/6 in 5s
+    shard 297: TimeoutError: The read operation timed out; retry 1/6 in 5s
+  25/751  4,767 rows  2.1 GB  30 min  ETA 880 min  free 603 GB
+    shard 306: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 1/6 in 5s
+    shard 306: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 2/6 in 10s
+    shard 306: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 3/6 in 20s
+    shard 312: OSError: truncated/corrupt download (56708107 bytes, expected 94064615); retry 1/6 in 5s
+    shard 312: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 2/6 in 10s
+    shard 312: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 3/6 in 20s
+    shard 316: OSError: truncated/corrupt download (16379882 bytes, expected 98229637); retry 1/6 in 5s
+    shard 321: OSError: truncated/corrupt download (9186783 bytes, expected 98950731); retry 1/6 in 5s
+    shard 321: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 2/6 in 10s
+  50/751  9,534 rows  4.5 GB  66 min  ETA 930 min  free 603 GB
+    shard 325: OSError: truncated/corrupt download (37935132 bytes, expected 99632492); retry 1/6 in 5s
+    shard 326: TimeoutError: The read operation timed out; retry 1/6 in 5s
+    shard 339: OSError: truncated/corrupt download (50942993 bytes, expected 87305030); retry 1/6 in 5s
+    shard 346: OSError: truncated/corrupt download (33452228 bytes, expected 85108238); retry 1/6 in 5s
+    shard 346: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 2/6 in 10s
+  75/751  14,301 rows  6.7 GB  111 min  ETA 999 min  free 605 GB
+    shard 351: OSError: truncated/corrupt download (4078010 bytes, expected 87799444); retry 1/6 in 5s
+    shard 367: OSError: truncated/corrupt download (8479401 bytes, expected 79883110); retry 1/6 in 5s
+  100/751  19,068 rows  8.9 GB  134 min  ETA 873 min  free 605 GB
+    shard 376: OSError: truncated/corrupt download (36961739 bytes, expected 95514084); retry 1/6 in 5s
+    shard 384: OSError: truncated/corrupt download (5581345 bytes, expected 94455204); retry 1/6 in 5s
+    shard 384: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 2/6 in 10s
+    shard 389: TimeoutError: The read operation timed out; retry 1/6 in 5s
+    shard 395: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 1/6 in 5s
+  125/751  23,837 rows  11.2 GB  175 min  ETA 878 min  free 605 GB
+    shard 400: OSError: truncated/corrupt download (37466047 bytes, expected 89772155); retry 1/6 in 5s
+    shard 400: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 2/6 in 10s
+    shard 407: TimeoutError: The read operation timed out; retry 1/6 in 5s
+    shard 418: TimeoutError: The read operation timed out; retry 1/6 in 5s
+  150/751  28,605 rows  13.5 GB  308 min  ETA 1235 min  free 606 GB
+    shard 432: TimeoutError: The read operation timed out; retry 1/6 in 5s
+  175/751  33,372 rows  15.6 GB  342 min  ETA 1124 min  free 606 GB
+    shard 474: TimeoutError: The read operation timed out; retry 1/6 in 5s
+    shard 474: ConnectionResetError: [Errno 54] Connection reset by peer; retry 2/6 in 10s
+    shard 474: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 3/6 in 20s
+    shard 474: TimeoutError: The read operation timed out; retry 4/6 in 40s
+  200/751  38,139 rows  17.8 GB  700 min  ETA 1928 min  free 606 GB
+    shard 481: ConnectionResetError: [Errno 54] Connection reset by peer; retry 1/6 in 5s
+    shard 481: ConnectionResetError: [Errno 54] Connection reset by peer; retry 2/6 in 10s
+    shard 481: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>; retry 3/6 in 20s
+    shard 481: TimeoutError: [Errno 60] Operation timed out; retry 4/6 in 40s
+    shard 481: ConnectionResetError: [Errno 54] Connection reset by peer; retry 5/6 in 80s
+  225/751  42,906 rows  20.0 GB  850 min  ETA 1987 min  free 606 GB
+    shard 505: ConnectionResetError: [Errno 54] Connection reset by peer; retry 1/6 in 5s
+    shard 505: ConnectionResetError: [Errno 54] Connection reset by peer; retry 2/6 in 10s
+    shard 514: URLError: <urlopen error [Errno 60] Operation timed out>; retry 1/6 in 5s
+    shard 519: TimeoutError: The read operation timed out; retry 1/6 in 5s
+    shard 520: ConnectionResetError: [Errno 54] Connection reset by peer; retry 1/6 in 5s
+  250/751  47,673 rows  22.3 GB  926 min  ETA 1855 min  free 606 GB
+  275/751  52,440 rows  24.5 GB  930 min  ETA 1609 min  free 606 GB
+  300/751  57,209 rows  26.8 GB  933 min  ETA 1403 min  free 606 GB
+  325/751  61,977 rows  29.1 GB  941 min  ETA 1233 min  free 606 GB
+  350/751  66,028 rows  30.8 GB  950 min  ETA 1088 min  free 606 GB
+  375/751  69,952 rows  32.6 GB  958 min  ETA 961 min  free 606 GB
+  400/751  74,719 rows  34.6 GB  969 min  ETA 850 min  free 606 GB
+  425/751  79,486 rows  36.7 GB  981 min  ETA 752 min  free 606 GB
+  450/751  84,253 rows  38.9 GB  987 min  ETA 660 min  free 606 GB
+  475/751  89,009 rows  40.9 GB  991 min  ETA 576 min  free 606 GB
+  500/751  93,778 rows  42.8 GB  997 min  ETA 500 min  free 606 GB
+  525/751  98,546 rows  44.9 GB  1005 min  ETA 433 min  free 606 GB
+  550/751  103,313 rows  47.1 GB  1008 min  ETA 369 min  free 606 GB
+  575/751  108,080 rows  49.2 GB  1014 min  ETA 310 min  free 606 GB
+  600/751  112,847 rows  51.3 GB  1021 min  ETA 257 min  free 606 GB
+  625/751  117,614 rows  53.6 GB  1026 min  ETA 207 min  free 606 GB
+  650/751  122,381 rows  55.7 GB  1030 min  ETA 160 min  free 606 GB
+  675/751  127,149 rows  58.0 GB  1034 min  ETA 116 min  free 606 GB
+  700/751  131,577 rows  59.9 GB  1038 min  ETA 76 min  free 606 GB
+  725/751  135,894 rows  61.8 GB  1040 min  ETA 37 min  free 606 GB
+  750/751  140,661 rows  64.1 GB  1042 min  ETA 1 min  free 606 GB
+  751/751  140,850 rows  64.2 GB  1043 min  ETA 0 min  free 606 GB
+
+140,850 rows appended -> full_raw.csv
+state: full_raw.csv.state  (delete it to start over)
+
+NEXT: python3 tahoe_full_screen.py --reuse full_raw.csv --out-prefix full

@@ -1,0 +1,3524 @@
+Cell_Name_Vevo,drug,concentration,plate,tau,direction,positions,n,omega
+A549,8-Hydroxyquinoline,0.050000000745058,4,0.5,opened,b5,1,12
+A549,8-Hydroxyquinoline,0.5,5,0.5,opened,b5,1,12
+A549,9-ING-41,0.5,2,0.5,opened,b2,1,12
+A549,AZD1390,0.5,2,0.5,opened,b2,1,12
+A549,Almonertinib (mesylate),5.0,13,0.5,opened,b2,1,12
+A549,Alpelisib,5.0,3,0.5,opened,b2,1,12
+A549,Amsacrine,5.0,6,0.5,opened,b2,1,12
+A549,Amsacrine,5.0,14,0.5,opened,b2,1,12
+A549,BI-3406,0.5,2,0.5,opened,b2|b5,2,24
+A549,BI-3406,5.0,3,0.5,opened,b5,1,12
+A549,Bentamapimod,5.0,3,0.5,opened,b5,1,12
+A549,Bestatin (hydrochloride),0.5,11,0.5,opened,b5,1,12
+A549,Binimetinib,0.5,2,0.5,opened,b2|b5,2,24
+A549,Binimetinib,0.5,11,0.5,opened,b2|b5,2,24
+A549,Binimetinib,5.0,3,0.5,opened,b2|b5,2,24
+A549,Binimetinib,5.0,12,0.5,opened,b2|b5,2,24
+A549,Cobimetinib,0.5,8,0.5,opened,b1|b2,2,24
+A549,Diphenhydramine,0.5,8,0.5,opened,b2,1,12
+A549,Elimusertib hydrochloride,0.050000000745058,1,0.5,opened,b2|b5,2,24
+A549,Elimusertib hydrochloride,5.0,3,0.5,opened,b2,1,12
+A549,GSK1059615,0.5,2,0.5,opened,b2,1,12
+A549,Gallic acid (hydrate),0.050000000745058,4,0.5,opened,b2,1,12
+A549,Infigratinib,0.050000000745058,1,0.5,opened,b2,1,12
+A549,Irinotecan (hydrochloride),0.050000000745058,13,0.5,opened,b2,1,12
+A549,Penfluridol,0.5,8,0.5,opened,b2,1,12
+A549,RMC-6236,0.5,2,0.5,opened,b2|b5,2,24
+A549,RMC-6236,5.0,3,0.5,opened,b5,1,12
+A549,Sulfisoxazole,0.5,13,0.5,opened,b1,1,12
+A549,Tirabrutinib (hydrochloride),0.5,11,0.5,opened,b1,1,12
+A549,Topotecan (hydrochloride),0.5,8,0.5,opened,b1|b2,2,24
+A549,Trametinib,0.5,2,0.5,opened,b2,1,12
+A549,Trametinib (DMSO_TF solvate),5.0,9,0.5,opened,b5,1,12
+A549,XRK3F2,0.5,2,0.5,opened,b2,1,12
+A549,palbociclib,5.0,3,0.5,opened,b2,1,12
+A549,venetoclax,0.050000000745058,1,0.5,opened,b2,1,12
+AsPC-1,5-Fluorouracil,0.5,11,0.5,opened,b5,1,12
+AsPC-1,8-Hydroxyquinoline,5.0,6,0.5,opened,b5,1,12
+AsPC-1,AZD-7648,0.5,2,0.5,opened,b2,1,12
+AsPC-1,AZD-8055,0.050000000745058,1,0.5,opened,b2,1,12
+AsPC-1,AZD-8055,5.0,3,0.5,opened,b1,1,12
+AsPC-1,Acetohexamide,0.5,5,0.5,opened,b2,1,12
+AsPC-1,Afatinib,5.0,3,0.5,opened,b1|b2,2,24
+AsPC-1,BI-3406,0.5,2,0.5,opened,b2|b5,2,24
+AsPC-1,BI-3406,5.0,3,0.5,opened,b2|b5,2,24
+AsPC-1,Bimiralisib,0.5,2,0.5,opened,b1|b2,2,24
+AsPC-1,Bimiralisib,5.0,3,0.5,opened,b1|b2|b5,3,48
+AsPC-1,Binimetinib,0.050000000745058,1,0.5,opened,b1|b2|b5,3,48
+AsPC-1,Binimetinib,0.5,2,0.5,opened,b1|b2|b5,3,48
+AsPC-1,Binimetinib,0.5,11,0.5,opened,b2|b5,2,24
+AsPC-1,Binimetinib,5.0,3,0.5,opened,b5,1,12
+AsPC-1,Binimetinib,5.0,12,0.5,opened,b2|b5,2,24
+AsPC-1,Brimonidine,5.0,12,0.5,opened,b2,1,12
+AsPC-1,Cabozantinib (S-malate),0.5,11,0.5,opened,b2,1,12
+AsPC-1,Capmatinib,5.0,3,0.5,opened,b1,1,12
+AsPC-1,Cobimetinib,5.0,9,0.5,opened,b1|b5,2,24
+AsPC-1,Dabrafenib,0.5,2,0.5,opened,b5,1,12
+AsPC-1,Dimethyl fumarate,0.050000000745058,7,0.5,opened,b2,1,12
+AsPC-1,Diphenhydramine,0.5,8,0.5,opened,b2,1,12
+AsPC-1,Elimusertib hydrochloride,0.050000000745058,1,0.5,opened,b1|b2|b5,3,48
+AsPC-1,Elimusertib hydrochloride,0.5,2,0.5,opened,b2|b5,2,24
+AsPC-1,Elimusertib hydrochloride,5.0,3,0.5,opened,b5,1,12
+AsPC-1,GSK1059615,0.5,2,0.5,opened,b2,1,12
+AsPC-1,HI-TOPK-032,0.5,2,0.5,opened,b2,1,12
+AsPC-1,Idarubicin (hydrochloride),0.5,5,0.5,opened,b1,1,12
+AsPC-1,Idoxuridine,0.5,11,0.5,opened,b2,1,12
+AsPC-1,Ixazomib,5.0,3,0.5,opened,b2,1,12
+AsPC-1,L-Eflornithine (monohydrochloride),5.0,12,0.5,opened,b5,1,12
+AsPC-1,LJI308,0.5,2,0.5,opened,b1,1,12
+AsPC-1,Medroxyprogesterone acetate,0.050000000745058,4,0.5,opened,b2,1,12
+AsPC-1,Methotrexate,0.5,11,0.5,opened,b5,1,12
+AsPC-1,Mitoxantrone (dihydrochloride),5.0,6,0.5,opened,b2,1,12
+AsPC-1,Naproxen,5.0,9,0.5,opened,b1,1,12
+AsPC-1,Nimesulide,0.050000000745058,13,0.5,opened,b2,1,12
+AsPC-1,Paclitaxel,0.5,2,0.5,opened,b1|b5,2,24
+AsPC-1,RMC-6236,0.5,2,0.5,opened,b2|b5,2,24
+AsPC-1,RMC-6236,5.0,3,0.5,opened,b2|b5,2,24
+AsPC-1,Selinexor ,0.050000000745058,4,0.5,opened,b1,1,12
+AsPC-1,Sunitinib,5.0,12,0.5,opened,b2,1,12
+AsPC-1,Trametinib,0.5,2,0.5,opened,b1|b2|b5,3,48
+AsPC-1,Trametinib,0.5,11,0.5,opened,b2,1,12
+AsPC-1,Trametinib,5.0,3,0.5,opened,b1|b2,2,24
+AsPC-1,Trametinib,5.0,12,0.5,opened,b1|b2|b5,3,48
+AsPC-1,Trametinib (DMSO_TF solvate),0.050000000745058,7,0.5,opened,b1|b2|b5,3,48
+AsPC-1,Trametinib (DMSO_TF solvate),0.5,8,0.5,opened,b1|b5,2,24
+AsPC-1,Trametinib (DMSO_TF solvate),5.0,9,0.5,opened,b1,1,12
+AsPC-1,Triamcinolone,5.0,6,0.5,opened,b2,1,12
+AsPC-1,ULK-101,0.5,2,0.5,opened,b5,1,12
+AsPC-1,Vemurafenib,5.0,3,0.5,opened,b1,1,12
+AsPC-1,c-Kit-IN-1,0.5,2,0.5,opened,b1,1,12
+AsPC-1,palbociclib,5.0,3,0.5,opened,b2,1,12
+CFPAC-1,(R)-Verapamil (hydrochloride),0.050000000745058,4,0.5,opened,b5,1,12
+CFPAC-1,APTO-253,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,AZD-7648,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,AZD-7648,5.0,3,0.5,opened,b2|b5,2,24
+CFPAC-1,AZD-8055,0.050000000745058,1,0.5,opened,b1|b5,2,24
+CFPAC-1,AZD-8055,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,AZD1390,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Adagrasib,0.050000000745058,5,0.5,opened,b1,1,12
+CFPAC-1,Adagrasib,0.050000000745058,7,0.5,opened,b5,1,12
+CFPAC-1,Afatinib,0.5,2,0.5,opened,b2|b5,2,24
+CFPAC-1,Afatinib,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,Allantoin,0.5,5,0.5,opened,b5,1,12
+CFPAC-1,Alpelisib,0.5,2,0.5,opened,b5,1,12
+CFPAC-1,Amsacrine,0.5,5,0.5,opened,b1|b2,2,24
+CFPAC-1,Azithromycin (hydrate),0.5,5,0.5,opened,b2,1,12
+CFPAC-1,BI-3406,0.5,2,0.5,opened,b2|b5,2,24
+CFPAC-1,BI-3406,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,BI-78D3,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,BI-78D3,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,Baicalin,0.050000000745058,4,0.5,opened,b1,1,12
+CFPAC-1,Bentamapimod,0.050000000745058,1,0.5,opened,b5,1,12
+CFPAC-1,Bentamapimod,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Berberine (chloride hydrate),0.050000000745058,4,0.5,opened,b5,1,12
+CFPAC-1,Betamethasone dipropionate,0.050000000745058,7,0.5,opened,b5,1,12
+CFPAC-1,Bimiralisib,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Bimiralisib,5.0,3,0.5,opened,b2|b5,2,24
+CFPAC-1,Binimetinib,0.050000000745058,1,0.5,opened,b1|b5,2,24
+CFPAC-1,Binimetinib,0.5,2,0.5,opened,b2|b5,2,24
+CFPAC-1,Binimetinib,0.5,11,0.5,opened,b2|b5,2,24
+CFPAC-1,Binimetinib,5.0,3,0.5,opened,b2|b5,2,24
+CFPAC-1,Binimetinib,5.0,12,0.5,opened,b2|b5,2,24
+CFPAC-1,Brivudine,0.050000000745058,1,0.5,opened,b5,1,12
+CFPAC-1,CP21R7,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Canagliflozin,0.5,8,0.5,opened,b2,1,12
+CFPAC-1,Capmatinib,0.050000000745058,1,0.5,opened,b1,1,12
+CFPAC-1,Capmatinib,0.5,2,0.5,opened,b5,1,12
+CFPAC-1,Capmatinib,5.0,3,0.5,opened,b2,1,12
+CFPAC-1,Carbamazepine,5.0,12,0.5,opened,b2,1,12
+CFPAC-1,Chlorhexidine (diacetate),5.0,14,0.5,opened,b1,1,12
+CFPAC-1,Cinacalcet,5.0,12,0.5,opened,b1,1,12
+CFPAC-1,Cobimetinib,0.5,8,0.5,opened,b1,1,12
+CFPAC-1,DT-061,5.0,3,0.5,opened,b2,1,12
+CFPAC-1,DTP3,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,Dabrafenib,0.5,2,0.5,opened,b5,1,12
+CFPAC-1,Demeclocycline,0.5,5,0.5,opened,b1,1,12
+CFPAC-1,Dexmedetomidine,0.5,8,0.5,opened,b2,1,12
+CFPAC-1,Dihydroartemisinin,5.0,12,0.5,opened,b5,1,12
+CFPAC-1,Diphenhydramine,0.050000000745058,7,0.5,opened,b5,1,12
+CFPAC-1,Diphenhydramine,0.5,8,0.5,opened,b5,1,12
+CFPAC-1,Drospirenone,0.050000000745058,10,0.5,opened,b5,1,12
+CFPAC-1,Elimusertib hydrochloride,0.050000000745058,1,0.5,opened,b1|b5,2,24
+CFPAC-1,Elimusertib hydrochloride,0.5,2,0.5,opened,b2|b5,2,24
+CFPAC-1,Elimusertib hydrochloride,5.0,3,0.5,opened,b2|b5,2,24
+CFPAC-1,Encorafenib,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,Fenofibrate,0.050000000745058,7,0.5,opened,b5,1,12
+CFPAC-1,Furosemide,0.050000000745058,4,0.5,opened,b1,1,12
+CFPAC-1,Futibatinib,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,GSK1059615,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,GSK1059615,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,Gemcitabine,5.0,3,0.5,opened,b2,1,12
+CFPAC-1,Gemfibrozil,0.050000000745058,4,0.5,opened,b5,1,12
+CFPAC-1,Gemfibrozil,5.0,6,0.5,opened,b5,1,12
+CFPAC-1,HI-TOPK-032,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Harringtonine,0.5,8,0.5,opened,b1|b2|b5,3,48
+CFPAC-1,Harringtonine,5.0,9,0.5,opened,b5,1,12
+CFPAC-1,Infigratinib,0.5,2,0.5,opened,b5,1,12
+CFPAC-1,Ixazomib,0.5,2,0.5,opened,b1,1,12
+CFPAC-1,LJI308,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,LY-2584702 (tosylate salt),0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Lactate (calcium),5.0,12,0.5,opened,b2,1,12
+CFPAC-1,MK-3903,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,ML264,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Menadione,0.050000000745058,7,0.5,opened,b5,1,12
+CFPAC-1,Mifepristone,0.050000000745058,7,0.5,opened,b5,1,12
+CFPAC-1,Mifepristone,0.5,8,0.5,opened,b5,1,12
+CFPAC-1,Mozavaptan,0.050000000745058,7,0.5,opened,b5,1,12
+CFPAC-1,Naproxen,0.5,8,0.5,opened,b5,1,12
+CFPAC-1,Norepinephrine (hydrochloride),0.050000000745058,4,0.5,opened,b2,1,12
+CFPAC-1,Norepinephrine (hydrochloride),5.0,6,0.5,opened,b2,1,12
+CFPAC-1,Olanzapine,0.5,5,0.5,opened,b5,1,12
+CFPAC-1,Osimertinib (mesylate),5.0,12,0.5,opened,b5,1,12
+CFPAC-1,PF-06260933,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,PH-797804,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Paclitaxel,0.5,2,0.5,opened,b2|b5,2,24
+CFPAC-1,Paclitaxel,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,Pemetrexed,5.0,9,0.5,opened,b5,1,12
+CFPAC-1,Pimitespib,0.050000000745058,1,0.5,opened,b1,1,12
+CFPAC-1,Pimitespib,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,Pralsetinib,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,RMC-6236,0.5,2,0.5,opened,b2|b5,2,24
+CFPAC-1,RMC-6236,5.0,3,0.5,opened,b2|b5,2,24
+CFPAC-1,Radotinib,0.050000000745058,4,0.5,opened,b5,1,12
+CFPAC-1,Ralimetinib dimesylate,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Retinoic acid,0.050000000745058,4,0.5,opened,b5,1,12
+CFPAC-1,Retinoic acid,5.0,14,0.5,opened,b1,1,12
+CFPAC-1,Ritonavir,0.050000000745058,4,0.5,opened,b5,1,12
+CFPAC-1,Ropivacaine (hydrochloride monohydrate),0.050000000745058,4,0.5,opened,b5,1,12
+CFPAC-1,Ropivacaine (hydrochloride monohydrate),5.0,6,0.5,opened,b5,1,12
+CFPAC-1,Rutin (trihydrate),0.050000000745058,7,0.5,opened,b5,1,12
+CFPAC-1,S-Adenosyl-L-methionine (disulfate tosylate),5.0,6,0.5,opened,b2,1,12
+CFPAC-1,Sapanisertib,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,Selinexor ,0.050000000745058,4,0.5,opened,b1,1,12
+CFPAC-1,Silodosin,0.5,8,0.5,opened,b2,1,12
+CFPAC-1,Sivelestat (sodium tetrahydrate),0.050000000745058,7,0.5,opened,b2|b5,2,24
+CFPAC-1,Sivelestat (sodium tetrahydrate),0.5,8,0.5,opened,b2,1,12
+CFPAC-1,Sonidegib,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,TAK-901,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Tadalafil,0.5,8,0.5,opened,b2,1,12
+CFPAC-1,Temuterkib,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Tolcapone,5.0,6,0.5,opened,b5,1,12
+CFPAC-1,Tomivosertib,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Topotecan (hydrochloride),0.5,8,0.5,opened,b1,1,12
+CFPAC-1,Torkinib,5.0,3,0.5,opened,b2,1,12
+CFPAC-1,Trametinib,0.050000000745058,1,0.5,opened,b5,1,12
+CFPAC-1,Trametinib,0.5,2,0.5,opened,b2|b5,2,24
+CFPAC-1,Trametinib,5.0,3,0.5,opened,b5,1,12
+CFPAC-1,Trametinib,5.0,12,0.5,opened,b1|b2|b5,3,48
+CFPAC-1,Trametinib (DMSO_TF solvate),0.050000000745058,7,0.5,opened,b2,1,12
+CFPAC-1,Trametinib (DMSO_TF solvate),0.5,8,0.5,opened,b1|b2,2,24
+CFPAC-1,Trametinib (DMSO_TF solvate),5.0,9,0.5,opened,b2,1,12
+CFPAC-1,Tucatinib,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,Tucidinostat,5.0,14,0.5,opened,b5,1,12
+CFPAC-1,Vemurafenib,5.0,3,0.5,opened,b2|b5,2,24
+CFPAC-1,Vortioxetine,5.0,12,0.5,opened,b2,1,12
+CFPAC-1,XRK3F2,0.5,2,0.5,opened,b2,1,12
+CFPAC-1,XRK3F2,5.0,3,0.5,opened,b1|b2,2,24
+CFPAC-1,olaparib,0.5,2,0.5,opened,b5,1,12
+CFPAC-1,palbociclib,5.0,3,0.5,opened,b2|b5,2,24
+COLO 205,Almonertinib (mesylate),0.050000000745058,13,0.5,opened,b2,1,12
+COLO 205,Anethole trithione,5.0,6,0.5,opened,b1,1,12
+COLO 205,Atazanavir (sulfate),0.5,11,0.5,opened,b2,1,12
+COLO 205,Baicalin,5.0,14,0.5,opened,b1,1,12
+COLO 205,Binimetinib,0.5,2,0.5,opened,b2,1,12
+COLO 205,Captopril,0.050000000745058,13,0.5,opened,b2,1,12
+COLO 205,Carbamazepine,0.5,11,0.5,opened,b5,1,12
+COLO 205,Carbidopa (monohydrate),5.0,13,0.5,opened,b2,1,12
+COLO 205,Cobimetinib,0.5,8,0.5,opened,b1,1,12
+COLO 205,Darolutamide,0.5,11,0.5,opened,b2,1,12
+COLO 205,HI-TOPK-032,0.5,2,0.5,opened,b2,1,12
+COLO 205,Harringtonine,0.050000000745058,7,0.5,opened,b2,1,12
+COLO 205,Idoxuridine,5.0,12,0.5,opened,b2,1,12
+COLO 205,Irinotecan (hydrochloride),0.050000000745058,13,0.5,opened,b2,1,12
+COLO 205,Macitentan,0.5,8,0.5,opened,b1,1,12
+COLO 205,NVP-BHG712,0.5,2,0.5,opened,b2,1,12
+COLO 205,Nimesulide,0.5,13,0.5,opened,b2,1,12
+COLO 205,Nimesulide,5.0,13,0.5,opened,b2,1,12
+COLO 205,Oxaprozin,5.0,12,0.5,opened,b2,1,12
+COLO 205,Pravastatin (sodium),0.5,13,0.5,opened,b2,1,12
+COLO 205,Pravastatin (sodium),5.0,13,0.5,opened,b2,1,12
+COLO 205,Retinoic acid,5.0,6,0.5,opened,b1,1,12
+COLO 205,Rimonabant (Hydrochloride),0.5,13,0.5,opened,b2,1,12
+COLO 205,Sonidegib,0.5,2,0.5,opened,b2,1,12
+COLO 205,Tucidinostat,5.0,6,0.5,opened,b1,1,12
+COLO 205,Zileuton,5.0,12,0.5,opened,b2,1,12
+HCT15,Aliskiren,0.5,5,0.5,opened,b5,1,12
+HCT15,Allantoin,0.5,5,0.5,opened,b5,1,12
+HCT15,Amsacrine,0.5,5,0.5,opened,b1,1,12
+HCT15,Amsacrine,5.0,6,0.5,opened,b1|b2,2,24
+HCT15,Baicalin,0.5,5,0.5,opened,b1,1,12
+HCT15,Binimetinib,0.050000000745058,1,0.5,opened,b5,1,12
+HCT15,Erythromycin,0.050000000745058,10,0.5,opened,b5,1,12
+HCT15,Esmolol (hydrochloride),0.050000000745058,10,0.5,opened,b2,1,12
+HCT15,Fluvoxamine (maleate),0.5,5,0.5,opened,b5,1,12
+HCT15,Gemfibrozil,0.5,5,0.5,opened,b1,1,12
+HCT15,Goserelin (acetate),5.0,6,0.5,opened,b5,1,12
+HCT15,Harringtonine,0.5,8,0.5,opened,b5,1,12
+HCT15,Homoharringtonine,5.0,6,0.5,opened,b5,1,12
+HCT15,Idarubicin (hydrochloride),5.0,6,0.5,opened,b1,1,12
+HCT15,Ivermectin,0.050000000745058,10,0.5,opened,b5,1,12
+HCT15,L-Eflornithine (monohydrochloride),0.050000000745058,10,0.5,opened,b5,1,12
+HCT15,Loperamide (hydrochloride),0.050000000745058,10,0.5,opened,b5,1,12
+HCT15,Megestrol,0.5,5,0.5,opened,b1,1,12
+HCT15,Mitoxantrone (dihydrochloride),0.050000000745058,4,0.5,opened,b2,1,12
+HCT15,Palmatine (chloride),5.0,6,0.5,opened,b5,1,12
+HCT15,Procainamide (hydrochloride),0.5,8,0.5,opened,b1,1,12
+HCT15,RMC-6236,5.0,3,0.5,opened,b5,1,12
+HCT15,Ritonavir,0.5,5,0.5,opened,b2,1,12
+HCT15,Sildenafil,0.5,8,0.5,opened,b1,1,12
+HCT15,TAK-733,0.5,2,0.5,opened,b2,1,12
+HCT15,Trametinib,0.050000000745058,10,0.5,opened,b5,1,12
+HCT15,Tucidinostat,5.0,6,0.5,opened,b1,1,12
+HS-578T,4EGI-1,0.5,2,0.5,opened,b1,1,12
+HS-578T,AZD-7648,0.5,2,0.5,opened,b2,1,12
+HS-578T,AZD-7648,5.0,3,0.5,opened,b2,1,12
+HS-578T,AZD-8055,0.5,2,0.5,opened,b1,1,12
+HS-578T,AZD1390,0.5,2,0.5,opened,b2,1,12
+HS-578T,Afatinib,0.5,2,0.5,opened,b2,1,12
+HS-578T,Afatinib,5.0,3,0.5,opened,b1,1,12
+HS-578T,Alpelisib,0.5,2,0.5,opened,b5,1,12
+HS-578T,Alpelisib,5.0,3,0.5,opened,b1,1,12
+HS-578T,Artesunate,0.5,5,0.5,opened,b1,1,12
+HS-578T,Artesunate,5.0,14,0.5,opened,b1,1,12
+HS-578T,Ataluren,5.0,12,0.5,opened,b2,1,12
+HS-578T,BI-3406,0.5,2,0.5,opened,b2|b5,2,24
+HS-578T,BI-78D3,0.5,2,0.5,opened,b2,1,12
+HS-578T,Binimetinib,0.5,2,0.5,opened,b2|b5,2,24
+HS-578T,Binimetinib,5.0,12,0.5,opened,b2,1,12
+HS-578T,Brivudine,0.050000000745058,1,0.5,opened,b5,1,12
+HS-578T,CP21R7,0.5,2,0.5,opened,b2,1,12
+HS-578T,CP21R7,5.0,3,0.5,opened,b2,1,12
+HS-578T,Chlorhexidine (diacetate),0.5,5,0.5,opened,b2,1,12
+HS-578T,Crizotinib (hydrochloride),0.050000000745058,10,0.5,opened,b5,1,12
+HS-578T,Cyclosporin A,5.0,12,0.5,opened,b2,1,12
+HS-578T,Dabrafenib,0.5,2,0.5,opened,b2,1,12
+HS-578T,Docetaxel (Trihydrate),0.5,8,0.5,opened,b2,1,12
+HS-578T,ETC-206,0.5,2,0.5,opened,b2,1,12
+HS-578T,EX229,0.5,2,0.5,opened,b2|b5,2,24
+HS-578T,Elagolix sodium,5.0,14,0.5,opened,b5,1,12
+HS-578T,Elimusertib hydrochloride,0.5,2,0.5,opened,b5,1,12
+HS-578T,Ferulic acid,0.5,8,0.5,opened,b1,1,12
+HS-578T,Fluvoxamine (maleate),5.0,6,0.5,opened,b5,1,12
+HS-578T,GSK1059615,0.5,2,0.5,opened,b2,1,12
+HS-578T,Gemcitabine,0.5,2,0.5,opened,b2,1,12
+HS-578T,Gemfibrozil,5.0,6,0.5,opened,b5,1,12
+HS-578T,HI-TOPK-032,0.5,2,0.5,opened,b2,1,12
+HS-578T,Harringtonine,0.5,8,0.5,opened,b5,1,12
+HS-578T,Homoharringtonine,0.050000000745058,4,0.5,opened,b5,1,12
+HS-578T,Homoharringtonine,0.5,5,0.5,opened,b5,1,12
+HS-578T,Idarubicin (hydrochloride),5.0,6,0.5,opened,b2,1,12
+HS-578T,Ixazomib,0.5,2,0.5,opened,b1,1,12
+HS-578T,L-Eflornithine (monohydrochloride),0.050000000745058,10,0.5,opened,b5,1,12
+HS-578T,LB-100,0.5,2,0.5,opened,b2,1,12
+HS-578T,Lidocaine (hydrochloride),5.0,6,0.5,opened,b2,1,12
+HS-578T,Lopinavir,0.050000000745058,10,0.5,opened,b5,1,12
+HS-578T,Pentoxifylline,0.5,11,0.5,opened,b2,1,12
+HS-578T,RMC-6236,0.5,2,0.5,opened,b2|b5,2,24
+HS-578T,Regorafenib,5.0,3,0.5,opened,b2,1,12
+HS-578T,S-Adenosyl-L-methionine (disulfate tosylate),0.5,5,0.5,opened,b2,1,12
+HS-578T,Sivelestat (sodium tetrahydrate),0.5,8,0.5,opened,b2,1,12
+HS-578T,Terfenadine,0.5,5,0.5,opened,b2,1,12
+HS-578T,Topotecan (hydrochloride),0.5,8,0.5,opened,b2,1,12
+HS-578T,Torkinib,0.5,2,0.5,opened,b2,1,12
+HS-578T,Trametinib,0.5,2,0.5,opened,b1|b2|b5,3,48
+HS-578T,Triamcinolone,5.0,6,0.5,opened,b2,1,12
+HS-578T,XRK3F2,0.5,2,0.5,opened,b2,1,12
+HT-29,18β-Glycyrrhetinic acid,5.0,6,0.5,opened,b5,1,12
+HT-29,5-Azacytidine,0.5,11,0.5,opened,b2,1,12
+HT-29,AZD-7648,0.050000000745058,1,0.5,opened,b1,1,12
+HT-29,AZD-7648,5.0,3,0.5,opened,b2,1,12
+HT-29,AZD-8055,5.0,3,0.5,opened,b1,1,12
+HT-29,Amsacrine,5.0,6,0.5,opened,b1,1,12
+HT-29,Belzutifan,5.0,3,0.5,opened,b2,1,12
+HT-29,Berberine (chloride hydrate),5.0,6,0.5,opened,b5,1,12
+HT-29,Binimetinib,0.050000000745058,1,0.5,opened,b5,1,12
+HT-29,Binimetinib,0.5,11,0.5,opened,b5,1,12
+HT-29,Binimetinib,5.0,12,0.5,opened,b2,1,12
+HT-29,Cinacalcet,0.5,11,0.5,opened,b2,1,12
+HT-29,Dabrafenib,0.5,2,0.5,opened,b5,1,12
+HT-29,Decitabine,0.5,8,0.5,opened,b2,1,12
+HT-29,Elimusertib hydrochloride,0.050000000745058,1,0.5,opened,b1|b5,2,24
+HT-29,Fluvoxamine (maleate),5.0,6,0.5,opened,b5,1,12
+HT-29,GSK1059615,0.5,2,0.5,opened,b2,1,12
+HT-29,Gemfibrozil,5.0,6,0.5,opened,b5,1,12
+HT-29,Harringtonine,0.5,8,0.5,opened,b2|b5,2,24
+HT-29,Infigratinib,0.050000000745058,1,0.5,opened,b1,1,12
+HT-29,L-Thyroxine (sodium salt pentahydrate),5.0,6,0.5,opened,b1,1,12
+HT-29,Larotrectinib sulfate,0.5,13,0.5,opened,b2,1,12
+HT-29,Neratinib (maleate),5.0,14,0.5,opened,b1,1,12
+HT-29,Posaconazole,0.5,8,0.5,opened,b2,1,12
+HT-29,RMC-6236,5.0,3,0.5,opened,b5,1,12
+HT-29,Radotinib,0.5,5,0.5,opened,b5,1,12
+HT-29,Ralimetinib dimesylate,0.5,2,0.5,opened,b2,1,12
+HT-29,Retinoic acid,0.5,5,0.5,opened,b1,1,12
+HT-29,Ropivacaine (hydrochloride monohydrate),5.0,6,0.5,opened,b5,1,12
+HT-29,Sinomenine,5.0,6,0.5,opened,b1,1,12
+HT-29,Temsirolimus,0.5,5,0.5,opened,b5,1,12
+HT-29,Tirabrutinib,5.0,9,0.5,opened,b5,1,12
+HT-29,Tirabrutinib (hydrochloride),0.5,11,0.5,opened,b1,1,12
+HT-29,Tranilast,0.5,8,0.5,opened,b2,1,12
+HT-29,Tucatinib,0.050000000745058,1,0.5,opened,b5,1,12
+HT-29,Tucidinostat,0.5,5,0.5,opened,b1,1,12
+HT-29,Tucidinostat,5.0,6,0.5,opened,b1,1,12
+HT-29,Vemurafenib,0.050000000745058,1,0.5,opened,b1,1,12
+HT-29,Volasertib,0.050000000745058,1,0.5,opened,b1,1,12
+HT-29,crizotinib,0.5,8,0.5,opened,b1,1,12
+Hs 766T,AZD-7648,0.5,2,0.5,opened,b2,1,12
+Hs 766T,BI-3406,0.5,2,0.5,opened,b2,1,12
+Hs 766T,BI-3406,5.0,3,0.5,opened,b5,1,12
+Hs 766T,Baicalin,0.5,5,0.5,opened,b1,1,12
+Hs 766T,Bergenin,5.0,6,0.5,opened,b5,1,12
+Hs 766T,Bimiralisib,0.5,2,0.5,opened,b2,1,12
+Hs 766T,Binimetinib,0.050000000745058,1,0.5,opened,b5,1,12
+Hs 766T,Binimetinib,0.5,2,0.5,opened,b1|b2,2,24
+Hs 766T,Celecoxib,0.5,2,0.5,opened,b2,1,12
+Hs 766T,Cobimetinib,5.0,9,0.5,opened,b1,1,12
+Hs 766T,DT-061,5.0,3,0.5,opened,b5,1,12
+Hs 766T,DTP3,5.0,3,0.5,opened,b5,1,12
+Hs 766T,Elagolix sodium,0.5,5,0.5,opened,b1,1,12
+Hs 766T,Elimusertib hydrochloride,5.0,3,0.5,opened,b5,1,12
+Hs 766T,GSK1059615,0.5,2,0.5,opened,b2,1,12
+Hs 766T,GSK1059615,5.0,3,0.5,opened,b5,1,12
+Hs 766T,Harringtonine,0.5,8,0.5,opened,b2|b5,2,24
+Hs 766T,Harringtonine,5.0,9,0.5,opened,b5,1,12
+Hs 766T,Idarubicin (hydrochloride),5.0,6,0.5,opened,b2,1,12
+Hs 766T,L-Thyroxine (sodium salt pentahydrate),0.5,5,0.5,opened,b1,1,12
+Hs 766T,Norepinephrine (hydrochloride),0.050000000745058,4,0.5,opened,b2,1,12
+Hs 766T,Paclitaxel,5.0,3,0.5,opened,b5,1,12
+Hs 766T,Pimitespib,0.5,2,0.5,opened,b2,1,12
+Hs 766T,RMC-6236,0.050000000745058,1,0.5,opened,b2,1,12
+Hs 766T,RMC-6236,0.5,2,0.5,opened,b2,1,12
+Hs 766T,RMC-6236,5.0,3,0.5,opened,b5,1,12
+Hs 766T,Ritonavir,5.0,6,0.5,opened,b2,1,12
+Hs 766T,Sonidegib,0.5,2,0.5,opened,b2,1,12
+Hs 766T,TAK-901,5.0,3,0.5,opened,b5,1,12
+Hs 766T,Tirabrutinib,0.050000000745058,7,0.5,opened,b5,1,12
+Hs 766T,Topotecan (hydrochloride),0.5,8,0.5,opened,b2,1,12
+Hs 766T,Trametinib,0.5,2,0.5,opened,b2,1,12
+Hs 766T,Trametinib (DMSO_TF solvate),0.050000000745058,7,0.5,opened,b1|b5,2,24
+Hs 766T,Trametinib (DMSO_TF solvate),0.5,8,0.5,opened,b2,1,12
+Hs 766T,ULK-101,0.5,2,0.5,opened,b2,1,12
+Hs 766T,Vilanterol,5.0,6,0.5,opened,b2,1,12
+LoVo,8-Hydroxyquinoline,0.5,5,0.5,opened,b5,1,12
+LoVo,AZD-7648,5.0,3,0.5,opened,b2,1,12
+LoVo,Alpelisib,0.5,2,0.5,opened,b5,1,12
+LoVo,Alpelisib,5.0,3,0.5,opened,b2|b5,2,24
+LoVo,Amsacrine,5.0,6,0.5,opened,b1,1,12
+LoVo,Bergenin,0.5,5,0.5,opened,b2,1,12
+LoVo,Bestatin (hydrochloride),0.5,11,0.5,opened,b5,1,12
+LoVo,Bimiralisib,0.5,2,0.5,opened,b2,1,12
+LoVo,Bimiralisib,5.0,3,0.5,opened,b5,1,12
+LoVo,Binimetinib,0.050000000745058,1,0.5,opened,b5,1,12
+LoVo,Binimetinib,0.5,2,0.5,opened,b2|b5,2,24
+LoVo,Binimetinib,0.5,11,0.5,opened,b5,1,12
+LoVo,Binimetinib,5.0,3,0.5,opened,b5,1,12
+LoVo,Binimetinib,5.0,12,0.5,opened,b5,1,12
+LoVo,Brivudine,0.5,2,0.5,opened,b5,1,12
+LoVo,CP21R7,0.5,2,0.5,opened,b5,1,12
+LoVo,Celecoxib,0.050000000745058,1,0.5,opened,b1,1,12
+LoVo,Celecoxib,0.5,2,0.5,opened,b2,1,12
+LoVo,Cepharanthine,5.0,6,0.5,opened,b1,1,12
+LoVo,Cobimetinib,5.0,9,0.5,opened,b1,1,12
+LoVo,"Dapagliflozin ((2S)-1,2-propanediol, hydrate)",0.050000000745058,7,0.5,opened,b5,1,12
+LoVo,Docetaxel,5.0,6,0.5,opened,b2,1,12
+LoVo,Elimusertib hydrochloride,0.050000000745058,1,0.5,opened,b1|b5,2,24
+LoVo,GSK1059615,0.5,2,0.5,opened,b2|b5,2,24
+LoVo,Gemfibrozil,0.050000000745058,4,0.5,opened,b5,1,12
+LoVo,Gemfibrozil,0.5,5,0.5,opened,b5,1,12
+LoVo,Gemfibrozil,5.0,6,0.5,opened,b5,1,12
+LoVo,HI-TOPK-032,0.050000000745058,1,0.5,opened,b5,1,12
+LoVo,HI-TOPK-032,0.5,2,0.5,opened,b2,1,12
+LoVo,Harringtonine,0.050000000745058,7,0.5,opened,b5,1,12
+LoVo,Harringtonine,0.5,8,0.5,opened,b5,1,12
+LoVo,Homoharringtonine,0.050000000745058,4,0.5,opened,b5,1,12
+LoVo,Idarubicin (hydrochloride),0.5,5,0.5,opened,b2,1,12
+LoVo,Idoxuridine,0.5,11,0.5,opened,b2,1,12
+LoVo,Infigratinib,0.050000000745058,1,0.5,opened,b5,1,12
+LoVo,Ivermectin,0.5,11,0.5,opened,b5,1,12
+LoVo,L-Eflornithine (monohydrochloride),5.0,12,0.5,opened,b5,1,12
+LoVo,Naproxen,0.050000000745058,7,0.5,opened,b5,1,12
+LoVo,Olanzapine,0.5,5,0.5,opened,b5,1,12
+LoVo,Pravastatin (sodium),0.050000000745058,7,0.5,opened,b5,1,12
+LoVo,RMC-6236,0.5,2,0.5,opened,b5,1,12
+LoVo,RMC-6236,5.0,3,0.5,opened,b5,1,12
+LoVo,Radotinib,0.5,5,0.5,opened,b5,1,12
+LoVo,Ralimetinib dimesylate,5.0,3,0.5,opened,b5,1,12
+LoVo,Retinoic acid,0.050000000745058,4,0.5,opened,b5,1,12
+LoVo,Ropivacaine (hydrochloride monohydrate),0.050000000745058,4,0.5,opened,b5,1,12
+LoVo,Ropivacaine (hydrochloride monohydrate),5.0,6,0.5,opened,b5,1,12
+LoVo,Tomivosertib,0.5,2,0.5,opened,b5,1,12
+LoVo,Topotecan (hydrochloride),0.5,8,0.5,opened,b5,1,12
+LoVo,Trametinib,0.5,2,0.5,opened,b2|b5,2,24
+LoVo,Trametinib (DMSO_TF solvate),5.0,9,0.5,opened,b5,1,12
+LoVo,Tucidinostat,5.0,6,0.5,opened,b1,1,12
+LoVo,vincristine,0.5,2,0.5,opened,b2,1,12
+MIA PaCa-2,5-Azacytidine,0.5,11,0.5,opened,b5,1,12
+MIA PaCa-2,9-ING-41,5.0,3,0.5,opened,b2,1,12
+MIA PaCa-2,AZD-8055,0.050000000745058,1,0.5,opened,b2,1,12
+MIA PaCa-2,Abemaciclib,0.050000000745058,13,0.5,opened,b1,1,12
+MIA PaCa-2,Adagrasib,0.050000000745058,2,0.5,opened,b1,1,12
+MIA PaCa-2,Adagrasib,0.050000000745058,8,0.5,opened,b2,1,12
+MIA PaCa-2,Adagrasib,0.050000000745058,11,0.5,opened,b2,1,12
+MIA PaCa-2,Adagrasib,0.050000000745058,12,0.5,opened,b2,1,12
+MIA PaCa-2,Adagrasib,0.050000000745058,13,0.5,opened,b1|b2,2,24
+MIA PaCa-2,Almonertinib (mesylate),0.050000000745058,7,0.5,opened,b5,1,12
+MIA PaCa-2,Atazanavir (sulfate),0.5,11,0.5,opened,b2,1,12
+MIA PaCa-2,BI-3406,0.050000000745058,1,0.5,opened,b2|b5,2,24
+MIA PaCa-2,BI-78D3,0.5,2,0.5,opened,b2,1,12
+MIA PaCa-2,Benztropine (mesylate),0.5,11,0.5,opened,b2,1,12
+MIA PaCa-2,Bestatin (hydrochloride),0.5,11,0.5,opened,b5,1,12
+MIA PaCa-2,Bimiralisib,0.5,2,0.5,opened,b2,1,12
+MIA PaCa-2,Bimiralisib,5.0,3,0.5,opened,b2,1,12
+MIA PaCa-2,Binimetinib,0.050000000745058,1,0.5,opened,b2|b5,2,24
+MIA PaCa-2,Binimetinib,0.050000000745058,10,0.5,opened,b2,1,12
+MIA PaCa-2,Binimetinib,0.5,2,0.5,opened,b2|b5,2,24
+MIA PaCa-2,Binimetinib,0.5,11,0.5,opened,b1|b2|b5,3,48
+MIA PaCa-2,Binimetinib,5.0,12,0.5,opened,b1|b2|b5,3,48
+MIA PaCa-2,Ciclopirox,0.5,5,0.5,opened,b5,1,12
+MIA PaCa-2,Cinacalcet,0.5,11,0.5,opened,b2,1,12
+MIA PaCa-2,Cobimetinib,0.5,8,0.5,opened,b1,1,12
+MIA PaCa-2,Cobimetinib,5.0,9,0.5,opened,b1,1,12
+MIA PaCa-2,DT-061,5.0,3,0.5,opened,b1,1,12
+MIA PaCa-2,Dimethyl fumarate,0.050000000745058,7,0.5,opened,b2,1,12
+MIA PaCa-2,Diphenhydramine,0.5,8,0.5,opened,b2,1,12
+MIA PaCa-2,Docetaxel (Trihydrate),0.5,8,0.5,opened,b2,1,12
+MIA PaCa-2,Drospirenone,0.5,11,0.5,opened,b2,1,12
+MIA PaCa-2,Econazole,0.050000000745058,10,0.5,opened,b2,1,12
+MIA PaCa-2,Elimusertib hydrochloride,0.050000000745058,1,0.5,opened,b1,1,12
+MIA PaCa-2,Erythromycin,5.0,12,0.5,opened,b2,1,12
+MIA PaCa-2,Estrone sulfate (potassium),5.0,12,0.5,opened,b2,1,12
+MIA PaCa-2,Fingolimod (hydrochloride),0.050000000745058,10,0.5,opened,b2,1,12
+MIA PaCa-2,Fostamatinib (disodium hexahydrate),0.050000000745058,13,0.5,opened,b1,1,12
+MIA PaCa-2,GSK1059615,0.5,2,0.5,opened,b2,1,12
+MIA PaCa-2,Glasdegib,0.5,13,0.5,opened,b2,1,12
+MIA PaCa-2,HI-TOPK-032,0.5,2,0.5,opened,b2,1,12
+MIA PaCa-2,Harringtonine,0.050000000745058,7,0.5,opened,b5,1,12
+MIA PaCa-2,Harringtonine,0.5,8,0.5,opened,b5,1,12
+MIA PaCa-2,Idarubicin (hydrochloride),0.5,5,0.5,opened,b1|b2,2,24
+MIA PaCa-2,L-Eflornithine (monohydrochloride),5.0,12,0.5,opened,b2|b5,2,24
+MIA PaCa-2,LJI308,0.5,2,0.5,opened,b2,1,12
+MIA PaCa-2,LY-2584702 (tosylate salt),5.0,3,0.5,opened,b2,1,12
+MIA PaCa-2,Lactate (calcium),0.5,11,0.5,opened,b2,1,12
+MIA PaCa-2,Naproxen,0.5,8,0.5,opened,b5,1,12
+MIA PaCa-2,PF-06260933,0.050000000745058,13,0.5,opened,b1,1,12
+MIA PaCa-2,Paclitaxel,5.0,3,0.5,opened,b2,1,12
+MIA PaCa-2,Pyridoxine (hydrochloride),5.0,14,0.5,opened,b2,1,12
+MIA PaCa-2,RMC-6236,0.5,2,0.5,opened,b2,1,12
+MIA PaCa-2,RMC-6236,5.0,3,0.5,opened,b2,1,12
+MIA PaCa-2,Regorafenib,5.0,3,0.5,opened,b2,1,12
+MIA PaCa-2,Topotecan (hydrochloride),0.5,8,0.5,opened,b2,1,12
+MIA PaCa-2,Trametinib,0.050000000745058,10,0.5,opened,b2,1,12
+MIA PaCa-2,Trametinib,0.5,2,0.5,opened,b2,1,12
+MIA PaCa-2,Trametinib,0.5,11,0.5,opened,b1,1,12
+MIA PaCa-2,Trametinib,5.0,12,0.5,opened,b1|b2,2,24
+MIA PaCa-2,Trametinib (DMSO_TF solvate),0.050000000745058,7,0.5,opened,b1,1,12
+MIA PaCa-2,Trametinib (DMSO_TF solvate),0.5,8,0.5,opened,b1,1,12
+MIA PaCa-2,Tucidinostat,5.0,6,0.5,opened,b1,1,12
+MIA PaCa-2,ULK-101,0.5,2,0.5,opened,b2,1,12
+MIA PaCa-2,Vemurafenib,5.0,3,0.5,opened,b1,1,12
+MIA PaCa-2,XRK3F2,5.0,3,0.5,opened,b1,1,12
+MIA PaCa-2,palbociclib,5.0,3,0.5,opened,b1|b2,2,24
+RKO,AZD2858,0.050000000745058,1,0.5,opened,b5,1,12
+RKO,Abiraterone acetate,5.0,12,0.5,opened,b2,1,12
+RKO,Adagrasib,0.5,8,0.5,opened,b2,1,12
+RKO,Amsacrine,0.5,5,0.5,opened,b5,1,12
+RKO,BI-3406,0.050000000745058,1,0.5,opened,b5,1,12
+RKO,BI-3406,0.5,2,0.5,opened,b5,1,12
+RKO,Binimetinib,0.050000000745058,1,0.5,opened,b1,1,12
+RKO,Binimetinib,0.050000000745058,10,0.5,opened,b5,1,12
+RKO,Binimetinib,0.5,2,0.5,opened,b2,1,12
+RKO,Binimetinib,5.0,12,0.5,opened,b2,1,12
+RKO,Cloxacillin (sodium),5.0,6,0.5,opened,b1,1,12
+RKO,Cobimetinib,5.0,9,0.5,opened,b1,1,12
+RKO,Cysteamine (hydrochloride),5.0,6,0.5,opened,b5,1,12
+RKO,Cytarabine,5.0,9,0.5,opened,b1,1,12
+RKO,Elimusertib hydrochloride,0.5,2,0.5,opened,b5,1,12
+RKO,Filgotinib,0.050000000745058,10,0.5,opened,b5,1,12
+RKO,Flumatinib (mesylate),5.0,9,0.5,opened,b1,1,12
+RKO,Fluvoxamine (maleate),0.5,5,0.5,opened,b5,1,12
+RKO,Gallic acid,5.0,6,0.5,opened,b5,1,12
+RKO,HI-TOPK-032,0.050000000745058,1,0.5,opened,b5,1,12
+RKO,Hesperidin,0.050000000745058,7,0.5,opened,b2,1,12
+RKO,Homoharringtonine,0.050000000745058,4,0.5,opened,b5,1,12
+RKO,Idarubicin (hydrochloride),0.5,5,0.5,opened,b1,1,12
+RKO,Idarubicin (hydrochloride),5.0,6,0.5,opened,b1|b5,2,24
+RKO,Infigratinib,0.050000000745058,1,0.5,opened,b5,1,12
+RKO,Mitoxantrone (dihydrochloride),5.0,6,0.5,opened,b2,1,12
+RKO,NVP-BHG712,0.5,2,0.5,opened,b2,1,12
+RKO,Osimertinib (mesylate),5.0,12,0.5,opened,b2,1,12
+RKO,PF-06260933,0.5,2,0.5,opened,b2,1,12
+RKO,Selinexor ,0.5,5,0.5,opened,b1|b2,2,24
+RKO,Sivelestat (sodium tetrahydrate),5.0,9,0.5,opened,b1,1,12
+RKO,Trametinib,0.5,2,0.5,opened,b2,1,12
+RKO,Trametinib,5.0,12,0.5,opened,b2,1,12
+RKO,Trametinib (DMSO_TF solvate),0.5,8,0.5,opened,b1,1,12
+RKO,Trametinib (DMSO_TF solvate),5.0,9,0.5,opened,b1,1,12
+RKO,Tucidinostat,0.5,5,0.5,opened,b1,1,12
+RKO,Tucidinostat,5.0,6,0.5,opened,b1,1,12
+RKO,ULK-101,0.050000000745058,1,0.5,opened,b5,1,12
+SHP-77,Binimetinib,5.0,12,0.5,opened,b5,1,12
+SHP-77,ETC-206,0.050000000745058,1,0.5,opened,b1,1,12
+SHP-77,Idarubicin (hydrochloride),5.0,14,0.5,opened,b1,1,12
+SHP-77,Larotrectinib,5.0,6,0.5,opened,b5,1,12
+SHP-77,Lenalidomide (hemihydrate),0.5,5,0.5,opened,b2,1,12
+SHP-77,Mitoxantrone (dihydrochloride),0.050000000745058,4,0.5,opened,b1,1,12
+SHP-77,Nimesulide,5.0,13,0.5,opened,b2,1,12
+SHP-77,Osimertinib (mesylate),0.050000000745058,10,0.5,opened,b2,1,12
+SHP-77,Oxaprozin,0.5,11,0.5,opened,b2,1,12
+SHP-77,Pimozide,0.050000000745058,10,0.5,opened,b2,1,12
+SHP-77,Ponatinib,0.5,11,0.5,opened,b2,1,12
+SHP-77,Rosiglitazone,5.0,9,0.5,opened,b5,1,12
+SHP-77,Saquinavir,0.5,5,0.5,opened,b2,1,12
+SHP-77,Sinomenine,0.5,5,0.5,opened,b2,1,12
+SHP-77,Thymol,0.5,5,0.5,opened,b2,1,12
+SHP-77,Trifluridine,0.5,5,0.5,opened,b5,1,12
+SHP-77,vincristine,0.5,2,0.5,opened,b2,1,12
+SW 900,18β-Glycyrrhetinic acid,5.0,6,0.5,opened,b5,1,12
+SW 900,AZD-8055,0.050000000745058,1,0.5,opened,b2,1,12
+SW 900,Aspirin,0.5,11,0.5,opened,b5,1,12
+SW 900,Belzutifan,0.5,2,0.5,opened,b5,1,12
+SW 900,Belzutifan,5.0,3,0.5,opened,b5,1,12
+SW 900,Berbamine (dihydrochloride),5.0,13,0.5,opened,b2,1,12
+SW 900,Binimetinib,0.5,2,0.5,opened,b2,1,12
+SW 900,Canagliflozin,0.050000000745058,7,0.5,opened,b2,1,12
+SW 900,Canagliflozin (hemihydrate),0.5,11,0.5,opened,b2,1,12
+SW 900,Capmatinib,5.0,3,0.5,opened,b5,1,12
+SW 900,Clobetasol propionate,0.050000000745058,10,0.5,opened,b5,1,12
+SW 900,Crizotinib (hydrochloride),0.050000000745058,10,0.5,opened,b5,1,12
+SW 900,Delamanid,0.050000000745058,10,0.5,opened,b5,1,12
+SW 900,Dexamethasone,0.5,11,0.5,opened,b5,1,12
+SW 900,Dinaciclib,0.5,8,0.5,opened,b2,1,12
+SW 900,Elagolix sodium,0.5,5,0.5,opened,b2,1,12
+SW 900,Elimusertib hydrochloride,0.5,2,0.5,opened,b5,1,12
+SW 900,Fluvoxamine (maleate),5.0,6,0.5,opened,b5,1,12
+SW 900,Harringtonine,0.5,8,0.5,opened,b5,1,12
+SW 900,Idarubicin (hydrochloride),0.5,5,0.5,opened,b2,1,12
+SW 900,Indacaterol (maleate),0.050000000745058,10,0.5,opened,b5,1,12
+SW 900,L-Eflornithine (monohydrochloride),0.5,11,0.5,opened,b5,1,12
+SW 900,Methotrexate,0.5,11,0.5,opened,b5,1,12
+SW 900,Mitoxantrone (dihydrochloride),5.0,6,0.5,opened,b5,1,12
+SW 900,Mozavaptan,0.050000000745058,7,0.5,opened,b5,1,12
+SW 900,Omeprazole,0.050000000745058,10,0.5,opened,b5,1,12
+SW 900,Osimertinib (mesylate),0.050000000745058,10,0.5,opened,b5,1,12
+SW 900,Oxaprozin,0.050000000745058,10,0.5,opened,b5,1,12
+SW 900,Pioglitazone,0.5,11,0.5,opened,b5,1,12
+SW 900,RMC-6236,0.5,2,0.5,opened,b5,1,12
+SW 900,Ropivacaine (hydrochloride monohydrate),5.0,6,0.5,opened,b5,1,12
+SW 900,TAK-733,0.5,2,0.5,opened,b5,1,12
+SW 900,Topotecan (hydrochloride),0.5,8,0.5,opened,b5,1,12
+SW 900,Trametinib,0.5,2,0.5,opened,b5,1,12
+SW 900,Tucidinostat,0.5,5,0.5,opened,b1,1,12
+SW 900,Vortioxetine,0.050000000745058,10,0.5,opened,b1,1,12
+SW1417,9-ING-41,0.5,2,0.5,opened,b2,1,12
+SW1417,AZD-7648,0.050000000745058,1,0.5,opened,b1,1,12
+SW1417,AZD-7648,0.5,2,0.5,opened,b2,1,12
+SW1417,Afatinib,0.5,2,0.5,opened,b5,1,12
+SW1417,Aliskiren,5.0,6,0.5,opened,b5,1,12
+SW1417,Bentamapimod,0.5,2,0.5,opened,b5,1,12
+SW1417,Bimiralisib,0.5,2,0.5,opened,b2,1,12
+SW1417,Binimetinib,0.050000000745058,1,0.5,opened,b5,1,12
+SW1417,Binimetinib,0.5,2,0.5,opened,b5,1,12
+SW1417,Binimetinib,5.0,12,0.5,opened,b5,1,12
+SW1417,Busulfan,5.0,6,0.5,opened,b5,1,12
+SW1417,Diphenhydramine,0.5,8,0.5,opened,b2,1,12
+SW1417,Edoxaban (tosylate monohydrate),5.0,13,0.5,opened,b2,1,12
+SW1417,Elimusertib hydrochloride,0.050000000745058,1,0.5,opened,b5,1,12
+SW1417,Elimusertib hydrochloride,0.5,2,0.5,opened,b5,1,12
+SW1417,Entrectinib,5.0,12,0.5,opened,b2,1,12
+SW1417,Filgotinib,0.5,11,0.5,opened,b2,1,12
+SW1417,Furosemide,5.0,14,0.5,opened,b2,1,12
+SW1417,Gallic acid,0.5,5,0.5,opened,b5,1,12
+SW1417,HI-TOPK-032,0.5,2,0.5,opened,b2,1,12
+SW1417,Infigratinib,0.050000000745058,1,0.5,opened,b5,1,12
+SW1417,LY-2584702 (tosylate salt),5.0,3,0.5,opened,b2,1,12
+SW1417,MK-3903,0.5,2,0.5,opened,b2,1,12
+SW1417,Malotilate,5.0,12,0.5,opened,b2,1,12
+SW1417,Olanzapine,0.050000000745058,4,0.5,opened,b5,1,12
+SW1417,Olanzapine,5.0,6,0.5,opened,b5,1,12
+SW1417,Pentamidine (isethionate),5.0,14,0.5,opened,b2,1,12
+SW1417,Quinestrol,5.0,6,0.5,opened,b5,1,12
+SW1417,RMC-6236,0.5,2,0.5,opened,b2|b5,2,24
+SW1417,Radotinib,0.050000000745058,4,0.5,opened,b5,1,12
+SW1417,Ropivacaine (hydrochloride monohydrate),5.0,6,0.5,opened,b1,1,12
+SW1417,Selinexor ,0.5,5,0.5,opened,b1,1,12
+SW1417,Selinexor ,5.0,6,0.5,opened,b1,1,12
+SW1417,Trametinib,0.5,2,0.5,opened,b2|b5,2,24
+SW1417,Trametinib,5.0,12,0.5,opened,b1,1,12
+SW1417,Tucidinostat,0.5,5,0.5,opened,b1,1,12
+SW1417,Tucidinostat,5.0,6,0.5,opened,b1,1,12
+SW480,18β-Glycyrrhetinic acid,5.0,6,0.5,opened,b1,1,12
+SW480,9-ING-41,0.5,2,0.5,opened,b2,1,12
+SW480,AZD-7648,0.5,2,0.5,opened,b2,1,12
+SW480,AZD-8055,0.050000000745058,1,0.5,opened,b1,1,12
+SW480,AZD-8055,5.0,3,0.5,opened,b5,1,12
+SW480,AZD1390,0.5,2,0.5,opened,b5,1,12
+SW480,Adagrasib,0.050000000745058,11,0.5,opened,b2,1,12
+SW480,Adagrasib,0.050000000745058,12,0.5,opened,b2,1,12
+SW480,Afatinib,0.5,2,0.5,opened,b2,1,12
+SW480,Afatinib,5.0,3,0.5,opened,b1,1,12
+SW480,Alpelisib,5.0,3,0.5,opened,b1|b5,2,24
+SW480,Altretamine,0.5,8,0.5,opened,b1,1,12
+SW480,Amsacrine,5.0,6,0.5,opened,b5,1,12
+SW480,Artesunate,5.0,6,0.5,opened,b1,1,12
+SW480,BI-3406,0.5,2,0.5,opened,b5,1,12
+SW480,BI-3406,5.0,3,0.5,opened,b5,1,12
+SW480,Baicalin,0.050000000745058,4,0.5,opened,b1,1,12
+SW480,Baicalin,5.0,14,0.5,opened,b1,1,12
+SW480,Balsalazide (sodium hydrate),0.5,5,0.5,opened,b1,1,12
+SW480,Bentamapimod,0.5,2,0.5,opened,b5,1,12
+SW480,Bimiralisib,0.5,2,0.5,opened,b2,1,12
+SW480,Binimetinib,0.050000000745058,1,0.5,opened,b1|b5,2,24
+SW480,Binimetinib,0.5,2,0.5,opened,b5,1,12
+SW480,Binimetinib,5.0,3,0.5,opened,b1,1,12
+SW480,Brivudine,0.5,2,0.5,opened,b5,1,12
+SW480,CP21R7,0.5,2,0.5,opened,b5,1,12
+SW480,Clonidine (hydrochloride),5.0,14,0.5,opened,b2,1,12
+SW480,Elimusertib hydrochloride,0.050000000745058,1,0.5,opened,b5,1,12
+SW480,Elimusertib hydrochloride,0.5,2,0.5,opened,b5,1,12
+SW480,Epirubicin (hydrochloride),5.0,9,0.5,opened,b1,1,12
+SW480,Estrone sulfate (potassium),0.050000000745058,10,0.5,opened,b1,1,12
+SW480,Estrone sulfate (potassium),5.0,12,0.5,opened,b5,1,12
+SW480,GSK1059615,0.5,2,0.5,opened,b2,1,12
+SW480,Gemcitabine,0.5,2,0.5,opened,b5,1,12
+SW480,Gemcitabine,5.0,3,0.5,opened,b1|b5,2,24
+SW480,Gemfibrozil,5.0,6,0.5,opened,b5,1,12
+SW480,Glasdegib,0.5,13,0.5,opened,b2,1,12
+SW480,HI-TOPK-032,5.0,3,0.5,opened,b1,1,12
+SW480,Idarubicin (hydrochloride),5.0,6,0.5,opened,b1|b2,2,24
+SW480,Idarubicin (hydrochloride),5.0,14,0.5,opened,b1,1,12
+SW480,Idoxuridine,5.0,12,0.5,opened,b2,1,12
+SW480,Infigratinib,0.5,2,0.5,opened,b5,1,12
+SW480,Ipatasertib,0.5,2,0.5,opened,b2,1,12
+SW480,L-Eflornithine (monohydrochloride),5.0,12,0.5,opened,b5,1,12
+SW480,LJI308,0.050000000745058,1,0.5,opened,b5,1,12
+SW480,Lactate (calcium),5.0,12,0.5,opened,b2,1,12
+SW480,Larotrectinib,5.0,6,0.5,opened,b2,1,12
+SW480,Lenalidomide (hemihydrate),0.5,5,0.5,opened,b2,1,12
+SW480,Lipoic acid,0.5,5,0.5,opened,b1,1,12
+SW480,MK-3903,0.050000000745058,1,0.5,opened,b1,1,12
+SW480,Malotilate,0.050000000745058,10,0.5,opened,b5,1,12
+SW480,Mitoxantrone (dihydrochloride),0.5,5,0.5,opened,b1,1,12
+SW480,Mitoxantrone (dihydrochloride),5.0,6,0.5,opened,b5,1,12
+SW480,NG25,0.050000000745058,1,0.5,opened,b5,1,12
+SW480,NVP-BHG712,0.5,2,0.5,opened,b2,1,12
+SW480,Nafamostat (mesylate),5.0,12,0.5,opened,b2,1,12
+SW480,Naproxen,0.5,8,0.5,opened,b5,1,12
+SW480,Olanzapine,5.0,6,0.5,opened,b5,1,12
+SW480,Omeprazole,0.5,11,0.5,opened,b2,1,12
+SW480,Omeprazole,5.0,12,0.5,opened,b5,1,12
+SW480,Paclitaxel,0.5,2,0.5,opened,b2|b5,2,24
+SW480,Panobinostat,0.050000000745058,10,0.5,opened,b1,1,12
+SW480,Pentamidine (isethionate),0.5,13,0.5,opened,b2,1,12
+SW480,Pimitespib,0.5,2,0.5,opened,b2,1,12
+SW480,Pravastatin (sodium),5.0,9,0.5,opened,b1,1,12
+SW480,Pyridoxine,0.5,5,0.5,opened,b1,1,12
+SW480,RMC-6236,0.5,2,0.5,opened,b2|b5,2,24
+SW480,Radotinib,0.5,5,0.5,opened,b5,1,12
+SW480,Ropivacaine (hydrochloride monohydrate),0.050000000745058,4,0.5,opened,b5,1,12
+SW480,Ropivacaine (hydrochloride monohydrate),5.0,6,0.5,opened,b5,1,12
+SW480,Ropivacaine (hydrochloride monohydrate),5.0,14,0.5,opened,b2,1,12
+SW480,Sivelestat (sodium tetrahydrate),5.0,9,0.5,opened,b1,1,12
+SW480,Sodium Salicylate,5.0,6,0.5,opened,b1,1,12
+SW480,Sonidegib,0.5,2,0.5,opened,b2,1,12
+SW480,Sulfisoxazole,0.5,13,0.5,opened,b1,1,12
+SW480,Temuterkib,0.5,2,0.5,opened,b5,1,12
+SW480,Thymol,0.5,5,0.5,opened,b2,1,12
+SW480,Tolcapone,5.0,6,0.5,opened,b5,1,12
+SW480,Tomivosertib,0.5,2,0.5,opened,b5,1,12
+SW480,Topotecan (hydrochloride),0.5,8,0.5,opened,b1|b2,2,24
+SW480,Trametinib,0.5,2,0.5,opened,b5,1,12
+SW480,Trametinib,5.0,12,0.5,opened,b1,1,12
+SW480,Trametinib (DMSO_TF solvate),0.050000000745058,7,0.5,opened,b1,1,12
+SW480,Trimetrexate,0.050000000745058,4,0.5,opened,b5,1,12
+SW480,Tucidinostat,0.050000000745058,4,0.5,opened,b1,1,12
+SW480,Tucidinostat,0.5,5,0.5,opened,b1,1,12
+SW480,Tucidinostat,5.0,6,0.5,opened,b1|b5,2,24
+SW480,ULK-101,0.5,2,0.5,opened,b2,1,12
+SW480,Verteporfin,5.0,9,0.5,opened,b1,1,12
+SW480,XRK3F2,5.0,3,0.5,opened,b1,1,12
+SW480,c-Kit-IN-1,0.050000000745058,13,0.5,opened,b2,1,12
+A549,APTO-253,5.0,3,0.5,closed,b1,1,24
+A549,Abemaciclib,5.0,3,0.5,closed,b1,1,24
+A549,Adagrasib,0.050000000745058,14,0.5,closed,b1,1,24
+A549,Asciminib,5.0,12,0.5,closed,b1,1,24
+A549,Auranofin,5.0,12,0.5,closed,b1,1,24
+A549,Belinostat,0.5,11,0.5,closed,b1,1,24
+A549,Belinostat,5.0,12,0.5,closed,b1,1,24
+A549,Bentamapimod,0.5,2,0.5,closed,b1,1,24
+A549,Bortezomib,0.050000000745058,1,0.5,closed,b1|b5,2,12
+A549,Bortezomib,0.5,2,0.5,closed,b1,1,24
+A549,Bortezomib,5.0,3,0.5,closed,b1,1,24
+A549,Capivasertib,0.5,2,0.5,closed,b1,1,24
+A549,Clonidine (hydrochloride),5.0,6,0.5,closed,b2,1,24
+A549,Darinaparsin,5.0,6,0.5,closed,b1,1,24
+A549,Dexamethasone,0.050000000745058,10,0.5,closed,b5,1,24
+A549,Digitoxin,0.050000000745058,10,0.5,closed,b1,1,24
+A549,Digitoxin,0.5,11,0.5,closed,b1,1,24
+A549,Dinaciclib,0.5,8,0.5,closed,b1,1,24
+A549,Doxycycline (monohydrate),0.050000000745058,7,0.5,closed,b1,1,24
+A549,ETC-206,0.5,2,0.5,closed,b1,1,24
+A549,EX229,0.5,2,0.5,closed,b1,1,24
+A549,Fedratinib (hydrochloride hydrate),5.0,12,0.5,closed,b1|b5,2,12
+A549,Filgotinib,0.5,11,0.5,closed,b1,1,24
+A549,Filgotinib,5.0,12,0.5,closed,b1,1,24
+A549,Flumatinib (mesylate),0.5,8,0.5,closed,b5,1,24
+A549,Folic acid,5.0,6,0.5,closed,b2,1,24
+A549,Futibatinib,0.5,2,0.5,closed,b1,1,24
+A549,Gallic acid (hydrate),5.0,6,0.5,closed,b1,1,24
+A549,HI-TOPK-032,0.5,2,0.5,closed,b1,1,24
+A549,Harringtonine,0.050000000745058,7,0.5,closed,b1,1,24
+A549,Harringtonine,0.5,8,0.5,closed,b1,1,24
+A549,Harringtonine,5.0,9,0.5,closed,b1,1,24
+A549,Homoharringtonine,0.050000000745058,4,0.5,closed,b1,1,24
+A549,Homoharringtonine,0.5,5,0.5,closed,b1,1,24
+A549,Homoharringtonine,5.0,6,0.5,closed,b1|b2,2,12
+A549,Homoharringtonine,5.0,14,0.5,closed,b1,1,24
+A549,Idarubicin (hydrochloride),5.0,6,0.5,closed,b5,1,24
+A549,Idarubicin (hydrochloride),5.0,14,0.5,closed,b5,1,24
+A549,Idoxuridine,0.050000000745058,10,0.5,closed,b1,1,24
+A549,Ipatasertib,5.0,3,0.5,closed,b1,1,24
+A549,Irinotecan,0.5,2,0.5,closed,b2,1,24
+A549,Irinotecan (hydrochloride),0.5,13,0.5,closed,b5,1,24
+A549,Irinotecan (hydrochloride),5.0,13,0.5,closed,b1,1,24
+A549,Ixazomib,5.0,3,0.5,closed,b1,1,24
+A549,Ixazomib citrate,0.5,11,0.5,closed,b1|b2|b5,3,6
+A549,Ixazomib citrate,5.0,12,0.5,closed,b1|b5,2,12
+A549,Lonafarnib,5.0,3,0.5,closed,b1,1,24
+A549,MK-8353,0.5,2,0.5,closed,b2,1,24
+A549,Medroxyprogesterone acetate,5.0,6,0.5,closed,b5,1,24
+A549,Megestrol,5.0,6,0.5,closed,b5,1,24
+A549,Menadione,0.050000000745058,7,0.5,closed,b1,1,24
+A549,Mitoxantrone (dihydrochloride),5.0,6,0.5,closed,b1,1,24
+A549,NG25,0.5,2,0.5,closed,b1,1,24
+A549,NG25,5.0,3,0.5,closed,b1,1,24
+A549,NVP-BHG712,0.050000000745058,1,0.5,closed,b1,1,24
+A549,NVP-BHG712,0.5,2,0.5,closed,b1,1,24
+A549,NVP-BHG712,5.0,3,0.5,closed,b1,1,24
+A549,Niclosamide (olamine),0.5,8,0.5,closed,b5,1,24
+A549,Nimesulide,5.0,13,0.5,closed,b1,1,24
+A549,Ouabain (Octahydrate),0.050000000745058,10,0.5,closed,b1|b2,2,12
+A549,Ouabain (Octahydrate),0.5,11,0.5,closed,b1|b2,2,12
+A549,Ouabain (Octahydrate),5.0,12,0.5,closed,b1,1,24
+A549,PH-797804,0.5,2,0.5,closed,b1,1,24
+A549,PH-797804,5.0,3,0.5,closed,b1|b2,2,12
+A549,Panobinostat,0.5,11,0.5,closed,b1|b5,2,12
+A549,Panobinostat,5.0,12,0.5,closed,b1,1,24
+A549,Pentagastrin,5.0,6,0.5,closed,b2,1,24
+A549,Peretinoin,0.5,8,0.5,closed,b5,1,24
+A549,Pralsetinib,0.5,2,0.5,closed,b1,1,24
+A549,Pralsetinib,5.0,3,0.5,closed,b1,1,24
+A549,Resveratrol,0.5,5,0.5,closed,b1,1,24
+A549,Resveratrol,5.0,6,0.5,closed,b1,1,24
+A549,Riluzole hydrochloride,0.5,5,0.5,closed,b1,1,24
+A549,Rutin (trihydrate),0.050000000745058,7,0.5,closed,b2,1,24
+A549,Sapanisertib,0.5,2,0.5,closed,b5,1,24
+A549,Selinexor ,5.0,6,0.5,closed,b1|b5,2,12
+A549,Silodosin,0.5,8,0.5,closed,b5,1,24
+A549,Sulfisoxazole,5.0,6,0.5,closed,b1,1,24
+A549,TAK-901,0.5,2,0.5,closed,b1,1,24
+A549,TAK-901,5.0,3,0.5,closed,b1|b2,2,12
+A549,Temuterkib,0.5,2,0.5,closed,b1,1,24
+A549,Tirabrutinib (hydrochloride),5.0,12,0.5,closed,b5,1,24
+A549,Tofacitinib,0.5,5,0.5,closed,b1|b5,2,12
+A549,Tofacitinib,5.0,6,0.5,closed,b1|b5,2,12
+A549,Tofacitinib (citrate),0.5,5,0.5,closed,b1,1,24
+A549,Tofacitinib (citrate),5.0,6,0.5,closed,b1|b5,2,12
+A549,Tolcapone,5.0,6,0.5,closed,b1,1,24
+A549,Triamcinolone,5.0,6,0.5,closed,b2,1,24
+A549,Trimetrexate,5.0,6,0.5,closed,b5,1,24
+A549,Tubulin inhibitor 6,0.5,2,0.5,closed,b1,1,24
+A549,Vinblastine (sulfate),5.0,6,0.5,closed,b5,1,24
+A549,c-Kit-IN-1,0.5,2,0.5,closed,b2,1,24
+A549,c-Kit-IN-1,5.0,3,0.5,closed,b1,1,24
+A549,vincristine,0.5,2,0.5,closed,b1,1,24
+AsPC-1,Acetohexamide,5.0,6,0.5,closed,b1,1,24
+AsPC-1,Allantoin,5.0,6,0.5,closed,b1,1,24
+AsPC-1,Allantoin,5.0,14,0.5,closed,b1,1,24
+AsPC-1,Atazanavir (sulfate),5.0,12,0.5,closed,b1,1,24
+AsPC-1,Auranofin,5.0,12,0.5,closed,b1|b5,2,12
+AsPC-1,Belinostat,0.5,11,0.5,closed,b1,1,24
+AsPC-1,Belinostat,5.0,12,0.5,closed,b1,1,24
+AsPC-1,Bergenin,5.0,6,0.5,closed,b1,1,24
+AsPC-1,Bexarotene,5.0,12,0.5,closed,b2,1,24
+AsPC-1,Bortezomib,0.050000000745058,1,0.5,closed,b1|b2|b5,3,6
+AsPC-1,Bortezomib,0.5,2,0.5,closed,b1|b5,2,12
+AsPC-1,Budesonide,0.050000000745058,10,0.5,closed,b5,1,24
+AsPC-1,Chlorhexidine (diacetate),5.0,6,0.5,closed,b1,1,24
+AsPC-1,Darinaparsin,5.0,6,0.5,closed,b5,1,24
+AsPC-1,Fedratinib (hydrochloride hydrate),5.0,12,0.5,closed,b5,1,24
+AsPC-1,Fluvoxamine (maleate),0.5,5,0.5,closed,b5,1,24
+AsPC-1,Glycyrrhizic acid,0.050000000745058,7,0.5,closed,b1,1,24
+AsPC-1,Homoharringtonine,0.5,5,0.5,closed,b2,1,24
+AsPC-1,Homoharringtonine,5.0,6,0.5,closed,b2,1,24
+AsPC-1,Ixazomib citrate,0.5,11,0.5,closed,b1|b2|b5,3,6
+AsPC-1,Ixazomib citrate,5.0,12,0.5,closed,b1|b2|b5,3,6
+AsPC-1,Lipoic acid,5.0,6,0.5,closed,b1,1,24
+AsPC-1,Medroxyprogesterone acetate,5.0,6,0.5,closed,b1,1,24
+AsPC-1,Neratinib,0.5,11,0.5,closed,b1,1,24
+AsPC-1,Neratinib (maleate),5.0,6,0.5,closed,b1,1,24
+AsPC-1,Neratinib (maleate),5.0,14,0.5,closed,b1,1,24
+AsPC-1,Ouabain (Octahydrate),0.5,11,0.5,closed,b1,1,24
+AsPC-1,Panobinostat,0.050000000745058,10,0.5,closed,b2,1,24
+AsPC-1,Panobinostat,0.5,11,0.5,closed,b1|b5,2,12
+AsPC-1,Panobinostat,5.0,12,0.5,closed,b1|b5,2,12
+AsPC-1,Pasireotide (acetate),5.0,6,0.5,closed,b1,1,24
+AsPC-1,Pentoxifylline,0.050000000745058,10,0.5,closed,b1,1,24
+AsPC-1,Retinoic acid,5.0,6,0.5,closed,b5,1,24
+AsPC-1,Ritonavir,5.0,6,0.5,closed,b1,1,24
+AsPC-1,Sunitinib,0.5,11,0.5,closed,b1,1,24
+AsPC-1,TAK-901,0.050000000745058,1,0.5,closed,b2,1,24
+AsPC-1,TAK-901,5.0,3,0.5,closed,b2,1,24
+AsPC-1,Temsirolimus,5.0,6,0.5,closed,b1,1,24
+AsPC-1,Tofacitinib,0.5,5,0.5,closed,b1|b5,2,12
+AsPC-1,Tofacitinib,5.0,6,0.5,closed,b1|b5,2,12
+AsPC-1,Tofacitinib (citrate),0.5,5,0.5,closed,b1,1,24
+AsPC-1,Tofacitinib (citrate),5.0,6,0.5,closed,b1|b5,2,12
+AsPC-1,Triamcinolone,0.5,5,0.5,closed,b5,1,24
+AsPC-1,Trifluridine,5.0,6,0.5,closed,b1,1,24
+AsPC-1,Vinblastine (sulfate),5.0,6,0.5,closed,b1|b5,2,12
+AsPC-1,c-Kit-IN-1,0.050000000745058,13,0.5,closed,b5,1,24
+CFPAC-1,5-Azacytidine,0.050000000745058,10,0.5,closed,b1,1,24
+CFPAC-1,5-Azacytidine,0.5,11,0.5,closed,b1,1,24
+CFPAC-1,Auranofin,0.5,11,0.5,closed,b1,1,24
+CFPAC-1,Auranofin,5.0,12,0.5,closed,b1|b2|b5,3,6
+CFPAC-1,Bisoprolol (hemifumarate),5.0,9,0.5,closed,b1,1,24
+CFPAC-1,Bortezomib,0.050000000745058,1,0.5,closed,b1|b2|b5,3,6
+CFPAC-1,Bortezomib,0.5,2,0.5,closed,b1|b5,2,12
+CFPAC-1,Bortezomib,5.0,3,0.5,closed,b1,1,24
+CFPAC-1,Bosentan (hydrate),0.050000000745058,7,0.5,closed,b1,1,24
+CFPAC-1,CP21R7,0.5,2,0.5,closed,b1,1,24
+CFPAC-1,Dabrafenib,5.0,3,0.5,closed,b2,1,24
+CFPAC-1,"Dapagliflozin ((2S)-1,2-propanediol, hydrate)",0.050000000745058,7,0.5,closed,b1,1,24
+CFPAC-1,Daptomycin,5.0,13,0.5,closed,b1|b2|b5,3,6
+CFPAC-1,Digitoxin,0.5,11,0.5,closed,b1,1,24
+CFPAC-1,Dinaciclib,0.050000000745058,7,0.5,closed,b1,1,24
+CFPAC-1,Dinaciclib,0.5,8,0.5,closed,b1|b5,2,12
+CFPAC-1,Dinaciclib,5.0,9,0.5,closed,b1,1,24
+CFPAC-1,Docetaxel (Trihydrate),5.0,9,0.5,closed,b1,1,24
+CFPAC-1,Drospirenone,0.5,11,0.5,closed,b5,1,24
+CFPAC-1,EX229,5.0,3,0.5,closed,b1,1,24
+CFPAC-1,Fedratinib (hydrochloride hydrate),0.5,11,0.5,closed,b1,1,24
+CFPAC-1,Fedratinib (hydrochloride hydrate),5.0,12,0.5,closed,b1|b5,2,12
+CFPAC-1,Filgotinib,5.0,12,0.5,closed,b5,1,24
+CFPAC-1,Futibatinib,0.5,2,0.5,closed,b1,1,24
+CFPAC-1,Idarubicin (hydrochloride),5.0,6,0.5,closed,b5,1,24
+CFPAC-1,Imiquimod (hydrochloride),5.0,12,0.5,closed,b1,1,24
+CFPAC-1,Ivermectin,0.5,11,0.5,closed,b1,1,24
+CFPAC-1,Ivermectin,5.0,12,0.5,closed,b1,1,24
+CFPAC-1,Ixazomib citrate,0.5,11,0.5,closed,b1|b2|b5,3,6
+CFPAC-1,Ixazomib citrate,5.0,12,0.5,closed,b1|b5,2,12
+CFPAC-1,Mifepristone,5.0,9,0.5,closed,b1,1,24
+CFPAC-1,Mitoxantrone (dihydrochloride),5.0,6,0.5,closed,b1,1,24
+CFPAC-1,Monocrotaline,0.050000000745058,7,0.5,closed,b1,1,24
+CFPAC-1,NG25,5.0,3,0.5,closed,b1,1,24
+CFPAC-1,NVP-BHG712,0.050000000745058,1,0.5,closed,b2,1,24
+CFPAC-1,Neratinib,0.050000000745058,10,0.5,closed,b1,1,24
+CFPAC-1,Oleic acid,0.050000000745058,1,0.5,closed,b2,1,24
+CFPAC-1,Omeprazole,0.5,11,0.5,closed,b1,1,24
+CFPAC-1,Ouabain (Octahydrate),0.5,11,0.5,closed,b5,1,24
+CFPAC-1,PH-797804,5.0,3,0.5,closed,b2,1,24
+CFPAC-1,Panobinostat,0.5,11,0.5,closed,b1|b2|b5,3,6
+CFPAC-1,Panobinostat,5.0,12,0.5,closed,b2|b5,2,12
+CFPAC-1,Peretinoin,5.0,9,0.5,closed,b1|b2,2,12
+CFPAC-1,Pexidartinib (hydrochloride),0.050000000745058,7,0.5,closed,b1,1,24
+CFPAC-1,Pitavastatin (Calcium),5.0,9,0.5,closed,b1,1,24
+CFPAC-1,Plicamycin,0.050000000745058,13,0.5,closed,b5,1,24
+CFPAC-1,Pravastatin (sodium),0.050000000745058,13,0.5,closed,b1,1,24
+CFPAC-1,Raltitrexed,0.5,5,0.5,closed,b5,1,24
+CFPAC-1,Rosiglitazone,5.0,9,0.5,closed,b1,1,24
+CFPAC-1,Rutin (trihydrate),5.0,9,0.5,closed,b2,1,24
+CFPAC-1,Selinexor ,5.0,6,0.5,closed,b1,1,24
+CFPAC-1,Sulfisoxazole,0.5,13,0.5,closed,b5,1,24
+CFPAC-1,Sunitinib,5.0,12,0.5,closed,b1,1,24
+CFPAC-1,TAK-901,5.0,3,0.5,closed,b2,1,24
+CFPAC-1,Temuterkib,0.050000000745058,1,0.5,closed,b2,1,24
+CFPAC-1,Thymopentin,5.0,9,0.5,closed,b2,1,24
+CFPAC-1,Tirabrutinib,5.0,9,0.5,closed,b2,1,24
+CFPAC-1,Tofacitinib,0.5,5,0.5,closed,b1|b5,2,12
+CFPAC-1,Tofacitinib,5.0,6,0.5,closed,b1|b5,2,12
+CFPAC-1,Tofacitinib (citrate),0.5,5,0.5,closed,b5,1,24
+CFPAC-1,Tofacitinib (citrate),5.0,6,0.5,closed,b1|b5,2,12
+CFPAC-1,Topotecan (hydrochloride),5.0,9,0.5,closed,b1,1,24
+CFPAC-1,Tubulin inhibitor 6,5.0,3,0.5,closed,b1,1,24
+CFPAC-1,Vinblastine (sulfate),0.5,5,0.5,closed,b5,1,24
+CFPAC-1,Vinblastine (sulfate),5.0,6,0.5,closed,b2,1,24
+CFPAC-1,c-Kit-IN-1,0.050000000745058,13,0.5,closed,b1|b2,2,12
+CFPAC-1,crizotinib,5.0,9,0.5,closed,b2,1,24
+COLO 205,Asciminib,0.050000000745058,10,0.5,closed,b2,1,24
+COLO 205,Auranofin,0.5,11,0.5,closed,b1,1,24
+COLO 205,Auranofin,5.0,12,0.5,closed,b1|b5,2,12
+COLO 205,Azithromycin (hydrate),0.050000000745058,4,0.5,closed,b5,1,24
+COLO 205,BI-78D3,0.5,2,0.5,closed,b1,1,24
+COLO 205,Belinostat,0.050000000745058,10,0.5,closed,b2,1,24
+COLO 205,Belinostat,0.5,11,0.5,closed,b1,1,24
+COLO 205,Belinostat,5.0,12,0.5,closed,b1|b5,2,12
+COLO 205,Belzutifan,0.5,2,0.5,closed,b1,1,24
+COLO 205,Bimiralisib,0.050000000745058,1,0.5,closed,b2,1,24
+COLO 205,Bortezomib,0.050000000745058,1,0.5,closed,b1|b2|b5,3,6
+COLO 205,Bortezomib,0.5,2,0.5,closed,b1|b2|b5,3,6
+COLO 205,Bortezomib,5.0,3,0.5,closed,b1|b2,2,12
+COLO 205,Crizotinib (hydrochloride),0.050000000745058,10,0.5,closed,b2,1,24
+COLO 205,Dapagliflozin,0.050000000745058,10,0.5,closed,b2,1,24
+COLO 205,Dihydroartemisinin,5.0,12,0.5,closed,b5,1,24
+COLO 205,EX229,0.050000000745058,1,0.5,closed,b1,1,24
+COLO 205,Fedratinib (hydrochloride hydrate),5.0,12,0.5,closed,b5,1,24
+COLO 205,Fingolimod (hydrochloride),0.050000000745058,10,0.5,closed,b2,1,24
+COLO 205,Harringtonine,5.0,9,0.5,closed,b1,1,24
+COLO 205,Homoharringtonine,0.5,5,0.5,closed,b1|b2,2,12
+COLO 205,Hydroxyurea,5.0,9,0.5,closed,b2,1,24
+COLO 205,Ixazomib citrate,0.5,11,0.5,closed,b1|b2|b5,3,6
+COLO 205,Ixazomib citrate,5.0,12,0.5,closed,b1|b2|b5,3,6
+COLO 205,LY2090314,0.050000000745058,1,0.5,closed,b2,1,24
+COLO 205,Lonafarnib,0.5,2,0.5,closed,b5,1,24
+COLO 205,Megestrol,0.5,5,0.5,closed,b2,1,24
+COLO 205,NVP-BHG712,0.050000000745058,1,0.5,closed,b2,1,24
+COLO 205,Panobinostat,0.050000000745058,10,0.5,closed,b2,1,24
+COLO 205,Panobinostat,0.5,11,0.5,closed,b1,1,24
+COLO 205,Panobinostat,5.0,12,0.5,closed,b1|b2|b5,3,6
+COLO 205,Regorafenib,0.5,2,0.5,closed,b5,1,24
+COLO 205,Sapanisertib,0.5,2,0.5,closed,b1,1,24
+COLO 205,Saquinavir,5.0,6,0.5,closed,b1,1,24
+COLO 205,Sodium Salicylate,0.050000000745058,4,0.5,closed,b2,1,24
+COLO 205,Sunitinib,5.0,12,0.5,closed,b1,1,24
+COLO 205,TAK-901,5.0,3,0.5,closed,b2,1,24
+COLO 205,Temsirolimus,0.5,5,0.5,closed,b5,1,24
+COLO 205,Topotecan (hydrochloride),5.0,9,0.5,closed,b1,1,24
+COLO 205,Torkinib,0.050000000745058,1,0.5,closed,b1,1,24
+COLO 205,Trimetrexate,0.050000000745058,4,0.5,closed,b1,1,24
+COLO 205,Valdecoxib,0.050000000745058,10,0.5,closed,b1,1,24
+COLO 205,c-Kit-IN-1,0.5,2,0.5,closed,b2,1,24
+HCT15,Belinostat,5.0,12,0.5,closed,b2,1,24
+HCT15,Bendamustine,0.050000000745058,7,0.5,closed,b1,1,24
+HCT15,Ixazomib citrate,0.5,11,0.5,closed,b1,1,24
+HCT15,Ixazomib citrate,5.0,12,0.5,closed,b1|b5,2,12
+HS-578T,AZD2858,5.0,3,0.5,closed,b1,1,24
+HS-578T,Artemether,0.5,11,0.5,closed,b1,1,24
+HS-578T,Atazanavir (sulfate),0.5,11,0.5,closed,b1,1,24
+HS-578T,Auranofin,5.0,12,0.5,closed,b1,1,24
+HS-578T,Belinostat,0.5,11,0.5,closed,b2,1,24
+HS-578T,Belinostat,5.0,12,0.5,closed,b1,1,24
+HS-578T,Bortezomib,0.050000000745058,1,0.5,closed,b1|b5,2,12
+HS-578T,Canagliflozin,0.050000000745058,7,0.5,closed,b5,1,24
+HS-578T,Daptomycin,5.0,13,0.5,closed,b5,1,24
+HS-578T,Diammonium Glycyrrhizinate,0.050000000745058,4,0.5,closed,b1,1,24
+HS-578T,Dinaciclib,0.5,8,0.5,closed,b1,1,24
+HS-578T,Encorafenib,0.050000000745058,1,0.5,closed,b1,1,24
+HS-578T,Filgotinib,0.5,11,0.5,closed,b5,1,24
+HS-578T,Filgotinib,5.0,12,0.5,closed,b5,1,24
+HS-578T,Flutamide,0.5,11,0.5,closed,b1,1,24
+HS-578T,Harringtonine,5.0,9,0.5,closed,b2,1,24
+HS-578T,Imiquimod (hydrochloride),0.5,11,0.5,closed,b1,1,24
+HS-578T,Ixazomib citrate,0.050000000745058,10,0.5,closed,b1,1,24
+HS-578T,Ixazomib citrate,0.5,11,0.5,closed,b1|b2|b5,3,6
+HS-578T,Mitoxantrone (dihydrochloride),5.0,6,0.5,closed,b5,1,24
+HS-578T,NG25,5.0,3,0.5,closed,b1,1,24
+HS-578T,Nevirapine,5.0,9,0.5,closed,b2,1,24
+HS-578T,OTS514,5.0,3,0.5,closed,b5,1,24
+HS-578T,PH-797804,5.0,3,0.5,closed,b2,1,24
+HS-578T,Panobinostat,0.050000000745058,10,0.5,closed,b2,1,24
+HS-578T,Panobinostat,0.5,11,0.5,closed,b1|b2,2,12
+HS-578T,Panobinostat,5.0,12,0.5,closed,b1|b2,2,12
+HS-578T,Pimozide,0.050000000745058,10,0.5,closed,b1,1,24
+HS-578T,Retinoic acid,0.050000000745058,4,0.5,closed,b1,1,24
+HS-578T,Ritonavir,0.5,5,0.5,closed,b1,1,24
+HS-578T,Salicylic acid,0.050000000745058,4,0.5,closed,b1,1,24
+HS-578T,Sildenafil,5.0,9,0.5,closed,b2,1,24
+HS-578T,Sivelestat (sodium tetrahydrate),5.0,9,0.5,closed,b2,1,24
+HS-578T,TAK-901,5.0,3,0.5,closed,b2,1,24
+HS-578T,Talc,0.5,11,0.5,closed,b1,1,24
+HS-578T,Tazarotene,0.5,11,0.5,closed,b1,1,24
+HS-578T,Tetracycline (hydrochloride),0.050000000745058,7,0.5,closed,b1,1,24
+HS-578T,Thymol,0.050000000745058,4,0.5,closed,b1,1,24
+HS-578T,Topotecan (hydrochloride),5.0,9,0.5,closed,b1,1,24
+HS-578T,Tranilast,5.0,9,0.5,closed,b2,1,24
+HS-578T,Valdecoxib,0.5,11,0.5,closed,b1,1,24
+HS-578T,Vilanterol,0.050000000745058,4,0.5,closed,b1,1,24
+HS-578T,Vinblastine (sulfate),5.0,6,0.5,closed,b5,1,24
+HT-29,Auranofin,5.0,12,0.5,closed,b1|b2,2,12
+HT-29,Belinostat,5.0,12,0.5,closed,b2,1,24
+HT-29,Bortezomib,0.050000000745058,1,0.5,closed,b1|b2|b5,3,6
+HT-29,Bortezomib,0.5,2,0.5,closed,b2,1,24
+HT-29,Bortezomib,5.0,3,0.5,closed,b2,1,24
+HT-29,Brivudine,0.050000000745058,1,0.5,closed,b2,1,24
+HT-29,Brivudine,5.0,3,0.5,closed,b2,1,24
+HT-29,EX229,0.050000000745058,1,0.5,closed,b2,1,24
+HT-29,EX229,0.5,2,0.5,closed,b1,1,24
+HT-29,EX229,5.0,3,0.5,closed,b2,1,24
+HT-29,Homoharringtonine,0.5,5,0.5,closed,b1|b2,2,12
+HT-29,Homoharringtonine,5.0,6,0.5,closed,b1|b2|b5,3,6
+HT-29,Homoharringtonine,5.0,14,0.5,closed,b2,1,24
+HT-29,IQ 1,0.050000000745058,1,0.5,closed,b2,1,24
+HT-29,Idarubicin (hydrochloride),5.0,6,0.5,closed,b2,1,24
+HT-29,Idarubicin (hydrochloride),5.0,14,0.5,closed,b2,1,24
+HT-29,Ixazomib citrate,0.5,11,0.5,closed,b1|b2|b5,3,6
+HT-29,Ixazomib citrate,5.0,12,0.5,closed,b2|b5,2,12
+HT-29,Lumateperone (tosylate),0.050000000745058,4,0.5,closed,b2,1,24
+HT-29,Niclosamide (olamine),5.0,9,0.5,closed,b2,1,24
+HT-29,Ouabain (Octahydrate),5.0,12,0.5,closed,b2,1,24
+HT-29,Panobinostat,0.050000000745058,10,0.5,closed,b2,1,24
+HT-29,Panobinostat,5.0,12,0.5,closed,b2,1,24
+HT-29,Ponatinib,0.050000000745058,10,0.5,closed,b2,1,24
+HT-29,Selinexor ,5.0,6,0.5,closed,b2,1,24
+HT-29,Sodium Salicylate,0.050000000745058,4,0.5,closed,b2,1,24
+HT-29,TAK-733,0.050000000745058,1,0.5,closed,b2,1,24
+HT-29,TAK-901,5.0,3,0.5,closed,b2,1,24
+HT-29,Tofacitinib,0.5,5,0.5,closed,b2,1,24
+HT-29,Tofacitinib,5.0,6,0.5,closed,b2,1,24
+HT-29,Tofacitinib (citrate),0.050000000745058,4,0.5,closed,b2,1,24
+HT-29,Tofacitinib (citrate),0.5,5,0.5,closed,b5,1,24
+HT-29,Trimetrexate,0.050000000745058,4,0.5,closed,b2,1,24
+HT-29,Trimetrexate,5.0,14,0.5,closed,b2,1,24
+HT-29,ULK-101,0.5,2,0.5,closed,b1,1,24
+HT-29,c-Kit-IN-1,0.5,2,0.5,closed,b2,1,24
+Hs 766T,Belumosudil,0.5,8,0.5,closed,b1,1,24
+Hs 766T,Bortezomib,0.5,2,0.5,closed,b5,1,24
+Hs 766T,Dimethyl fumarate,0.5,8,0.5,closed,b5,1,24
+Hs 766T,Erlotinib,5.0,9,0.5,closed,b2,1,24
+Hs 766T,Gallic acid,5.0,6,0.5,closed,b1,1,24
+Hs 766T,Mozavaptan,0.050000000745058,7,0.5,closed,b1,1,24
+Hs 766T,Nevirapine,0.5,8,0.5,closed,b5,1,24
+Hs 766T,Sapanisertib,0.5,2,0.5,closed,b1,1,24
+Hs 766T,TAK-901,0.5,2,0.5,closed,b5,1,24
+Hs 766T,TAK-901,5.0,3,0.5,closed,b2,1,24
+Hs 766T,Tofacitinib (citrate),5.0,6,0.5,closed,b5,1,24
+Hs 766T,Torkinib,0.5,2,0.5,closed,b5,1,24
+Hs 766T,Verteporfin,0.5,8,0.5,closed,b1,1,24
+LoVo,5-Azacytidine,0.5,11,0.5,closed,b1,1,24
+LoVo,Abemaciclib,0.5,2,0.5,closed,b5,1,24
+LoVo,Asciminib,0.050000000745058,10,0.5,closed,b2,1,24
+LoVo,Auranofin,0.5,11,0.5,closed,b1,1,24
+LoVo,Auranofin,5.0,12,0.5,closed,b1|b2|b5,3,6
+LoVo,BI-78D3,0.050000000745058,1,0.5,closed,b2,1,24
+LoVo,Balsalazide (sodium hydrate),5.0,6,0.5,closed,b2,1,24
+LoVo,Belinostat,5.0,12,0.5,closed,b1|b2|b5,3,6
+LoVo,Belumosudil,0.050000000745058,13,0.5,closed,b5,1,24
+LoVo,Belumosudil,0.5,8,0.5,closed,b1,1,24
+LoVo,Belzutifan,0.5,2,0.5,closed,b1,1,24
+LoVo,Berberine (chloride hydrate),0.050000000745058,4,0.5,closed,b1,1,24
+LoVo,Bortezomib,0.050000000745058,1,0.5,closed,b1|b2|b5,3,6
+LoVo,Bortezomib,0.5,2,0.5,closed,b1|b2|b5,3,6
+LoVo,Bortezomib,5.0,3,0.5,closed,b5,1,24
+LoVo,Brivudine,5.0,3,0.5,closed,b2,1,24
+LoVo,CP21R7,0.5,2,0.5,closed,b1,1,24
+LoVo,Capivasertib,0.5,2,0.5,closed,b5,1,24
+LoVo,Carbamazepine,0.5,11,0.5,closed,b1,1,24
+LoVo,Citalopram (hydrobromide),0.5,11,0.5,closed,b5,1,24
+LoVo,Crizotinib (hydrochloride),5.0,12,0.5,closed,b1,1,24
+LoVo,Cytarabine,0.050000000745058,13,0.5,closed,b5,1,24
+LoVo,Dabrafenib,5.0,3,0.5,closed,b1,1,24
+LoVo,"Dapagliflozin ((2S)-1,2-propanediol, hydrate)",0.050000000745058,7,0.5,closed,b1,1,24
+LoVo,Digitoxin,0.050000000745058,10,0.5,closed,b1,1,24
+LoVo,Digitoxin,0.5,11,0.5,closed,b1|b2|b5,3,6
+LoVo,Digitoxin,5.0,12,0.5,closed,b1,1,24
+LoVo,ERK5-IN-2,0.5,2,0.5,closed,b1,1,24
+LoVo,ETC-206,0.5,2,0.5,closed,b1,1,24
+LoVo,Entrectinib,5.0,12,0.5,closed,b1,1,24
+LoVo,Erdafitinib ,0.050000000745058,1,0.5,closed,b1,1,24
+LoVo,Erlotinib,5.0,9,0.5,closed,b2,1,24
+LoVo,Fedratinib (hydrochloride hydrate),5.0,12,0.5,closed,b1|b5,2,12
+LoVo,Filgotinib,0.5,11,0.5,closed,b1,1,24
+LoVo,Filgotinib,5.0,12,0.5,closed,b1|b5,2,12
+LoVo,Flumatinib (mesylate),0.050000000745058,13,0.5,closed,b5,1,24
+LoVo,Flutamide,0.050000000745058,10,0.5,closed,b2,1,24
+LoVo,Flutamide,5.0,12,0.5,closed,b1,1,24
+LoVo,Gallic acid (hydrate),0.050000000745058,4,0.5,closed,b1,1,24
+LoVo,Glasdegib,5.0,13,0.5,closed,b5,1,24
+LoVo,Homoharringtonine,5.0,14,0.5,closed,b5,1,24
+LoVo,Hydroxyfasudil,5.0,3,0.5,closed,b1,1,24
+LoVo,Idarubicin (hydrochloride),5.0,6,0.5,closed,b5,1,24
+LoVo,Imiquimod (hydrochloride),5.0,12,0.5,closed,b1,1,24
+LoVo,Infigratinib,5.0,3,0.5,closed,b1,1,24
+LoVo,Ipatasertib,5.0,3,0.5,closed,b1,1,24
+LoVo,Irinotecan (hydrochloride),0.5,13,0.5,closed,b1,1,24
+LoVo,Irinotecan (hydrochloride),5.0,13,0.5,closed,b1,1,24
+LoVo,Ixazomib,5.0,3,0.5,closed,b1|b5,2,12
+LoVo,Ixazomib citrate,0.5,11,0.5,closed,b1|b2|b5,3,6
+LoVo,Ixazomib citrate,5.0,12,0.5,closed,b1|b2|b5,3,6
+LoVo,LJI308,0.5,2,0.5,closed,b1,1,24
+LoVo,Lopinavir,5.0,12,0.5,closed,b1,1,24
+LoVo,Monocrotaline,0.050000000745058,7,0.5,closed,b1,1,24
+LoVo,NG25,5.0,3,0.5,closed,b1,1,24
+LoVo,NVP-BHG712,0.5,2,0.5,closed,b1,1,24
+LoVo,NVP-BHG712,5.0,3,0.5,closed,b1,1,24
+LoVo,Neratinib,5.0,12,0.5,closed,b1,1,24
+LoVo,Neratinib (maleate),5.0,6,0.5,closed,b2,1,24
+LoVo,Niclosamide (olamine),5.0,9,0.5,closed,b1,1,24
+LoVo,OTS514,0.5,2,0.5,closed,b1,1,24
+LoVo,Ouabain (Octahydrate),0.5,11,0.5,closed,b1|b2|b5,3,6
+LoVo,Ouabain (Octahydrate),5.0,12,0.5,closed,b1|b2|b5,3,6
+LoVo,PH-797804,0.5,2,0.5,closed,b1,1,24
+LoVo,PH-797804,5.0,3,0.5,closed,b2,1,24
+LoVo,Panobinostat,0.050000000745058,10,0.5,closed,b2,1,24
+LoVo,Panobinostat,0.5,11,0.5,closed,b1|b2|b5,3,6
+LoVo,Panobinostat,5.0,12,0.5,closed,b1|b2|b5,3,6
+LoVo,Pentagastrin,0.050000000745058,4,0.5,closed,b1,1,24
+LoVo,Ponatinib,0.5,11,0.5,closed,b1,1,24
+LoVo,Ponatinib,5.0,12,0.5,closed,b1,1,24
+LoVo,Pyridoxine,0.5,5,0.5,closed,b1,1,24
+LoVo,Ralimetinib dimesylate,0.5,2,0.5,closed,b1,1,24
+LoVo,Sapanisertib,0.5,2,0.5,closed,b1,1,24
+LoVo,Saquinavir,5.0,6,0.5,closed,b5,1,24
+LoVo,Sunitinib,5.0,12,0.5,closed,b1,1,24
+LoVo,TAK-901,0.050000000745058,1,0.5,closed,b1|b2,2,12
+LoVo,TAK-901,5.0,3,0.5,closed,b2,1,24
+LoVo,Talc,0.050000000745058,10,0.5,closed,b1,1,24
+LoVo,Talc,0.5,11,0.5,closed,b1,1,24
+LoVo,Terfenadine,0.5,13,0.5,closed,b1,1,24
+LoVo,Thymopentin,5.0,9,0.5,closed,b2,1,24
+LoVo,Tofacitinib,0.5,5,0.5,closed,b1|b5,2,12
+LoVo,Tofacitinib,5.0,6,0.5,closed,b1|b5,2,12
+LoVo,Tofacitinib (citrate),0.5,5,0.5,closed,b1|b5,2,12
+LoVo,Tofacitinib (citrate),5.0,6,0.5,closed,b1|b5,2,12
+LoVo,Trifluridine,0.050000000745058,4,0.5,closed,b1,1,24
+LoVo,Trifluridine,5.0,6,0.5,closed,b1,1,24
+LoVo,Trimetrexate,5.0,14,0.5,closed,b5,1,24
+LoVo,Verteporfin,0.5,8,0.5,closed,b1,1,24
+LoVo,Verteporfin,5.0,9,0.5,closed,b2,1,24
+LoVo,Voriconazole,5.0,12,0.5,closed,b1,1,24
+LoVo,c-Kit-IN-1,0.050000000745058,13,0.5,closed,b5,1,24
+LoVo,olaparib,5.0,3,0.5,closed,b5,1,24
+MIA PaCa-2,(R)-Verapamil (hydrochloride),5.0,6,0.5,closed,b2,1,24
+MIA PaCa-2,4EGI-1,0.5,2,0.5,closed,b2,1,24
+MIA PaCa-2,5-Azacytidine,0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,AZD1390,0.5,2,0.5,closed,b5,1,24
+MIA PaCa-2,Adenosine,5.0,6,0.5,closed,b1,1,24
+MIA PaCa-2,Almonertinib (mesylate),5.0,9,0.5,closed,b2,1,24
+MIA PaCa-2,Altretamine,0.5,8,0.5,closed,b5,1,24
+MIA PaCa-2,Aprepitant,0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,Atazanavir (sulfate),5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,Auranofin,5.0,12,0.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Belinostat,5.0,12,0.5,closed,b1|b2,2,12
+MIA PaCa-2,Benztropine (mesylate),5.0,12,0.5,closed,b5,1,24
+MIA PaCa-2,Bergenin,0.5,5,0.5,closed,b1,1,24
+MIA PaCa-2,Bestatin,5.0,9,0.5,closed,b2,1,24
+MIA PaCa-2,Bortezomib,0.050000000745058,1,0.5,closed,b1|b2,2,12
+MIA PaCa-2,Bortezomib,0.5,2,0.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Bortezomib,5.0,3,0.5,closed,b1,1,24
+MIA PaCa-2,Bosentan (hydrate),0.5,8,0.5,closed,b1,1,24
+MIA PaCa-2,Brimonidine,0.050000000745058,10,0.5,closed,b5,1,24
+MIA PaCa-2,Canagliflozin (hemihydrate),0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,Crizotinib (hydrochloride),5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,Cytarabine,0.5,8,0.5,closed,b2,1,24
+MIA PaCa-2,Daptomycin,0.5,13,0.5,closed,b1,1,24
+MIA PaCa-2,Daptomycin,5.0,13,0.5,closed,b1|b5,2,12
+MIA PaCa-2,Darolutamide,0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,Darolutamide,5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,Delamanid,0.050000000745058,10,0.5,closed,b5,1,24
+MIA PaCa-2,Delamanid,0.5,11,0.5,closed,b1,1,24
+MIA PaCa-2,Demeclocycline,0.050000000745058,4,0.5,closed,b2,1,24
+MIA PaCa-2,Dexamethasone,5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,Digitoxin,0.5,11,0.5,closed,b1,1,24
+MIA PaCa-2,Digitoxin,5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,Dimethyl fumarate,5.0,9,0.5,closed,b2,1,24
+MIA PaCa-2,Dinaciclib,0.5,8,0.5,closed,b1,1,24
+MIA PaCa-2,EX229,5.0,3,0.5,closed,b1,1,24
+MIA PaCa-2,Entecavir (monohydrate),5.0,9,0.5,closed,b2,1,24
+MIA PaCa-2,Fedratinib (hydrochloride hydrate),5.0,12,0.5,closed,b1|b5,2,12
+MIA PaCa-2,Filgotinib,5.0,12,0.5,closed,b1|b5,2,12
+MIA PaCa-2,Fingolimod (hydrochloride),0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,Flutamide,5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,Harringtonine,5.0,9,0.5,closed,b1,1,24
+MIA PaCa-2,Idarubicin (hydrochloride),5.0,6,0.5,closed,b5,1,24
+MIA PaCa-2,Infigratinib,5.0,3,0.5,closed,b1,1,24
+MIA PaCa-2,Irinotecan (hydrochloride),5.0,13,0.5,closed,b5,1,24
+MIA PaCa-2,Isocorydine,0.5,5,0.5,closed,b1,1,24
+MIA PaCa-2,Ixazomib citrate,0.5,11,0.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Ixazomib citrate,5.0,12,0.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Loperamide (hydrochloride),0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,Malotilate,5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,Mebendazole,5.0,9,0.5,closed,b1|b2,2,12
+MIA PaCa-2,Methyl aminolevulinate (hydrochloride),0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,Mitoxantrone (dihydrochloride),5.0,6,0.5,closed,b5,1,24
+MIA PaCa-2,Monocrotaline,0.5,8,0.5,closed,b5,1,24
+MIA PaCa-2,Norepinephrine (hydrochloride),0.5,5,0.5,closed,b1,1,24
+MIA PaCa-2,Osimertinib (mesylate),5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,Ouabain (Octahydrate),5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,PH-797804,5.0,3,0.5,closed,b1,1,24
+MIA PaCa-2,Panobinostat,0.050000000745058,10,0.5,closed,b2,1,24
+MIA PaCa-2,Panobinostat,5.0,12,0.5,closed,b5,1,24
+MIA PaCa-2,Pentoxifylline,0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,Peretinoin,0.5,8,0.5,closed,b1|b2,2,12
+MIA PaCa-2,Peretinoin,5.0,9,0.5,closed,b2,1,24
+MIA PaCa-2,Pimozide,0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,Pimozide,5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,Ponatinib,5.0,12,0.5,closed,b5,1,24
+MIA PaCa-2,Posaconazole,0.5,8,0.5,closed,b1,1,24
+MIA PaCa-2,Pralsetinib,0.050000000745058,13,0.5,closed,b5,1,24
+MIA PaCa-2,Ranolazine,5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,Rapamycin,0.5,5,0.5,closed,b2,1,24
+MIA PaCa-2,Ribociclib,0.5,13,0.5,closed,b5,1,24
+MIA PaCa-2,Rifaximin,5.0,9,0.5,closed,b2,1,24
+MIA PaCa-2,Rosiglitazone,5.0,9,0.5,closed,b2,1,24
+MIA PaCa-2,Roxadustat,0.050000000745058,7,0.5,closed,b1,1,24
+MIA PaCa-2,Roxadustat,0.5,8,0.5,closed,b1,1,24
+MIA PaCa-2,Sapanisertib,0.050000000745058,1,0.5,closed,b2,1,24
+MIA PaCa-2,Selinexor ,5.0,6,0.5,closed,b1|b2,2,12
+MIA PaCa-2,Sildenafil,5.0,9,0.5,closed,b2,1,24
+MIA PaCa-2,Sunitinib,0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,TAK-901,5.0,3,0.5,closed,b2,1,24
+MIA PaCa-2,Tazarotene,0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,Thymopentin,5.0,9,0.5,closed,b2,1,24
+MIA PaCa-2,Tofacitinib,0.5,5,0.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Tofacitinib,5.0,6,0.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Tofacitinib,5.0,14,0.5,closed,b1,1,24
+MIA PaCa-2,Tofacitinib (citrate),0.5,5,0.5,closed,b1|b5,2,12
+MIA PaCa-2,Tofacitinib (citrate),5.0,6,0.5,closed,b1|b2,2,12
+MIA PaCa-2,Tolcapone,0.050000000745058,4,0.5,closed,b5,1,24
+MIA PaCa-2,Trimetrexate,5.0,6,0.5,closed,b1,1,24
+MIA PaCa-2,Tucatinib,0.050000000745058,1,0.5,closed,b1,1,24
+MIA PaCa-2,Vandetanib,0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,Vinblastine (sulfate),0.5,5,0.5,closed,b1|b2,2,12
+MIA PaCa-2,Vinblastine (sulfate),5.0,6,0.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Vinblastine (sulfate),5.0,14,0.5,closed,b1,1,24
+MIA PaCa-2,Voriconazole,0.050000000745058,10,0.5,closed,b1,1,24
+MIA PaCa-2,Voriconazole,5.0,12,0.5,closed,b1,1,24
+MIA PaCa-2,crizotinib,5.0,9,0.5,closed,b2,1,24
+MIA PaCa-2,vincristine,0.050000000745058,1,0.5,closed,b2,1,24
+MIA PaCa-2,vincristine,0.5,2,0.5,closed,b1,1,24
+RKO,Bortezomib,0.050000000745058,1,0.5,closed,b2,1,24
+RKO,Carbidopa (monohydrate),0.050000000745058,13,0.5,closed,b1,1,24
+RKO,Daptomycin,5.0,13,0.5,closed,b1,1,24
+RKO,Hesperidin,0.050000000745058,7,0.5,closed,b1,1,24
+RKO,PH-797804,0.050000000745058,1,0.5,closed,b2,1,24
+RKO,Pralsetinib,0.050000000745058,13,0.5,closed,b5,1,24
+RKO,Salicylic acid,5.0,6,0.5,closed,b1,1,24
+RKO,Saquinavir,5.0,6,0.5,closed,b1,1,24
+RKO,TAK-901,5.0,3,0.5,closed,b2,1,24
+RKO,Verapamil,0.5,8,0.5,closed,b1,1,24
+RKO,c-Kit-IN-1,0.050000000745058,13,0.5,closed,b1,1,24
+SHP-77,Digitoxin,0.5,11,0.5,closed,b5,1,24
+SHP-77,Ixazomib citrate,5.0,12,0.5,closed,b5,1,24
+SHP-77,TAK-901,5.0,3,0.5,closed,b2,1,24
+SHP-77,c-Kit-IN-1,0.050000000745058,13,0.5,closed,b1,1,24
+SW 900,Afatinib,0.5,2,0.5,closed,b2,1,24
+SW 900,Auranofin,5.0,12,0.5,closed,b1,1,24
+SW 900,Carbidopa (monohydrate),0.050000000745058,13,0.5,closed,b5,1,24
+SW 900,Everolimus,0.5,2,0.5,closed,b2,1,24
+SW 900,Fumaric acid,5.0,9,0.5,closed,b2,1,24
+SW 900,Irinotecan,0.5,2,0.5,closed,b2,1,24
+SW 900,Ixazomib citrate,0.5,11,0.5,closed,b1,1,24
+SW 900,Ixazomib citrate,5.0,12,0.5,closed,b1|b2,2,12
+SW 900,Larotrectinib sulfate,0.5,13,0.5,closed,b1,1,24
+SW 900,Panobinostat,0.050000000745058,10,0.5,closed,b2,1,24
+SW 900,Pimozide,5.0,12,0.5,closed,b1,1,24
+SW 900,Piroxicam,0.050000000745058,10,0.5,closed,b2,1,24
+SW 900,Proglumide,0.5,11,0.5,closed,b1,1,24
+SW 900,c-Kit-IN-1,0.5,2,0.5,closed,b2,1,24
+SW 900,palbociclib,0.5,2,0.5,closed,b2,1,24
+SW1417,Almonertinib (hydrochloride),0.050000000745058,4,0.5,closed,b1,1,24
+SW1417,Auranofin,5.0,12,0.5,closed,b1|b5,2,12
+SW1417,BI-78D3,0.050000000745058,1,0.5,closed,b1,1,24
+SW1417,Baicalin,5.0,14,0.5,closed,b5,1,24
+SW1417,Bortezomib,0.050000000745058,1,0.5,closed,b1|b2|b5,3,6
+SW1417,Bortezomib,0.5,2,0.5,closed,b2|b5,2,12
+SW1417,Cepharanthine,0.5,5,0.5,closed,b5,1,24
+SW1417,ERK5-IN-2,5.0,3,0.5,closed,b2,1,24
+SW1417,EX229,5.0,3,0.5,closed,b1,1,24
+SW1417,Entrectinib,0.050000000745058,10,0.5,closed,b1,1,24
+SW1417,Fedratinib (hydrochloride hydrate),5.0,12,0.5,closed,b5,1,24
+SW1417,Futibatinib,0.5,2,0.5,closed,b1,1,24
+SW1417,GSK1059615,0.5,2,0.5,closed,b1,1,24
+SW1417,Homoharringtonine,0.5,5,0.5,closed,b2,1,24
+SW1417,Homoharringtonine,5.0,6,0.5,closed,b1|b2,2,12
+SW1417,Ipatasertib,0.5,2,0.5,closed,b5,1,24
+SW1417,Irinotecan (hydrochloride),0.5,13,0.5,closed,b5,1,24
+SW1417,Ixazomib citrate,5.0,12,0.5,closed,b1|b2|b5,3,6
+SW1417,Minodronic acid,0.050000000745058,1,0.5,closed,b2,1,24
+SW1417,NG25,5.0,3,0.5,closed,b1,1,24
+SW1417,Nevirapine,0.5,8,0.5,closed,b5,1,24
+SW1417,Omeprazole (sodium),0.5,11,0.5,closed,b5,1,24
+SW1417,Ouabain (Octahydrate),0.5,11,0.5,closed,b1|b2,2,12
+SW1417,PH-797804,5.0,3,0.5,closed,b2,1,24
+SW1417,Panobinostat,0.050000000745058,10,0.5,closed,b2,1,24
+SW1417,Panobinostat,5.0,12,0.5,closed,b2,1,24
+SW1417,Pravastatin (sodium),5.0,9,0.5,closed,b2,1,24
+SW1417,Ralimetinib dimesylate,0.5,2,0.5,closed,b1,1,24
+SW1417,Resveratrol,0.050000000745058,4,0.5,closed,b1,1,24
+SW1417,Sapanisertib,0.050000000745058,1,0.5,closed,b2,1,24
+SW1417,Saquinavir,0.050000000745058,4,0.5,closed,b1,1,24
+SW1417,Sulfisoxazole,0.5,5,0.5,closed,b1,1,24
+SW1417,Sunitinib,0.050000000745058,10,0.5,closed,b1,1,24
+SW1417,TAK-901,0.050000000745058,1,0.5,closed,b2,1,24
+SW1417,TAK-901,5.0,3,0.5,closed,b2,1,24
+SW1417,Talc,0.050000000745058,10,0.5,closed,b1,1,24
+SW1417,Thymol,0.5,5,0.5,closed,b5,1,24
+SW1417,Tubulin inhibitor 6,0.5,2,0.5,closed,b2,1,24
+SW1417,Vandetanib,0.050000000745058,10,0.5,closed,b1,1,24
+SW1417,Vinblastine (sulfate),0.5,5,0.5,closed,b1,1,24
+SW1417,Voriconazole,0.050000000745058,10,0.5,closed,b1,1,24
+SW1417,Voriconazole,5.0,12,0.5,closed,b1|b2,2,12
+SW480,Adagrasib,0.5,8,0.5,closed,b2,1,24
+SW480,Auranofin,0.5,11,0.5,closed,b1,1,24
+SW480,Auranofin,5.0,12,0.5,closed,b1,1,24
+SW480,BAY1125976,5.0,3,0.5,closed,b2,1,24
+SW480,Bortezomib,0.050000000745058,1,0.5,closed,b2|b5,2,12
+SW480,Bortezomib,5.0,3,0.5,closed,b2,1,24
+SW480,Brivudine,5.0,3,0.5,closed,b2,1,24
+SW480,Delamanid,0.5,11,0.5,closed,b1,1,24
+SW480,Dexamethasone,0.5,11,0.5,closed,b1,1,24
+SW480,Digitoxin,0.050000000745058,10,0.5,closed,b2,1,24
+SW480,Digitoxin,0.5,11,0.5,closed,b2|b5,2,12
+SW480,ERK5-IN-2,5.0,3,0.5,closed,b2,1,24
+SW480,Fluvoxamine (maleate),0.050000000745058,4,0.5,closed,b1,1,24
+SW480,Harringtonine,0.5,8,0.5,closed,b1,1,24
+SW480,Homoharringtonine,0.5,5,0.5,closed,b2,1,24
+SW480,Homoharringtonine,5.0,6,0.5,closed,b1|b2,2,12
+SW480,Ivabradine (hydrochloride),0.5,13,0.5,closed,b1,1,24
+SW480,Ixazomib citrate,0.5,11,0.5,closed,b1|b2|b5,3,6
+SW480,Ixazomib citrate,5.0,12,0.5,closed,b2,1,24
+SW480,MK-3903,0.050000000745058,1,0.5,closed,b2,1,24
+SW480,Mebendazole,5.0,9,0.5,closed,b2,1,24
+SW480,Methotrexate,0.050000000745058,10,0.5,closed,b2,1,24
+SW480,Minodronic acid,0.050000000745058,1,0.5,closed,b2,1,24
+SW480,Ouabain (Octahydrate),0.050000000745058,10,0.5,closed,b2,1,24
+SW480,Ouabain (Octahydrate),0.5,11,0.5,closed,b1|b2,2,12
+SW480,Ouabain (Octahydrate),5.0,12,0.5,closed,b1|b2|b5,3,6
+SW480,PH-797804,5.0,3,0.5,closed,b2,1,24
+SW480,Panobinostat,0.050000000745058,10,0.5,closed,b2,1,24
+SW480,Simotinib,5.0,9,0.5,closed,b5,1,24
+SW480,TAK-901,0.050000000745058,1,0.5,closed,b2,1,24
+SW480,TAK-901,5.0,3,0.5,closed,b2,1,24
+SW480,Talc,0.5,11,0.5,closed,b1,1,24
+SW480,Tubulin inhibitor 6,5.0,3,0.5,closed,b5,1,24
+SW480,vincristine,0.5,2,0.5,closed,b1,1,24
+A549,8-Hydroxyquinoline,0.5,5,1.0,opened,b5,1,12
+A549,9-ING-41,0.5,2,1.0,opened,b2,1,12
+A549,AZD1390,0.5,2,1.0,opened,b2,1,12
+A549,Almonertinib (mesylate),5.0,13,1.0,opened,b2,1,12
+A549,Alpelisib,5.0,3,1.0,opened,b2,1,12
+A549,Amsacrine,5.0,6,1.0,opened,b2,1,12
+A549,Amsacrine,5.0,14,1.0,opened,b2,1,12
+A549,BI-3406,0.5,2,1.0,opened,b2|b5,2,24
+A549,BI-3406,5.0,3,1.0,opened,b5,1,12
+A549,Bentamapimod,5.0,3,1.0,opened,b5,1,12
+A549,Bestatin (hydrochloride),0.5,11,1.0,opened,b5,1,12
+A549,Binimetinib,0.5,2,1.0,opened,b2|b5,2,24
+A549,Binimetinib,0.5,11,1.0,opened,b2|b5,2,24
+A549,Binimetinib,5.0,3,1.0,opened,b2|b5,2,24
+A549,Binimetinib,5.0,12,1.0,opened,b2|b5,2,24
+A549,Cobimetinib,0.5,8,1.0,opened,b1|b2,2,24
+A549,Diphenhydramine,0.5,8,1.0,opened,b2,1,12
+A549,Elimusertib hydrochloride,0.050000000745058,1,1.0,opened,b2|b5,2,24
+A549,Elimusertib hydrochloride,5.0,3,1.0,opened,b2,1,12
+A549,GSK1059615,0.5,2,1.0,opened,b2,1,12
+A549,Gallic acid (hydrate),0.050000000745058,4,1.0,opened,b2,1,12
+A549,Infigratinib,0.050000000745058,1,1.0,opened,b2,1,12
+A549,Irinotecan (hydrochloride),0.050000000745058,13,1.0,opened,b2,1,12
+A549,Penfluridol,0.5,8,1.0,opened,b2,1,12
+A549,RMC-6236,0.5,2,1.0,opened,b5,1,12
+A549,RMC-6236,5.0,3,1.0,opened,b5,1,12
+A549,Sulfisoxazole,0.5,13,1.0,opened,b1,1,12
+A549,Topotecan (hydrochloride),0.5,8,1.0,opened,b2,1,12
+A549,Trametinib,0.5,2,1.0,opened,b2,1,12
+A549,Trametinib (DMSO_TF solvate),5.0,9,1.0,opened,b5,1,12
+A549,XRK3F2,0.5,2,1.0,opened,b2,1,12
+A549,palbociclib,5.0,3,1.0,opened,b2,1,12
+A549,venetoclax,0.050000000745058,1,1.0,opened,b2,1,12
+AsPC-1,5-Fluorouracil,0.5,11,1.0,opened,b5,1,12
+AsPC-1,AZD-7648,0.5,2,1.0,opened,b2,1,12
+AsPC-1,AZD-8055,0.050000000745058,1,1.0,opened,b2,1,12
+AsPC-1,AZD-8055,5.0,3,1.0,opened,b1,1,12
+AsPC-1,Acetohexamide,0.5,5,1.0,opened,b2,1,12
+AsPC-1,Afatinib,5.0,3,1.0,opened,b1|b2,2,24
+AsPC-1,BI-3406,0.5,2,1.0,opened,b2,1,12
+AsPC-1,BI-3406,5.0,3,1.0,opened,b2|b5,2,24
+AsPC-1,Bimiralisib,0.5,2,1.0,opened,b1|b2,2,24
+AsPC-1,Bimiralisib,5.0,3,1.0,opened,b1|b2|b5,3,48
+AsPC-1,Binimetinib,0.050000000745058,1,1.0,opened,b1|b2|b5,3,48
+AsPC-1,Binimetinib,0.5,2,1.0,opened,b1|b2|b5,3,48
+AsPC-1,Binimetinib,0.5,11,1.0,opened,b2|b5,2,24
+AsPC-1,Binimetinib,5.0,3,1.0,opened,b5,1,12
+AsPC-1,Binimetinib,5.0,12,1.0,opened,b2|b5,2,24
+AsPC-1,Brimonidine,5.0,12,1.0,opened,b2,1,12
+AsPC-1,Cabozantinib (S-malate),0.5,11,1.0,opened,b2,1,12
+AsPC-1,Capmatinib,5.0,3,1.0,opened,b1,1,12
+AsPC-1,Cobimetinib,5.0,9,1.0,opened,b1|b5,2,24
+AsPC-1,Dabrafenib,0.5,2,1.0,opened,b5,1,12
+AsPC-1,Dimethyl fumarate,0.050000000745058,7,1.0,opened,b2,1,12
+AsPC-1,Diphenhydramine,0.5,8,1.0,opened,b2,1,12
+AsPC-1,Elimusertib hydrochloride,0.050000000745058,1,1.0,opened,b1|b2|b5,3,48
+AsPC-1,Elimusertib hydrochloride,0.5,2,1.0,opened,b2|b5,2,24
+AsPC-1,Elimusertib hydrochloride,5.0,3,1.0,opened,b5,1,12
+AsPC-1,GSK1059615,0.5,2,1.0,opened,b2,1,12
+AsPC-1,HI-TOPK-032,0.5,2,1.0,opened,b2,1,12
+AsPC-1,Idarubicin (hydrochloride),0.5,5,1.0,opened,b1,1,12
+AsPC-1,Idoxuridine,0.5,11,1.0,opened,b2,1,12
+AsPC-1,Ixazomib,5.0,3,1.0,opened,b2,1,12
+AsPC-1,L-Eflornithine (monohydrochloride),5.0,12,1.0,opened,b5,1,12
+AsPC-1,LJI308,0.5,2,1.0,opened,b1,1,12
+AsPC-1,Medroxyprogesterone acetate,0.050000000745058,4,1.0,opened,b2,1,12
+AsPC-1,Methotrexate,0.5,11,1.0,opened,b5,1,12
+AsPC-1,Mitoxantrone (dihydrochloride),5.0,6,1.0,opened,b2,1,12
+AsPC-1,Naproxen,5.0,9,1.0,opened,b1,1,12
+AsPC-1,Nimesulide,0.050000000745058,13,1.0,opened,b2,1,12
+AsPC-1,Paclitaxel,0.5,2,1.0,opened,b1,1,12
+AsPC-1,RMC-6236,0.5,2,1.0,opened,b2|b5,2,24
+AsPC-1,RMC-6236,5.0,3,1.0,opened,b2|b5,2,24
+AsPC-1,Selinexor ,0.050000000745058,4,1.0,opened,b1,1,12
+AsPC-1,Sunitinib,5.0,12,1.0,opened,b2,1,12
+AsPC-1,Trametinib,0.5,2,1.0,opened,b1|b2|b5,3,48
+AsPC-1,Trametinib,0.5,11,1.0,opened,b2,1,12
+AsPC-1,Trametinib,5.0,3,1.0,opened,b1|b2,2,24
+AsPC-1,Trametinib,5.0,12,1.0,opened,b1|b2|b5,3,48
+AsPC-1,Trametinib (DMSO_TF solvate),0.050000000745058,7,1.0,opened,b1|b2|b5,3,48
+AsPC-1,Trametinib (DMSO_TF solvate),0.5,8,1.0,opened,b1|b5,2,24
+AsPC-1,Trametinib (DMSO_TF solvate),5.0,9,1.0,opened,b1,1,12
+AsPC-1,Triamcinolone,5.0,6,1.0,opened,b2,1,12
+AsPC-1,ULK-101,0.5,2,1.0,opened,b5,1,12
+AsPC-1,Vemurafenib,5.0,3,1.0,opened,b1,1,12
+AsPC-1,c-Kit-IN-1,0.5,2,1.0,opened,b1,1,12
+AsPC-1,palbociclib,5.0,3,1.0,opened,b2,1,12
+CFPAC-1,(R)-Verapamil (hydrochloride),0.050000000745058,4,1.0,opened,b5,1,12
+CFPAC-1,APTO-253,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,AZD-7648,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,AZD-7648,5.0,3,1.0,opened,b2|b5,2,24
+CFPAC-1,AZD-8055,0.050000000745058,1,1.0,opened,b1,1,12
+CFPAC-1,AZD-8055,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,AZD1390,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Afatinib,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,Amsacrine,0.5,5,1.0,opened,b1,1,12
+CFPAC-1,Azithromycin (hydrate),0.5,5,1.0,opened,b2,1,12
+CFPAC-1,BI-3406,0.5,2,1.0,opened,b2|b5,2,24
+CFPAC-1,BI-3406,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,BI-78D3,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,BI-78D3,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,Baicalin,0.050000000745058,4,1.0,opened,b1,1,12
+CFPAC-1,Bentamapimod,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Betamethasone dipropionate,0.050000000745058,7,1.0,opened,b5,1,12
+CFPAC-1,Bimiralisib,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Bimiralisib,5.0,3,1.0,opened,b2|b5,2,24
+CFPAC-1,Binimetinib,0.050000000745058,1,1.0,opened,b1|b5,2,24
+CFPAC-1,Binimetinib,0.5,2,1.0,opened,b2|b5,2,24
+CFPAC-1,Binimetinib,0.5,11,1.0,opened,b2|b5,2,24
+CFPAC-1,Binimetinib,5.0,3,1.0,opened,b2|b5,2,24
+CFPAC-1,Binimetinib,5.0,12,1.0,opened,b2|b5,2,24
+CFPAC-1,CP21R7,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Canagliflozin,0.5,8,1.0,opened,b2,1,12
+CFPAC-1,Capmatinib,0.050000000745058,1,1.0,opened,b1,1,12
+CFPAC-1,Capmatinib,5.0,3,1.0,opened,b2,1,12
+CFPAC-1,Chlorhexidine (diacetate),5.0,14,1.0,opened,b1,1,12
+CFPAC-1,Cinacalcet,5.0,12,1.0,opened,b1,1,12
+CFPAC-1,Cobimetinib,0.5,8,1.0,opened,b1,1,12
+CFPAC-1,DT-061,5.0,3,1.0,opened,b2,1,12
+CFPAC-1,DTP3,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,Demeclocycline,0.5,5,1.0,opened,b1,1,12
+CFPAC-1,Elimusertib hydrochloride,0.050000000745058,1,1.0,opened,b1|b5,2,24
+CFPAC-1,Elimusertib hydrochloride,0.5,2,1.0,opened,b5,1,12
+CFPAC-1,Elimusertib hydrochloride,5.0,3,1.0,opened,b2|b5,2,24
+CFPAC-1,Encorafenib,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,Fenofibrate,0.050000000745058,7,1.0,opened,b5,1,12
+CFPAC-1,Furosemide,0.050000000745058,4,1.0,opened,b1,1,12
+CFPAC-1,Futibatinib,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,GSK1059615,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,GSK1059615,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,Gemcitabine,5.0,3,1.0,opened,b2,1,12
+CFPAC-1,Gemfibrozil,0.050000000745058,4,1.0,opened,b5,1,12
+CFPAC-1,HI-TOPK-032,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Harringtonine,0.5,8,1.0,opened,b2|b5,2,24
+CFPAC-1,Harringtonine,5.0,9,1.0,opened,b5,1,12
+CFPAC-1,Ixazomib,0.5,2,1.0,opened,b1,1,12
+CFPAC-1,LJI308,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,LY-2584702 (tosylate salt),0.5,2,1.0,opened,b2,1,12
+CFPAC-1,MK-3903,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Menadione,0.050000000745058,7,1.0,opened,b5,1,12
+CFPAC-1,Mifepristone,0.050000000745058,7,1.0,opened,b5,1,12
+CFPAC-1,Mozavaptan,0.050000000745058,7,1.0,opened,b5,1,12
+CFPAC-1,Norepinephrine (hydrochloride),0.050000000745058,4,1.0,opened,b2,1,12
+CFPAC-1,PH-797804,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Paclitaxel,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,Pemetrexed,5.0,9,1.0,opened,b5,1,12
+CFPAC-1,Pimitespib,0.050000000745058,1,1.0,opened,b1,1,12
+CFPAC-1,Pimitespib,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,Pralsetinib,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,RMC-6236,0.5,2,1.0,opened,b2|b5,2,24
+CFPAC-1,RMC-6236,5.0,3,1.0,opened,b2|b5,2,24
+CFPAC-1,Radotinib,0.050000000745058,4,1.0,opened,b5,1,12
+CFPAC-1,Ralimetinib dimesylate,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Retinoic acid,5.0,14,1.0,opened,b1,1,12
+CFPAC-1,S-Adenosyl-L-methionine (disulfate tosylate),5.0,6,1.0,opened,b2,1,12
+CFPAC-1,Sapanisertib,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,Selinexor ,0.050000000745058,4,1.0,opened,b1,1,12
+CFPAC-1,Sivelestat (sodium tetrahydrate),0.050000000745058,7,1.0,opened,b2|b5,2,24
+CFPAC-1,Sivelestat (sodium tetrahydrate),0.5,8,1.0,opened,b2,1,12
+CFPAC-1,Sonidegib,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,TAK-901,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Temuterkib,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Tomivosertib,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Topotecan (hydrochloride),0.5,8,1.0,opened,b1,1,12
+CFPAC-1,Torkinib,5.0,3,1.0,opened,b2,1,12
+CFPAC-1,Trametinib,0.050000000745058,1,1.0,opened,b5,1,12
+CFPAC-1,Trametinib,0.5,2,1.0,opened,b2|b5,2,24
+CFPAC-1,Trametinib,5.0,3,1.0,opened,b5,1,12
+CFPAC-1,Trametinib,5.0,12,1.0,opened,b1|b5,2,24
+CFPAC-1,Trametinib (DMSO_TF solvate),0.050000000745058,7,1.0,opened,b2,1,12
+CFPAC-1,Trametinib (DMSO_TF solvate),0.5,8,1.0,opened,b2,1,12
+CFPAC-1,Trametinib (DMSO_TF solvate),5.0,9,1.0,opened,b2,1,12
+CFPAC-1,Tucatinib,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,Tucidinostat,5.0,14,1.0,opened,b5,1,12
+CFPAC-1,Vemurafenib,5.0,3,1.0,opened,b2|b5,2,24
+CFPAC-1,Vortioxetine,5.0,12,1.0,opened,b2,1,12
+CFPAC-1,XRK3F2,0.5,2,1.0,opened,b2,1,12
+CFPAC-1,XRK3F2,5.0,3,1.0,opened,b1|b2,2,24
+CFPAC-1,palbociclib,5.0,3,1.0,opened,b2|b5,2,24
+COLO 205,Almonertinib (mesylate),0.050000000745058,13,1.0,opened,b2,1,12
+COLO 205,Anethole trithione,5.0,6,1.0,opened,b1,1,12
+COLO 205,Atazanavir (sulfate),0.5,11,1.0,opened,b2,1,12
+COLO 205,Baicalin,5.0,14,1.0,opened,b1,1,12
+COLO 205,Binimetinib,0.5,2,1.0,opened,b2,1,12
+COLO 205,Captopril,0.050000000745058,13,1.0,opened,b2,1,12
+COLO 205,Carbamazepine,0.5,11,1.0,opened,b5,1,12
+COLO 205,Carbidopa (monohydrate),5.0,13,1.0,opened,b2,1,12
+COLO 205,Cobimetinib,0.5,8,1.0,opened,b1,1,12
+COLO 205,Darolutamide,0.5,11,1.0,opened,b2,1,12
+COLO 205,HI-TOPK-032,0.5,2,1.0,opened,b2,1,12
+COLO 205,Harringtonine,0.050000000745058,7,1.0,opened,b2,1,12
+COLO 205,Idoxuridine,5.0,12,1.0,opened,b2,1,12
+COLO 205,Irinotecan (hydrochloride),0.050000000745058,13,1.0,opened,b2,1,12
+COLO 205,Macitentan,0.5,8,1.0,opened,b1,1,12
+COLO 205,NVP-BHG712,0.5,2,1.0,opened,b2,1,12
+COLO 205,Nimesulide,0.5,13,1.0,opened,b2,1,12
+COLO 205,Nimesulide,5.0,13,1.0,opened,b2,1,12
+COLO 205,Oxaprozin,5.0,12,1.0,opened,b2,1,12
+COLO 205,Pravastatin (sodium),0.5,13,1.0,opened,b2,1,12
+COLO 205,Pravastatin (sodium),5.0,13,1.0,opened,b2,1,12
+COLO 205,Retinoic acid,5.0,6,1.0,opened,b1,1,12
+COLO 205,Rimonabant (Hydrochloride),0.5,13,1.0,opened,b2,1,12
+COLO 205,Sonidegib,0.5,2,1.0,opened,b2,1,12
+COLO 205,Tucidinostat,5.0,6,1.0,opened,b1,1,12
+COLO 205,Zileuton,5.0,12,1.0,opened,b2,1,12
+HCT15,Aliskiren,0.5,5,1.0,opened,b5,1,12
+HCT15,Allantoin,0.5,5,1.0,opened,b5,1,12
+HCT15,Amsacrine,0.5,5,1.0,opened,b1,1,12
+HCT15,Amsacrine,5.0,6,1.0,opened,b1|b2,2,24
+HCT15,Baicalin,0.5,5,1.0,opened,b1,1,12
+HCT15,Binimetinib,0.050000000745058,1,1.0,opened,b5,1,12
+HCT15,Erythromycin,0.050000000745058,10,1.0,opened,b5,1,12
+HCT15,Esmolol (hydrochloride),0.050000000745058,10,1.0,opened,b2,1,12
+HCT15,Fluvoxamine (maleate),0.5,5,1.0,opened,b5,1,12
+HCT15,Gemfibrozil,0.5,5,1.0,opened,b1,1,12
+HCT15,Goserelin (acetate),5.0,6,1.0,opened,b5,1,12
+HCT15,Harringtonine,0.5,8,1.0,opened,b5,1,12
+HCT15,Homoharringtonine,5.0,6,1.0,opened,b5,1,12
+HCT15,Idarubicin (hydrochloride),5.0,6,1.0,opened,b1,1,12
+HCT15,Ivermectin,0.050000000745058,10,1.0,opened,b5,1,12
+HCT15,L-Eflornithine (monohydrochloride),0.050000000745058,10,1.0,opened,b5,1,12
+HCT15,Loperamide (hydrochloride),0.050000000745058,10,1.0,opened,b5,1,12
+HCT15,Megestrol,0.5,5,1.0,opened,b1,1,12
+HCT15,Mitoxantrone (dihydrochloride),0.050000000745058,4,1.0,opened,b2,1,12
+HCT15,Palmatine (chloride),5.0,6,1.0,opened,b5,1,12
+HCT15,Procainamide (hydrochloride),0.5,8,1.0,opened,b1,1,12
+HCT15,RMC-6236,5.0,3,1.0,opened,b5,1,12
+HCT15,Ritonavir,0.5,5,1.0,opened,b2,1,12
+HCT15,Sildenafil,0.5,8,1.0,opened,b1,1,12
+HCT15,TAK-733,0.5,2,1.0,opened,b2,1,12
+HCT15,Trametinib,0.050000000745058,10,1.0,opened,b5,1,12
+HCT15,Tucidinostat,5.0,6,1.0,opened,b1,1,12
+HS-578T,AZD-7648,0.5,2,1.0,opened,b2,1,12
+HS-578T,AZD-7648,5.0,3,1.0,opened,b2,1,12
+HS-578T,AZD-8055,0.5,2,1.0,opened,b1,1,12
+HS-578T,AZD1390,0.5,2,1.0,opened,b2,1,12
+HS-578T,Afatinib,0.5,2,1.0,opened,b2,1,12
+HS-578T,Afatinib,5.0,3,1.0,opened,b1,1,12
+HS-578T,Alpelisib,0.5,2,1.0,opened,b5,1,12
+HS-578T,Alpelisib,5.0,3,1.0,opened,b1,1,12
+HS-578T,Artesunate,0.5,5,1.0,opened,b1,1,12
+HS-578T,Artesunate,5.0,14,1.0,opened,b1,1,12
+HS-578T,BI-3406,0.5,2,1.0,opened,b2|b5,2,24
+HS-578T,BI-78D3,0.5,2,1.0,opened,b2,1,12
+HS-578T,Binimetinib,0.5,2,1.0,opened,b2|b5,2,24
+HS-578T,Brivudine,0.050000000745058,1,1.0,opened,b5,1,12
+HS-578T,CP21R7,0.5,2,1.0,opened,b2,1,12
+HS-578T,CP21R7,5.0,3,1.0,opened,b2,1,12
+HS-578T,Chlorhexidine (diacetate),0.5,5,1.0,opened,b2,1,12
+HS-578T,Crizotinib (hydrochloride),0.050000000745058,10,1.0,opened,b5,1,12
+HS-578T,Cyclosporin A,5.0,12,1.0,opened,b2,1,12
+HS-578T,Dabrafenib,0.5,2,1.0,opened,b2,1,12
+HS-578T,Docetaxel (Trihydrate),0.5,8,1.0,opened,b2,1,12
+HS-578T,ETC-206,0.5,2,1.0,opened,b2,1,12
+HS-578T,EX229,0.5,2,1.0,opened,b2|b5,2,24
+HS-578T,Elagolix sodium,5.0,14,1.0,opened,b5,1,12
+HS-578T,Elimusertib hydrochloride,0.5,2,1.0,opened,b5,1,12
+HS-578T,Ferulic acid,0.5,8,1.0,opened,b1,1,12
+HS-578T,Fluvoxamine (maleate),5.0,6,1.0,opened,b5,1,12
+HS-578T,GSK1059615,0.5,2,1.0,opened,b2,1,12
+HS-578T,Gemfibrozil,5.0,6,1.0,opened,b5,1,12
+HS-578T,HI-TOPK-032,0.5,2,1.0,opened,b2,1,12
+HS-578T,Harringtonine,0.5,8,1.0,opened,b5,1,12
+HS-578T,Homoharringtonine,0.050000000745058,4,1.0,opened,b5,1,12
+HS-578T,Homoharringtonine,0.5,5,1.0,opened,b5,1,12
+HS-578T,Idarubicin (hydrochloride),5.0,6,1.0,opened,b2,1,12
+HS-578T,LB-100,0.5,2,1.0,opened,b2,1,12
+HS-578T,Lidocaine (hydrochloride),5.0,6,1.0,opened,b2,1,12
+HS-578T,Lopinavir,0.050000000745058,10,1.0,opened,b5,1,12
+HS-578T,Pentoxifylline,0.5,11,1.0,opened,b2,1,12
+HS-578T,RMC-6236,0.5,2,1.0,opened,b2|b5,2,24
+HS-578T,Regorafenib,5.0,3,1.0,opened,b2,1,12
+HS-578T,Sivelestat (sodium tetrahydrate),0.5,8,1.0,opened,b2,1,12
+HS-578T,Terfenadine,0.5,5,1.0,opened,b2,1,12
+HS-578T,Topotecan (hydrochloride),0.5,8,1.0,opened,b2,1,12
+HS-578T,Torkinib,0.5,2,1.0,opened,b2,1,12
+HS-578T,Trametinib,0.5,2,1.0,opened,b1|b2|b5,3,48
+HS-578T,Triamcinolone,5.0,6,1.0,opened,b2,1,12
+HS-578T,XRK3F2,0.5,2,1.0,opened,b2,1,12
+HT-29,18β-Glycyrrhetinic acid,5.0,6,1.0,opened,b5,1,12
+HT-29,5-Azacytidine,0.5,11,1.0,opened,b2,1,12
+HT-29,AZD-7648,0.050000000745058,1,1.0,opened,b1,1,12
+HT-29,AZD-7648,5.0,3,1.0,opened,b2,1,12
+HT-29,AZD-8055,5.0,3,1.0,opened,b1,1,12
+HT-29,Amsacrine,5.0,6,1.0,opened,b1,1,12
+HT-29,Belzutifan,5.0,3,1.0,opened,b2,1,12
+HT-29,Binimetinib,0.050000000745058,1,1.0,opened,b5,1,12
+HT-29,Binimetinib,0.5,11,1.0,opened,b5,1,12
+HT-29,Binimetinib,5.0,12,1.0,opened,b2,1,12
+HT-29,Cinacalcet,0.5,11,1.0,opened,b2,1,12
+HT-29,Dabrafenib,0.5,2,1.0,opened,b5,1,12
+HT-29,Decitabine,0.5,8,1.0,opened,b2,1,12
+HT-29,Elimusertib hydrochloride,0.050000000745058,1,1.0,opened,b1|b5,2,24
+HT-29,GSK1059615,0.5,2,1.0,opened,b2,1,12
+HT-29,Gemfibrozil,5.0,6,1.0,opened,b5,1,12
+HT-29,Harringtonine,0.5,8,1.0,opened,b5,1,12
+HT-29,Infigratinib,0.050000000745058,1,1.0,opened,b1,1,12
+HT-29,L-Thyroxine (sodium salt pentahydrate),5.0,6,1.0,opened,b1,1,12
+HT-29,Larotrectinib sulfate,0.5,13,1.0,opened,b2,1,12
+HT-29,Neratinib (maleate),5.0,14,1.0,opened,b1,1,12
+HT-29,Posaconazole,0.5,8,1.0,opened,b2,1,12
+HT-29,RMC-6236,5.0,3,1.0,opened,b5,1,12
+HT-29,Radotinib,0.5,5,1.0,opened,b5,1,12
+HT-29,Retinoic acid,0.5,5,1.0,opened,b1,1,12
+HT-29,Ropivacaine (hydrochloride monohydrate),5.0,6,1.0,opened,b5,1,12
+HT-29,Sinomenine,5.0,6,1.0,opened,b1,1,12
+HT-29,Temsirolimus,0.5,5,1.0,opened,b5,1,12
+HT-29,Tirabrutinib,5.0,9,1.0,opened,b5,1,12
+HT-29,Tirabrutinib (hydrochloride),0.5,11,1.0,opened,b1,1,12
+HT-29,Tranilast,0.5,8,1.0,opened,b2,1,12
+HT-29,Tucatinib,0.050000000745058,1,1.0,opened,b5,1,12
+HT-29,Tucidinostat,0.5,5,1.0,opened,b1,1,12
+HT-29,Tucidinostat,5.0,6,1.0,opened,b1,1,12
+HT-29,Vemurafenib,0.050000000745058,1,1.0,opened,b1,1,12
+HT-29,Volasertib,0.050000000745058,1,1.0,opened,b1,1,12
+HT-29,crizotinib,0.5,8,1.0,opened,b1,1,12
+Hs 766T,AZD-7648,0.5,2,1.0,opened,b2,1,12
+Hs 766T,BI-3406,0.5,2,1.0,opened,b2,1,12
+Hs 766T,BI-3406,5.0,3,1.0,opened,b5,1,12
+Hs 766T,Baicalin,0.5,5,1.0,opened,b1,1,12
+Hs 766T,Bergenin,5.0,6,1.0,opened,b5,1,12
+Hs 766T,Bimiralisib,0.5,2,1.0,opened,b2,1,12
+Hs 766T,Binimetinib,0.050000000745058,1,1.0,opened,b5,1,12
+Hs 766T,Binimetinib,0.5,2,1.0,opened,b1|b2,2,24
+Hs 766T,Celecoxib,0.5,2,1.0,opened,b2,1,12
+Hs 766T,Cobimetinib,5.0,9,1.0,opened,b1,1,12
+Hs 766T,DT-061,5.0,3,1.0,opened,b5,1,12
+Hs 766T,DTP3,5.0,3,1.0,opened,b5,1,12
+Hs 766T,Elagolix sodium,0.5,5,1.0,opened,b1,1,12
+Hs 766T,Elimusertib hydrochloride,5.0,3,1.0,opened,b5,1,12
+Hs 766T,GSK1059615,0.5,2,1.0,opened,b2,1,12
+Hs 766T,GSK1059615,5.0,3,1.0,opened,b5,1,12
+Hs 766T,Harringtonine,0.5,8,1.0,opened,b2|b5,2,24
+Hs 766T,Harringtonine,5.0,9,1.0,opened,b5,1,12
+Hs 766T,Idarubicin (hydrochloride),5.0,6,1.0,opened,b2,1,12
+Hs 766T,L-Thyroxine (sodium salt pentahydrate),0.5,5,1.0,opened,b1,1,12
+Hs 766T,Norepinephrine (hydrochloride),0.050000000745058,4,1.0,opened,b2,1,12
+Hs 766T,Paclitaxel,5.0,3,1.0,opened,b5,1,12
+Hs 766T,Pimitespib,0.5,2,1.0,opened,b2,1,12
+Hs 766T,RMC-6236,0.050000000745058,1,1.0,opened,b2,1,12
+Hs 766T,RMC-6236,0.5,2,1.0,opened,b2,1,12
+Hs 766T,RMC-6236,5.0,3,1.0,opened,b5,1,12
+Hs 766T,Ritonavir,5.0,6,1.0,opened,b2,1,12
+Hs 766T,Sonidegib,0.5,2,1.0,opened,b2,1,12
+Hs 766T,TAK-901,5.0,3,1.0,opened,b5,1,12
+Hs 766T,Tirabrutinib,0.050000000745058,7,1.0,opened,b5,1,12
+Hs 766T,Topotecan (hydrochloride),0.5,8,1.0,opened,b2,1,12
+Hs 766T,Trametinib,0.5,2,1.0,opened,b2,1,12
+Hs 766T,Trametinib (DMSO_TF solvate),0.050000000745058,7,1.0,opened,b5,1,12
+Hs 766T,Trametinib (DMSO_TF solvate),0.5,8,1.0,opened,b2,1,12
+Hs 766T,ULK-101,0.5,2,1.0,opened,b2,1,12
+Hs 766T,Vilanterol,5.0,6,1.0,opened,b2,1,12
+LoVo,AZD-7648,5.0,3,1.0,opened,b2,1,12
+LoVo,Alpelisib,5.0,3,1.0,opened,b2|b5,2,24
+LoVo,Bergenin,0.5,5,1.0,opened,b2,1,12
+LoVo,Bimiralisib,0.5,2,1.0,opened,b2,1,12
+LoVo,Bimiralisib,5.0,3,1.0,opened,b5,1,12
+LoVo,Binimetinib,0.050000000745058,1,1.0,opened,b5,1,12
+LoVo,Binimetinib,0.5,2,1.0,opened,b2|b5,2,24
+LoVo,Binimetinib,5.0,3,1.0,opened,b5,1,12
+LoVo,Binimetinib,5.0,12,1.0,opened,b5,1,12
+LoVo,CP21R7,0.5,2,1.0,opened,b5,1,12
+LoVo,Celecoxib,0.050000000745058,1,1.0,opened,b1,1,12
+LoVo,Celecoxib,0.5,2,1.0,opened,b2,1,12
+LoVo,Cepharanthine,5.0,6,1.0,opened,b1,1,12
+LoVo,Cobimetinib,5.0,9,1.0,opened,b1,1,12
+LoVo,"Dapagliflozin ((2S)-1,2-propanediol, hydrate)",0.050000000745058,7,1.0,opened,b5,1,12
+LoVo,Elimusertib hydrochloride,0.050000000745058,1,1.0,opened,b5,1,12
+LoVo,GSK1059615,0.5,2,1.0,opened,b2,1,12
+LoVo,Harringtonine,0.050000000745058,7,1.0,opened,b5,1,12
+LoVo,Harringtonine,0.5,8,1.0,opened,b5,1,12
+LoVo,Idarubicin (hydrochloride),0.5,5,1.0,opened,b2,1,12
+LoVo,Idoxuridine,0.5,11,1.0,opened,b2,1,12
+LoVo,Ivermectin,0.5,11,1.0,opened,b5,1,12
+LoVo,Naproxen,0.050000000745058,7,1.0,opened,b5,1,12
+LoVo,Pravastatin (sodium),0.050000000745058,7,1.0,opened,b5,1,12
+LoVo,Ralimetinib dimesylate,5.0,3,1.0,opened,b5,1,12
+LoVo,Trametinib,0.5,2,1.0,opened,b2|b5,2,24
+LoVo,Trametinib (DMSO_TF solvate),5.0,9,1.0,opened,b5,1,12
+LoVo,Tucidinostat,5.0,6,1.0,opened,b1,1,12
+LoVo,vincristine,0.5,2,1.0,opened,b2,1,12
+MIA PaCa-2,5-Azacytidine,0.5,11,1.0,opened,b5,1,12
+MIA PaCa-2,9-ING-41,5.0,3,1.0,opened,b2,1,12
+MIA PaCa-2,AZD-8055,0.050000000745058,1,1.0,opened,b2,1,12
+MIA PaCa-2,Abemaciclib,0.050000000745058,13,1.0,opened,b1,1,12
+MIA PaCa-2,Adagrasib,0.050000000745058,2,1.0,opened,b1,1,12
+MIA PaCa-2,Adagrasib,0.050000000745058,8,1.0,opened,b2,1,12
+MIA PaCa-2,Adagrasib,0.050000000745058,11,1.0,opened,b2,1,12
+MIA PaCa-2,Adagrasib,0.050000000745058,12,1.0,opened,b2,1,12
+MIA PaCa-2,Adagrasib,0.050000000745058,13,1.0,opened,b1,1,12
+MIA PaCa-2,Almonertinib (mesylate),0.050000000745058,7,1.0,opened,b5,1,12
+MIA PaCa-2,Atazanavir (sulfate),0.5,11,1.0,opened,b2,1,12
+MIA PaCa-2,BI-3406,0.050000000745058,1,1.0,opened,b2|b5,2,24
+MIA PaCa-2,BI-78D3,0.5,2,1.0,opened,b2,1,12
+MIA PaCa-2,Bestatin (hydrochloride),0.5,11,1.0,opened,b5,1,12
+MIA PaCa-2,Bimiralisib,0.5,2,1.0,opened,b2,1,12
+MIA PaCa-2,Bimiralisib,5.0,3,1.0,opened,b2,1,12
+MIA PaCa-2,Binimetinib,0.050000000745058,1,1.0,opened,b2|b5,2,24
+MIA PaCa-2,Binimetinib,0.050000000745058,10,1.0,opened,b2,1,12
+MIA PaCa-2,Binimetinib,0.5,2,1.0,opened,b2|b5,2,24
+MIA PaCa-2,Binimetinib,0.5,11,1.0,opened,b1|b2|b5,3,48
+MIA PaCa-2,Binimetinib,5.0,12,1.0,opened,b2|b5,2,24
+MIA PaCa-2,Ciclopirox,0.5,5,1.0,opened,b5,1,12
+MIA PaCa-2,Cinacalcet,0.5,11,1.0,opened,b2,1,12
+MIA PaCa-2,Cobimetinib,0.5,8,1.0,opened,b1,1,12
+MIA PaCa-2,Cobimetinib,5.0,9,1.0,opened,b1,1,12
+MIA PaCa-2,DT-061,5.0,3,1.0,opened,b1,1,12
+MIA PaCa-2,Dimethyl fumarate,0.050000000745058,7,1.0,opened,b2,1,12
+MIA PaCa-2,Docetaxel (Trihydrate),0.5,8,1.0,opened,b2,1,12
+MIA PaCa-2,Drospirenone,0.5,11,1.0,opened,b2,1,12
+MIA PaCa-2,Elimusertib hydrochloride,0.050000000745058,1,1.0,opened,b1,1,12
+MIA PaCa-2,Erythromycin,5.0,12,1.0,opened,b2,1,12
+MIA PaCa-2,Estrone sulfate (potassium),5.0,12,1.0,opened,b2,1,12
+MIA PaCa-2,GSK1059615,0.5,2,1.0,opened,b2,1,12
+MIA PaCa-2,Glasdegib,0.5,13,1.0,opened,b2,1,12
+MIA PaCa-2,HI-TOPK-032,0.5,2,1.0,opened,b2,1,12
+MIA PaCa-2,Harringtonine,0.050000000745058,7,1.0,opened,b5,1,12
+MIA PaCa-2,Harringtonine,0.5,8,1.0,opened,b5,1,12
+MIA PaCa-2,L-Eflornithine (monohydrochloride),5.0,12,1.0,opened,b5,1,12
+MIA PaCa-2,LJI308,0.5,2,1.0,opened,b2,1,12
+MIA PaCa-2,LY-2584702 (tosylate salt),5.0,3,1.0,opened,b2,1,12
+MIA PaCa-2,PF-06260933,0.050000000745058,13,1.0,opened,b1,1,12
+MIA PaCa-2,Paclitaxel,5.0,3,1.0,opened,b2,1,12
+MIA PaCa-2,Pyridoxine (hydrochloride),5.0,14,1.0,opened,b2,1,12
+MIA PaCa-2,RMC-6236,0.5,2,1.0,opened,b2,1,12
+MIA PaCa-2,RMC-6236,5.0,3,1.0,opened,b2,1,12
+MIA PaCa-2,Regorafenib,5.0,3,1.0,opened,b2,1,12
+MIA PaCa-2,Topotecan (hydrochloride),0.5,8,1.0,opened,b2,1,12
+MIA PaCa-2,Trametinib,0.050000000745058,10,1.0,opened,b2,1,12
+MIA PaCa-2,Trametinib,0.5,2,1.0,opened,b2,1,12
+MIA PaCa-2,Trametinib,5.0,12,1.0,opened,b1|b2,2,24
+MIA PaCa-2,Trametinib (DMSO_TF solvate),0.050000000745058,7,1.0,opened,b1,1,12
+MIA PaCa-2,Tucidinostat,5.0,6,1.0,opened,b1,1,12
+MIA PaCa-2,ULK-101,0.5,2,1.0,opened,b2,1,12
+MIA PaCa-2,Vemurafenib,5.0,3,1.0,opened,b1,1,12
+MIA PaCa-2,XRK3F2,5.0,3,1.0,opened,b1,1,12
+MIA PaCa-2,palbociclib,5.0,3,1.0,opened,b1|b2,2,24
+RKO,AZD2858,0.050000000745058,1,1.0,opened,b5,1,12
+RKO,Abiraterone acetate,5.0,12,1.0,opened,b2,1,12
+RKO,Adagrasib,0.5,8,1.0,opened,b2,1,12
+RKO,Amsacrine,0.5,5,1.0,opened,b5,1,12
+RKO,BI-3406,0.050000000745058,1,1.0,opened,b5,1,12
+RKO,BI-3406,0.5,2,1.0,opened,b5,1,12
+RKO,Binimetinib,0.050000000745058,1,1.0,opened,b1,1,12
+RKO,Binimetinib,0.050000000745058,10,1.0,opened,b5,1,12
+RKO,Binimetinib,0.5,2,1.0,opened,b2,1,12
+RKO,Binimetinib,5.0,12,1.0,opened,b2,1,12
+RKO,Cloxacillin (sodium),5.0,6,1.0,opened,b1,1,12
+RKO,Cobimetinib,5.0,9,1.0,opened,b1,1,12
+RKO,Cysteamine (hydrochloride),5.0,6,1.0,opened,b5,1,12
+RKO,Cytarabine,5.0,9,1.0,opened,b1,1,12
+RKO,Elimusertib hydrochloride,0.5,2,1.0,opened,b5,1,12
+RKO,Filgotinib,0.050000000745058,10,1.0,opened,b5,1,12
+RKO,Flumatinib (mesylate),5.0,9,1.0,opened,b1,1,12
+RKO,Fluvoxamine (maleate),0.5,5,1.0,opened,b5,1,12
+RKO,Gallic acid,5.0,6,1.0,opened,b5,1,12
+RKO,HI-TOPK-032,0.050000000745058,1,1.0,opened,b5,1,12
+RKO,Hesperidin,0.050000000745058,7,1.0,opened,b2,1,12
+RKO,Homoharringtonine,0.050000000745058,4,1.0,opened,b5,1,12
+RKO,Idarubicin (hydrochloride),0.5,5,1.0,opened,b1,1,12
+RKO,Idarubicin (hydrochloride),5.0,6,1.0,opened,b1|b5,2,24
+RKO,Infigratinib,0.050000000745058,1,1.0,opened,b5,1,12
+RKO,Mitoxantrone (dihydrochloride),5.0,6,1.0,opened,b2,1,12
+RKO,NVP-BHG712,0.5,2,1.0,opened,b2,1,12
+RKO,Osimertinib (mesylate),5.0,12,1.0,opened,b2,1,12
+RKO,PF-06260933,0.5,2,1.0,opened,b2,1,12
+RKO,Selinexor ,0.5,5,1.0,opened,b1|b2,2,24
+RKO,Sivelestat (sodium tetrahydrate),5.0,9,1.0,opened,b1,1,12
+RKO,Trametinib,0.5,2,1.0,opened,b2,1,12
+RKO,Trametinib,5.0,12,1.0,opened,b2,1,12
+RKO,Trametinib (DMSO_TF solvate),0.5,8,1.0,opened,b1,1,12
+RKO,Trametinib (DMSO_TF solvate),5.0,9,1.0,opened,b1,1,12
+RKO,Tucidinostat,0.5,5,1.0,opened,b1,1,12
+RKO,Tucidinostat,5.0,6,1.0,opened,b1,1,12
+RKO,ULK-101,0.050000000745058,1,1.0,opened,b5,1,12
+SHP-77,Binimetinib,5.0,12,1.0,opened,b5,1,12
+SHP-77,ETC-206,0.050000000745058,1,1.0,opened,b1,1,12
+SHP-77,Idarubicin (hydrochloride),5.0,14,1.0,opened,b1,1,12
+SHP-77,Larotrectinib,5.0,6,1.0,opened,b5,1,12
+SHP-77,Lenalidomide (hemihydrate),0.5,5,1.0,opened,b2,1,12
+SHP-77,Mitoxantrone (dihydrochloride),0.050000000745058,4,1.0,opened,b1,1,12
+SHP-77,Nimesulide,5.0,13,1.0,opened,b2,1,12
+SHP-77,Osimertinib (mesylate),0.050000000745058,10,1.0,opened,b2,1,12
+SHP-77,Oxaprozin,0.5,11,1.0,opened,b2,1,12
+SHP-77,Pimozide,0.050000000745058,10,1.0,opened,b2,1,12
+SHP-77,Ponatinib,0.5,11,1.0,opened,b2,1,12
+SHP-77,Rosiglitazone,5.0,9,1.0,opened,b5,1,12
+SHP-77,Saquinavir,0.5,5,1.0,opened,b2,1,12
+SHP-77,Sinomenine,0.5,5,1.0,opened,b2,1,12
+SHP-77,Thymol,0.5,5,1.0,opened,b2,1,12
+SHP-77,Trifluridine,0.5,5,1.0,opened,b5,1,12
+SHP-77,vincristine,0.5,2,1.0,opened,b2,1,12
+SW 900,18β-Glycyrrhetinic acid,5.0,6,1.0,opened,b5,1,12
+SW 900,AZD-8055,0.050000000745058,1,1.0,opened,b2,1,12
+SW 900,Aspirin,0.5,11,1.0,opened,b5,1,12
+SW 900,Belzutifan,0.5,2,1.0,opened,b5,1,12
+SW 900,Belzutifan,5.0,3,1.0,opened,b5,1,12
+SW 900,Berbamine (dihydrochloride),5.0,13,1.0,opened,b2,1,12
+SW 900,Binimetinib,0.5,2,1.0,opened,b2,1,12
+SW 900,Canagliflozin,0.050000000745058,7,1.0,opened,b2,1,12
+SW 900,Canagliflozin (hemihydrate),0.5,11,1.0,opened,b2,1,12
+SW 900,Capmatinib,5.0,3,1.0,opened,b5,1,12
+SW 900,Clobetasol propionate,0.050000000745058,10,1.0,opened,b5,1,12
+SW 900,Crizotinib (hydrochloride),0.050000000745058,10,1.0,opened,b5,1,12
+SW 900,Delamanid,0.050000000745058,10,1.0,opened,b5,1,12
+SW 900,Dexamethasone,0.5,11,1.0,opened,b5,1,12
+SW 900,Dinaciclib,0.5,8,1.0,opened,b2,1,12
+SW 900,Elagolix sodium,0.5,5,1.0,opened,b2,1,12
+SW 900,Elimusertib hydrochloride,0.5,2,1.0,opened,b5,1,12
+SW 900,Fluvoxamine (maleate),5.0,6,1.0,opened,b5,1,12
+SW 900,Harringtonine,0.5,8,1.0,opened,b5,1,12
+SW 900,Idarubicin (hydrochloride),0.5,5,1.0,opened,b2,1,12
+SW 900,Indacaterol (maleate),0.050000000745058,10,1.0,opened,b5,1,12
+SW 900,L-Eflornithine (monohydrochloride),0.5,11,1.0,opened,b5,1,12
+SW 900,Methotrexate,0.5,11,1.0,opened,b5,1,12
+SW 900,Mitoxantrone (dihydrochloride),5.0,6,1.0,opened,b5,1,12
+SW 900,Mozavaptan,0.050000000745058,7,1.0,opened,b5,1,12
+SW 900,Omeprazole,0.050000000745058,10,1.0,opened,b5,1,12
+SW 900,Osimertinib (mesylate),0.050000000745058,10,1.0,opened,b5,1,12
+SW 900,Oxaprozin,0.050000000745058,10,1.0,opened,b5,1,12
+SW 900,Pioglitazone,0.5,11,1.0,opened,b5,1,12
+SW 900,RMC-6236,0.5,2,1.0,opened,b5,1,12
+SW 900,Ropivacaine (hydrochloride monohydrate),5.0,6,1.0,opened,b5,1,12
+SW 900,TAK-733,0.5,2,1.0,opened,b5,1,12
+SW 900,Topotecan (hydrochloride),0.5,8,1.0,opened,b5,1,12
+SW 900,Trametinib,0.5,2,1.0,opened,b5,1,12
+SW 900,Tucidinostat,0.5,5,1.0,opened,b1,1,12
+SW 900,Vortioxetine,0.050000000745058,10,1.0,opened,b1,1,12
+SW1417,AZD-7648,0.5,2,1.0,opened,b2,1,12
+SW1417,Aliskiren,5.0,6,1.0,opened,b5,1,12
+SW1417,Bentamapimod,0.5,2,1.0,opened,b5,1,12
+SW1417,Bimiralisib,0.5,2,1.0,opened,b2,1,12
+SW1417,Binimetinib,0.050000000745058,1,1.0,opened,b5,1,12
+SW1417,Binimetinib,0.5,2,1.0,opened,b5,1,12
+SW1417,Binimetinib,5.0,12,1.0,opened,b5,1,12
+SW1417,Diphenhydramine,0.5,8,1.0,opened,b2,1,12
+SW1417,Edoxaban (tosylate monohydrate),5.0,13,1.0,opened,b2,1,12
+SW1417,Elimusertib hydrochloride,0.050000000745058,1,1.0,opened,b5,1,12
+SW1417,Entrectinib,5.0,12,1.0,opened,b2,1,12
+SW1417,Filgotinib,0.5,11,1.0,opened,b2,1,12
+SW1417,Furosemide,5.0,14,1.0,opened,b2,1,12
+SW1417,HI-TOPK-032,0.5,2,1.0,opened,b2,1,12
+SW1417,Infigratinib,0.050000000745058,1,1.0,opened,b5,1,12
+SW1417,LY-2584702 (tosylate salt),5.0,3,1.0,opened,b2,1,12
+SW1417,Malotilate,5.0,12,1.0,opened,b2,1,12
+SW1417,Olanzapine,0.050000000745058,4,1.0,opened,b5,1,12
+SW1417,Pentamidine (isethionate),5.0,14,1.0,opened,b2,1,12
+SW1417,Quinestrol,5.0,6,1.0,opened,b5,1,12
+SW1417,Selinexor ,0.5,5,1.0,opened,b1,1,12
+SW1417,Trametinib,0.5,2,1.0,opened,b2|b5,2,24
+SW1417,Tucidinostat,0.5,5,1.0,opened,b1,1,12
+SW1417,Tucidinostat,5.0,6,1.0,opened,b1,1,12
+SW480,18β-Glycyrrhetinic acid,5.0,6,1.0,opened,b1,1,12
+SW480,AZD-7648,0.5,2,1.0,opened,b2,1,12
+SW480,AZD-8055,0.050000000745058,1,1.0,opened,b1,1,12
+SW480,AZD-8055,5.0,3,1.0,opened,b5,1,12
+SW480,AZD1390,0.5,2,1.0,opened,b5,1,12
+SW480,Adagrasib,0.050000000745058,11,1.0,opened,b2,1,12
+SW480,Afatinib,0.5,2,1.0,opened,b2,1,12
+SW480,Afatinib,5.0,3,1.0,opened,b1,1,12
+SW480,Alpelisib,5.0,3,1.0,opened,b1|b5,2,24
+SW480,BI-3406,5.0,3,1.0,opened,b5,1,12
+SW480,Baicalin,0.050000000745058,4,1.0,opened,b1,1,12
+SW480,Baicalin,5.0,14,1.0,opened,b1,1,12
+SW480,Bentamapimod,0.5,2,1.0,opened,b5,1,12
+SW480,Bimiralisib,0.5,2,1.0,opened,b2,1,12
+SW480,Binimetinib,0.050000000745058,1,1.0,opened,b1|b5,2,24
+SW480,Binimetinib,0.5,2,1.0,opened,b5,1,12
+SW480,Binimetinib,5.0,3,1.0,opened,b1,1,12
+SW480,Brivudine,0.5,2,1.0,opened,b5,1,12
+SW480,Clonidine (hydrochloride),5.0,14,1.0,opened,b2,1,12
+SW480,Elimusertib hydrochloride,0.050000000745058,1,1.0,opened,b5,1,12
+SW480,Epirubicin (hydrochloride),5.0,9,1.0,opened,b1,1,12
+SW480,Estrone sulfate (potassium),0.050000000745058,10,1.0,opened,b1,1,12
+SW480,GSK1059615,0.5,2,1.0,opened,b2,1,12
+SW480,Gemcitabine,5.0,3,1.0,opened,b1|b5,2,24
+SW480,HI-TOPK-032,5.0,3,1.0,opened,b1,1,12
+SW480,Idarubicin (hydrochloride),5.0,6,1.0,opened,b1|b2,2,24
+SW480,Idarubicin (hydrochloride),5.0,14,1.0,opened,b1,1,12
+SW480,Ipatasertib,0.5,2,1.0,opened,b2,1,12
+SW480,L-Eflornithine (monohydrochloride),5.0,12,1.0,opened,b5,1,12
+SW480,LJI308,0.050000000745058,1,1.0,opened,b5,1,12
+SW480,Lactate (calcium),5.0,12,1.0,opened,b2,1,12
+SW480,Larotrectinib,5.0,6,1.0,opened,b2,1,12
+SW480,Lenalidomide (hemihydrate),0.5,5,1.0,opened,b2,1,12
+SW480,MK-3903,0.050000000745058,1,1.0,opened,b1,1,12
+SW480,Mitoxantrone (dihydrochloride),0.5,5,1.0,opened,b1,1,12
+SW480,NVP-BHG712,0.5,2,1.0,opened,b2,1,12
+SW480,Olanzapine,5.0,6,1.0,opened,b5,1,12
+SW480,Paclitaxel,0.5,2,1.0,opened,b5,1,12
+SW480,Panobinostat,0.050000000745058,10,1.0,opened,b1,1,12
+SW480,Pentamidine (isethionate),0.5,13,1.0,opened,b2,1,12
+SW480,Pimitespib,0.5,2,1.0,opened,b2,1,12
+SW480,Pravastatin (sodium),5.0,9,1.0,opened,b1,1,12
+SW480,Pyridoxine,0.5,5,1.0,opened,b1,1,12
+SW480,Radotinib,0.5,5,1.0,opened,b5,1,12
+SW480,Ropivacaine (hydrochloride monohydrate),5.0,14,1.0,opened,b2,1,12
+SW480,Sivelestat (sodium tetrahydrate),5.0,9,1.0,opened,b1,1,12
+SW480,Sodium Salicylate,5.0,6,1.0,opened,b1,1,12
+SW480,Sonidegib,0.5,2,1.0,opened,b2,1,12
+SW480,Sulfisoxazole,0.5,13,1.0,opened,b1,1,12
+SW480,Thymol,0.5,5,1.0,opened,b2,1,12
+SW480,Topotecan (hydrochloride),0.5,8,1.0,opened,b1,1,12
+SW480,Trametinib,0.5,2,1.0,opened,b5,1,12
+SW480,Trametinib,5.0,12,1.0,opened,b1,1,12
+SW480,Trametinib (DMSO_TF solvate),0.050000000745058,7,1.0,opened,b1,1,12
+SW480,Trimetrexate,0.050000000745058,4,1.0,opened,b5,1,12
+SW480,Tucidinostat,0.050000000745058,4,1.0,opened,b1,1,12
+SW480,Tucidinostat,0.5,5,1.0,opened,b1,1,12
+SW480,Tucidinostat,5.0,6,1.0,opened,b1|b5,2,24
+SW480,ULK-101,0.5,2,1.0,opened,b2,1,12
+SW480,Verteporfin,5.0,9,1.0,opened,b1,1,12
+SW480,XRK3F2,5.0,3,1.0,opened,b1,1,12
+SW480,c-Kit-IN-1,0.050000000745058,13,1.0,opened,b2,1,12
+A549,APTO-253,5.0,3,1.0,closed,b1,1,24
+A549,Abemaciclib,5.0,3,1.0,closed,b1,1,24
+A549,Adagrasib,0.050000000745058,14,1.0,closed,b1,1,24
+A549,Asciminib,5.0,12,1.0,closed,b1,1,24
+A549,Auranofin,5.0,12,1.0,closed,b1,1,24
+A549,Belinostat,0.5,11,1.0,closed,b1,1,24
+A549,Belinostat,5.0,12,1.0,closed,b1,1,24
+A549,Bortezomib,0.050000000745058,1,1.0,closed,b1|b5,2,12
+A549,Bortezomib,0.5,2,1.0,closed,b1,1,24
+A549,Bortezomib,5.0,3,1.0,closed,b1,1,24
+A549,Clonidine (hydrochloride),5.0,6,1.0,closed,b2,1,24
+A549,Darinaparsin,5.0,6,1.0,closed,b1,1,24
+A549,Dexamethasone,0.050000000745058,10,1.0,closed,b5,1,24
+A549,Digitoxin,0.050000000745058,10,1.0,closed,b1,1,24
+A549,Digitoxin,0.5,11,1.0,closed,b1,1,24
+A549,Dinaciclib,0.5,8,1.0,closed,b1,1,24
+A549,Doxycycline (monohydrate),0.050000000745058,7,1.0,closed,b1,1,24
+A549,Fedratinib (hydrochloride hydrate),5.0,12,1.0,closed,b1|b5,2,12
+A549,Filgotinib,0.5,11,1.0,closed,b1,1,24
+A549,Filgotinib,5.0,12,1.0,closed,b1,1,24
+A549,Flumatinib (mesylate),0.5,8,1.0,closed,b5,1,24
+A549,Folic acid,5.0,6,1.0,closed,b2,1,24
+A549,Gallic acid (hydrate),5.0,6,1.0,closed,b1,1,24
+A549,Harringtonine,0.050000000745058,7,1.0,closed,b1,1,24
+A549,Harringtonine,0.5,8,1.0,closed,b1,1,24
+A549,Harringtonine,5.0,9,1.0,closed,b1,1,24
+A549,Homoharringtonine,0.050000000745058,4,1.0,closed,b1,1,24
+A549,Homoharringtonine,0.5,5,1.0,closed,b1,1,24
+A549,Homoharringtonine,5.0,6,1.0,closed,b1|b2,2,12
+A549,Homoharringtonine,5.0,14,1.0,closed,b1,1,24
+A549,Idarubicin (hydrochloride),5.0,6,1.0,closed,b5,1,24
+A549,Idarubicin (hydrochloride),5.0,14,1.0,closed,b5,1,24
+A549,Idoxuridine,0.050000000745058,10,1.0,closed,b1,1,24
+A549,Ipatasertib,5.0,3,1.0,closed,b1,1,24
+A549,Irinotecan,0.5,2,1.0,closed,b2,1,24
+A549,Irinotecan (hydrochloride),0.5,13,1.0,closed,b5,1,24
+A549,Irinotecan (hydrochloride),5.0,13,1.0,closed,b1,1,24
+A549,Ixazomib,5.0,3,1.0,closed,b1,1,24
+A549,Ixazomib citrate,0.5,11,1.0,closed,b1|b2|b5,3,6
+A549,Ixazomib citrate,5.0,12,1.0,closed,b1|b5,2,12
+A549,Lonafarnib,5.0,3,1.0,closed,b1,1,24
+A549,MK-8353,0.5,2,1.0,closed,b2,1,24
+A549,Medroxyprogesterone acetate,5.0,6,1.0,closed,b5,1,24
+A549,Megestrol,5.0,6,1.0,closed,b5,1,24
+A549,Menadione,0.050000000745058,7,1.0,closed,b1,1,24
+A549,Mitoxantrone (dihydrochloride),5.0,6,1.0,closed,b1,1,24
+A549,NG25,0.5,2,1.0,closed,b1,1,24
+A549,NG25,5.0,3,1.0,closed,b1,1,24
+A549,NVP-BHG712,0.050000000745058,1,1.0,closed,b1,1,24
+A549,NVP-BHG712,0.5,2,1.0,closed,b1,1,24
+A549,NVP-BHG712,5.0,3,1.0,closed,b1,1,24
+A549,Niclosamide (olamine),0.5,8,1.0,closed,b5,1,24
+A549,Nimesulide,5.0,13,1.0,closed,b1,1,24
+A549,Ouabain (Octahydrate),0.050000000745058,10,1.0,closed,b1|b2,2,12
+A549,Ouabain (Octahydrate),0.5,11,1.0,closed,b1|b2,2,12
+A549,Ouabain (Octahydrate),5.0,12,1.0,closed,b1,1,24
+A549,PH-797804,0.5,2,1.0,closed,b1,1,24
+A549,PH-797804,5.0,3,1.0,closed,b1|b2,2,12
+A549,Panobinostat,0.5,11,1.0,closed,b1|b5,2,12
+A549,Panobinostat,5.0,12,1.0,closed,b1,1,24
+A549,Pentagastrin,5.0,6,1.0,closed,b2,1,24
+A549,Peretinoin,0.5,8,1.0,closed,b5,1,24
+A549,Pralsetinib,5.0,3,1.0,closed,b1,1,24
+A549,Resveratrol,0.5,5,1.0,closed,b1,1,24
+A549,Riluzole hydrochloride,0.5,5,1.0,closed,b1,1,24
+A549,Rutin (trihydrate),0.050000000745058,7,1.0,closed,b2,1,24
+A549,Sapanisertib,0.5,2,1.0,closed,b5,1,24
+A549,Selinexor ,5.0,6,1.0,closed,b1|b5,2,12
+A549,Silodosin,0.5,8,1.0,closed,b5,1,24
+A549,TAK-901,0.5,2,1.0,closed,b1,1,24
+A549,TAK-901,5.0,3,1.0,closed,b1|b2,2,12
+A549,Temuterkib,0.5,2,1.0,closed,b1,1,24
+A549,Tirabrutinib (hydrochloride),5.0,12,1.0,closed,b5,1,24
+A549,Tofacitinib,0.5,5,1.0,closed,b1|b5,2,12
+A549,Tofacitinib,5.0,6,1.0,closed,b1|b5,2,12
+A549,Tofacitinib (citrate),0.5,5,1.0,closed,b1,1,24
+A549,Tofacitinib (citrate),5.0,6,1.0,closed,b1|b5,2,12
+A549,Triamcinolone,5.0,6,1.0,closed,b2,1,24
+A549,Trimetrexate,5.0,6,1.0,closed,b5,1,24
+A549,Vinblastine (sulfate),5.0,6,1.0,closed,b5,1,24
+A549,c-Kit-IN-1,0.5,2,1.0,closed,b2,1,24
+A549,c-Kit-IN-1,5.0,3,1.0,closed,b1,1,24
+AsPC-1,Acetohexamide,5.0,6,1.0,closed,b1,1,24
+AsPC-1,Allantoin,5.0,6,1.0,closed,b1,1,24
+AsPC-1,Allantoin,5.0,14,1.0,closed,b1,1,24
+AsPC-1,Atazanavir (sulfate),5.0,12,1.0,closed,b1,1,24
+AsPC-1,Auranofin,5.0,12,1.0,closed,b1|b5,2,12
+AsPC-1,Belinostat,0.5,11,1.0,closed,b1,1,24
+AsPC-1,Belinostat,5.0,12,1.0,closed,b1,1,24
+AsPC-1,Bergenin,5.0,6,1.0,closed,b1,1,24
+AsPC-1,Bexarotene,5.0,12,1.0,closed,b2,1,24
+AsPC-1,Bortezomib,0.050000000745058,1,1.0,closed,b1|b2|b5,3,6
+AsPC-1,Bortezomib,0.5,2,1.0,closed,b1|b5,2,12
+AsPC-1,Budesonide,0.050000000745058,10,1.0,closed,b5,1,24
+AsPC-1,Darinaparsin,5.0,6,1.0,closed,b5,1,24
+AsPC-1,Fedratinib (hydrochloride hydrate),5.0,12,1.0,closed,b5,1,24
+AsPC-1,Fluvoxamine (maleate),0.5,5,1.0,closed,b5,1,24
+AsPC-1,Glycyrrhizic acid,0.050000000745058,7,1.0,closed,b1,1,24
+AsPC-1,Homoharringtonine,0.5,5,1.0,closed,b2,1,24
+AsPC-1,Homoharringtonine,5.0,6,1.0,closed,b2,1,24
+AsPC-1,Ixazomib citrate,0.5,11,1.0,closed,b1|b2|b5,3,6
+AsPC-1,Ixazomib citrate,5.0,12,1.0,closed,b1|b2|b5,3,6
+AsPC-1,Lipoic acid,5.0,6,1.0,closed,b1,1,24
+AsPC-1,Medroxyprogesterone acetate,5.0,6,1.0,closed,b1,1,24
+AsPC-1,Neratinib,0.5,11,1.0,closed,b1,1,24
+AsPC-1,Neratinib (maleate),5.0,6,1.0,closed,b1,1,24
+AsPC-1,Neratinib (maleate),5.0,14,1.0,closed,b1,1,24
+AsPC-1,Ouabain (Octahydrate),0.5,11,1.0,closed,b1,1,24
+AsPC-1,Panobinostat,0.050000000745058,10,1.0,closed,b2,1,24
+AsPC-1,Panobinostat,0.5,11,1.0,closed,b1|b5,2,12
+AsPC-1,Panobinostat,5.0,12,1.0,closed,b1|b5,2,12
+AsPC-1,Pasireotide (acetate),5.0,6,1.0,closed,b1,1,24
+AsPC-1,Pentoxifylline,0.050000000745058,10,1.0,closed,b1,1,24
+AsPC-1,Retinoic acid,5.0,6,1.0,closed,b5,1,24
+AsPC-1,Ritonavir,5.0,6,1.0,closed,b1,1,24
+AsPC-1,Sunitinib,0.5,11,1.0,closed,b1,1,24
+AsPC-1,TAK-901,0.050000000745058,1,1.0,closed,b2,1,24
+AsPC-1,TAK-901,5.0,3,1.0,closed,b2,1,24
+AsPC-1,Temsirolimus,5.0,6,1.0,closed,b1,1,24
+AsPC-1,Tofacitinib,0.5,5,1.0,closed,b1|b5,2,12
+AsPC-1,Tofacitinib,5.0,6,1.0,closed,b1|b5,2,12
+AsPC-1,Tofacitinib (citrate),0.5,5,1.0,closed,b1,1,24
+AsPC-1,Tofacitinib (citrate),5.0,6,1.0,closed,b1|b5,2,12
+AsPC-1,Triamcinolone,0.5,5,1.0,closed,b5,1,24
+AsPC-1,Trifluridine,5.0,6,1.0,closed,b1,1,24
+AsPC-1,Vinblastine (sulfate),5.0,6,1.0,closed,b1|b5,2,12
+AsPC-1,c-Kit-IN-1,0.050000000745058,13,1.0,closed,b5,1,24
+CFPAC-1,5-Azacytidine,0.050000000745058,10,1.0,closed,b1,1,24
+CFPAC-1,5-Azacytidine,0.5,11,1.0,closed,b1,1,24
+CFPAC-1,Auranofin,0.5,11,1.0,closed,b1,1,24
+CFPAC-1,Auranofin,5.0,12,1.0,closed,b1|b2|b5,3,6
+CFPAC-1,Bisoprolol (hemifumarate),5.0,9,1.0,closed,b1,1,24
+CFPAC-1,Bortezomib,0.050000000745058,1,1.0,closed,b1|b2|b5,3,6
+CFPAC-1,Bortezomib,0.5,2,1.0,closed,b1|b5,2,12
+CFPAC-1,Bortezomib,5.0,3,1.0,closed,b1,1,24
+CFPAC-1,Bosentan (hydrate),0.050000000745058,7,1.0,closed,b1,1,24
+CFPAC-1,CP21R7,0.5,2,1.0,closed,b1,1,24
+CFPAC-1,Dabrafenib,5.0,3,1.0,closed,b2,1,24
+CFPAC-1,"Dapagliflozin ((2S)-1,2-propanediol, hydrate)",0.050000000745058,7,1.0,closed,b1,1,24
+CFPAC-1,Daptomycin,5.0,13,1.0,closed,b1|b2,2,12
+CFPAC-1,Digitoxin,0.5,11,1.0,closed,b1,1,24
+CFPAC-1,Dinaciclib,0.050000000745058,7,1.0,closed,b1,1,24
+CFPAC-1,Dinaciclib,0.5,8,1.0,closed,b1,1,24
+CFPAC-1,Dinaciclib,5.0,9,1.0,closed,b1,1,24
+CFPAC-1,Docetaxel (Trihydrate),5.0,9,1.0,closed,b1,1,24
+CFPAC-1,EX229,5.0,3,1.0,closed,b1,1,24
+CFPAC-1,Fedratinib (hydrochloride hydrate),5.0,12,1.0,closed,b1,1,24
+CFPAC-1,Imiquimod (hydrochloride),5.0,12,1.0,closed,b1,1,24
+CFPAC-1,Ivermectin,0.5,11,1.0,closed,b1,1,24
+CFPAC-1,Ixazomib citrate,0.5,11,1.0,closed,b1|b2|b5,3,6
+CFPAC-1,Ixazomib citrate,5.0,12,1.0,closed,b1,1,24
+CFPAC-1,Mifepristone,5.0,9,1.0,closed,b1,1,24
+CFPAC-1,Mitoxantrone (dihydrochloride),5.0,6,1.0,closed,b1,1,24
+CFPAC-1,Monocrotaline,0.050000000745058,7,1.0,closed,b1,1,24
+CFPAC-1,NG25,5.0,3,1.0,closed,b1,1,24
+CFPAC-1,NVP-BHG712,0.050000000745058,1,1.0,closed,b2,1,24
+CFPAC-1,Neratinib,0.050000000745058,10,1.0,closed,b1,1,24
+CFPAC-1,Oleic acid,0.050000000745058,1,1.0,closed,b2,1,24
+CFPAC-1,Omeprazole,0.5,11,1.0,closed,b1,1,24
+CFPAC-1,Ouabain (Octahydrate),0.5,11,1.0,closed,b5,1,24
+CFPAC-1,PH-797804,5.0,3,1.0,closed,b2,1,24
+CFPAC-1,Panobinostat,0.5,11,1.0,closed,b1|b2|b5,3,6
+CFPAC-1,Panobinostat,5.0,12,1.0,closed,b2|b5,2,12
+CFPAC-1,Peretinoin,5.0,9,1.0,closed,b1|b2,2,12
+CFPAC-1,Pexidartinib (hydrochloride),0.050000000745058,7,1.0,closed,b1,1,24
+CFPAC-1,Pitavastatin (Calcium),5.0,9,1.0,closed,b1,1,24
+CFPAC-1,Plicamycin,0.050000000745058,13,1.0,closed,b5,1,24
+CFPAC-1,Pravastatin (sodium),0.050000000745058,13,1.0,closed,b1,1,24
+CFPAC-1,Raltitrexed,0.5,5,1.0,closed,b5,1,24
+CFPAC-1,Rosiglitazone,5.0,9,1.0,closed,b1,1,24
+CFPAC-1,Rutin (trihydrate),5.0,9,1.0,closed,b2,1,24
+CFPAC-1,Selinexor ,5.0,6,1.0,closed,b1,1,24
+CFPAC-1,Sunitinib,5.0,12,1.0,closed,b1,1,24
+CFPAC-1,TAK-901,5.0,3,1.0,closed,b2,1,24
+CFPAC-1,Temuterkib,0.050000000745058,1,1.0,closed,b2,1,24
+CFPAC-1,Thymopentin,5.0,9,1.0,closed,b2,1,24
+CFPAC-1,Tirabrutinib,5.0,9,1.0,closed,b2,1,24
+CFPAC-1,Tofacitinib,0.5,5,1.0,closed,b1,1,24
+CFPAC-1,Tofacitinib,5.0,6,1.0,closed,b1|b5,2,12
+CFPAC-1,Tofacitinib (citrate),0.5,5,1.0,closed,b5,1,24
+CFPAC-1,Tofacitinib (citrate),5.0,6,1.0,closed,b1|b5,2,12
+CFPAC-1,Topotecan (hydrochloride),5.0,9,1.0,closed,b1,1,24
+CFPAC-1,Tubulin inhibitor 6,5.0,3,1.0,closed,b1,1,24
+CFPAC-1,Vinblastine (sulfate),5.0,6,1.0,closed,b2,1,24
+CFPAC-1,c-Kit-IN-1,0.050000000745058,13,1.0,closed,b1|b2,2,12
+CFPAC-1,crizotinib,5.0,9,1.0,closed,b2,1,24
+COLO 205,Asciminib,0.050000000745058,10,1.0,closed,b2,1,24
+COLO 205,Auranofin,0.5,11,1.0,closed,b1,1,24
+COLO 205,Auranofin,5.0,12,1.0,closed,b1|b5,2,12
+COLO 205,Azithromycin (hydrate),0.050000000745058,4,1.0,closed,b5,1,24
+COLO 205,BI-78D3,0.5,2,1.0,closed,b1,1,24
+COLO 205,Belinostat,0.050000000745058,10,1.0,closed,b2,1,24
+COLO 205,Belinostat,0.5,11,1.0,closed,b1,1,24
+COLO 205,Belinostat,5.0,12,1.0,closed,b1|b5,2,12
+COLO 205,Belzutifan,0.5,2,1.0,closed,b1,1,24
+COLO 205,Bimiralisib,0.050000000745058,1,1.0,closed,b2,1,24
+COLO 205,Bortezomib,0.050000000745058,1,1.0,closed,b1|b2|b5,3,6
+COLO 205,Bortezomib,0.5,2,1.0,closed,b1|b2|b5,3,6
+COLO 205,Bortezomib,5.0,3,1.0,closed,b1|b2,2,12
+COLO 205,Crizotinib (hydrochloride),0.050000000745058,10,1.0,closed,b2,1,24
+COLO 205,Dapagliflozin,0.050000000745058,10,1.0,closed,b2,1,24
+COLO 205,Dihydroartemisinin,5.0,12,1.0,closed,b5,1,24
+COLO 205,EX229,0.050000000745058,1,1.0,closed,b1,1,24
+COLO 205,Fedratinib (hydrochloride hydrate),5.0,12,1.0,closed,b5,1,24
+COLO 205,Fingolimod (hydrochloride),0.050000000745058,10,1.0,closed,b2,1,24
+COLO 205,Harringtonine,5.0,9,1.0,closed,b1,1,24
+COLO 205,Homoharringtonine,0.5,5,1.0,closed,b1|b2,2,12
+COLO 205,Hydroxyurea,5.0,9,1.0,closed,b2,1,24
+COLO 205,Ixazomib citrate,0.5,11,1.0,closed,b1|b2|b5,3,6
+COLO 205,Ixazomib citrate,5.0,12,1.0,closed,b1|b2|b5,3,6
+COLO 205,LY2090314,0.050000000745058,1,1.0,closed,b2,1,24
+COLO 205,Lonafarnib,0.5,2,1.0,closed,b5,1,24
+COLO 205,Megestrol,0.5,5,1.0,closed,b2,1,24
+COLO 205,NVP-BHG712,0.050000000745058,1,1.0,closed,b2,1,24
+COLO 205,Panobinostat,0.050000000745058,10,1.0,closed,b2,1,24
+COLO 205,Panobinostat,0.5,11,1.0,closed,b1,1,24
+COLO 205,Panobinostat,5.0,12,1.0,closed,b1|b2|b5,3,6
+COLO 205,Regorafenib,0.5,2,1.0,closed,b5,1,24
+COLO 205,Sapanisertib,0.5,2,1.0,closed,b1,1,24
+COLO 205,Saquinavir,5.0,6,1.0,closed,b1,1,24
+COLO 205,Sodium Salicylate,0.050000000745058,4,1.0,closed,b2,1,24
+COLO 205,Sunitinib,5.0,12,1.0,closed,b1,1,24
+COLO 205,TAK-901,5.0,3,1.0,closed,b2,1,24
+COLO 205,Temsirolimus,0.5,5,1.0,closed,b5,1,24
+COLO 205,Topotecan (hydrochloride),5.0,9,1.0,closed,b1,1,24
+COLO 205,Torkinib,0.050000000745058,1,1.0,closed,b1,1,24
+COLO 205,Trimetrexate,0.050000000745058,4,1.0,closed,b1,1,24
+COLO 205,Valdecoxib,0.050000000745058,10,1.0,closed,b1,1,24
+COLO 205,c-Kit-IN-1,0.5,2,1.0,closed,b2,1,24
+HCT15,Belinostat,5.0,12,1.0,closed,b2,1,24
+HCT15,Bendamustine,0.050000000745058,7,1.0,closed,b1,1,24
+HCT15,Ixazomib citrate,0.5,11,1.0,closed,b1,1,24
+HCT15,Ixazomib citrate,5.0,12,1.0,closed,b1|b5,2,12
+HS-578T,AZD2858,5.0,3,1.0,closed,b1,1,24
+HS-578T,Auranofin,5.0,12,1.0,closed,b1,1,24
+HS-578T,Belinostat,0.5,11,1.0,closed,b2,1,24
+HS-578T,Belinostat,5.0,12,1.0,closed,b1,1,24
+HS-578T,Bortezomib,0.050000000745058,1,1.0,closed,b1|b5,2,12
+HS-578T,Canagliflozin,0.050000000745058,7,1.0,closed,b5,1,24
+HS-578T,Daptomycin,5.0,13,1.0,closed,b5,1,24
+HS-578T,Diammonium Glycyrrhizinate,0.050000000745058,4,1.0,closed,b1,1,24
+HS-578T,Dinaciclib,0.5,8,1.0,closed,b1,1,24
+HS-578T,Filgotinib,0.5,11,1.0,closed,b5,1,24
+HS-578T,Harringtonine,5.0,9,1.0,closed,b2,1,24
+HS-578T,Ixazomib citrate,0.050000000745058,10,1.0,closed,b1,1,24
+HS-578T,Ixazomib citrate,0.5,11,1.0,closed,b1|b2|b5,3,6
+HS-578T,Mitoxantrone (dihydrochloride),5.0,6,1.0,closed,b5,1,24
+HS-578T,NG25,5.0,3,1.0,closed,b1,1,24
+HS-578T,Nevirapine,5.0,9,1.0,closed,b2,1,24
+HS-578T,OTS514,5.0,3,1.0,closed,b5,1,24
+HS-578T,PH-797804,5.0,3,1.0,closed,b2,1,24
+HS-578T,Panobinostat,0.050000000745058,10,1.0,closed,b2,1,24
+HS-578T,Panobinostat,0.5,11,1.0,closed,b1|b2,2,12
+HS-578T,Panobinostat,5.0,12,1.0,closed,b1|b2,2,12
+HS-578T,Pimozide,0.050000000745058,10,1.0,closed,b1,1,24
+HS-578T,Retinoic acid,0.050000000745058,4,1.0,closed,b1,1,24
+HS-578T,Ritonavir,0.5,5,1.0,closed,b1,1,24
+HS-578T,Salicylic acid,0.050000000745058,4,1.0,closed,b1,1,24
+HS-578T,Sildenafil,5.0,9,1.0,closed,b2,1,24
+HS-578T,Sivelestat (sodium tetrahydrate),5.0,9,1.0,closed,b2,1,24
+HS-578T,TAK-901,5.0,3,1.0,closed,b2,1,24
+HS-578T,Talc,0.5,11,1.0,closed,b1,1,24
+HS-578T,Tetracycline (hydrochloride),0.050000000745058,7,1.0,closed,b1,1,24
+HS-578T,Thymol,0.050000000745058,4,1.0,closed,b1,1,24
+HS-578T,Topotecan (hydrochloride),5.0,9,1.0,closed,b1,1,24
+HS-578T,Tranilast,5.0,9,1.0,closed,b2,1,24
+HS-578T,Vilanterol,0.050000000745058,4,1.0,closed,b1,1,24
+HS-578T,Vinblastine (sulfate),5.0,6,1.0,closed,b5,1,24
+HT-29,Auranofin,5.0,12,1.0,closed,b1|b2,2,12
+HT-29,Belinostat,5.0,12,1.0,closed,b2,1,24
+HT-29,Bortezomib,0.050000000745058,1,1.0,closed,b1|b2|b5,3,6
+HT-29,Bortezomib,0.5,2,1.0,closed,b2,1,24
+HT-29,Bortezomib,5.0,3,1.0,closed,b2,1,24
+HT-29,Brivudine,0.050000000745058,1,1.0,closed,b2,1,24
+HT-29,Brivudine,5.0,3,1.0,closed,b2,1,24
+HT-29,EX229,0.050000000745058,1,1.0,closed,b2,1,24
+HT-29,EX229,0.5,2,1.0,closed,b1,1,24
+HT-29,EX229,5.0,3,1.0,closed,b2,1,24
+HT-29,Homoharringtonine,0.5,5,1.0,closed,b1|b2,2,12
+HT-29,Homoharringtonine,5.0,6,1.0,closed,b1|b2|b5,3,6
+HT-29,Homoharringtonine,5.0,14,1.0,closed,b2,1,24
+HT-29,IQ 1,0.050000000745058,1,1.0,closed,b2,1,24
+HT-29,Idarubicin (hydrochloride),5.0,6,1.0,closed,b2,1,24
+HT-29,Idarubicin (hydrochloride),5.0,14,1.0,closed,b2,1,24
+HT-29,Ixazomib citrate,0.5,11,1.0,closed,b1|b2|b5,3,6
+HT-29,Ixazomib citrate,5.0,12,1.0,closed,b2|b5,2,12
+HT-29,Lumateperone (tosylate),0.050000000745058,4,1.0,closed,b2,1,24
+HT-29,Niclosamide (olamine),5.0,9,1.0,closed,b2,1,24
+HT-29,Ouabain (Octahydrate),5.0,12,1.0,closed,b2,1,24
+HT-29,Panobinostat,0.050000000745058,10,1.0,closed,b2,1,24
+HT-29,Panobinostat,5.0,12,1.0,closed,b2,1,24
+HT-29,Ponatinib,0.050000000745058,10,1.0,closed,b2,1,24
+HT-29,Sodium Salicylate,0.050000000745058,4,1.0,closed,b2,1,24
+HT-29,TAK-733,0.050000000745058,1,1.0,closed,b2,1,24
+HT-29,TAK-901,5.0,3,1.0,closed,b2,1,24
+HT-29,Tofacitinib,0.5,5,1.0,closed,b2,1,24
+HT-29,Tofacitinib,5.0,6,1.0,closed,b2,1,24
+HT-29,Tofacitinib (citrate),0.050000000745058,4,1.0,closed,b2,1,24
+HT-29,Tofacitinib (citrate),0.5,5,1.0,closed,b5,1,24
+HT-29,Trimetrexate,0.050000000745058,4,1.0,closed,b2,1,24
+HT-29,Trimetrexate,5.0,14,1.0,closed,b2,1,24
+HT-29,ULK-101,0.5,2,1.0,closed,b1,1,24
+HT-29,c-Kit-IN-1,0.5,2,1.0,closed,b2,1,24
+Hs 766T,Bortezomib,0.5,2,1.0,closed,b5,1,24
+Hs 766T,Erlotinib,5.0,9,1.0,closed,b2,1,24
+Hs 766T,Gallic acid,5.0,6,1.0,closed,b1,1,24
+Hs 766T,Mozavaptan,0.050000000745058,7,1.0,closed,b1,1,24
+Hs 766T,Sapanisertib,0.5,2,1.0,closed,b1,1,24
+Hs 766T,TAK-901,0.5,2,1.0,closed,b5,1,24
+Hs 766T,TAK-901,5.0,3,1.0,closed,b2,1,24
+Hs 766T,Tofacitinib (citrate),5.0,6,1.0,closed,b5,1,24
+Hs 766T,Torkinib,0.5,2,1.0,closed,b5,1,24
+Hs 766T,Verteporfin,0.5,8,1.0,closed,b1,1,24
+LoVo,5-Azacytidine,0.5,11,1.0,closed,b1,1,24
+LoVo,Asciminib,0.050000000745058,10,1.0,closed,b2,1,24
+LoVo,Auranofin,0.5,11,1.0,closed,b1,1,24
+LoVo,Auranofin,5.0,12,1.0,closed,b1|b2|b5,3,6
+LoVo,BI-78D3,0.050000000745058,1,1.0,closed,b2,1,24
+LoVo,Belinostat,5.0,12,1.0,closed,b1|b2|b5,3,6
+LoVo,Belumosudil,0.050000000745058,13,1.0,closed,b5,1,24
+LoVo,Belumosudil,0.5,8,1.0,closed,b1,1,24
+LoVo,Bortezomib,0.050000000745058,1,1.0,closed,b1|b2|b5,3,6
+LoVo,Bortezomib,0.5,2,1.0,closed,b1|b2|b5,3,6
+LoVo,Bortezomib,5.0,3,1.0,closed,b5,1,24
+LoVo,Brivudine,5.0,3,1.0,closed,b2,1,24
+LoVo,Carbamazepine,0.5,11,1.0,closed,b1,1,24
+LoVo,Citalopram (hydrobromide),0.5,11,1.0,closed,b5,1,24
+LoVo,Cytarabine,0.050000000745058,13,1.0,closed,b5,1,24
+LoVo,"Dapagliflozin ((2S)-1,2-propanediol, hydrate)",0.050000000745058,7,1.0,closed,b1,1,24
+LoVo,Digitoxin,0.5,11,1.0,closed,b1|b2|b5,3,6
+LoVo,Digitoxin,5.0,12,1.0,closed,b1,1,24
+LoVo,Erlotinib,5.0,9,1.0,closed,b2,1,24
+LoVo,Fedratinib (hydrochloride hydrate),5.0,12,1.0,closed,b1|b5,2,12
+LoVo,Filgotinib,0.5,11,1.0,closed,b1,1,24
+LoVo,Filgotinib,5.0,12,1.0,closed,b1,1,24
+LoVo,Flutamide,0.050000000745058,10,1.0,closed,b2,1,24
+LoVo,Homoharringtonine,5.0,14,1.0,closed,b5,1,24
+LoVo,Hydroxyfasudil,5.0,3,1.0,closed,b1,1,24
+LoVo,Idarubicin (hydrochloride),5.0,6,1.0,closed,b5,1,24
+LoVo,Imiquimod (hydrochloride),5.0,12,1.0,closed,b1,1,24
+LoVo,Infigratinib,5.0,3,1.0,closed,b1,1,24
+LoVo,Ipatasertib,5.0,3,1.0,closed,b1,1,24
+LoVo,Irinotecan (hydrochloride),0.5,13,1.0,closed,b1,1,24
+LoVo,Irinotecan (hydrochloride),5.0,13,1.0,closed,b1,1,24
+LoVo,Ixazomib,5.0,3,1.0,closed,b1|b5,2,12
+LoVo,Ixazomib citrate,0.5,11,1.0,closed,b1|b2|b5,3,6
+LoVo,Ixazomib citrate,5.0,12,1.0,closed,b1|b2|b5,3,6
+LoVo,Lopinavir,5.0,12,1.0,closed,b1,1,24
+LoVo,Monocrotaline,0.050000000745058,7,1.0,closed,b1,1,24
+LoVo,NG25,5.0,3,1.0,closed,b1,1,24
+LoVo,NVP-BHG712,0.5,2,1.0,closed,b1,1,24
+LoVo,NVP-BHG712,5.0,3,1.0,closed,b1,1,24
+LoVo,Neratinib,5.0,12,1.0,closed,b1,1,24
+LoVo,Niclosamide (olamine),5.0,9,1.0,closed,b1,1,24
+LoVo,Ouabain (Octahydrate),0.5,11,1.0,closed,b1|b2|b5,3,6
+LoVo,Ouabain (Octahydrate),5.0,12,1.0,closed,b1|b2|b5,3,6
+LoVo,PH-797804,0.5,2,1.0,closed,b1,1,24
+LoVo,PH-797804,5.0,3,1.0,closed,b2,1,24
+LoVo,Panobinostat,0.050000000745058,10,1.0,closed,b2,1,24
+LoVo,Panobinostat,0.5,11,1.0,closed,b1|b2|b5,3,6
+LoVo,Panobinostat,5.0,12,1.0,closed,b1|b2|b5,3,6
+LoVo,Ponatinib,0.5,11,1.0,closed,b1,1,24
+LoVo,Ponatinib,5.0,12,1.0,closed,b1,1,24
+LoVo,Sapanisertib,0.5,2,1.0,closed,b1,1,24
+LoVo,Sunitinib,5.0,12,1.0,closed,b1,1,24
+LoVo,TAK-901,0.050000000745058,1,1.0,closed,b1|b2,2,12
+LoVo,TAK-901,5.0,3,1.0,closed,b2,1,24
+LoVo,Talc,0.050000000745058,10,1.0,closed,b1,1,24
+LoVo,Talc,0.5,11,1.0,closed,b1,1,24
+LoVo,Terfenadine,0.5,13,1.0,closed,b1,1,24
+LoVo,Thymopentin,5.0,9,1.0,closed,b2,1,24
+LoVo,Tofacitinib,0.5,5,1.0,closed,b1,1,24
+LoVo,Tofacitinib,5.0,6,1.0,closed,b1|b5,2,12
+LoVo,Tofacitinib (citrate),0.5,5,1.0,closed,b1,1,24
+LoVo,Tofacitinib (citrate),5.0,6,1.0,closed,b1|b5,2,12
+LoVo,Trifluridine,5.0,6,1.0,closed,b1,1,24
+LoVo,Trimetrexate,5.0,14,1.0,closed,b5,1,24
+LoVo,Verteporfin,0.5,8,1.0,closed,b1,1,24
+LoVo,Verteporfin,5.0,9,1.0,closed,b2,1,24
+LoVo,c-Kit-IN-1,0.050000000745058,13,1.0,closed,b5,1,24
+LoVo,olaparib,5.0,3,1.0,closed,b5,1,24
+MIA PaCa-2,(R)-Verapamil (hydrochloride),5.0,6,1.0,closed,b2,1,24
+MIA PaCa-2,4EGI-1,0.5,2,1.0,closed,b2,1,24
+MIA PaCa-2,5-Azacytidine,0.050000000745058,10,1.0,closed,b1,1,24
+MIA PaCa-2,AZD1390,0.5,2,1.0,closed,b5,1,24
+MIA PaCa-2,Adenosine,5.0,6,1.0,closed,b1,1,24
+MIA PaCa-2,Altretamine,0.5,8,1.0,closed,b5,1,24
+MIA PaCa-2,Atazanavir (sulfate),5.0,12,1.0,closed,b1,1,24
+MIA PaCa-2,Auranofin,5.0,12,1.0,closed,b1|b2|b5,3,6
+MIA PaCa-2,Belinostat,5.0,12,1.0,closed,b1|b2,2,12
+MIA PaCa-2,Benztropine (mesylate),5.0,12,1.0,closed,b5,1,24
+MIA PaCa-2,Bergenin,0.5,5,1.0,closed,b1,1,24
+MIA PaCa-2,Bestatin,5.0,9,1.0,closed,b2,1,24
+MIA PaCa-2,Bortezomib,0.050000000745058,1,1.0,closed,b1|b2,2,12
+MIA PaCa-2,Bortezomib,0.5,2,1.0,closed,b1|b2|b5,3,6
+MIA PaCa-2,Bortezomib,5.0,3,1.0,closed,b1,1,24
+MIA PaCa-2,Bosentan (hydrate),0.5,8,1.0,closed,b1,1,24
+MIA PaCa-2,Brimonidine,0.050000000745058,10,1.0,closed,b5,1,24
+MIA PaCa-2,Canagliflozin (hemihydrate),0.050000000745058,10,1.0,closed,b1,1,24
+MIA PaCa-2,Daptomycin,0.5,13,1.0,closed,b1,1,24
+MIA PaCa-2,Daptomycin,5.0,13,1.0,closed,b1|b5,2,12
+MIA PaCa-2,Delamanid,0.050000000745058,10,1.0,closed,b5,1,24
+MIA PaCa-2,Delamanid,0.5,11,1.0,closed,b1,1,24
+MIA PaCa-2,Demeclocycline,0.050000000745058,4,1.0,closed,b2,1,24
+MIA PaCa-2,Digitoxin,0.5,11,1.0,closed,b1,1,24
+MIA PaCa-2,Dimethyl fumarate,5.0,9,1.0,closed,b2,1,24
+MIA PaCa-2,Dinaciclib,0.5,8,1.0,closed,b1,1,24
+MIA PaCa-2,EX229,5.0,3,1.0,closed,b1,1,24
+MIA PaCa-2,Entecavir (monohydrate),5.0,9,1.0,closed,b2,1,24
+MIA PaCa-2,Fedratinib (hydrochloride hydrate),5.0,12,1.0,closed,b1|b5,2,12
+MIA PaCa-2,Filgotinib,5.0,12,1.0,closed,b5,1,24
+MIA PaCa-2,Fingolimod (hydrochloride),0.050000000745058,10,1.0,closed,b1,1,24
+MIA PaCa-2,Flutamide,5.0,12,1.0,closed,b1,1,24
+MIA PaCa-2,Harringtonine,5.0,9,1.0,closed,b1,1,24
+MIA PaCa-2,Idarubicin (hydrochloride),5.0,6,1.0,closed,b5,1,24
+MIA PaCa-2,Infigratinib,5.0,3,1.0,closed,b1,1,24
+MIA PaCa-2,Irinotecan (hydrochloride),5.0,13,1.0,closed,b5,1,24
+MIA PaCa-2,Isocorydine,0.5,5,1.0,closed,b1,1,24
+MIA PaCa-2,Ixazomib citrate,0.5,11,1.0,closed,b1|b2|b5,3,6
+MIA PaCa-2,Ixazomib citrate,5.0,12,1.0,closed,b1|b2|b5,3,6
+MIA PaCa-2,Loperamide (hydrochloride),0.050000000745058,10,1.0,closed,b1,1,24
+MIA PaCa-2,Mebendazole,5.0,9,1.0,closed,b1|b2,2,12
+MIA PaCa-2,Methyl aminolevulinate (hydrochloride),0.050000000745058,10,1.0,closed,b1,1,24
+MIA PaCa-2,Mitoxantrone (dihydrochloride),5.0,6,1.0,closed,b5,1,24
+MIA PaCa-2,Monocrotaline,0.5,8,1.0,closed,b5,1,24
+MIA PaCa-2,Norepinephrine (hydrochloride),0.5,5,1.0,closed,b1,1,24
+MIA PaCa-2,Osimertinib (mesylate),5.0,12,1.0,closed,b1,1,24
+MIA PaCa-2,Ouabain (Octahydrate),5.0,12,1.0,closed,b1,1,24
+MIA PaCa-2,PH-797804,5.0,3,1.0,closed,b1,1,24
+MIA PaCa-2,Panobinostat,0.050000000745058,10,1.0,closed,b2,1,24
+MIA PaCa-2,Panobinostat,5.0,12,1.0,closed,b5,1,24
+MIA PaCa-2,Pentoxifylline,0.050000000745058,10,1.0,closed,b1,1,24
+MIA PaCa-2,Peretinoin,0.5,8,1.0,closed,b1|b2,2,12
+MIA PaCa-2,Peretinoin,5.0,9,1.0,closed,b2,1,24
+MIA PaCa-2,Pimozide,0.050000000745058,10,1.0,closed,b1,1,24
+MIA PaCa-2,Ponatinib,5.0,12,1.0,closed,b5,1,24
+MIA PaCa-2,Pralsetinib,0.050000000745058,13,1.0,closed,b5,1,24
+MIA PaCa-2,Rapamycin,0.5,5,1.0,closed,b2,1,24
+MIA PaCa-2,Ribociclib,0.5,13,1.0,closed,b5,1,24
+MIA PaCa-2,Rifaximin,5.0,9,1.0,closed,b2,1,24
+MIA PaCa-2,Rosiglitazone,5.0,9,1.0,closed,b2,1,24
+MIA PaCa-2,Roxadustat,0.050000000745058,7,1.0,closed,b1,1,24
+MIA PaCa-2,Roxadustat,0.5,8,1.0,closed,b1,1,24
+MIA PaCa-2,Sapanisertib,0.050000000745058,1,1.0,closed,b2,1,24
+MIA PaCa-2,Selinexor ,5.0,6,1.0,closed,b1|b2,2,12
+MIA PaCa-2,Sildenafil,5.0,9,1.0,closed,b2,1,24
+MIA PaCa-2,Sunitinib,0.050000000745058,10,1.0,closed,b1,1,24
+MIA PaCa-2,TAK-901,5.0,3,1.0,closed,b2,1,24
+MIA PaCa-2,Tazarotene,0.050000000745058,10,1.0,closed,b1,1,24
+MIA PaCa-2,Thymopentin,5.0,9,1.0,closed,b2,1,24
+MIA PaCa-2,Tofacitinib,0.5,5,1.0,closed,b1|b2|b5,3,6
+MIA PaCa-2,Tofacitinib,5.0,6,1.0,closed,b1|b2|b5,3,6
+MIA PaCa-2,Tofacitinib,5.0,14,1.0,closed,b1,1,24
+MIA PaCa-2,Tofacitinib (citrate),0.5,5,1.0,closed,b1|b5,2,12
+MIA PaCa-2,Tofacitinib (citrate),5.0,6,1.0,closed,b1|b2,2,12
+MIA PaCa-2,Tolcapone,0.050000000745058,4,1.0,closed,b5,1,24
+MIA PaCa-2,Trimetrexate,5.0,6,1.0,closed,b1,1,24
+MIA PaCa-2,Tucatinib,0.050000000745058,1,1.0,closed,b1,1,24
+MIA PaCa-2,Vandetanib,0.050000000745058,10,1.0,closed,b1,1,24
+MIA PaCa-2,Vinblastine (sulfate),0.5,5,1.0,closed,b1|b2,2,12
+MIA PaCa-2,Vinblastine (sulfate),5.0,6,1.0,closed,b1|b2|b5,3,6
+MIA PaCa-2,Vinblastine (sulfate),5.0,14,1.0,closed,b1,1,24
+MIA PaCa-2,Voriconazole,0.050000000745058,10,1.0,closed,b1,1,24
+MIA PaCa-2,Voriconazole,5.0,12,1.0,closed,b1,1,24
+MIA PaCa-2,crizotinib,5.0,9,1.0,closed,b2,1,24
+MIA PaCa-2,vincristine,0.050000000745058,1,1.0,closed,b2,1,24
+MIA PaCa-2,vincristine,0.5,2,1.0,closed,b1,1,24
+RKO,Bortezomib,0.050000000745058,1,1.0,closed,b2,1,24
+RKO,Carbidopa (monohydrate),0.050000000745058,13,1.0,closed,b1,1,24
+RKO,Daptomycin,5.0,13,1.0,closed,b1,1,24
+RKO,Hesperidin,0.050000000745058,7,1.0,closed,b1,1,24
+RKO,PH-797804,0.050000000745058,1,1.0,closed,b2,1,24
+RKO,Pralsetinib,0.050000000745058,13,1.0,closed,b5,1,24
+RKO,Salicylic acid,5.0,6,1.0,closed,b1,1,24
+RKO,Saquinavir,5.0,6,1.0,closed,b1,1,24
+RKO,TAK-901,5.0,3,1.0,closed,b2,1,24
+RKO,Verapamil,0.5,8,1.0,closed,b1,1,24
+RKO,c-Kit-IN-1,0.050000000745058,13,1.0,closed,b1,1,24
+SHP-77,Digitoxin,0.5,11,1.0,closed,b5,1,24
+SHP-77,Ixazomib citrate,5.0,12,1.0,closed,b5,1,24
+SHP-77,TAK-901,5.0,3,1.0,closed,b2,1,24
+SHP-77,c-Kit-IN-1,0.050000000745058,13,1.0,closed,b1,1,24
+SW 900,Afatinib,0.5,2,1.0,closed,b2,1,24
+SW 900,Auranofin,5.0,12,1.0,closed,b1,1,24
+SW 900,Carbidopa (monohydrate),0.050000000745058,13,1.0,closed,b5,1,24
+SW 900,Everolimus,0.5,2,1.0,closed,b2,1,24
+SW 900,Fumaric acid,5.0,9,1.0,closed,b2,1,24
+SW 900,Irinotecan,0.5,2,1.0,closed,b2,1,24
+SW 900,Ixazomib citrate,0.5,11,1.0,closed,b1,1,24
+SW 900,Ixazomib citrate,5.0,12,1.0,closed,b1|b2,2,12
+SW 900,Larotrectinib sulfate,0.5,13,1.0,closed,b1,1,24
+SW 900,Panobinostat,0.050000000745058,10,1.0,closed,b2,1,24
+SW 900,Pimozide,5.0,12,1.0,closed,b1,1,24
+SW 900,Piroxicam,0.050000000745058,10,1.0,closed,b2,1,24
+SW 900,Proglumide,0.5,11,1.0,closed,b1,1,24
+SW 900,c-Kit-IN-1,0.5,2,1.0,closed,b2,1,24
+SW 900,palbociclib,0.5,2,1.0,closed,b2,1,24
+SW1417,Almonertinib (hydrochloride),0.050000000745058,4,1.0,closed,b1,1,24
+SW1417,Auranofin,5.0,12,1.0,closed,b1|b5,2,12
+SW1417,BI-78D3,0.050000000745058,1,1.0,closed,b1,1,24
+SW1417,Baicalin,5.0,14,1.0,closed,b5,1,24
+SW1417,Bortezomib,0.050000000745058,1,1.0,closed,b1|b2|b5,3,6
+SW1417,Bortezomib,0.5,2,1.0,closed,b2|b5,2,12
+SW1417,Cepharanthine,0.5,5,1.0,closed,b5,1,24
+SW1417,ERK5-IN-2,5.0,3,1.0,closed,b2,1,24
+SW1417,EX229,5.0,3,1.0,closed,b1,1,24
+SW1417,Entrectinib,0.050000000745058,10,1.0,closed,b1,1,24
+SW1417,Fedratinib (hydrochloride hydrate),5.0,12,1.0,closed,b5,1,24
+SW1417,GSK1059615,0.5,2,1.0,closed,b1,1,24
+SW1417,Homoharringtonine,0.5,5,1.0,closed,b2,1,24
+SW1417,Homoharringtonine,5.0,6,1.0,closed,b1|b2,2,12
+SW1417,Ipatasertib,0.5,2,1.0,closed,b5,1,24
+SW1417,Irinotecan (hydrochloride),0.5,13,1.0,closed,b5,1,24
+SW1417,Ixazomib citrate,5.0,12,1.0,closed,b1|b2|b5,3,6
+SW1417,Minodronic acid,0.050000000745058,1,1.0,closed,b2,1,24
+SW1417,NG25,5.0,3,1.0,closed,b1,1,24
+SW1417,Nevirapine,0.5,8,1.0,closed,b5,1,24
+SW1417,Omeprazole (sodium),0.5,11,1.0,closed,b5,1,24
+SW1417,Ouabain (Octahydrate),0.5,11,1.0,closed,b1|b2,2,12
+SW1417,PH-797804,5.0,3,1.0,closed,b2,1,24
+SW1417,Panobinostat,0.050000000745058,10,1.0,closed,b2,1,24
+SW1417,Panobinostat,5.0,12,1.0,closed,b2,1,24
+SW1417,Pravastatin (sodium),5.0,9,1.0,closed,b2,1,24
+SW1417,Ralimetinib dimesylate,0.5,2,1.0,closed,b1,1,24
+SW1417,Resveratrol,0.050000000745058,4,1.0,closed,b1,1,24
+SW1417,Saquinavir,0.050000000745058,4,1.0,closed,b1,1,24
+SW1417,Sulfisoxazole,0.5,5,1.0,closed,b1,1,24
+SW1417,Sunitinib,0.050000000745058,10,1.0,closed,b1,1,24
+SW1417,TAK-901,0.050000000745058,1,1.0,closed,b2,1,24
+SW1417,TAK-901,5.0,3,1.0,closed,b2,1,24
+SW1417,Talc,0.050000000745058,10,1.0,closed,b1,1,24
+SW1417,Thymol,0.5,5,1.0,closed,b5,1,24
+SW1417,Vandetanib,0.050000000745058,10,1.0,closed,b1,1,24
+SW1417,Vinblastine (sulfate),0.5,5,1.0,closed,b1,1,24
+SW1417,Voriconazole,0.050000000745058,10,1.0,closed,b1,1,24
+SW1417,Voriconazole,5.0,12,1.0,closed,b1|b2,2,12
+SW480,Adagrasib,0.5,8,1.0,closed,b2,1,24
+SW480,Auranofin,0.5,11,1.0,closed,b1,1,24
+SW480,Auranofin,5.0,12,1.0,closed,b1,1,24
+SW480,BAY1125976,5.0,3,1.0,closed,b2,1,24
+SW480,Bortezomib,0.050000000745058,1,1.0,closed,b2|b5,2,12
+SW480,Bortezomib,5.0,3,1.0,closed,b2,1,24
+SW480,Brivudine,5.0,3,1.0,closed,b2,1,24
+SW480,Delamanid,0.5,11,1.0,closed,b1,1,24
+SW480,Dexamethasone,0.5,11,1.0,closed,b1,1,24
+SW480,Digitoxin,0.050000000745058,10,1.0,closed,b2,1,24
+SW480,Digitoxin,0.5,11,1.0,closed,b2|b5,2,12
+SW480,ERK5-IN-2,5.0,3,1.0,closed,b2,1,24
+SW480,Fluvoxamine (maleate),0.050000000745058,4,1.0,closed,b1,1,24
+SW480,Harringtonine,0.5,8,1.0,closed,b1,1,24
+SW480,Homoharringtonine,0.5,5,1.0,closed,b2,1,24
+SW480,Homoharringtonine,5.0,6,1.0,closed,b1|b2,2,12
+SW480,Ivabradine (hydrochloride),0.5,13,1.0,closed,b1,1,24
+SW480,Ixazomib citrate,0.5,11,1.0,closed,b1|b2|b5,3,6
+SW480,Ixazomib citrate,5.0,12,1.0,closed,b2,1,24
+SW480,MK-3903,0.050000000745058,1,1.0,closed,b2,1,24
+SW480,Mebendazole,5.0,9,1.0,closed,b2,1,24
+SW480,Methotrexate,0.050000000745058,10,1.0,closed,b2,1,24
+SW480,Ouabain (Octahydrate),0.050000000745058,10,1.0,closed,b2,1,24
+SW480,Ouabain (Octahydrate),0.5,11,1.0,closed,b1|b2,2,12
+SW480,Ouabain (Octahydrate),5.0,12,1.0,closed,b1|b2|b5,3,6
+SW480,PH-797804,5.0,3,1.0,closed,b2,1,24
+SW480,Panobinostat,0.050000000745058,10,1.0,closed,b2,1,24
+SW480,Simotinib,5.0,9,1.0,closed,b5,1,24
+SW480,TAK-901,0.050000000745058,1,1.0,closed,b2,1,24
+SW480,TAK-901,5.0,3,1.0,closed,b2,1,24
+SW480,Talc,0.5,11,1.0,closed,b1,1,24
+SW480,Tubulin inhibitor 6,5.0,3,1.0,closed,b5,1,24
+SW480,vincristine,0.5,2,1.0,closed,b1,1,24
+A549,Almonertinib (mesylate),5.0,13,1.5,opened,b2,1,12
+A549,Alpelisib,5.0,3,1.5,opened,b2,1,12
+A549,Amsacrine,5.0,14,1.5,opened,b2,1,12
+A549,BI-3406,5.0,3,1.5,opened,b5,1,12
+A549,Bentamapimod,5.0,3,1.5,opened,b5,1,12
+A549,Binimetinib,5.0,3,1.5,opened,b2|b5,2,24
+A549,Binimetinib,5.0,12,1.5,opened,b2,1,12
+A549,Cobimetinib,0.5,8,1.5,opened,b2,1,12
+A549,Elimusertib hydrochloride,5.0,3,1.5,opened,b2,1,12
+A549,GSK1059615,0.5,2,1.5,opened,b2,1,12
+A549,Irinotecan (hydrochloride),0.050000000745058,13,1.5,opened,b2,1,12
+A549,Penfluridol,0.5,8,1.5,opened,b2,1,12
+A549,RMC-6236,5.0,3,1.5,opened,b5,1,12
+A549,Trametinib,0.5,2,1.5,opened,b2,1,12
+A549,Trametinib (DMSO_TF solvate),5.0,9,1.5,opened,b5,1,12
+A549,XRK3F2,0.5,2,1.5,opened,b2,1,12
+A549,palbociclib,5.0,3,1.5,opened,b2,1,12
+AsPC-1,AZD-7648,0.5,2,1.5,opened,b2,1,12
+AsPC-1,AZD-8055,5.0,3,1.5,opened,b1,1,12
+AsPC-1,Afatinib,5.0,3,1.5,opened,b1|b2,2,24
+AsPC-1,BI-3406,0.5,2,1.5,opened,b2,1,12
+AsPC-1,BI-3406,5.0,3,1.5,opened,b2|b5,2,24
+AsPC-1,Bimiralisib,0.5,2,1.5,opened,b1|b2,2,24
+AsPC-1,Bimiralisib,5.0,3,1.5,opened,b1|b2|b5,3,48
+AsPC-1,Binimetinib,0.050000000745058,1,1.5,opened,b2|b5,2,24
+AsPC-1,Binimetinib,0.5,2,1.5,opened,b1|b2|b5,3,48
+AsPC-1,Binimetinib,0.5,11,1.5,opened,b2|b5,2,24
+AsPC-1,Binimetinib,5.0,3,1.5,opened,b5,1,12
+AsPC-1,Binimetinib,5.0,12,1.5,opened,b2|b5,2,24
+AsPC-1,Cabozantinib (S-malate),0.5,11,1.5,opened,b2,1,12
+AsPC-1,Capmatinib,5.0,3,1.5,opened,b1,1,12
+AsPC-1,Cobimetinib,5.0,9,1.5,opened,b1|b5,2,24
+AsPC-1,Dimethyl fumarate,0.050000000745058,7,1.5,opened,b2,1,12
+AsPC-1,Elimusertib hydrochloride,0.050000000745058,1,1.5,opened,b1|b5,2,24
+AsPC-1,Elimusertib hydrochloride,0.5,2,1.5,opened,b2,1,12
+AsPC-1,Elimusertib hydrochloride,5.0,3,1.5,opened,b5,1,12
+AsPC-1,GSK1059615,0.5,2,1.5,opened,b2,1,12
+AsPC-1,Ixazomib,5.0,3,1.5,opened,b2,1,12
+AsPC-1,Methotrexate,0.5,11,1.5,opened,b5,1,12
+AsPC-1,Naproxen,5.0,9,1.5,opened,b1,1,12
+AsPC-1,Nimesulide,0.050000000745058,13,1.5,opened,b2,1,12
+AsPC-1,RMC-6236,0.5,2,1.5,opened,b2,1,12
+AsPC-1,RMC-6236,5.0,3,1.5,opened,b2|b5,2,24
+AsPC-1,Sunitinib,5.0,12,1.5,opened,b2,1,12
+AsPC-1,Trametinib,0.5,2,1.5,opened,b1|b2|b5,3,48
+AsPC-1,Trametinib,0.5,11,1.5,opened,b2,1,12
+AsPC-1,Trametinib,5.0,3,1.5,opened,b1|b2,2,24
+AsPC-1,Trametinib,5.0,12,1.5,opened,b2,1,12
+AsPC-1,Trametinib (DMSO_TF solvate),0.050000000745058,7,1.5,opened,b1|b2,2,24
+AsPC-1,Trametinib (DMSO_TF solvate),0.5,8,1.5,opened,b1|b5,2,24
+AsPC-1,Trametinib (DMSO_TF solvate),5.0,9,1.5,opened,b1,1,12
+AsPC-1,Vemurafenib,5.0,3,1.5,opened,b1,1,12
+AsPC-1,palbociclib,5.0,3,1.5,opened,b2,1,12
+CFPAC-1,AZD-7648,0.5,2,1.5,opened,b2,1,12
+CFPAC-1,AZD-7648,5.0,3,1.5,opened,b2|b5,2,24
+CFPAC-1,Afatinib,5.0,3,1.5,opened,b5,1,12
+CFPAC-1,BI-3406,5.0,3,1.5,opened,b5,1,12
+CFPAC-1,Bimiralisib,0.5,2,1.5,opened,b2,1,12
+CFPAC-1,Bimiralisib,5.0,3,1.5,opened,b2|b5,2,24
+CFPAC-1,Binimetinib,0.5,2,1.5,opened,b2|b5,2,24
+CFPAC-1,Binimetinib,5.0,3,1.5,opened,b2|b5,2,24
+CFPAC-1,Capmatinib,5.0,3,1.5,opened,b2,1,12
+CFPAC-1,Chlorhexidine (diacetate),5.0,14,1.5,opened,b1,1,12
+CFPAC-1,Elimusertib hydrochloride,0.050000000745058,1,1.5,opened,b1|b5,2,24
+CFPAC-1,Elimusertib hydrochloride,5.0,3,1.5,opened,b2|b5,2,24
+CFPAC-1,Encorafenib,5.0,3,1.5,opened,b5,1,12
+CFPAC-1,Furosemide,0.050000000745058,4,1.5,opened,b1,1,12
+CFPAC-1,Futibatinib,5.0,3,1.5,opened,b5,1,12
+CFPAC-1,GSK1059615,0.5,2,1.5,opened,b2,1,12
+CFPAC-1,LJI308,0.5,2,1.5,opened,b2,1,12
+CFPAC-1,MK-3903,0.5,2,1.5,opened,b2,1,12
+CFPAC-1,Pimitespib,5.0,3,1.5,opened,b5,1,12
+CFPAC-1,RMC-6236,0.5,2,1.5,opened,b2,1,12
+CFPAC-1,RMC-6236,5.0,3,1.5,opened,b5,1,12
+CFPAC-1,Ralimetinib dimesylate,0.5,2,1.5,opened,b2,1,12
+CFPAC-1,Retinoic acid,5.0,14,1.5,opened,b1,1,12
+CFPAC-1,Selinexor ,0.050000000745058,4,1.5,opened,b1,1,12
+CFPAC-1,Sonidegib,0.5,2,1.5,opened,b2,1,12
+CFPAC-1,Torkinib,5.0,3,1.5,opened,b2,1,12
+CFPAC-1,Trametinib,0.050000000745058,1,1.5,opened,b5,1,12
+CFPAC-1,Trametinib,0.5,2,1.5,opened,b2,1,12
+CFPAC-1,Trametinib (DMSO_TF solvate),0.5,8,1.5,opened,b2,1,12
+CFPAC-1,Vemurafenib,5.0,3,1.5,opened,b2,1,12
+CFPAC-1,XRK3F2,0.5,2,1.5,opened,b2,1,12
+CFPAC-1,palbociclib,5.0,3,1.5,opened,b2|b5,2,24
+COLO 205,Almonertinib (mesylate),0.050000000745058,13,1.5,opened,b2,1,12
+COLO 205,Anethole trithione,5.0,6,1.5,opened,b1,1,12
+COLO 205,Atazanavir (sulfate),0.5,11,1.5,opened,b2,1,12
+COLO 205,Baicalin,5.0,14,1.5,opened,b1,1,12
+COLO 205,Captopril,0.050000000745058,13,1.5,opened,b2,1,12
+COLO 205,Carbamazepine,0.5,11,1.5,opened,b5,1,12
+COLO 205,Carbidopa (monohydrate),5.0,13,1.5,opened,b2,1,12
+COLO 205,Cobimetinib,0.5,8,1.5,opened,b1,1,12
+COLO 205,Darolutamide,0.5,11,1.5,opened,b2,1,12
+COLO 205,Harringtonine,0.050000000745058,7,1.5,opened,b2,1,12
+COLO 205,Irinotecan (hydrochloride),0.050000000745058,13,1.5,opened,b2,1,12
+COLO 205,Macitentan,0.5,8,1.5,opened,b1,1,12
+COLO 205,Nimesulide,0.5,13,1.5,opened,b2,1,12
+COLO 205,Nimesulide,5.0,13,1.5,opened,b2,1,12
+COLO 205,Pravastatin (sodium),0.5,13,1.5,opened,b2,1,12
+COLO 205,Pravastatin (sodium),5.0,13,1.5,opened,b2,1,12
+COLO 205,Rimonabant (Hydrochloride),0.5,13,1.5,opened,b2,1,12
+COLO 205,Tucidinostat,5.0,6,1.5,opened,b1,1,12
+HCT15,Aliskiren,0.5,5,1.5,opened,b5,1,12
+HCT15,Allantoin,0.5,5,1.5,opened,b5,1,12
+HCT15,Amsacrine,0.5,5,1.5,opened,b1,1,12
+HCT15,Baicalin,0.5,5,1.5,opened,b1,1,12
+HCT15,Binimetinib,0.050000000745058,1,1.5,opened,b5,1,12
+HCT15,Esmolol (hydrochloride),0.050000000745058,10,1.5,opened,b2,1,12
+HCT15,Fluvoxamine (maleate),0.5,5,1.5,opened,b5,1,12
+HCT15,Gemfibrozil,0.5,5,1.5,opened,b1,1,12
+HCT15,Harringtonine,0.5,8,1.5,opened,b5,1,12
+HCT15,Homoharringtonine,5.0,6,1.5,opened,b5,1,12
+HCT15,Idarubicin (hydrochloride),5.0,6,1.5,opened,b1,1,12
+HCT15,Ivermectin,0.050000000745058,10,1.5,opened,b5,1,12
+HCT15,L-Eflornithine (monohydrochloride),0.050000000745058,10,1.5,opened,b5,1,12
+HCT15,Loperamide (hydrochloride),0.050000000745058,10,1.5,opened,b5,1,12
+HCT15,Megestrol,0.5,5,1.5,opened,b1,1,12
+HCT15,Mitoxantrone (dihydrochloride),0.050000000745058,4,1.5,opened,b2,1,12
+HCT15,Palmatine (chloride),5.0,6,1.5,opened,b5,1,12
+HCT15,RMC-6236,5.0,3,1.5,opened,b5,1,12
+HCT15,Ritonavir,0.5,5,1.5,opened,b2,1,12
+HCT15,Sildenafil,0.5,8,1.5,opened,b1,1,12
+HCT15,TAK-733,0.5,2,1.5,opened,b2,1,12
+HCT15,Trametinib,0.050000000745058,10,1.5,opened,b5,1,12
+HCT15,Tucidinostat,5.0,6,1.5,opened,b1,1,12
+HS-578T,AZD-7648,0.5,2,1.5,opened,b2,1,12
+HS-578T,AZD-7648,5.0,3,1.5,opened,b2,1,12
+HS-578T,Artesunate,5.0,14,1.5,opened,b1,1,12
+HS-578T,CP21R7,0.5,2,1.5,opened,b2,1,12
+HS-578T,CP21R7,5.0,3,1.5,opened,b2,1,12
+HS-578T,Elagolix sodium,5.0,14,1.5,opened,b5,1,12
+HS-578T,Elimusertib hydrochloride,0.5,2,1.5,opened,b5,1,12
+HS-578T,GSK1059615,0.5,2,1.5,opened,b2,1,12
+HS-578T,Harringtonine,0.5,8,1.5,opened,b5,1,12
+HS-578T,Homoharringtonine,0.050000000745058,4,1.5,opened,b5,1,12
+HS-578T,Homoharringtonine,0.5,5,1.5,opened,b5,1,12
+HS-578T,Regorafenib,5.0,3,1.5,opened,b2,1,12
+HS-578T,Topotecan (hydrochloride),0.5,8,1.5,opened,b2,1,12
+HS-578T,Trametinib,0.5,2,1.5,opened,b2,1,12
+HS-578T,XRK3F2,0.5,2,1.5,opened,b2,1,12
+HT-29,AZD-7648,5.0,3,1.5,opened,b2,1,12
+HT-29,AZD-8055,5.0,3,1.5,opened,b1,1,12
+HT-29,Belzutifan,5.0,3,1.5,opened,b2,1,12
+HT-29,Elimusertib hydrochloride,0.050000000745058,1,1.5,opened,b1,1,12
+HT-29,Larotrectinib sulfate,0.5,13,1.5,opened,b2,1,12
+HT-29,Neratinib (maleate),5.0,14,1.5,opened,b1,1,12
+HT-29,Posaconazole,0.5,8,1.5,opened,b2,1,12
+HT-29,RMC-6236,5.0,3,1.5,opened,b5,1,12
+HT-29,Radotinib,0.5,5,1.5,opened,b5,1,12
+HT-29,Tirabrutinib,5.0,9,1.5,opened,b5,1,12
+HT-29,Tirabrutinib (hydrochloride),0.5,11,1.5,opened,b1,1,12
+HT-29,Tucidinostat,0.5,5,1.5,opened,b1,1,12
+HT-29,Vemurafenib,0.050000000745058,1,1.5,opened,b1,1,12
+Hs 766T,AZD-7648,0.5,2,1.5,opened,b2,1,12
+Hs 766T,BI-3406,5.0,3,1.5,opened,b5,1,12
+Hs 766T,Baicalin,0.5,5,1.5,opened,b1,1,12
+Hs 766T,Bimiralisib,0.5,2,1.5,opened,b2,1,12
+Hs 766T,Binimetinib,0.050000000745058,1,1.5,opened,b5,1,12
+Hs 766T,Binimetinib,0.5,2,1.5,opened,b1|b2,2,24
+Hs 766T,Celecoxib,0.5,2,1.5,opened,b2,1,12
+Hs 766T,Cobimetinib,5.0,9,1.5,opened,b1,1,12
+Hs 766T,DT-061,5.0,3,1.5,opened,b5,1,12
+Hs 766T,DTP3,5.0,3,1.5,opened,b5,1,12
+Hs 766T,Elagolix sodium,0.5,5,1.5,opened,b1,1,12
+Hs 766T,Elimusertib hydrochloride,5.0,3,1.5,opened,b5,1,12
+Hs 766T,GSK1059615,0.5,2,1.5,opened,b2,1,12
+Hs 766T,GSK1059615,5.0,3,1.5,opened,b5,1,12
+Hs 766T,Idarubicin (hydrochloride),5.0,6,1.5,opened,b2,1,12
+Hs 766T,L-Thyroxine (sodium salt pentahydrate),0.5,5,1.5,opened,b1,1,12
+Hs 766T,Norepinephrine (hydrochloride),0.050000000745058,4,1.5,opened,b2,1,12
+Hs 766T,Paclitaxel,5.0,3,1.5,opened,b5,1,12
+Hs 766T,RMC-6236,5.0,3,1.5,opened,b5,1,12
+Hs 766T,Sonidegib,0.5,2,1.5,opened,b2,1,12
+Hs 766T,TAK-901,5.0,3,1.5,opened,b5,1,12
+Hs 766T,Trametinib,0.5,2,1.5,opened,b2,1,12
+Hs 766T,ULK-101,0.5,2,1.5,opened,b2,1,12
+LoVo,AZD-7648,5.0,3,1.5,opened,b2,1,12
+LoVo,Alpelisib,5.0,3,1.5,opened,b2|b5,2,24
+LoVo,Binimetinib,0.5,2,1.5,opened,b5,1,12
+LoVo,Binimetinib,5.0,3,1.5,opened,b5,1,12
+LoVo,Elimusertib hydrochloride,0.050000000745058,1,1.5,opened,b5,1,12
+MIA PaCa-2,9-ING-41,5.0,3,1.5,opened,b2,1,12
+MIA PaCa-2,Almonertinib (mesylate),0.050000000745058,7,1.5,opened,b5,1,12
+MIA PaCa-2,BI-3406,0.050000000745058,1,1.5,opened,b5,1,12
+MIA PaCa-2,Bimiralisib,0.5,2,1.5,opened,b2,1,12
+MIA PaCa-2,Bimiralisib,5.0,3,1.5,opened,b2,1,12
+MIA PaCa-2,Binimetinib,0.050000000745058,1,1.5,opened,b5,1,12
+MIA PaCa-2,Binimetinib,0.050000000745058,10,1.5,opened,b2,1,12
+MIA PaCa-2,Binimetinib,0.5,2,1.5,opened,b5,1,12
+MIA PaCa-2,Binimetinib,0.5,11,1.5,opened,b2|b5,2,24
+MIA PaCa-2,Cobimetinib,0.5,8,1.5,opened,b1,1,12
+MIA PaCa-2,Cobimetinib,5.0,9,1.5,opened,b1,1,12
+MIA PaCa-2,DT-061,5.0,3,1.5,opened,b1,1,12
+MIA PaCa-2,Harringtonine,0.050000000745058,7,1.5,opened,b5,1,12
+MIA PaCa-2,Harringtonine,0.5,8,1.5,opened,b5,1,12
+MIA PaCa-2,LJI308,0.5,2,1.5,opened,b2,1,12
+MIA PaCa-2,LY-2584702 (tosylate salt),5.0,3,1.5,opened,b2,1,12
+MIA PaCa-2,Paclitaxel,5.0,3,1.5,opened,b2,1,12
+MIA PaCa-2,Pyridoxine (hydrochloride),5.0,14,1.5,opened,b2,1,12
+MIA PaCa-2,RMC-6236,5.0,3,1.5,opened,b2,1,12
+MIA PaCa-2,Regorafenib,5.0,3,1.5,opened,b2,1,12
+MIA PaCa-2,Trametinib,0.5,2,1.5,opened,b2,1,12
+MIA PaCa-2,Tucidinostat,5.0,6,1.5,opened,b1,1,12
+MIA PaCa-2,Vemurafenib,5.0,3,1.5,opened,b1,1,12
+MIA PaCa-2,XRK3F2,5.0,3,1.5,opened,b1,1,12
+MIA PaCa-2,palbociclib,5.0,3,1.5,opened,b1|b2,2,24
+RKO,AZD2858,0.050000000745058,1,1.5,opened,b5,1,12
+RKO,Adagrasib,0.5,8,1.5,opened,b2,1,12
+RKO,BI-3406,0.050000000745058,1,1.5,opened,b5,1,12
+RKO,Binimetinib,0.050000000745058,1,1.5,opened,b1,1,12
+RKO,Binimetinib,0.050000000745058,10,1.5,opened,b5,1,12
+RKO,Binimetinib,0.5,2,1.5,opened,b2,1,12
+RKO,Binimetinib,5.0,12,1.5,opened,b2,1,12
+RKO,Cobimetinib,5.0,9,1.5,opened,b1,1,12
+RKO,Cytarabine,5.0,9,1.5,opened,b1,1,12
+RKO,Filgotinib,0.050000000745058,10,1.5,opened,b5,1,12
+RKO,Flumatinib (mesylate),5.0,9,1.5,opened,b1,1,12
+RKO,Fluvoxamine (maleate),0.5,5,1.5,opened,b5,1,12
+RKO,HI-TOPK-032,0.050000000745058,1,1.5,opened,b5,1,12
+RKO,Hesperidin,0.050000000745058,7,1.5,opened,b2,1,12
+RKO,Homoharringtonine,0.050000000745058,4,1.5,opened,b5,1,12
+RKO,Idarubicin (hydrochloride),5.0,6,1.5,opened,b1|b5,2,24
+RKO,Mitoxantrone (dihydrochloride),5.0,6,1.5,opened,b2,1,12
+RKO,NVP-BHG712,0.5,2,1.5,opened,b2,1,12
+RKO,PF-06260933,0.5,2,1.5,opened,b2,1,12
+RKO,Sivelestat (sodium tetrahydrate),5.0,9,1.5,opened,b1,1,12
+RKO,Trametinib,5.0,12,1.5,opened,b2,1,12
+RKO,Trametinib (DMSO_TF solvate),5.0,9,1.5,opened,b1,1,12
+RKO,Tucidinostat,0.5,5,1.5,opened,b1,1,12
+RKO,Tucidinostat,5.0,6,1.5,opened,b1,1,12
+RKO,ULK-101,0.050000000745058,1,1.5,opened,b5,1,12
+SHP-77,Binimetinib,5.0,12,1.5,opened,b5,1,12
+SHP-77,ETC-206,0.050000000745058,1,1.5,opened,b1,1,12
+SHP-77,Idarubicin (hydrochloride),5.0,14,1.5,opened,b1,1,12
+SHP-77,Larotrectinib,5.0,6,1.5,opened,b5,1,12
+SHP-77,Lenalidomide (hemihydrate),0.5,5,1.5,opened,b2,1,12
+SHP-77,Mitoxantrone (dihydrochloride),0.050000000745058,4,1.5,opened,b1,1,12
+SHP-77,Nimesulide,5.0,13,1.5,opened,b2,1,12
+SHP-77,Osimertinib (mesylate),0.050000000745058,10,1.5,opened,b2,1,12
+SHP-77,Oxaprozin,0.5,11,1.5,opened,b2,1,12
+SHP-77,Pimozide,0.050000000745058,10,1.5,opened,b2,1,12
+SHP-77,Ponatinib,0.5,11,1.5,opened,b2,1,12
+SHP-77,Rosiglitazone,5.0,9,1.5,opened,b5,1,12
+SHP-77,Saquinavir,0.5,5,1.5,opened,b2,1,12
+SHP-77,Sinomenine,0.5,5,1.5,opened,b2,1,12
+SHP-77,Thymol,0.5,5,1.5,opened,b2,1,12
+SHP-77,Trifluridine,0.5,5,1.5,opened,b5,1,12
+SHP-77,vincristine,0.5,2,1.5,opened,b2,1,12
+SW 900,18β-Glycyrrhetinic acid,5.0,6,1.5,opened,b5,1,12
+SW 900,Aspirin,0.5,11,1.5,opened,b5,1,12
+SW 900,Belzutifan,5.0,3,1.5,opened,b5,1,12
+SW 900,Berbamine (dihydrochloride),5.0,13,1.5,opened,b2,1,12
+SW 900,Binimetinib,0.5,2,1.5,opened,b2,1,12
+SW 900,Canagliflozin,0.050000000745058,7,1.5,opened,b2,1,12
+SW 900,Canagliflozin (hemihydrate),0.5,11,1.5,opened,b2,1,12
+SW 900,Capmatinib,5.0,3,1.5,opened,b5,1,12
+SW 900,Clobetasol propionate,0.050000000745058,10,1.5,opened,b5,1,12
+SW 900,Crizotinib (hydrochloride),0.050000000745058,10,1.5,opened,b5,1,12
+SW 900,Delamanid,0.050000000745058,10,1.5,opened,b5,1,12
+SW 900,Dinaciclib,0.5,8,1.5,opened,b2,1,12
+SW 900,Elagolix sodium,0.5,5,1.5,opened,b2,1,12
+SW 900,Fluvoxamine (maleate),5.0,6,1.5,opened,b5,1,12
+SW 900,Harringtonine,0.5,8,1.5,opened,b5,1,12
+SW 900,Idarubicin (hydrochloride),0.5,5,1.5,opened,b2,1,12
+SW 900,Indacaterol (maleate),0.050000000745058,10,1.5,opened,b5,1,12
+SW 900,L-Eflornithine (monohydrochloride),0.5,11,1.5,opened,b5,1,12
+SW 900,Methotrexate,0.5,11,1.5,opened,b5,1,12
+SW 900,Mozavaptan,0.050000000745058,7,1.5,opened,b5,1,12
+SW 900,Oxaprozin,0.050000000745058,10,1.5,opened,b5,1,12
+SW 900,Pioglitazone,0.5,11,1.5,opened,b5,1,12
+SW 900,TAK-733,0.5,2,1.5,opened,b5,1,12
+SW 900,Trametinib,0.5,2,1.5,opened,b5,1,12
+SW 900,Tucidinostat,0.5,5,1.5,opened,b1,1,12
+SW 900,Vortioxetine,0.050000000745058,10,1.5,opened,b1,1,12
+SW1417,Entrectinib,5.0,12,1.5,opened,b2,1,12
+SW1417,Furosemide,5.0,14,1.5,opened,b2,1,12
+SW1417,Pentamidine (isethionate),5.0,14,1.5,opened,b2,1,12
+SW1417,Tucidinostat,5.0,6,1.5,opened,b1,1,12
+SW480,AZD-7648,0.5,2,1.5,opened,b2,1,12
+SW480,AZD-8055,5.0,3,1.5,opened,b5,1,12
+SW480,Alpelisib,5.0,3,1.5,opened,b1|b5,2,24
+SW480,BI-3406,5.0,3,1.5,opened,b5,1,12
+SW480,Baicalin,5.0,14,1.5,opened,b1,1,12
+SW480,Binimetinib,5.0,3,1.5,opened,b1,1,12
+SW480,Gemcitabine,5.0,3,1.5,opened,b5,1,12
+SW480,HI-TOPK-032,5.0,3,1.5,opened,b1,1,12
+SW480,Idarubicin (hydrochloride),5.0,14,1.5,opened,b1,1,12
+SW480,Mitoxantrone (dihydrochloride),0.5,5,1.5,opened,b1,1,12
+SW480,Ropivacaine (hydrochloride monohydrate),5.0,14,1.5,opened,b2,1,12
+SW480,Sonidegib,0.5,2,1.5,opened,b2,1,12
+SW480,Tucidinostat,0.5,5,1.5,opened,b1,1,12
+SW480,Tucidinostat,5.0,6,1.5,opened,b1,1,12
+SW480,XRK3F2,5.0,3,1.5,opened,b1,1,12
+A549,APTO-253,5.0,3,1.5,closed,b1,1,24
+A549,Adagrasib,0.050000000745058,14,1.5,closed,b1,1,24
+A549,Auranofin,5.0,12,1.5,closed,b1,1,24
+A549,Belinostat,0.5,11,1.5,closed,b1,1,24
+A549,Belinostat,5.0,12,1.5,closed,b1,1,24
+A549,Bortezomib,0.050000000745058,1,1.5,closed,b1|b5,2,12
+A549,Bortezomib,5.0,3,1.5,closed,b1,1,24
+A549,Dexamethasone,0.050000000745058,10,1.5,closed,b5,1,24
+A549,Digitoxin,0.050000000745058,10,1.5,closed,b1,1,24
+A549,Dinaciclib,0.5,8,1.5,closed,b1,1,24
+A549,Doxycycline (monohydrate),0.050000000745058,7,1.5,closed,b1,1,24
+A549,Fedratinib (hydrochloride hydrate),5.0,12,1.5,closed,b1|b5,2,12
+A549,Harringtonine,5.0,9,1.5,closed,b1,1,24
+A549,Homoharringtonine,0.5,5,1.5,closed,b1,1,24
+A549,Homoharringtonine,5.0,6,1.5,closed,b1|b2,2,12
+A549,Homoharringtonine,5.0,14,1.5,closed,b1,1,24
+A549,Idarubicin (hydrochloride),5.0,6,1.5,closed,b5,1,24
+A549,Idarubicin (hydrochloride),5.0,14,1.5,closed,b5,1,24
+A549,Ipatasertib,5.0,3,1.5,closed,b1,1,24
+A549,Irinotecan (hydrochloride),0.5,13,1.5,closed,b5,1,24
+A549,Irinotecan (hydrochloride),5.0,13,1.5,closed,b1,1,24
+A549,Ixazomib,5.0,3,1.5,closed,b1,1,24
+A549,Ixazomib citrate,0.5,11,1.5,closed,b1|b2|b5,3,6
+A549,Ixazomib citrate,5.0,12,1.5,closed,b1|b5,2,12
+A549,Lonafarnib,5.0,3,1.5,closed,b1,1,24
+A549,Medroxyprogesterone acetate,5.0,6,1.5,closed,b5,1,24
+A549,Mitoxantrone (dihydrochloride),5.0,6,1.5,closed,b1,1,24
+A549,NG25,5.0,3,1.5,closed,b1,1,24
+A549,NVP-BHG712,0.5,2,1.5,closed,b1,1,24
+A549,NVP-BHG712,5.0,3,1.5,closed,b1,1,24
+A549,Nimesulide,5.0,13,1.5,closed,b1,1,24
+A549,Ouabain (Octahydrate),0.050000000745058,10,1.5,closed,b2,1,24
+A549,Ouabain (Octahydrate),0.5,11,1.5,closed,b2,1,24
+A549,PH-797804,5.0,3,1.5,closed,b1|b2,2,12
+A549,Panobinostat,0.5,11,1.5,closed,b5,1,24
+A549,Panobinostat,5.0,12,1.5,closed,b1,1,24
+A549,Pralsetinib,5.0,3,1.5,closed,b1,1,24
+A549,Selinexor ,5.0,6,1.5,closed,b5,1,24
+A549,Silodosin,0.5,8,1.5,closed,b5,1,24
+A549,TAK-901,5.0,3,1.5,closed,b1|b2,2,12
+A549,Tofacitinib,0.5,5,1.5,closed,b1|b5,2,12
+A549,Tofacitinib,5.0,6,1.5,closed,b1|b5,2,12
+A549,Tofacitinib (citrate),0.5,5,1.5,closed,b1,1,24
+A549,Tofacitinib (citrate),5.0,6,1.5,closed,b1,1,24
+A549,Triamcinolone,5.0,6,1.5,closed,b2,1,24
+A549,c-Kit-IN-1,5.0,3,1.5,closed,b1,1,24
+AsPC-1,Acetohexamide,5.0,6,1.5,closed,b1,1,24
+AsPC-1,Allantoin,5.0,14,1.5,closed,b1,1,24
+AsPC-1,Atazanavir (sulfate),5.0,12,1.5,closed,b1,1,24
+AsPC-1,Auranofin,5.0,12,1.5,closed,b1|b5,2,12
+AsPC-1,Belinostat,0.5,11,1.5,closed,b1,1,24
+AsPC-1,Belinostat,5.0,12,1.5,closed,b1,1,24
+AsPC-1,Bergenin,5.0,6,1.5,closed,b1,1,24
+AsPC-1,Bexarotene,5.0,12,1.5,closed,b2,1,24
+AsPC-1,Bortezomib,0.050000000745058,1,1.5,closed,b1|b2|b5,3,6
+AsPC-1,Bortezomib,0.5,2,1.5,closed,b1|b5,2,12
+AsPC-1,Budesonide,0.050000000745058,10,1.5,closed,b5,1,24
+AsPC-1,Darinaparsin,5.0,6,1.5,closed,b5,1,24
+AsPC-1,Fedratinib (hydrochloride hydrate),5.0,12,1.5,closed,b5,1,24
+AsPC-1,Glycyrrhizic acid,0.050000000745058,7,1.5,closed,b1,1,24
+AsPC-1,Homoharringtonine,0.5,5,1.5,closed,b2,1,24
+AsPC-1,Homoharringtonine,5.0,6,1.5,closed,b2,1,24
+AsPC-1,Ixazomib citrate,0.5,11,1.5,closed,b1|b2|b5,3,6
+AsPC-1,Ixazomib citrate,5.0,12,1.5,closed,b1|b5,2,12
+AsPC-1,Neratinib,0.5,11,1.5,closed,b1,1,24
+AsPC-1,Neratinib (maleate),5.0,14,1.5,closed,b1,1,24
+AsPC-1,Ouabain (Octahydrate),0.5,11,1.5,closed,b1,1,24
+AsPC-1,Panobinostat,0.050000000745058,10,1.5,closed,b2,1,24
+AsPC-1,Panobinostat,0.5,11,1.5,closed,b1|b5,2,12
+AsPC-1,Panobinostat,5.0,12,1.5,closed,b1|b5,2,12
+AsPC-1,Pentoxifylline,0.050000000745058,10,1.5,closed,b1,1,24
+AsPC-1,Ritonavir,5.0,6,1.5,closed,b1,1,24
+AsPC-1,Sunitinib,0.5,11,1.5,closed,b1,1,24
+AsPC-1,TAK-901,0.050000000745058,1,1.5,closed,b2,1,24
+AsPC-1,TAK-901,5.0,3,1.5,closed,b2,1,24
+AsPC-1,Temsirolimus,5.0,6,1.5,closed,b1,1,24
+AsPC-1,Tofacitinib,0.5,5,1.5,closed,b1|b5,2,12
+AsPC-1,Tofacitinib,5.0,6,1.5,closed,b1,1,24
+AsPC-1,Tofacitinib (citrate),0.5,5,1.5,closed,b1,1,24
+AsPC-1,Tofacitinib (citrate),5.0,6,1.5,closed,b1|b5,2,12
+AsPC-1,Triamcinolone,0.5,5,1.5,closed,b5,1,24
+AsPC-1,Trifluridine,5.0,6,1.5,closed,b1,1,24
+AsPC-1,Vinblastine (sulfate),5.0,6,1.5,closed,b1|b5,2,12
+AsPC-1,c-Kit-IN-1,0.050000000745058,13,1.5,closed,b5,1,24
+CFPAC-1,Auranofin,5.0,12,1.5,closed,b1|b2|b5,3,6
+CFPAC-1,Bortezomib,0.050000000745058,1,1.5,closed,b1|b2,2,12
+CFPAC-1,Bortezomib,0.5,2,1.5,closed,b1,1,24
+CFPAC-1,Bortezomib,5.0,3,1.5,closed,b1,1,24
+CFPAC-1,Daptomycin,5.0,13,1.5,closed,b2,1,24
+CFPAC-1,Digitoxin,0.5,11,1.5,closed,b1,1,24
+CFPAC-1,Dinaciclib,0.050000000745058,7,1.5,closed,b1,1,24
+CFPAC-1,Dinaciclib,5.0,9,1.5,closed,b1,1,24
+CFPAC-1,Ixazomib citrate,0.5,11,1.5,closed,b1,1,24
+CFPAC-1,Ixazomib citrate,5.0,12,1.5,closed,b1,1,24
+CFPAC-1,NG25,5.0,3,1.5,closed,b1,1,24
+CFPAC-1,PH-797804,5.0,3,1.5,closed,b2,1,24
+CFPAC-1,Panobinostat,0.5,11,1.5,closed,b2,1,24
+CFPAC-1,Peretinoin,5.0,9,1.5,closed,b2,1,24
+CFPAC-1,Rutin (trihydrate),5.0,9,1.5,closed,b2,1,24
+CFPAC-1,Selinexor ,5.0,6,1.5,closed,b1,1,24
+CFPAC-1,TAK-901,5.0,3,1.5,closed,b2,1,24
+CFPAC-1,Temuterkib,0.050000000745058,1,1.5,closed,b2,1,24
+CFPAC-1,Thymopentin,5.0,9,1.5,closed,b2,1,24
+CFPAC-1,Tofacitinib,5.0,6,1.5,closed,b5,1,24
+CFPAC-1,Tofacitinib (citrate),5.0,6,1.5,closed,b1,1,24
+CFPAC-1,Topotecan (hydrochloride),5.0,9,1.5,closed,b1,1,24
+CFPAC-1,Tubulin inhibitor 6,5.0,3,1.5,closed,b1,1,24
+CFPAC-1,Vinblastine (sulfate),5.0,6,1.5,closed,b2,1,24
+CFPAC-1,c-Kit-IN-1,0.050000000745058,13,1.5,closed,b2,1,24
+CFPAC-1,crizotinib,5.0,9,1.5,closed,b2,1,24
+COLO 205,Asciminib,0.050000000745058,10,1.5,closed,b2,1,24
+COLO 205,Auranofin,5.0,12,1.5,closed,b1|b5,2,12
+COLO 205,Azithromycin (hydrate),0.050000000745058,4,1.5,closed,b5,1,24
+COLO 205,Belinostat,0.050000000745058,10,1.5,closed,b2,1,24
+COLO 205,Belinostat,0.5,11,1.5,closed,b1,1,24
+COLO 205,Belinostat,5.0,12,1.5,closed,b1|b5,2,12
+COLO 205,Bimiralisib,0.050000000745058,1,1.5,closed,b2,1,24
+COLO 205,Bortezomib,0.050000000745058,1,1.5,closed,b1|b2|b5,3,6
+COLO 205,Bortezomib,0.5,2,1.5,closed,b1|b2|b5,3,6
+COLO 205,Bortezomib,5.0,3,1.5,closed,b1|b2,2,12
+COLO 205,Crizotinib (hydrochloride),0.050000000745058,10,1.5,closed,b2,1,24
+COLO 205,Dihydroartemisinin,5.0,12,1.5,closed,b5,1,24
+COLO 205,Fedratinib (hydrochloride hydrate),5.0,12,1.5,closed,b5,1,24
+COLO 205,Harringtonine,5.0,9,1.5,closed,b1,1,24
+COLO 205,Homoharringtonine,0.5,5,1.5,closed,b2,1,24
+COLO 205,Hydroxyurea,5.0,9,1.5,closed,b2,1,24
+COLO 205,Ixazomib citrate,0.5,11,1.5,closed,b1|b2|b5,3,6
+COLO 205,Ixazomib citrate,5.0,12,1.5,closed,b1|b2|b5,3,6
+COLO 205,Megestrol,0.5,5,1.5,closed,b2,1,24
+COLO 205,Panobinostat,0.050000000745058,10,1.5,closed,b2,1,24
+COLO 205,Panobinostat,0.5,11,1.5,closed,b1,1,24
+COLO 205,Panobinostat,5.0,12,1.5,closed,b1|b2|b5,3,6
+COLO 205,Saquinavir,5.0,6,1.5,closed,b1,1,24
+COLO 205,Sodium Salicylate,0.050000000745058,4,1.5,closed,b2,1,24
+COLO 205,Sunitinib,5.0,12,1.5,closed,b1,1,24
+COLO 205,TAK-901,5.0,3,1.5,closed,b2,1,24
+COLO 205,Temsirolimus,0.5,5,1.5,closed,b5,1,24
+COLO 205,Topotecan (hydrochloride),5.0,9,1.5,closed,b1,1,24
+COLO 205,Torkinib,0.050000000745058,1,1.5,closed,b1,1,24
+COLO 205,Trimetrexate,0.050000000745058,4,1.5,closed,b1,1,24
+COLO 205,Valdecoxib,0.050000000745058,10,1.5,closed,b1,1,24
+HCT15,Belinostat,5.0,12,1.5,closed,b2,1,24
+HCT15,Bendamustine,0.050000000745058,7,1.5,closed,b1,1,24
+HCT15,Ixazomib citrate,0.5,11,1.5,closed,b1,1,24
+HCT15,Ixazomib citrate,5.0,12,1.5,closed,b1|b5,2,12
+HS-578T,AZD2858,5.0,3,1.5,closed,b1,1,24
+HS-578T,Auranofin,5.0,12,1.5,closed,b1,1,24
+HS-578T,Belinostat,0.5,11,1.5,closed,b2,1,24
+HS-578T,Bortezomib,0.050000000745058,1,1.5,closed,b1|b5,2,12
+HS-578T,Canagliflozin,0.050000000745058,7,1.5,closed,b5,1,24
+HS-578T,Daptomycin,5.0,13,1.5,closed,b5,1,24
+HS-578T,Dinaciclib,0.5,8,1.5,closed,b1,1,24
+HS-578T,Harringtonine,5.0,9,1.5,closed,b2,1,24
+HS-578T,Ixazomib citrate,0.5,11,1.5,closed,b1|b2|b5,3,6
+HS-578T,Mitoxantrone (dihydrochloride),5.0,6,1.5,closed,b5,1,24
+HS-578T,NG25,5.0,3,1.5,closed,b1,1,24
+HS-578T,Nevirapine,5.0,9,1.5,closed,b2,1,24
+HS-578T,OTS514,5.0,3,1.5,closed,b5,1,24
+HS-578T,PH-797804,5.0,3,1.5,closed,b2,1,24
+HS-578T,Panobinostat,0.050000000745058,10,1.5,closed,b2,1,24
+HS-578T,Panobinostat,0.5,11,1.5,closed,b1,1,24
+HS-578T,Panobinostat,5.0,12,1.5,closed,b1|b2,2,12
+HS-578T,TAK-901,5.0,3,1.5,closed,b2,1,24
+HS-578T,Topotecan (hydrochloride),5.0,9,1.5,closed,b1,1,24
+HS-578T,Tranilast,5.0,9,1.5,closed,b2,1,24
+HS-578T,Vilanterol,0.050000000745058,4,1.5,closed,b1,1,24
+HS-578T,Vinblastine (sulfate),5.0,6,1.5,closed,b5,1,24
+HT-29,Auranofin,5.0,12,1.5,closed,b1|b2,2,12
+HT-29,Belinostat,5.0,12,1.5,closed,b2,1,24
+HT-29,Bortezomib,0.050000000745058,1,1.5,closed,b1|b2|b5,3,6
+HT-29,Bortezomib,0.5,2,1.5,closed,b2,1,24
+HT-29,Bortezomib,5.0,3,1.5,closed,b2,1,24
+HT-29,Brivudine,5.0,3,1.5,closed,b2,1,24
+HT-29,EX229,5.0,3,1.5,closed,b2,1,24
+HT-29,Homoharringtonine,0.5,5,1.5,closed,b1,1,24
+HT-29,Homoharringtonine,5.0,6,1.5,closed,b1|b2|b5,3,6
+HT-29,Homoharringtonine,5.0,14,1.5,closed,b2,1,24
+HT-29,IQ 1,0.050000000745058,1,1.5,closed,b2,1,24
+HT-29,Idarubicin (hydrochloride),5.0,6,1.5,closed,b2,1,24
+HT-29,Idarubicin (hydrochloride),5.0,14,1.5,closed,b2,1,24
+HT-29,Ixazomib citrate,0.5,11,1.5,closed,b1|b2|b5,3,6
+HT-29,Ixazomib citrate,5.0,12,1.5,closed,b2|b5,2,12
+HT-29,Niclosamide (olamine),5.0,9,1.5,closed,b2,1,24
+HT-29,Ouabain (Octahydrate),5.0,12,1.5,closed,b2,1,24
+HT-29,Panobinostat,5.0,12,1.5,closed,b2,1,24
+HT-29,TAK-901,5.0,3,1.5,closed,b2,1,24
+HT-29,Tofacitinib,0.5,5,1.5,closed,b2,1,24
+HT-29,Tofacitinib (citrate),0.050000000745058,4,1.5,closed,b2,1,24
+HT-29,Tofacitinib (citrate),0.5,5,1.5,closed,b5,1,24
+HT-29,Trimetrexate,0.050000000745058,4,1.5,closed,b2,1,24
+HT-29,Trimetrexate,5.0,14,1.5,closed,b2,1,24
+Hs 766T,Erlotinib,5.0,9,1.5,closed,b2,1,24
+Hs 766T,Sapanisertib,0.5,2,1.5,closed,b1,1,24
+Hs 766T,TAK-901,0.5,2,1.5,closed,b5,1,24
+Hs 766T,TAK-901,5.0,3,1.5,closed,b2,1,24
+Hs 766T,Tofacitinib (citrate),5.0,6,1.5,closed,b5,1,24
+LoVo,Auranofin,5.0,12,1.5,closed,b1|b2|b5,3,6
+LoVo,Belinostat,5.0,12,1.5,closed,b2,1,24
+LoVo,Bortezomib,0.050000000745058,1,1.5,closed,b1|b2|b5,3,6
+LoVo,Bortezomib,5.0,3,1.5,closed,b5,1,24
+LoVo,Brivudine,5.0,3,1.5,closed,b2,1,24
+LoVo,Digitoxin,0.5,11,1.5,closed,b1|b2,2,12
+LoVo,Digitoxin,5.0,12,1.5,closed,b1,1,24
+LoVo,Erlotinib,5.0,9,1.5,closed,b2,1,24
+LoVo,Fedratinib (hydrochloride hydrate),5.0,12,1.5,closed,b1|b5,2,12
+LoVo,Homoharringtonine,5.0,14,1.5,closed,b5,1,24
+LoVo,Hydroxyfasudil,5.0,3,1.5,closed,b1,1,24
+LoVo,Ipatasertib,5.0,3,1.5,closed,b1,1,24
+LoVo,Irinotecan (hydrochloride),0.5,13,1.5,closed,b1,1,24
+LoVo,Irinotecan (hydrochloride),5.0,13,1.5,closed,b1,1,24
+LoVo,Ixazomib,5.0,3,1.5,closed,b1|b5,2,12
+LoVo,Ixazomib citrate,0.5,11,1.5,closed,b1|b2|b5,3,6
+LoVo,Ixazomib citrate,5.0,12,1.5,closed,b1|b2|b5,3,6
+LoVo,NG25,5.0,3,1.5,closed,b1,1,24
+LoVo,Niclosamide (olamine),5.0,9,1.5,closed,b1,1,24
+LoVo,Ouabain (Octahydrate),0.5,11,1.5,closed,b1|b2,2,12
+LoVo,Ouabain (Octahydrate),5.0,12,1.5,closed,b1|b2,2,12
+LoVo,PH-797804,0.5,2,1.5,closed,b1,1,24
+LoVo,PH-797804,5.0,3,1.5,closed,b2,1,24
+LoVo,Panobinostat,0.050000000745058,10,1.5,closed,b2,1,24
+LoVo,Panobinostat,0.5,11,1.5,closed,b1|b2|b5,3,6
+LoVo,Panobinostat,5.0,12,1.5,closed,b2|b5,2,12
+LoVo,TAK-901,0.050000000745058,1,1.5,closed,b2,1,24
+LoVo,TAK-901,5.0,3,1.5,closed,b2,1,24
+LoVo,Terfenadine,0.5,13,1.5,closed,b1,1,24
+LoVo,Thymopentin,5.0,9,1.5,closed,b2,1,24
+LoVo,Tofacitinib,0.5,5,1.5,closed,b1,1,24
+LoVo,Tofacitinib,5.0,6,1.5,closed,b1|b5,2,12
+LoVo,Tofacitinib (citrate),0.5,5,1.5,closed,b1,1,24
+LoVo,Tofacitinib (citrate),5.0,6,1.5,closed,b1,1,24
+LoVo,Verteporfin,5.0,9,1.5,closed,b2,1,24
+MIA PaCa-2,AZD1390,0.5,2,1.5,closed,b5,1,24
+MIA PaCa-2,Auranofin,5.0,12,1.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Belinostat,5.0,12,1.5,closed,b1,1,24
+MIA PaCa-2,Bergenin,0.5,5,1.5,closed,b1,1,24
+MIA PaCa-2,Bortezomib,0.050000000745058,1,1.5,closed,b1|b2,2,12
+MIA PaCa-2,Bortezomib,0.5,2,1.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Bortezomib,5.0,3,1.5,closed,b1,1,24
+MIA PaCa-2,Daptomycin,0.5,13,1.5,closed,b1,1,24
+MIA PaCa-2,Delamanid,0.050000000745058,10,1.5,closed,b5,1,24
+MIA PaCa-2,Demeclocycline,0.050000000745058,4,1.5,closed,b2,1,24
+MIA PaCa-2,Digitoxin,0.5,11,1.5,closed,b1,1,24
+MIA PaCa-2,Dinaciclib,0.5,8,1.5,closed,b1,1,24
+MIA PaCa-2,EX229,5.0,3,1.5,closed,b1,1,24
+MIA PaCa-2,Fedratinib (hydrochloride hydrate),5.0,12,1.5,closed,b1|b5,2,12
+MIA PaCa-2,Harringtonine,5.0,9,1.5,closed,b1,1,24
+MIA PaCa-2,Idarubicin (hydrochloride),5.0,6,1.5,closed,b5,1,24
+MIA PaCa-2,Infigratinib,5.0,3,1.5,closed,b1,1,24
+MIA PaCa-2,Irinotecan (hydrochloride),5.0,13,1.5,closed,b5,1,24
+MIA PaCa-2,Ixazomib citrate,0.5,11,1.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Ixazomib citrate,5.0,12,1.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Mebendazole,5.0,9,1.5,closed,b1|b2,2,12
+MIA PaCa-2,Mitoxantrone (dihydrochloride),5.0,6,1.5,closed,b5,1,24
+MIA PaCa-2,PH-797804,5.0,3,1.5,closed,b1,1,24
+MIA PaCa-2,Panobinostat,0.050000000745058,10,1.5,closed,b2,1,24
+MIA PaCa-2,Panobinostat,5.0,12,1.5,closed,b5,1,24
+MIA PaCa-2,Peretinoin,0.5,8,1.5,closed,b1,1,24
+MIA PaCa-2,Peretinoin,5.0,9,1.5,closed,b2,1,24
+MIA PaCa-2,Pimozide,0.050000000745058,10,1.5,closed,b1,1,24
+MIA PaCa-2,Rapamycin,0.5,5,1.5,closed,b2,1,24
+MIA PaCa-2,Rifaximin,5.0,9,1.5,closed,b2,1,24
+MIA PaCa-2,Roxadustat,0.050000000745058,7,1.5,closed,b1,1,24
+MIA PaCa-2,Sapanisertib,0.050000000745058,1,1.5,closed,b2,1,24
+MIA PaCa-2,Selinexor ,5.0,6,1.5,closed,b1,1,24
+MIA PaCa-2,TAK-901,5.0,3,1.5,closed,b2,1,24
+MIA PaCa-2,Tofacitinib,0.5,5,1.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Tofacitinib,5.0,6,1.5,closed,b1|b5,2,12
+MIA PaCa-2,Tofacitinib,5.0,14,1.5,closed,b1,1,24
+MIA PaCa-2,Tofacitinib (citrate),0.5,5,1.5,closed,b1|b5,2,12
+MIA PaCa-2,Tofacitinib (citrate),5.0,6,1.5,closed,b1|b2,2,12
+MIA PaCa-2,Tolcapone,0.050000000745058,4,1.5,closed,b5,1,24
+MIA PaCa-2,Vinblastine (sulfate),0.5,5,1.5,closed,b1|b2,2,12
+MIA PaCa-2,Vinblastine (sulfate),5.0,6,1.5,closed,b1|b2|b5,3,6
+MIA PaCa-2,Vinblastine (sulfate),5.0,14,1.5,closed,b1,1,24
+MIA PaCa-2,vincristine,0.050000000745058,1,1.5,closed,b2,1,24
+MIA PaCa-2,vincristine,0.5,2,1.5,closed,b1,1,24
+RKO,Bortezomib,0.050000000745058,1,1.5,closed,b2,1,24
+RKO,Carbidopa (monohydrate),0.050000000745058,13,1.5,closed,b1,1,24
+RKO,Daptomycin,5.0,13,1.5,closed,b1,1,24
+RKO,Hesperidin,0.050000000745058,7,1.5,closed,b1,1,24
+RKO,PH-797804,0.050000000745058,1,1.5,closed,b2,1,24
+RKO,Pralsetinib,0.050000000745058,13,1.5,closed,b5,1,24
+RKO,Salicylic acid,5.0,6,1.5,closed,b1,1,24
+RKO,Saquinavir,5.0,6,1.5,closed,b1,1,24
+RKO,TAK-901,5.0,3,1.5,closed,b2,1,24
+RKO,Verapamil,0.5,8,1.5,closed,b1,1,24
+RKO,c-Kit-IN-1,0.050000000745058,13,1.5,closed,b1,1,24
+SHP-77,Digitoxin,0.5,11,1.5,closed,b5,1,24
+SHP-77,Ixazomib citrate,5.0,12,1.5,closed,b5,1,24
+SHP-77,TAK-901,5.0,3,1.5,closed,b2,1,24
+SHP-77,c-Kit-IN-1,0.050000000745058,13,1.5,closed,b1,1,24
+SW 900,Afatinib,0.5,2,1.5,closed,b2,1,24
+SW 900,Auranofin,5.0,12,1.5,closed,b1,1,24
+SW 900,Carbidopa (monohydrate),0.050000000745058,13,1.5,closed,b5,1,24
+SW 900,Everolimus,0.5,2,1.5,closed,b2,1,24
+SW 900,Fumaric acid,5.0,9,1.5,closed,b2,1,24
+SW 900,Irinotecan,0.5,2,1.5,closed,b2,1,24
+SW 900,Ixazomib citrate,0.5,11,1.5,closed,b1,1,24
+SW 900,Ixazomib citrate,5.0,12,1.5,closed,b1|b2,2,12
+SW 900,Larotrectinib sulfate,0.5,13,1.5,closed,b1,1,24
+SW 900,Panobinostat,0.050000000745058,10,1.5,closed,b2,1,24
+SW 900,Pimozide,5.0,12,1.5,closed,b1,1,24
+SW 900,Piroxicam,0.050000000745058,10,1.5,closed,b2,1,24
+SW 900,Proglumide,0.5,11,1.5,closed,b1,1,24
+SW 900,c-Kit-IN-1,0.5,2,1.5,closed,b2,1,24
+SW 900,palbociclib,0.5,2,1.5,closed,b2,1,24
+SW1417,Almonertinib (hydrochloride),0.050000000745058,4,1.5,closed,b1,1,24
+SW1417,Auranofin,5.0,12,1.5,closed,b1|b5,2,12
+SW1417,Baicalin,5.0,14,1.5,closed,b5,1,24
+SW1417,Bortezomib,0.050000000745058,1,1.5,closed,b1|b2|b5,3,6
+SW1417,EX229,5.0,3,1.5,closed,b1,1,24
+SW1417,Homoharringtonine,5.0,6,1.5,closed,b2,1,24
+SW1417,Ipatasertib,0.5,2,1.5,closed,b5,1,24
+SW1417,Irinotecan (hydrochloride),0.5,13,1.5,closed,b5,1,24
+SW1417,Ixazomib citrate,5.0,12,1.5,closed,b1|b2|b5,3,6
+SW1417,NG25,5.0,3,1.5,closed,b1,1,24
+SW1417,Ouabain (Octahydrate),0.5,11,1.5,closed,b1|b2,2,12
+SW1417,PH-797804,5.0,3,1.5,closed,b2,1,24
+SW1417,Panobinostat,0.050000000745058,10,1.5,closed,b2,1,24
+SW1417,Panobinostat,5.0,12,1.5,closed,b2,1,24
+SW1417,Pravastatin (sodium),5.0,9,1.5,closed,b2,1,24
+SW1417,Ralimetinib dimesylate,0.5,2,1.5,closed,b1,1,24
+SW1417,TAK-901,0.050000000745058,1,1.5,closed,b2,1,24
+SW1417,TAK-901,5.0,3,1.5,closed,b2,1,24
+SW1417,Talc,0.050000000745058,10,1.5,closed,b1,1,24
+SW1417,Voriconazole,5.0,12,1.5,closed,b2,1,24
+SW480,Auranofin,5.0,12,1.5,closed,b1,1,24
+SW480,BAY1125976,5.0,3,1.5,closed,b2,1,24
+SW480,Bortezomib,0.050000000745058,1,1.5,closed,b2,1,24
+SW480,Bortezomib,5.0,3,1.5,closed,b2,1,24
+SW480,Brivudine,5.0,3,1.5,closed,b2,1,24
+SW480,Dexamethasone,0.5,11,1.5,closed,b1,1,24
+SW480,Digitoxin,0.050000000745058,10,1.5,closed,b2,1,24
+SW480,Digitoxin,0.5,11,1.5,closed,b2,1,24
+SW480,ERK5-IN-2,5.0,3,1.5,closed,b2,1,24
+SW480,Fluvoxamine (maleate),0.050000000745058,4,1.5,closed,b1,1,24
+SW480,Homoharringtonine,0.5,5,1.5,closed,b2,1,24
+SW480,Homoharringtonine,5.0,6,1.5,closed,b2,1,24
+SW480,Ivabradine (hydrochloride),0.5,13,1.5,closed,b1,1,24
+SW480,Ixazomib citrate,0.5,11,1.5,closed,b1|b2|b5,3,6
+SW480,Methotrexate,0.050000000745058,10,1.5,closed,b2,1,24
+SW480,Ouabain (Octahydrate),0.5,11,1.5,closed,b1,1,24
+SW480,Ouabain (Octahydrate),5.0,12,1.5,closed,b2,1,24
+SW480,PH-797804,5.0,3,1.5,closed,b2,1,24
+SW480,Panobinostat,0.050000000745058,10,1.5,closed,b2,1,24
+SW480,Simotinib,5.0,9,1.5,closed,b5,1,24
+SW480,TAK-901,0.050000000745058,1,1.5,closed,b2,1,24
+SW480,TAK-901,5.0,3,1.5,closed,b2,1,24
+SW480,Tubulin inhibitor 6,5.0,3,1.5,closed,b5,1,24
+SW480,vincristine,0.5,2,1.5,closed,b1,1,24
+A549,Alpelisib,5.0,3,2.0,opened,b2,1,12
+A549,Binimetinib,5.0,3,2.0,opened,b5,1,12
+A549,Elimusertib hydrochloride,5.0,3,2.0,opened,b2,1,12
+A549,palbociclib,5.0,3,2.0,opened,b2,1,12
+AsPC-1,AZD-8055,5.0,3,2.0,opened,b1,1,12
+AsPC-1,Afatinib,5.0,3,2.0,opened,b2,1,12
+AsPC-1,BI-3406,5.0,3,2.0,opened,b2|b5,2,24
+AsPC-1,Bimiralisib,0.5,2,2.0,opened,b2,1,12
+AsPC-1,Bimiralisib,5.0,3,2.0,opened,b5,1,12
+AsPC-1,Binimetinib,0.050000000745058,1,2.0,opened,b2,1,12
+AsPC-1,Binimetinib,0.5,2,2.0,opened,b1,1,12
+AsPC-1,Binimetinib,0.5,11,2.0,opened,b2|b5,2,24
+AsPC-1,Binimetinib,5.0,3,2.0,opened,b5,1,12
+AsPC-1,Binimetinib,5.0,12,2.0,opened,b5,1,12
+AsPC-1,Dimethyl fumarate,0.050000000745058,7,2.0,opened,b2,1,12
+AsPC-1,Elimusertib hydrochloride,0.050000000745058,1,2.0,opened,b1|b5,2,24
+AsPC-1,Elimusertib hydrochloride,5.0,3,2.0,opened,b5,1,12
+AsPC-1,GSK1059615,0.5,2,2.0,opened,b2,1,12
+AsPC-1,Ixazomib,5.0,3,2.0,opened,b2,1,12
+AsPC-1,Naproxen,5.0,9,2.0,opened,b1,1,12
+AsPC-1,RMC-6236,5.0,3,2.0,opened,b5,1,12
+AsPC-1,Trametinib,0.5,2,2.0,opened,b2|b5,2,24
+AsPC-1,Trametinib,5.0,3,2.0,opened,b1,1,12
+AsPC-1,Trametinib,5.0,12,2.0,opened,b2,1,12
+AsPC-1,Trametinib (DMSO_TF solvate),0.050000000745058,7,2.0,opened,b2,1,12
+AsPC-1,Trametinib (DMSO_TF solvate),5.0,9,2.0,opened,b1,1,12
+AsPC-1,palbociclib,5.0,3,2.0,opened,b2,1,12
+CFPAC-1,AZD-7648,5.0,3,2.0,opened,b2,1,12
+CFPAC-1,Binimetinib,0.5,2,2.0,opened,b2,1,12
+CFPAC-1,Binimetinib,5.0,3,2.0,opened,b2|b5,2,24
+CFPAC-1,Capmatinib,5.0,3,2.0,opened,b2,1,12
+CFPAC-1,Chlorhexidine (diacetate),5.0,14,2.0,opened,b1,1,12
+CFPAC-1,GSK1059615,0.5,2,2.0,opened,b2,1,12
+CFPAC-1,Trametinib,0.5,2,2.0,opened,b2,1,12
+CFPAC-1,XRK3F2,0.5,2,2.0,opened,b2,1,12
+COLO 205,Baicalin,5.0,14,2.0,opened,b1,1,12
+COLO 205,Captopril,0.050000000745058,13,2.0,opened,b2,1,12
+COLO 205,Cobimetinib,0.5,8,2.0,opened,b1,1,12
+COLO 205,Harringtonine,0.050000000745058,7,2.0,opened,b2,1,12
+COLO 205,Nimesulide,5.0,13,2.0,opened,b2,1,12
+COLO 205,Pravastatin (sodium),5.0,13,2.0,opened,b2,1,12
+COLO 205,Tucidinostat,5.0,6,2.0,opened,b1,1,12
+HCT15,Allantoin,0.5,5,2.0,opened,b5,1,12
+HCT15,Binimetinib,0.050000000745058,1,2.0,opened,b5,1,12
+HCT15,Esmolol (hydrochloride),0.050000000745058,10,2.0,opened,b2,1,12
+HCT15,Gemfibrozil,0.5,5,2.0,opened,b1,1,12
+HCT15,Homoharringtonine,5.0,6,2.0,opened,b5,1,12
+HCT15,Loperamide (hydrochloride),0.050000000745058,10,2.0,opened,b5,1,12
+HCT15,Megestrol,0.5,5,2.0,opened,b1,1,12
+HCT15,Mitoxantrone (dihydrochloride),0.050000000745058,4,2.0,opened,b2,1,12
+HCT15,Palmatine (chloride),5.0,6,2.0,opened,b5,1,12
+HCT15,RMC-6236,5.0,3,2.0,opened,b5,1,12
+HCT15,Ritonavir,0.5,5,2.0,opened,b2,1,12
+HCT15,TAK-733,0.5,2,2.0,opened,b2,1,12
+HCT15,Tucidinostat,5.0,6,2.0,opened,b1,1,12
+HS-578T,Elagolix sodium,5.0,14,2.0,opened,b5,1,12
+HS-578T,GSK1059615,0.5,2,2.0,opened,b2,1,12
+HS-578T,Harringtonine,0.5,8,2.0,opened,b5,1,12
+HS-578T,Homoharringtonine,0.050000000745058,4,2.0,opened,b5,1,12
+HT-29,Neratinib (maleate),5.0,14,2.0,opened,b1,1,12
+HT-29,RMC-6236,5.0,3,2.0,opened,b5,1,12
+Hs 766T,BI-3406,5.0,3,2.0,opened,b5,1,12
+Hs 766T,Bimiralisib,0.5,2,2.0,opened,b2,1,12
+Hs 766T,Binimetinib,0.5,2,2.0,opened,b2,1,12
+Hs 766T,Cobimetinib,5.0,9,2.0,opened,b1,1,12
+Hs 766T,DT-061,5.0,3,2.0,opened,b5,1,12
+Hs 766T,DTP3,5.0,3,2.0,opened,b5,1,12
+Hs 766T,Elimusertib hydrochloride,5.0,3,2.0,opened,b5,1,12
+Hs 766T,GSK1059615,0.5,2,2.0,opened,b2,1,12
+Hs 766T,GSK1059615,5.0,3,2.0,opened,b5,1,12
+Hs 766T,Paclitaxel,5.0,3,2.0,opened,b5,1,12
+Hs 766T,RMC-6236,5.0,3,2.0,opened,b5,1,12
+Hs 766T,Sonidegib,0.5,2,2.0,opened,b2,1,12
+Hs 766T,TAK-901,5.0,3,2.0,opened,b5,1,12
+MIA PaCa-2,Binimetinib,0.050000000745058,1,2.0,opened,b5,1,12
+MIA PaCa-2,Harringtonine,0.050000000745058,7,2.0,opened,b5,1,12
+MIA PaCa-2,LY-2584702 (tosylate salt),5.0,3,2.0,opened,b2,1,12
+MIA PaCa-2,Vemurafenib,5.0,3,2.0,opened,b1,1,12
+MIA PaCa-2,XRK3F2,5.0,3,2.0,opened,b1,1,12
+MIA PaCa-2,palbociclib,5.0,3,2.0,opened,b2,1,12
+RKO,Binimetinib,5.0,12,2.0,opened,b2,1,12
+RKO,Cobimetinib,5.0,9,2.0,opened,b1,1,12
+RKO,Cytarabine,5.0,9,2.0,opened,b1,1,12
+RKO,Flumatinib (mesylate),5.0,9,2.0,opened,b1,1,12
+RKO,Fluvoxamine (maleate),0.5,5,2.0,opened,b5,1,12
+RKO,HI-TOPK-032,0.050000000745058,1,2.0,opened,b5,1,12
+RKO,Hesperidin,0.050000000745058,7,2.0,opened,b2,1,12
+RKO,Homoharringtonine,0.050000000745058,4,2.0,opened,b5,1,12
+RKO,Idarubicin (hydrochloride),5.0,6,2.0,opened,b1|b5,2,24
+RKO,Trametinib (DMSO_TF solvate),5.0,9,2.0,opened,b1,1,12
+RKO,ULK-101,0.050000000745058,1,2.0,opened,b5,1,12
+SHP-77,ETC-206,0.050000000745058,1,2.0,opened,b1,1,12
+SHP-77,Idarubicin (hydrochloride),5.0,14,2.0,opened,b1,1,12
+SHP-77,Larotrectinib,5.0,6,2.0,opened,b5,1,12
+SHP-77,Lenalidomide (hemihydrate),0.5,5,2.0,opened,b2,1,12
+SHP-77,Mitoxantrone (dihydrochloride),0.050000000745058,4,2.0,opened,b1,1,12
+SHP-77,Nimesulide,5.0,13,2.0,opened,b2,1,12
+SHP-77,Oxaprozin,0.5,11,2.0,opened,b2,1,12
+SHP-77,Pimozide,0.050000000745058,10,2.0,opened,b2,1,12
+SHP-77,Rosiglitazone,5.0,9,2.0,opened,b5,1,12
+SHP-77,Saquinavir,0.5,5,2.0,opened,b2,1,12
+SHP-77,Sinomenine,0.5,5,2.0,opened,b2,1,12
+SHP-77,Thymol,0.5,5,2.0,opened,b2,1,12
+SHP-77,vincristine,0.5,2,2.0,opened,b2,1,12
+SW 900,18β-Glycyrrhetinic acid,5.0,6,2.0,opened,b5,1,12
+SW 900,Belzutifan,5.0,3,2.0,opened,b5,1,12
+SW 900,Berbamine (dihydrochloride),5.0,13,2.0,opened,b2,1,12
+SW 900,Canagliflozin,0.050000000745058,7,2.0,opened,b2,1,12
+SW 900,Capmatinib,5.0,3,2.0,opened,b5,1,12
+SW 900,Elagolix sodium,0.5,5,2.0,opened,b2,1,12
+SW 900,Harringtonine,0.5,8,2.0,opened,b5,1,12
+SW 900,Mozavaptan,0.050000000745058,7,2.0,opened,b5,1,12
+SW 900,Tucidinostat,0.5,5,2.0,opened,b1,1,12
+SW480,Alpelisib,5.0,3,2.0,opened,b5,1,12
+SW480,BI-3406,5.0,3,2.0,opened,b5,1,12
+SW480,Binimetinib,5.0,3,2.0,opened,b1,1,12
+SW480,HI-TOPK-032,5.0,3,2.0,opened,b1,1,12
+SW480,Idarubicin (hydrochloride),5.0,14,2.0,opened,b1,1,12
+SW480,Tucidinostat,0.5,5,2.0,opened,b1,1,12
+A549,Auranofin,5.0,12,2.0,closed,b1,1,24
+A549,Belinostat,0.5,11,2.0,closed,b1,1,24
+A549,Bortezomib,0.050000000745058,1,2.0,closed,b1|b5,2,12
+A549,Bortezomib,5.0,3,2.0,closed,b1,1,24
+A549,Dinaciclib,0.5,8,2.0,closed,b1,1,24
+A549,Fedratinib (hydrochloride hydrate),5.0,12,2.0,closed,b1,1,24
+A549,Harringtonine,5.0,9,2.0,closed,b1,1,24
+A549,Homoharringtonine,0.5,5,2.0,closed,b1,1,24
+A549,Homoharringtonine,5.0,6,2.0,closed,b1|b2,2,12
+A549,Homoharringtonine,5.0,14,2.0,closed,b1,1,24
+A549,Idarubicin (hydrochloride),5.0,14,2.0,closed,b5,1,24
+A549,Ipatasertib,5.0,3,2.0,closed,b1,1,24
+A549,Irinotecan (hydrochloride),0.5,13,2.0,closed,b5,1,24
+A549,Irinotecan (hydrochloride),5.0,13,2.0,closed,b1,1,24
+A549,Ixazomib,5.0,3,2.0,closed,b1,1,24
+A549,Ixazomib citrate,0.5,11,2.0,closed,b1,1,24
+A549,Ixazomib citrate,5.0,12,2.0,closed,b1|b5,2,12
+A549,Lonafarnib,5.0,3,2.0,closed,b1,1,24
+A549,NG25,5.0,3,2.0,closed,b1,1,24
+A549,PH-797804,5.0,3,2.0,closed,b1|b2,2,12
+A549,TAK-901,5.0,3,2.0,closed,b1|b2,2,12
+A549,Tofacitinib,0.5,5,2.0,closed,b5,1,24
+A549,Tofacitinib,5.0,6,2.0,closed,b1|b5,2,12
+AsPC-1,Allantoin,5.0,14,2.0,closed,b1,1,24
+AsPC-1,Auranofin,5.0,12,2.0,closed,b1|b5,2,12
+AsPC-1,Bortezomib,0.050000000745058,1,2.0,closed,b1|b5,2,12
+AsPC-1,Glycyrrhizic acid,0.050000000745058,7,2.0,closed,b1,1,24
+AsPC-1,Homoharringtonine,5.0,6,2.0,closed,b2,1,24
+AsPC-1,Ixazomib citrate,0.5,11,2.0,closed,b2,1,24
+AsPC-1,Ixazomib citrate,5.0,12,2.0,closed,b1|b5,2,12
+AsPC-1,Neratinib (maleate),5.0,14,2.0,closed,b1,1,24
+AsPC-1,Ouabain (Octahydrate),0.5,11,2.0,closed,b1,1,24
+AsPC-1,Panobinostat,0.5,11,2.0,closed,b1|b5,2,12
+AsPC-1,Panobinostat,5.0,12,2.0,closed,b5,1,24
+AsPC-1,TAK-901,5.0,3,2.0,closed,b2,1,24
+AsPC-1,Tofacitinib (citrate),5.0,6,2.0,closed,b1|b5,2,12
+CFPAC-1,Auranofin,5.0,12,2.0,closed,b1,1,24
+CFPAC-1,Bortezomib,0.050000000745058,1,2.0,closed,b1|b2,2,12
+CFPAC-1,Bortezomib,5.0,3,2.0,closed,b1,1,24
+CFPAC-1,Dinaciclib,0.050000000745058,7,2.0,closed,b1,1,24
+CFPAC-1,Dinaciclib,5.0,9,2.0,closed,b1,1,24
+CFPAC-1,Ixazomib citrate,0.5,11,2.0,closed,b1,1,24
+CFPAC-1,Ixazomib citrate,5.0,12,2.0,closed,b1,1,24
+CFPAC-1,PH-797804,5.0,3,2.0,closed,b2,1,24
+CFPAC-1,Peretinoin,5.0,9,2.0,closed,b2,1,24
+CFPAC-1,TAK-901,5.0,3,2.0,closed,b2,1,24
+CFPAC-1,Topotecan (hydrochloride),5.0,9,2.0,closed,b1,1,24
+CFPAC-1,crizotinib,5.0,9,2.0,closed,b2,1,24
+COLO 205,Asciminib,0.050000000745058,10,2.0,closed,b2,1,24
+COLO 205,Auranofin,5.0,12,2.0,closed,b1|b5,2,12
+COLO 205,Belinostat,0.5,11,2.0,closed,b1,1,24
+COLO 205,Belinostat,5.0,12,2.0,closed,b1|b5,2,12
+COLO 205,Bortezomib,0.050000000745058,1,2.0,closed,b1|b2|b5,3,6
+COLO 205,Bortezomib,0.5,2,2.0,closed,b1|b2|b5,3,6
+COLO 205,Bortezomib,5.0,3,2.0,closed,b1|b2,2,12
+COLO 205,Harringtonine,5.0,9,2.0,closed,b1,1,24
+COLO 205,Homoharringtonine,0.5,5,2.0,closed,b2,1,24
+COLO 205,Hydroxyurea,5.0,9,2.0,closed,b2,1,24
+COLO 205,Ixazomib citrate,0.5,11,2.0,closed,b1|b2|b5,3,6
+COLO 205,Ixazomib citrate,5.0,12,2.0,closed,b1|b2|b5,3,6
+COLO 205,Panobinostat,0.5,11,2.0,closed,b1,1,24
+COLO 205,Panobinostat,5.0,12,2.0,closed,b1|b2|b5,3,6
+COLO 205,Saquinavir,5.0,6,2.0,closed,b1,1,24
+COLO 205,TAK-901,5.0,3,2.0,closed,b2,1,24
+COLO 205,Temsirolimus,0.5,5,2.0,closed,b5,1,24
+COLO 205,Topotecan (hydrochloride),5.0,9,2.0,closed,b1,1,24
+COLO 205,Trimetrexate,0.050000000745058,4,2.0,closed,b1,1,24
+HCT15,Belinostat,5.0,12,2.0,closed,b2,1,24
+HCT15,Bendamustine,0.050000000745058,7,2.0,closed,b1,1,24
+HCT15,Ixazomib citrate,0.5,11,2.0,closed,b1,1,24
+HCT15,Ixazomib citrate,5.0,12,2.0,closed,b1|b5,2,12
+HS-578T,Auranofin,5.0,12,2.0,closed,b1,1,24
+HS-578T,Belinostat,0.5,11,2.0,closed,b2,1,24
+HS-578T,Bortezomib,0.050000000745058,1,2.0,closed,b5,1,24
+HS-578T,Dinaciclib,0.5,8,2.0,closed,b1,1,24
+HS-578T,Harringtonine,5.0,9,2.0,closed,b2,1,24
+HS-578T,Ixazomib citrate,0.5,11,2.0,closed,b2,1,24
+HS-578T,Mitoxantrone (dihydrochloride),5.0,6,2.0,closed,b5,1,24
+HS-578T,NG25,5.0,3,2.0,closed,b1,1,24
+HS-578T,OTS514,5.0,3,2.0,closed,b5,1,24
+HS-578T,PH-797804,5.0,3,2.0,closed,b2,1,24
+HS-578T,Panobinostat,0.5,11,2.0,closed,b1,1,24
+HS-578T,Panobinostat,5.0,12,2.0,closed,b2,1,24
+HS-578T,TAK-901,5.0,3,2.0,closed,b2,1,24
+HT-29,Auranofin,5.0,12,2.0,closed,b1|b2,2,12
+HT-29,Belinostat,5.0,12,2.0,closed,b2,1,24
+HT-29,Bortezomib,0.050000000745058,1,2.0,closed,b1|b2|b5,3,6
+HT-29,Bortezomib,0.5,2,2.0,closed,b2,1,24
+HT-29,Bortezomib,5.0,3,2.0,closed,b2,1,24
+HT-29,Brivudine,5.0,3,2.0,closed,b2,1,24
+HT-29,EX229,5.0,3,2.0,closed,b2,1,24
+HT-29,Homoharringtonine,5.0,6,2.0,closed,b2,1,24
+HT-29,Homoharringtonine,5.0,14,2.0,closed,b2,1,24
+HT-29,Idarubicin (hydrochloride),5.0,14,2.0,closed,b2,1,24
+HT-29,Ixazomib citrate,0.5,11,2.0,closed,b1|b2|b5,3,6
+HT-29,Ixazomib citrate,5.0,12,2.0,closed,b2|b5,2,12
+HT-29,Niclosamide (olamine),5.0,9,2.0,closed,b2,1,24
+HT-29,Panobinostat,5.0,12,2.0,closed,b2,1,24
+HT-29,TAK-901,5.0,3,2.0,closed,b2,1,24
+Hs 766T,TAK-901,5.0,3,2.0,closed,b2,1,24
+LoVo,Auranofin,5.0,12,2.0,closed,b1|b5,2,12
+LoVo,Belinostat,5.0,12,2.0,closed,b2,1,24
+LoVo,Bortezomib,0.050000000745058,1,2.0,closed,b1|b5,2,12
+LoVo,Bortezomib,5.0,3,2.0,closed,b5,1,24
+LoVo,Brivudine,5.0,3,2.0,closed,b2,1,24
+LoVo,Digitoxin,0.5,11,2.0,closed,b1|b2,2,12
+LoVo,Digitoxin,5.0,12,2.0,closed,b1,1,24
+LoVo,Erlotinib,5.0,9,2.0,closed,b2,1,24
+LoVo,Fedratinib (hydrochloride hydrate),5.0,12,2.0,closed,b1,1,24
+LoVo,Ixazomib citrate,0.5,11,2.0,closed,b1|b2|b5,3,6
+LoVo,Ixazomib citrate,5.0,12,2.0,closed,b1|b2|b5,3,6
+LoVo,NG25,5.0,3,2.0,closed,b1,1,24
+LoVo,Ouabain (Octahydrate),0.5,11,2.0,closed,b2,1,24
+LoVo,Ouabain (Octahydrate),5.0,12,2.0,closed,b2,1,24
+LoVo,PH-797804,5.0,3,2.0,closed,b2,1,24
+LoVo,Panobinostat,0.050000000745058,10,2.0,closed,b2,1,24
+LoVo,Panobinostat,0.5,11,2.0,closed,b2|b5,2,12
+LoVo,Panobinostat,5.0,12,2.0,closed,b2|b5,2,12
+LoVo,TAK-901,5.0,3,2.0,closed,b2,1,24
+LoVo,Thymopentin,5.0,9,2.0,closed,b2,1,24
+LoVo,Tofacitinib,5.0,6,2.0,closed,b1,1,24
+LoVo,Tofacitinib (citrate),0.5,5,2.0,closed,b1,1,24
+LoVo,Tofacitinib (citrate),5.0,6,2.0,closed,b1,1,24
+LoVo,Verteporfin,5.0,9,2.0,closed,b2,1,24
+MIA PaCa-2,AZD1390,0.5,2,2.0,closed,b5,1,24
+MIA PaCa-2,Auranofin,5.0,12,2.0,closed,b1|b2|b5,3,6
+MIA PaCa-2,Bortezomib,0.050000000745058,1,2.0,closed,b1|b2,2,12
+MIA PaCa-2,Bortezomib,0.5,2,2.0,closed,b5,1,24
+MIA PaCa-2,Bortezomib,5.0,3,2.0,closed,b1,1,24
+MIA PaCa-2,Dinaciclib,0.5,8,2.0,closed,b1,1,24
+MIA PaCa-2,EX229,5.0,3,2.0,closed,b1,1,24
+MIA PaCa-2,Fedratinib (hydrochloride hydrate),5.0,12,2.0,closed,b1|b5,2,12
+MIA PaCa-2,Harringtonine,5.0,9,2.0,closed,b1,1,24
+MIA PaCa-2,Infigratinib,5.0,3,2.0,closed,b1,1,24
+MIA PaCa-2,Irinotecan (hydrochloride),5.0,13,2.0,closed,b5,1,24
+MIA PaCa-2,Ixazomib citrate,0.5,11,2.0,closed,b1|b5,2,12
+MIA PaCa-2,Ixazomib citrate,5.0,12,2.0,closed,b1|b2|b5,3,6
+MIA PaCa-2,Mebendazole,5.0,9,2.0,closed,b1,1,24
+MIA PaCa-2,Mitoxantrone (dihydrochloride),5.0,6,2.0,closed,b5,1,24
+MIA PaCa-2,PH-797804,5.0,3,2.0,closed,b1,1,24
+MIA PaCa-2,Panobinostat,5.0,12,2.0,closed,b5,1,24
+MIA PaCa-2,Peretinoin,5.0,9,2.0,closed,b2,1,24
+MIA PaCa-2,Rapamycin,0.5,5,2.0,closed,b2,1,24
+MIA PaCa-2,Sapanisertib,0.050000000745058,1,2.0,closed,b2,1,24
+MIA PaCa-2,TAK-901,5.0,3,2.0,closed,b2,1,24
+MIA PaCa-2,Tofacitinib,0.5,5,2.0,closed,b1|b5,2,12
+MIA PaCa-2,Tofacitinib,5.0,6,2.0,closed,b1,1,24
+MIA PaCa-2,Tofacitinib,5.0,14,2.0,closed,b1,1,24
+MIA PaCa-2,Tofacitinib (citrate),0.5,5,2.0,closed,b1|b5,2,12
+MIA PaCa-2,Tofacitinib (citrate),5.0,6,2.0,closed,b1,1,24
+MIA PaCa-2,Tolcapone,0.050000000745058,4,2.0,closed,b5,1,24
+MIA PaCa-2,Vinblastine (sulfate),5.0,6,2.0,closed,b1|b2,2,12
+MIA PaCa-2,Vinblastine (sulfate),5.0,14,2.0,closed,b1,1,24
+MIA PaCa-2,vincristine,0.050000000745058,1,2.0,closed,b2,1,24
+RKO,Bortezomib,0.050000000745058,1,2.0,closed,b2,1,24
+RKO,Daptomycin,5.0,13,2.0,closed,b1,1,24
+RKO,Hesperidin,0.050000000745058,7,2.0,closed,b1,1,24
+RKO,Saquinavir,5.0,6,2.0,closed,b1,1,24
+RKO,TAK-901,5.0,3,2.0,closed,b2,1,24
+RKO,Verapamil,0.5,8,2.0,closed,b1,1,24
+RKO,c-Kit-IN-1,0.050000000745058,13,2.0,closed,b1,1,24
+SHP-77,Digitoxin,0.5,11,2.0,closed,b5,1,24
+SHP-77,Ixazomib citrate,5.0,12,2.0,closed,b5,1,24
+SHP-77,TAK-901,5.0,3,2.0,closed,b2,1,24
+SHP-77,c-Kit-IN-1,0.050000000745058,13,2.0,closed,b1,1,24
+SW 900,Afatinib,0.5,2,2.0,closed,b2,1,24
+SW 900,Auranofin,5.0,12,2.0,closed,b1,1,24
+SW 900,Irinotecan,0.5,2,2.0,closed,b2,1,24
+SW 900,Ixazomib citrate,5.0,12,2.0,closed,b1,1,24
+SW 900,Larotrectinib sulfate,0.5,13,2.0,closed,b1,1,24
+SW 900,Panobinostat,0.050000000745058,10,2.0,closed,b2,1,24
+SW 900,Pimozide,5.0,12,2.0,closed,b1,1,24
+SW1417,Auranofin,5.0,12,2.0,closed,b1|b5,2,12
+SW1417,Ixazomib citrate,5.0,12,2.0,closed,b2,1,24
+SW1417,NG25,5.0,3,2.0,closed,b1,1,24
+SW1417,Ouabain (Octahydrate),0.5,11,2.0,closed,b2,1,24
+SW1417,PH-797804,5.0,3,2.0,closed,b2,1,24
+SW1417,Panobinostat,0.050000000745058,10,2.0,closed,b2,1,24
+SW1417,Panobinostat,5.0,12,2.0,closed,b2,1,24
+SW1417,TAK-901,0.050000000745058,1,2.0,closed,b2,1,24
+SW1417,TAK-901,5.0,3,2.0,closed,b2,1,24
+SW480,Bortezomib,0.050000000745058,1,2.0,closed,b2,1,24
+SW480,Bortezomib,5.0,3,2.0,closed,b2,1,24
+SW480,Brivudine,5.0,3,2.0,closed,b2,1,24
+SW480,Homoharringtonine,0.5,5,2.0,closed,b2,1,24
+SW480,Homoharringtonine,5.0,6,2.0,closed,b2,1,24
+SW480,Ixazomib citrate,0.5,11,2.0,closed,b1|b5,2,12
+SW480,Ouabain (Octahydrate),0.5,11,2.0,closed,b1,1,24
+SW480,Ouabain (Octahydrate),5.0,12,2.0,closed,b2,1,24
+SW480,PH-797804,5.0,3,2.0,closed,b2,1,24
+SW480,Simotinib,5.0,9,2.0,closed,b5,1,24
+SW480,TAK-901,0.050000000745058,1,2.0,closed,b2,1,24
+SW480,TAK-901,5.0,3,2.0,closed,b2,1,24
+SW480,Tubulin inhibitor 6,5.0,3,2.0,closed,b5,1,24

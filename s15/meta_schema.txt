@@ -1,0 +1,21 @@
+
+=== metadata/cell_line_metadata.parquet ===
+  downloading metadata/cell_line_metadata.parquet ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  shape: (1000, 10)
+  columns: ['cell_name', 'Cell_ID_DepMap', 'Cell_ID_Cellosaur', 'Organ', 'Driver_Gene_Symbol', 'Driver_VarZyg', 'Driver_VarType', 'Driver_ProtEffect_or_CdnaEffect', 'Driver_Mech_InferDM', 'Driver_GeneType_DM']
+  cell_name Cell_ID_DepMap Cell_ID_Cellosaur Organ Driver_Gene_Symbol Driver_VarZyg Driver_VarType Driver_ProtEffect_or_CdnaEffect Driver_Mech_InferDM Driver_GeneType_DM
+0      A549     ACH-000681         CVCL_0023  Lung             CDKN2A           Hom       Deletion                             DEL                 LoF         Suppressor
+1      A549     ACH-000681         CVCL_0023  Lung             CDKN2B           Hom       Deletion                             DEL                 LoF         Suppressor
+2      A549     ACH-000681         CVCL_0023  Lung               KRAS           Hom       Missense                          p.G12S                 GoF           Oncogene
+
+=== metadata/pseudobulk_differential_expression/train-00000-of-01026.parquet ===
+  downloading metadata/pseudobulk_differential_expression/train-00000-of-01026.parquet ...
+  shape: (3986181, 16)
+  columns: ['gene_name', 'baseMean', 'log2FoldChange', 'lfcSE', 'stat', 'pvalue', 'padj', 'plate', 'n_cells_trt', 'n_cells_ctrl', 'Cell_ID_Cellosaur', 'Cell_ID_DepMap', 'drug', 'concentration', 'concentration_unit', 'Cell_Name_Vevo']
+  gene_name    baseMean  log2FoldChange     lfcSE      stat    pvalue      padj plate  n_cells_trt  n_cells_ctrl Cell_ID_Cellosaur Cell_ID_DepMap    drug  concentration concentration_unit Cell_Name_Vevo
+0    TSPAN6   16.415594       -0.279559  0.366763 -0.762235  0.445920  0.756971     1         1378          4862         CVCL_0023     ACH-000681  4EGI-1           0.05                 uM           A549
+1      TNMD    0.000000             NaN       NaN       NaN       NaN       NaN     1         1378          4862         CVCL_0023     ACH-000681  4EGI-1           0.05                 uM           A549
+2      DPM1  130.059631       -0.050576  0.137905 -0.366746  0.713808  0.897968     1         1378          4862         CVCL_0023     ACH-000681  4EGI-1           0.05                 uM           A549
+
+=== schema probe complete ===

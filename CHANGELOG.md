@@ -1,5 +1,29 @@
 # Changelog
+## v2.1.0
 
+- Typed relations: `contacts` and `prerequisites` declared separately, with
+  provenance recorded per relation and used only to raise consistency warnings.
+  A bare `requires` retains its previous meaning, so all published counts are
+  unchanged.
+- Assembly-tree enumeration (`n_trees`): counts binary merger histories over
+  connected subsets, recovering the seed-anchored count exactly when every
+  relation is a prerequisite and mergers are singleton additions to the seed.
+  Verified against exhaustive enumeration on 2,156 connected graphs and 1,157
+  cases carrying prerequisites.
+- Exact experimental-subcomplex support (`support`, `support_table`):
+  distinguishes impossible, optional and necessary intermediates. Verified
+  against explicit tree enumeration on 6,005 subset queries.
+- Diagnostics: `check_contact_graph` and `diagnose` report isolated units or a
+  disconnected contact graph rather than a bare zero; cyclic prerequisites are
+  rejected at construction.
+- Declared prerequisites no longer create contacts: a temporal relation is not
+  evidence of a physical interface.
+- Interface extraction validated against PDBePISA across seven complexes
+  (73 chain pairs, precision/recall/F1/kappa all 1.00).
+- Legend rendering: section headings given clearance above; dashed
+  alternative-occupancy row height corrected.
+- New `analysis/` scripts: `reproduce_all.py`, `validate_support.py`,
+  `extract_snare_contacts.py`, `af_ensemble.py`.
 ## v2.0.0
 
 - Probabilistic layer (`contrib.probabilistic`) now reports P_competent,

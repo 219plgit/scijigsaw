@@ -1,0 +1,11 @@
+  downloading metadata/drug_metadata.parquet ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+columns: ['drug', 'targets', 'moa-broad', 'moa-fine', 'human-approved', 'clinical-trials', 'gpt-notes-approval', 'canonical_smiles', 'pubchem_cid']
+
+               drug              targets             moa-broad              moa-fine human-approved clinical-trials                                                         gpt-notes-approval                                                          canonical_smiles  pubchem_cid
+1        Bortezomib                PSMB5  inhibitor/antagonist  Proteasome inhibitor            yes             yes                    Approved for multiple myeloma and mantle cell lymphoma.                    B(C(CC(C)C)NC(=O)C(CC1=CC=CC=C1)NC(=O)C2=NC=CN=C2)(O)O     387447.0
+2          Ixazomib                PSMB5  inhibitor/antagonist  Proteasome inhibitor            yes             yes                                   Approved for multiple myeloma treatment.                          B(C(CC(C)C)NC(=O)CNC(=O)C1=C(C=CC(=C1)Cl)Cl)(O)O   25183872.0
+3  Ixazomib citrate  PSMB1, PSMB2, PSMB5  inhibitor/antagonist  Proteasome inhibitor            yes             yes  Approved for multiple myeloma treatment as part of a combination therapy.  B1(OC(=O)C(O1)(CC(=O)O)CC(=O)O)C(CC(C)C)NC(=O)CNC(=O)C2=C(C=CC(=C2)Cl)Cl   56844015.0
+
+3 matching drugs. Copy the EXACT strings from the drug column -- names carry formulation suffixes.

@@ -1,0 +1,55 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+=== pseudobulk_differential_expression ===
+  gene_name                        TSPAN6
+  baseMean                         16.41559410095215
+  log2FoldChange                   -0.27955949306488037
+  lfcSE                            0.3667627274990082
+  stat                             -0.7622353434562683
+  pvalue                           0.44591957330703735
+  padj                             0.7569714784622192
+  plate                            1
+  n_cells_trt                      1378
+  n_cells_ctrl                     4862
+  Cell_ID_Cellosaur                CVCL_0023
+  Cell_ID_DepMap                   ACH-000681
+  drug                             4EGI-1
+  concentration                    0.05000000074505806
+  concentration_unit               uM
+  Cell_Name_Vevo                   A549
+
+=== drug_metadata ===
+  drug                             Talc
+  targets                          None
+  moa-broad                        unclear
+  moa-fine                         unclear
+  human-approved                   yes
+  clinical-trials                  yes
+  gpt-notes-approval               Talc used in pharma and cosmetics; safety under review for some uses.
+  canonical_smiles                 [OH-].[OH-].[O-][Si]12O[Si]3(O[Si](O1)(O[Si](O2)(O3)[O-])[O-])[O-].[Mg
+  pubchem_cid                      165411828.0
+
+=== gene_metadata ===
+  gene_symbol                      TSPAN6
+  ensembl_id                       ENSG00000000003
+  token_id                         3
+
+=== obs_metadata ===
+  plate                            plate10
+  BARCODE_SUB_LIB_ID               01_001_001-lib_1681
+  sample                           smp_2359
+  gene_count                       1379
+  tscp_count                       2172
+  mread_count                      2559
+  drugname_drugconc                [('Bestatin (hydrochloride)', 0.05, 'uM')]
+  drug                             Bestatin (hydrochloride)
+  cell_line                        CVCL_1478
+  sublibrary                       lib_1681
+  BARCODE                          01_001_001
+  pcnt_mito                        0.02992633543908596
+  S_score                          -0.22966507177033493
+  G2M_score                        -0.1901098901098901
+  phase                            G1
+  pass_filter                      full
+  cell_name                        NCI-H1573
+  __index_level_0__                0

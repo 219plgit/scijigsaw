@@ -1,0 +1,18 @@
+300 shards to fetch; free disk 606 GB
+  25/300  9,537 rows  2.2 GB  10 min  ETA 115 min  free 606 GB
+  50/300  19,071 rows  4.4 GB  20 min  ETA 101 min  free 606 GB
+  75/300  28,607 rows  6.7 GB  25 min  ETA 74 min  free 606 GB
+  100/300  38,141 rows  9.1 GB  29 min  ETA 58 min  free 606 GB
+  125/300  47,676 rows  11.4 GB  35 min  ETA 49 min  free 606 GB
+  150/300  57,210 rows  13.6 GB  41 min  ETA 41 min  free 606 GB
+  175/300  66,743 rows  15.8 GB  45 min  ETA 32 min  free 606 GB
+  200/300  76,277 rows  18.0 GB  50 min  ETA 25 min  free 606 GB
+  225/300  85,813 rows  20.3 GB  60 min  ETA 20 min  free 606 GB
+  250/300  95,349 rows  22.4 GB  65 min  ETA 13 min  free 606 GB
+  275/300  104,883 rows  24.7 GB  71 min  ETA 6 min  free 606 GB
+  300/300  114,418 rows  26.8 GB  75 min  ETA 0 min  free 606 GB
+
+114,418 rows appended -> immuno_raw.csv
+state: immuno_raw.csv.state  (delete it to start over)
+
+NEXT: python3 tahoe_full_screen.py --reuse immuno_raw.csv --out-prefix full

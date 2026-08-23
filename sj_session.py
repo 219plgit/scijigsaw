@@ -42,7 +42,7 @@ def _fs(pairs):
 
 BOARDS: Dict[str, Dict] = {
     "eif3": {
-        "desc": "yeast eIF3 core (Suppl. S9.10 / S8.7)",
+        "desc": "yeast eIF3 core",
         "V": ("Tif32", "Prt1", "Nip1", "Tif35", "Tif34"),
         "C": _fs([("Prt1", "Tif34"), ("Tif32", "Prt1"),
                   ("Tif35", "Tif34"), ("Tif32", "Nip1")]),

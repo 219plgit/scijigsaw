@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # scijigsaw v3.0.0 — Phase 1 (GitHub release for submission)
-# Run from the repository root AFTER merging the final modules and
-# applying the metadata files from this package. Requires: git, gh (authenticated).
+# Portable across macOS (BSD) and Linux (GNU). Run from the repository root.
 set -euo pipefail
 
 VERSION="3.0.0"
@@ -16,10 +15,12 @@ grep -q "version: ${VERSION}" CITATION.cff || { echo "CITATION.cff version misma
 # 1. reproduce the manuscript numbers (should be green before tagging)
 python reproduce_all.py
 
-# 2. set today's date in CITATION.cff
-sed -i "s/^date-released: .*/date-released: $(date +%F)/" CITATION.cff
-git add CITATION.cff
-git commit -m "v${VERSION}: set release date" || true
+# 2. set today's date in CITATION.cff (perl -pi is portable; macOS sed -i differs from GNU)
+perl -pi -e "s/^date-released: .*/date-released: $(date +%F)/" CITATION.cff
+if ! git diff --quiet CITATION.cff; then
+  git add CITATION.cff
+  git commit -m "v${VERSION}: set release date"
+fi
 
 # 3. annotated tag + push
 git tag -a "${TAG}" -m "scijigsaw ${TAG}: evidence-weighted inference and hypothesis navigation (PLOS submission release)"
@@ -30,8 +31,5 @@ gh release create "${TAG}" \
   --title "scijigsaw ${TAG} — evidence-weighted inference and hypothesis navigation" \
   --notes-file RELEASE_NOTES_v3.0.0.md
 
-# 5. optional: attach the submission archive as an asset
-# gh release upload "${TAG}" scijigsaw_${TAG}_submission_archive.tar.gz
-
 echo "Done. Release: https://github.com/219plgit/scijigsaw/releases/tag/${TAG}"
-echo "Phase 2 (Zenodo + DOI) happens after acceptance — see RELEASE_CHECKLIST."
+echo "Phase 2 (Zenodo + DOI) happens after acceptance."

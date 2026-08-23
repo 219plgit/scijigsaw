@@ -125,7 +125,7 @@ HTML = r"""<!DOCTYPE html>
  header{padding:14px 20px;border-bottom:1px solid #ddd}
  h1{font-size:17px;margin:0 0 3px} .sub{color:#666;font-size:12.5px}
  main{display:flex;gap:0;align-items:stretch;min-height:calc(100vh - 62px)}
- #treewrap{flex:1 1 auto;overflow:auto;padding:14px 8px}
+ #treewrap{flex:0 1 auto;overflow:auto;padding:14px 8px}
  aside{width:330px;flex:0 0 330px;border-left:1px solid #ddd;padding:14px 16px;
        overflow:auto;background:#fafafa}
  .panel{margin-bottom:20px}

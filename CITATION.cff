@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite both the software and the paper."
 title: "scijigsaw: evidence-typed probabilistic reasoning and hypothesis navigation for protein-complex assembly"
 version: 3.0.0
-date-released: 2026-08-31   # PLACEHOLDER — set to actual tag date
+date-released: 2026-08-23
 license: MIT
 repository-code: "https://github.com/219plgit/scijigsaw"
 url: "https://github.com/219plgit/scijigsaw/releases/tag/v3.0.0"

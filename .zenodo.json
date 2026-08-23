@@ -1,6 +1,6 @@
 {
-  "title": "scijigsaw: interface geometry as a constraint on protein-assembly order",
-  "description": "<p>Converts mapped protein interfaces into complementary tabs and sockets, and counts exactly the assembly orders permitted by two geometric constraints: precedence (a piece is seated only when the partners it binds are present) and exclusion (partners on overlapping interfaces cannot coexist). Permitted orders are the linear extensions of the resulting constraint poset, counted by subset dynamic programming.</p><p><strong>It does not infer the assembly pathway.</strong> It eliminates orders incompatible with the encoded interface and seating constraints. Software accompanying Li&ograve; &amp; Li&ograve;, <em>Bioinformatics Advances</em> (2026).</p>",
+  "title": "scijigsaw: evidence-typed probabilistic reasoning and hypothesis navigation for protein-complex assembly",
+  "description": "<p>Scientific Jigsaw keeps contacts, temporal prerequisites, exclusions, observed subcomplexes, alternative structural models and contextual weights distinct while reasoning over the complete protein-complex assembly-mechanism space. Exact dynamic programmes enumerate seed-anchored histories or general merger trees and classify a queried intermediate as impossible, optional or necessary; strictly positive evidence weights then redistribute probability among already-admissible mechanisms, yielding exact branch probabilities and an effective number of competing mechanisms without converting soft evidence into hard possibility.</p><p>This release adds the evidence-weighted inference layer, the probabilistic assembly tree, the TEST/WHY/COMPARE/UPDATE hypothesis navigator (command-line session and self-contained browser view), the cryo-EM observation-set analysis, and counterfactual model comparison, together with complete biological encodings, the AlphaFold&nbsp;3 eIF3 model ensemble and scripts reproducing every number and figure in the manuscript. Software accompanying Li&ograve; &amp; Li&ograve;, PLOS (2026, submitted).</p>",
   "upload_type": "software",
   "license": "MIT",
   "access_right": "open",
@@ -11,10 +11,18 @@
       "affiliation": "Department of Computer Science and Technology, University of Cambridge" }
   ],
   "keywords": [
-    "protein interfaces",
-    "assembly order",
-    "linear extensions",
-    "data visualisation",
+    "protein complexes",
+    "assembly mechanisms",
+    "evidence-typed reasoning",
+    "weighted model counting",
+    "probabilistic assembly tree",
+    "hypothesis navigation",
+    "cryo-EM",
     "structural bioinformatics"
+  ],
+  "related_identifiers": [
+    { "relation": "isSupplementTo",
+      "identifier": "INSERT-MANUSCRIPT-DOI-ON-ACCEPTANCE",
+      "resource_type": "publication-article" }
   ]
 }

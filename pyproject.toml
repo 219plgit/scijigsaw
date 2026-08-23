@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "scijigsaw"
-version = "2.1.0"
-description = "Interface geometry as a constraint on the assembly order of protein complexes"
+version = "3.0.0"
+description = "Evidence-typed probabilistic reasoning and hypothesis navigation for protein-complex assembly"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -22,6 +22,7 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Scientific/Engineering :: Bio-Informatics",
 ]
 dependencies = [
@@ -45,7 +46,7 @@ scijigsaw-tiles   = "scijigsaw.cli:_tiles"
 [project.urls]
 Repository = "https://github.com/219plgit/scijigsaw"
 Issues     = "https://github.com/219plgit/scijigsaw/issues"
-Release    = "https://github.com/219plgit/scijigsaw/releases/tag/v2.0.0"
+Release    = "https://github.com/219plgit/scijigsaw/releases/tag/v3.0.0"
 
 [tool.setuptools.packages.find]
 where = ["src"]

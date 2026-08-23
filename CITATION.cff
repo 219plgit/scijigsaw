@@ -1,11 +1,12 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite both the software and the paper."
-title: "scijigsaw: interface geometry as a constraint on protein-assembly order"
-version: 2.1.0
-date-released: 2026-07-23
+title: "scijigsaw: evidence-typed probabilistic reasoning and hypothesis navigation for protein-complex assembly"
+version: 3.0.0
+date-released: 2026-08-31   # PLACEHOLDER — set to actual tag date
 license: MIT
 repository-code: "https://github.com/219plgit/scijigsaw"
-url: "https://github.com/219plgit/scijigsaw/releases/tag/v2.0.0"
+url: "https://github.com/219plgit/scijigsaw/releases/tag/v3.0.0"
+# doi: to be added after acceptance, when the release is archived in Zenodo
 authors:
   - family-names: "Liò"
     given-names: "Pietro"
@@ -15,9 +16,9 @@ authors:
     affiliation: "Department of Computer Science and Technology, University of Cambridge"
 preferred-citation:
   type: article
-  title: "The Scientific Jigsaw: interface geometry constrains protein-assembly space"
-  journal: "Bioinformatics Advances"
+  title: "Scientific Jigsaw: evidence-typed probabilistic reasoning and hypothesis navigation for protein-complex assembly"
   year: 2026
+  journal: "PLOS (submitted)"   # update journal/volume/DOI on acceptance
   authors:
     - family-names: "Liò"
       given-names: "Pietro"

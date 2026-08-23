@@ -1,4 +1,87 @@
 # Changelog
+## v3.0.0
+
+Release accompanying Liò & Liò, *Scientific Jigsaw: evidence-typed
+probabilistic reasoning and hypothesis navigation for protein-complex
+assembly* (PLOS, submitted). Major version: adds the evidence-weighted
+inference layer and the interactive hypothesis-navigation interfaces on
+top of the unchanged exact enumerators.
+
+### Evidence-weighted exact inference
+- Strictly positive mechanism weights `W(ω; E) > 0` over the admissible
+  space only: soft evidence redistributes probability but can never
+  create or delete a mechanism. At unit potentials every weighted count
+  reproduces the uniform enumerator exactly (`Z = F`, `Z_B = G_B`).
+- Weighted continuation recurrence `Q(S)` (seed-anchored) and weighted
+  merger recurrence: exact partition functions, branch probabilities
+  `Pr(p next | S, E)`, weighted subcomplex support, Shannon entropy
+  `H₂` and effective mechanism number `N_eff = 2^H₂`.
+- Interface-level structural potentials
+  `φ_m(λ) = exp(λ(a·r̄_m + b·log(1+n_m)))` with λ-sweep reporting.
+  Includes the additivity lemma check: edge-additive potentials are
+  provably uninformative (all trees score identically), and any
+  interface potential is flat on an acyclic contact graph.
+- Forward-branch calibration verified against brute-force enumeration
+  to 1e-12; tree-enumeration uniqueness certified by explicit
+  construction and deduplication.
+- Abundance-proportional encounter priors (GTEx v8/v10 demonstration on
+  the fixed 252-history VAMP2 space) with per-tissue N_eff reporting.
+
+### Probabilistic assembly tree and navigation API
+- The probabilistic assembly tree as a navigational view of the exact
+  (uniform or weighted) distribution: branch probabilities, hypothesis
+  mass Pr(H | E) for declared mechanism families, conditioning on
+  observed intermediates, branch-level entropy for locating
+  high-uncertainty decision points.
+- Navigation API exposing TEST / WHY / COMPARE / UPDATE and the `walk`
+  operation over both representations, with conditioning trails and
+  provenance preserved on every query.
+
+### User interfaces
+- `sj_session.py` — interactive command-line session; biological-language
+  commands (`ask exact A B`, `ask before A B`, `see before A B`,
+  `do drop-p A B`, `compare`, `walk`, `back`); supports seed-anchored
+  and merger-tree modes without re-encoding.
+- `sj_visual.py` — self-contained browser view; precomputes the factual
+  space and one counterfactual per removable relation into a single
+  HTML file; click-to-condition, exact-subcomplex testing and relation
+  deletion with killed/resurrected routes and entropy change, no server.
+  (Seed-anchored view; merger-tree visualisation is a named extension.)
+
+### Cryo-EM observation-set analysis
+- Joint analysis of resolved compositions entered as queries: pairwise
+  mutual-exclusivity detection, minimum number of coexisting mechanisms
+  by exhaustive covering, and leave-one-out attribution of the branching
+  conclusion to specific depositions. Reproduces the two-route result on
+  the six deposited yeast proteasome precursor structures.
+
+### Counterfactual comparison
+- Declared alternative models M′ with exact recomputation; differences
+  decomposed into killed / resurrected / reweighted mechanisms with
+  entropy change in bits; per-contact in-silico interface deletion
+  (load-bearing vs redundant contacts).
+
+### Encodings, data and reproduction
+- Complete biological encodings shipped as boards: VAMP2/SNARE,
+  eIF3 (declared + AF3 ensembles), proteasome late-stage, NLRP3, 30S,
+  mTORC1 FRB alternative occupancy.
+- AlphaFold 3 eIF3 model ensemble (10 predictions) and extracted
+  contact sets included for reproduction.
+- Machine-readable outputs and analysis scripts reproducing every
+  number and figure in the manuscript (`reproduce_all.py`).
+
+### Metadata
+- CITATION.cff and pyproject.toml updated for the PLOS manuscript;
+  Python 3.11–3.13 tested; stale v2.0.0 release URLs fixed. Zenodo
+  archiving (and DOI insertion) is deferred to manuscript acceptance;
+  .zenodo.json is kept current so the GitHub–Zenodo webhook archives the
+  acceptance-time release correctly.
+
+### Compatibility
+- The deterministic core is unchanged; all v2.1.0 counts are
+  reproduced exactly. The weighted layer is additive and reduces to the
+  uniform enumerator at unit potentials.
+
 ## v2.1.0
 
 - Typed relations: `contacts` and `prerequisites` declared separately, with

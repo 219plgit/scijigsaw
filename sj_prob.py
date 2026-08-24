@@ -446,6 +446,171 @@ def drop_relations(model: TypedModel, *,
     )
 
 
+def edit_relations(model: TypedModel, *,
+                   drop_P: Sequence[Tuple[Component, Component]] = (),
+                   drop_X: Iterable[FrozenSet[Component]] = (),
+                   drop_C: Iterable[FrozenSet[Component]] = (),
+                   add_P: Sequence[Tuple[Component, Component]] = (),
+                   add_X: Iterable[Iterable[Component]] = (),
+                   add_C: Iterable[Iterable[Component]] = (),
+                   eta: Optional[Dict[str, str]] = None) -> TypedModel:
+    """Return the model with typed relations removed and/or added.
+
+    Generalises drop_relations (left untouched) so that a declared alternative
+    model M_z -- a post-translational modification, an alternative predicted
+    contact graph, a perturbation-selected state -- is expressed as an edit of
+    the factual model rather than re-encoded by hand.
+    """
+    return TypedModel(
+        V=model.V,
+        C=(model.C - frozenset(frozenset(e) for e in drop_C))
+          | frozenset(frozenset(e) for e in add_C),
+        P=tuple(p for p in model.P if p not in set(drop_P)) + tuple(add_P),
+        X=(model.X - frozenset(frozenset(e) for e in drop_X))
+          | frozenset(frozenset(e) for e in add_X),
+        eta={**model.eta, **(eta or {})},
+    )
+
+
+def target_orders(model: TypedModel, seed: Component,
+                  target: Optional[Subset] = None) -> int:
+    """Exact seed-anchored order count for a declared target state.
+
+    The seeded recurrence consumes prerequisites only, because exclusions are
+    resolved at state-selection time (Supplementary S6). A declared alternative
+    may therefore act as a STATE SELECTOR: it can make the target state itself
+    infeasible without changing the number of orders inside any feasible state.
+    The gate is applied explicitly here, which is what keeps Pr(competent) and
+    E[orders] distinct quantities.
+    """
+    full = frozenset(target) if target is not None else frozenset(model.V)
+    if not model.valid_intermediate(full):
+        return 0
+    return seeded_F(model, seed)(frozenset())
+
+
+def occupancy_mixture(factual: TypedModel, alternative: TypedModel,
+                      seed: Component, occupancy: float,
+                      target: Optional[Subset] = None) -> Dict[str, float]:
+    """Model-level mixture for one declared alternative held at occupancy p.
+
+    The alternative carries weight p and the factual model 1 - p; each is
+    enumerated exactly by the unchanged recurrence. Reports competence
+    probability, expected and conditional order counts, and the variance --
+    the quantity showing that no single model instance realises E[orders].
+    """
+    p = float(occupancy)
+    L0 = target_orders(factual, seed, target)
+    L1 = target_orders(alternative, seed, target)
+    e_l = (1.0 - p) * L0 + p * L1
+    e_l2 = (1.0 - p) * L0 * L0 + p * L1 * L1
+    comp = (1.0 - p) * (L0 > 0) + p * (L1 > 0)
+    return {"occupancy": p, "L_factual": L0, "L_alternative": L1,
+            "P_competent": comp, "E_orders": e_l,
+            "Var_orders": e_l2 - e_l * e_l,
+            "E_orders_given_competent": (e_l / comp) if comp > 0 else 0.0}
+
+
+def beta_occupancy_mixture(factual: TypedModel, alternative: TypedModel,
+                           seed: Component, alpha: float, beta: float,
+                           target: Optional[Subset] = None,
+                           cred: float = 0.95) -> Dict[str, float]:
+    """Propagate uncertainty in the occupancy itself, p ~ Beta(alpha, beta).
+
+    Declared occupancies are measured quantities and are themselves uncertain.
+    Because the order count is linear in p, the expectation is closed form and
+    the credible interval is obtained by mapping the Beta quantiles through the
+    transform; the exact enumerator is reused unchanged.
+
+    The law of total variance separates two sources: heterogeneity across
+    molecules at a fixed occupancy (within), and epistemic uncertainty about
+    the occupancy (between). Note that the two telescope -- the total reduces
+    to L0^2 * E[p](1 - E[p]) -- so the total variance depends on the prior MEAN
+    only and is invariant to how tightly the occupancy is known. Spreading the
+    prior moves variance from the within term to the between term without
+    changing their sum.
+    """
+    L0 = target_orders(factual, seed, target)
+    L1 = target_orders(alternative, seed, target)
+    e_p = alpha / (alpha + beta)
+    v_p = alpha * beta / ((alpha + beta) ** 2 * (alpha + beta + 1))
+    span = L0 - L1                                   # L(p) = L0 - p * span
+    e_l = L0 - e_p * span
+
+    e_mix = L0 * (1 - e_p) + L1 * e_p
+    within = (L0 ** 2 * (1 - e_p) + L1 ** 2 * e_p) - e_mix ** 2 - span ** 2 * v_p
+    between = span ** 2 * v_p
+
+    tail = (1 - cred) / 2
+    lo_p = _beta_quantile(alpha, beta, tail)
+    hi_p = _beta_quantile(alpha, beta, 1 - tail)
+    lo, hi = sorted((L0 - hi_p * span, L0 - lo_p * span))
+    return {"alpha": alpha, "beta": beta,
+            "E_occupancy": e_p, "Var_occupancy": v_p,
+            "L_factual": L0, "L_alternative": L1,
+            "E_orders": e_l,
+            "Var_within": within, "Var_between": between,
+            "Var_total": within + between,
+            "cred_level": cred, "cred_lo": lo, "cred_hi": hi}
+
+
+def _beta_quantile(alpha: float, beta: float, q: float, tol: float = 1e-12) -> float:
+    """Inverse Beta CDF by bisection on the regularised incomplete beta."""
+    lo, hi = 0.0, 1.0
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        if _beta_cdf(alpha, beta, mid) < q:
+            lo = mid
+        else:
+            hi = mid
+        if hi - lo < tol:
+            break
+    return (lo + hi) / 2
+
+
+def _beta_cdf(alpha: float, beta: float, x: float, terms: int = 20000) -> float:
+    """Regularised incomplete beta by numerical integration (stdlib only)."""
+    if x <= 0:
+        return 0.0
+    if x >= 1:
+        return 1.0
+    import math
+    logB = (math.lgamma(alpha) + math.lgamma(beta) - math.lgamma(alpha + beta))
+    n = terms
+    h = x / n
+    total = 0.0
+    for i in range(n + 1):
+        t = i * h
+        if t <= 0 or t >= 1:
+            f = 0.0
+        else:
+            f = math.exp((alpha - 1) * math.log(t) + (beta - 1) * math.log1p(-t) - logB)
+        total += f * (0.5 if i in (0, n) else 1.0)
+    return min(1.0, total * h)
+
+
+def joint_mixture(weighted_models: Sequence[Tuple[float, TypedModel]],
+                  seed: Component,
+                  target: Optional[Subset] = None) -> Dict[str, float]:
+    """Mixture over an explicitly declared joint distribution of alternatives.
+
+    Independent modifications multiply, but correlated ones do not; supplying
+    the joint weights directly covers both. Each declared model is enumerated
+    once by the unchanged recurrence.
+    """
+    tot = sum(w for w, _ in weighted_models)
+    e_l = e_l2 = comp = 0.0
+    for w, m in weighted_models:
+        p = w / tot
+        L = target_orders(m, seed, target)
+        e_l += p * L
+        e_l2 += p * L * L
+        comp += p * (1.0 if L > 0 else 0.0)
+    return {"P_competent": comp, "E_orders": e_l,
+            "Var_orders": e_l2 - e_l * e_l,
+            "E_orders_given_competent": (e_l / comp) if comp > 0 else 0.0}
+
+
 def decision_value_relation(model: TypedModel, seed: Component, *,
                             drop_P: Sequence[Tuple[Component, Component]] = (),
                             drop_X: Iterable[FrozenSet[Component]] = (),

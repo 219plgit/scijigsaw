@@ -1,161 +1,13 @@
-"""
-sj_visual.py -- generate a standalone, interactive HTML view of an assembly model.
-
-Enumeration happens once in Python; the resulting mechanism space (and one
-variant per removable relation) is embedded in a single HTML file. The browser
-then does conditioning, hypothesis testing and counterfactual comparison
-instantly, with no server and no dependencies.
-
-    python3 sj_visual.py                # writes jigsaw_eif3.html
-    python3 sj_visual.py proteasome     # any board defined in sj_session.py
-    open jigsaw_eif3.html               # macOS; or double-click the file
-
-In the page:
-  * click a node to condition on reaching that state; click the root to reset
-  * tick components to ask whether that exact subcomplex can form
-  * choose a relation to remove and see which mechanisms die or revive
-"""
-
-from __future__ import annotations
-
-import json
-import sys
-from typing import Dict, List, Tuple
-
-from sj_prob import (TypedModel, drop_relations, edit_relations,
-                     target_orders)
-from sj_navigate import Navigator
-from sj_session import BOARDS
-
-
-def merger_trees(model: TypedModel) -> List:
-    """All admissible merger trees as nested lists, deduplicated."""
-    import itertools
-
-    def rec(S):
-        S = frozenset(S)
-        if len(S) == 1:
-            return [next(iter(S))]
-        if not model.valid_intermediate(S):
-            return []
-        out, anchor = [], min(S)
-        for r in range(len(S)):
-            for combo in itertools.combinations(sorted(S - {anchor}), r):
-                A = frozenset({anchor}) | frozenset(combo)
-                B = S - A
-                if not B or not (model.valid_intermediate(A)
-                                 and model.valid_intermediate(B)):
-                    continue
-                if not any(model.has_contact(u, v) for u in A for v in B):
-                    continue
-                for ta in rec(A):
-                    for tb in rec(B):
-                        out.append([ta, tb])
-        return out
-
-    seen, uniq = set(), []
-    for t in rec(frozenset(model.V)):
-        k = json.dumps(canon(t))
-        if k not in seen:
-            seen.add(k); uniq.append(canon(t))
-    return uniq
-
-
-def canon(t):
-    if isinstance(t, str):
-        return t
-    a, b = canon(t[0]), canon(t[1])
-    return [a, b] if json.dumps(a) <= json.dumps(b) else [b, a]
-
-
-def space(model: TypedModel, seed: str) -> Dict:
-    """Enumerate one model into a JSON-ready description."""
-    nav = Navigator(model, seed)
-    hists = [list(h) for h, _ in nav.masses]
-    return {
-        "histories": hists,
-        "n": len(hists),
-        "relations": {
-            "P": [list(p) for p in model.P],
-            "C": [sorted(c) for c in model.C],
-            "X": [sorted(x) for x in model.X],
-        },
-    }
-
-
-def build(board_name: str) -> Tuple[str, Dict]:
-    b = BOARDS[board_name]
-    seed = b["seed"]
-    model = TypedModel(V=b["V"], C=b["C"],
-                       P=b.get("P_seeded", b.get("P", ())),
-                       X=b.get("X", frozenset()))
-    merger_model = TypedModel(V=b["V"], C=b["C"], P=b.get("P", ()),
-                              X=b.get("X", frozenset()))
-    data: Dict = {
-        "merger": merger_trees(merger_model),
-        "board": board_name,
-        "desc": b["desc"],
-        "seed": seed,
-        "components": [c for c in b["V"] if c != seed],
-        "prereqs": [list(p) for p in b.get("P_seeded", b.get("P", ()))],
-        "all_components": list(b["V"]),
-        "factual": space(model, seed),
-        "variants": {},
-        "queries": {k: sorted(v) for k, v in b.get("queries", {}).items()},
-    }
-    for (a, c) in model.P:
-        data["variants"][f"prereq {a}->{c}"] = space(
-            drop_relations(model, drop_P=[(a, c)]), seed)
-    for e in sorted(model.C, key=lambda s: sorted(s)):
-        u, v = sorted(e)
-        data["variants"][f"contact {u}--{v}"] = space(
-            drop_relations(model, drop_C=[(u, v)]), seed)
-    for e in sorted(model.X, key=lambda s: sorted(s)):
-        u, v = sorted(e)
-        data["variants"][f"exclusion {u}--{v}"] = space(
-            drop_relations(model, drop_X=[e]), seed)
-
-    # ---- declared model-level alternatives (S8.2) ---------------------------
-    # Each alternative is one hard model M_z, enumerated by the unchanged
-    # recurrence. Only the two endpoint counts are needed: the mixture
-    # quantities are linear in the declared occupancy, so the browser computes
-    # them exactly at any p without re-enumerating.
-    data["alternatives"] = {}
-    data["L_factual"] = target_orders(model, seed)
-    for key, spec in b.get("alternatives", {}).items():
-        alt = edit_relations(model,
-                             add_X=spec.get("add_X", ()),
-                             add_P=spec.get("add_P", ()),
-                             add_C=spec.get("add_C", ()),
-                             drop_X=[frozenset(e) for e in spec.get("drop_X", ())],
-                             drop_P=spec.get("drop_P", ()),
-                             drop_C=[frozenset(e) for e in spec.get("drop_C", ())])
-        full = frozenset(model.V)
-        data["alternatives"][key] = {
-            "label": spec.get("label", key),
-            "kind": spec.get("kind", "alternative model"),
-            "provenance": spec.get("provenance", "declared"),
-            "note": spec.get("note", ""),
-            "occupancy": spec.get("default_occupancy", 0.5),
-            "L": target_orders(alt, seed),
-            "cause": alt.blocking_reason(full) or "",
-            "space": space(alt, seed) if alt.valid_intermediate(full) else None,
-        }
-    return seed, data
-
-
-HTML = r"""<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
-<title>Scientific Jigsaw &mdash; __BOARD__</title>
+<title>Scientific Jigsaw &mdash; eif3</title>
 <style>
  body{font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
       margin:0;color:#111;background:#fff}
  header{padding:14px 20px;border-bottom:1px solid #ddd}
  h1{font-size:17px;margin:0 0 3px} .sub{color:#666;font-size:12.5px}
  main{display:flex;gap:0;align-items:stretch;min-height:calc(100vh - 62px)}
- #treewrap{flex:0 1 auto;min-width:0;overflow:auto;padding:14px 8px}
- @media (max-width:900px){ main{flex-wrap:wrap}
-   aside{width:100%;flex:1 1 100%;border-left:none;border-top:1px solid #ddd} }
+ #treewrap{flex:0 1 auto;overflow:auto;padding:14px 8px}
  aside{width:330px;flex:0 0 330px;border-left:1px solid #ddd;padding:14px 16px;
        overflow:auto;background:#fafafa}
  .panel{margin-bottom:20px}
@@ -167,20 +19,6 @@ HTML = r"""<!DOCTYPE html>
  .chip{border:1px solid #bbb;border-radius:13px;padding:3px 9px;cursor:pointer;
        background:#fff;font-size:12.5px;user-select:none}
  .chip.on{background:#111;color:#fff;border-color:#111}
- #modrow{display:flex;align-items:center;gap:8px;margin:8px 0 4px}
- #occ{flex:1}
- #occval{font-variant-numeric:tabular-nums;font-weight:600;min-width:34px;text-align:right}
- .pin{color:#0a7d33}
- .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
- .mcell{background:#fff;border:1px solid #e2e2e2;border-radius:5px;padding:5px 7px}
- .mcell .k{color:#666;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em}
- .mcell .v{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
- .mcell.pinned{border-color:#bfe0c6;background:#f4fbf4}
- .mcell.pinned .k,.mcell.pinned .v{color:#0a7d33}
- .takeaway{color:#444;font-size:11.5px;margin-top:8px;line-height:1.35}
- details.why{margin-top:6px}
- details.why summary{cursor:pointer;color:#666;font-size:11.5px;outline:none}
- .provnote{color:#666;font-size:11.5px;margin-top:5px;line-height:1.35}
  .verdict{margin-top:9px;padding:9px 11px;border-radius:6px;background:#fff;
           border:1px solid #ddd}
  .verdict b{display:block;margin-bottom:2px}
@@ -211,7 +49,7 @@ HTML = r"""<!DOCTYPE html>
  .tcard .cap{font-size:10.5px;color:#888;text-align:center;margin-top:1px}
 </style></head><body>
 <header>
- <h1>Scientific Jigsaw &mdash; __DESC__</h1>
+ <h1>Scientific Jigsaw &mdash; yeast eIF3 core</h1>
  <div class="sub">Click a node to suppose the assembly reached it. Tick components to test whether that exact subcomplex can form.</div>
 </header>
 <div class="modes">
@@ -237,32 +75,13 @@ HTML = r"""<!DOCTYPE html>
     <select id="variant"></select>
     <div class="verdict" id="cf">factual model</div>
   </div>
-  <div class="panel" id="modpanel" style="display:none">
-    <h2>Model level: declared alternative</h2>
-    <select id="altsel"></select>
-    <div id="modrow">
-      <span style="color:#666;font-size:12px">occupancy</span>
-      <input type="range" id="occ" min="0" max="1" step="0.01" value="0.6">
-      <span id="occval">0.60</span>
-    </div>
-    <div class="mgrid">
-      <div class="mcell"><div class="k">Pr(exists)</div><div class="v" id="m-comp"></div></div>
-      <div class="mcell"><div class="k">E[mech]</div><div class="v" id="m-e"></div></div>
-      <div class="mcell"><div class="k">SD</div><div class="v" id="m-sd"></div></div>
-      <div class="mcell pinned"><div class="k">E[mech | exists]</div
-        ><div class="v" id="m-cond"></div></div>
-    </div>
-    <div class="takeaway" id="m-take"></div>
-    <details class="why"><summary>why</summary>
-      <div class="provnote" id="m-cause"></div></details>
-  </div>
   <div class="panel"><h2>Mechanisms</h2><div id="mechs"></div></div>
  </aside>
 </main>
 <div class="legend">Node = assembled state. Edge label = probability of that next
  addition under the current space. Yellow = state matching the ticked subcomplex.</div>
 <script>
-const DATA = __DATA__;
+const DATA = {"merger": [["Nip1", [["Prt1", "Tif32"], ["Tif34", "Tif35"]]], ["Nip1", ["Tif35", ["Tif34", ["Prt1", "Tif32"]]]], ["Nip1", ["Tif35", ["Tif32", ["Prt1", "Tif34"]]]], ["Nip1", ["Tif32", ["Prt1", ["Tif34", "Tif35"]]]], ["Nip1", ["Tif32", ["Tif35", ["Prt1", "Tif34"]]]], [["Nip1", "Tif32"], ["Prt1", ["Tif34", "Tif35"]]], [["Nip1", "Tif32"], ["Tif35", ["Prt1", "Tif34"]]], [["Nip1", ["Prt1", "Tif32"]], ["Tif34", "Tif35"]], [["Prt1", ["Nip1", "Tif32"]], ["Tif34", "Tif35"]], ["Tif35", ["Nip1", ["Tif34", ["Prt1", "Tif32"]]]], ["Tif35", ["Nip1", ["Tif32", ["Prt1", "Tif34"]]]], ["Tif35", [["Nip1", "Tif32"], ["Prt1", "Tif34"]]], ["Tif35", ["Tif34", ["Nip1", ["Prt1", "Tif32"]]]], ["Tif35", ["Tif34", ["Prt1", ["Nip1", "Tif32"]]]]], "board": "eif3", "desc": "yeast eIF3 core", "seed": "Prt1", "components": ["Tif32", "Nip1", "Tif35", "Tif34"], "prereqs": [["Prt1", "Tif34"], ["Prt1", "Tif32"], ["Tif34", "Tif35"], ["Tif32", "Nip1"]], "all_components": ["Tif32", "Prt1", "Nip1", "Tif35", "Tif34"], "factual": {"histories": [["Tif32", "Nip1", "Tif34", "Tif35"], ["Tif32", "Tif34", "Nip1", "Tif35"], ["Tif32", "Tif34", "Tif35", "Nip1"], ["Tif34", "Tif32", "Nip1", "Tif35"], ["Tif34", "Tif32", "Tif35", "Nip1"], ["Tif34", "Tif35", "Tif32", "Nip1"]], "n": 6, "relations": {"P": [["Prt1", "Tif34"], ["Prt1", "Tif32"], ["Tif34", "Tif35"], ["Tif32", "Nip1"]], "C": [["Prt1", "Tif34"], ["Tif34", "Tif35"], ["Prt1", "Tif32"], ["Nip1", "Tif32"]], "X": []}}, "variants": {"prereq Prt1->Tif34": {"histories": [["Tif32", "Nip1", "Tif34", "Tif35"], ["Tif32", "Tif34", "Nip1", "Tif35"], ["Tif32", "Tif34", "Tif35", "Nip1"], ["Tif34", "Tif32", "Nip1", "Tif35"], ["Tif34", "Tif32", "Tif35", "Nip1"], ["Tif34", "Tif35", "Tif32", "Nip1"]], "n": 6, "relations": {"P": [["Prt1", "Tif32"], ["Tif34", "Tif35"], ["Tif32", "Nip1"]], "C": [["Prt1", "Tif34"], ["Tif34", "Tif35"], ["Prt1", "Tif32"], ["Nip1", "Tif32"]], "X": []}}, "prereq Prt1->Tif32": {"histories": [["Tif32", "Nip1", "Tif34", "Tif35"], ["Tif32", "Tif34", "Nip1", "Tif35"], ["Tif32", "Tif34", "Tif35", "Nip1"], ["Tif34", "Tif32", "Nip1", "Tif35"], ["Tif34", "Tif32", "Tif35", "Nip1"], ["Tif34", "Tif35", "Tif32", "Nip1"]], "n": 6, "relations": {"P": [["Prt1", "Tif34"], ["Tif34", "Tif35"], ["Tif32", "Nip1"]], "C": [["Prt1", "Tif34"], ["Tif34", "Tif35"], ["Prt1", "Tif32"], ["Nip1", "Tif32"]], "X": []}}, "prereq Tif34->Tif35": {"histories": [["Tif32", "Nip1", "Tif34", "Tif35"], ["Tif32", "Nip1", "Tif35", "Tif34"], ["Tif32", "Tif34", "Nip1", "Tif35"], ["Tif32", "Tif34", "Tif35", "Nip1"], ["Tif32", "Tif35", "Nip1", "Tif34"], ["Tif32", "Tif35", "Tif34", "Nip1"], ["Tif34", "Tif32", "Nip1", "Tif35"], ["Tif34", "Tif32", "Tif35", "Nip1"], ["Tif34", "Tif35", "Tif32", "Nip1"], ["Tif35", "Tif32", "Nip1", "Tif34"], ["Tif35", "Tif32", "Tif34", "Nip1"], ["Tif35", "Tif34", "Tif32", "Nip1"]], "n": 12, "relations": {"P": [["Prt1", "Tif34"], ["Prt1", "Tif32"], ["Tif32", "Nip1"]], "C": [["Prt1", "Tif34"], ["Tif34", "Tif35"], ["Prt1", "Tif32"], ["Nip1", "Tif32"]], "X": []}}, "prereq Tif32->Nip1": {"histories": [["Nip1", "Tif32", "Tif34", "Tif35"], ["Nip1", "Tif34", "Tif32", "Tif35"], ["Nip1", "Tif34", "Tif35", "Tif32"], ["Tif32", "Nip1", "Tif34", "Tif35"], ["Tif32", "Tif34", "Nip1", "Tif35"], ["Tif32", "Tif34", "Tif35", "Nip1"], ["Tif34", "Nip1", "Tif32", "Tif35"], ["Tif34", "Nip1", "Tif35", "Tif32"], ["Tif34", "Tif32", "Nip1", "Tif35"], ["Tif34", "Tif32", "Tif35", "Nip1"], ["Tif34", "Tif35", "Nip1", "Tif32"], ["Tif34", "Tif35", "Tif32", "Nip1"]], "n": 12, "relations": {"P": [["Prt1", "Tif34"], ["Prt1", "Tif32"], ["Tif34", "Tif35"]], "C": [["Prt1", "Tif34"], ["Tif34", "Tif35"], ["Prt1", "Tif32"], ["Nip1", "Tif32"]], "X": []}}, "contact Nip1--Tif32": {"histories": [["Tif32", "Nip1", "Tif34", "Tif35"], ["Tif32", "Tif34", "Nip1", "Tif35"], ["Tif32", "Tif34", "Tif35", "Nip1"], ["Tif34", "Tif32", "Nip1", "Tif35"], ["Tif34", "Tif32", "Tif35", "Nip1"], ["Tif34", "Tif35", "Tif32", "Nip1"]], "n": 6, "relations": {"P": [["Prt1", "Tif34"], ["Prt1", "Tif32"], ["Tif34", "Tif35"], ["Tif32", "Nip1"]], "C": [["Prt1", "Tif34"], ["Tif34", "Tif35"], ["Prt1", "Tif32"]], "X": []}}, "contact Prt1--Tif32": {"histories": [["Tif32", "Nip1", "Tif34", "Tif35"], ["Tif32", "Tif34", "Nip1", "Tif35"], ["Tif32", "Tif34", "Tif35", "Nip1"], ["Tif34", "Tif32", "Nip1", "Tif35"], ["Tif34", "Tif32", "Tif35", "Nip1"], ["Tif34", "Tif35", "Tif32", "Nip1"]], "n": 6, "relations": {"P": [["Prt1", "Tif34"], ["Prt1", "Tif32"], ["Tif34", "Tif35"], ["Tif32", "Nip1"]], "C": [["Prt1", "Tif34"], ["Tif34", "Tif35"], ["Nip1", "Tif32"]], "X": []}}, "contact Prt1--Tif34": {"histories": [["Tif32", "Nip1", "Tif34", "Tif35"], ["Tif32", "Tif34", "Nip1", "Tif35"], ["Tif32", "Tif34", "Tif35", "Nip1"], ["Tif34", "Tif32", "Nip1", "Tif35"], ["Tif34", "Tif32", "Tif35", "Nip1"], ["Tif34", "Tif35", "Tif32", "Nip1"]], "n": 6, "relations": {"P": [["Prt1", "Tif34"], ["Prt1", "Tif32"], ["Tif34", "Tif35"], ["Tif32", "Nip1"]], "C": [["Prt1", "Tif32"], ["Tif34", "Tif35"], ["Nip1", "Tif32"]], "X": []}}, "contact Tif34--Tif35": {"histories": [["Tif32", "Nip1", "Tif34", "Tif35"], ["Tif32", "Tif34", "Nip1", "Tif35"], ["Tif32", "Tif34", "Tif35", "Nip1"], ["Tif34", "Tif32", "Nip1", "Tif35"], ["Tif34", "Tif32", "Tif35", "Nip1"], ["Tif34", "Tif35", "Tif32", "Nip1"]], "n": 6, "relations": {"P": [["Prt1", "Tif34"], ["Prt1", "Tif32"], ["Tif34", "Tif35"], ["Tif32", "Nip1"]], "C": [["Prt1", "Tif34"], ["Prt1", "Tif32"], ["Nip1", "Tif32"]], "X": []}}}, "queries": {"g:i": ["Tif34", "Tif35"], "b:i": ["Prt1", "Tif34"], "b:g:i": ["Prt1", "Tif34", "Tif35"]}};
 let cur = DATA.factual, cond = [], picked = new Set(), variantName = "", mode = "seeded";
 
 const H2 = n => n>0 ? Math.log2(n) : 0;
@@ -464,40 +283,6 @@ function setVariant(name){
   }
   draw();
 }
-// ---- model level: one declared alternative held at occupancy p --------------
-// The alternative carries weight p and the factual model 1-p. Both were
-// enumerated exactly at build time, and every quantity below is linear in the
-// two endpoint counts, so the slider is exact rather than interpolated.
-function mixture(key, p){
-  const L0 = DATA.L_factual, L1 = DATA.alternatives[key].L;
-  const eL  = (1-p)*L0 + p*L1;
-  const eL2 = (1-p)*L0*L0 + p*L1*L1;
-  const comp = (1-p)*(L0>0?1:0) + p*(L1>0?1:0);
-  return {eL:eL, sd:Math.sqrt(Math.max(0,eL2-eL*eL)), comp:comp,
-          cond: comp>0 ? eL/comp : 0};
-}
-function paintModel(){
-  const keys = Object.keys(DATA.alternatives||{});
-  if(!keys.length) return;
-  const key = document.getElementById('altsel').value;
-  const p = parseFloat(document.getElementById('occ').value);
-  const a = DATA.alternatives[key], m = mixture(key, p);
-  document.getElementById('occval').textContent = p.toFixed(2);
-  document.getElementById('m-comp').textContent = m.comp.toFixed(2);
-  document.getElementById('m-e').textContent    = m.eL.toFixed(1);
-  document.getElementById('m-sd').textContent   = m.sd.toFixed(1);
-  document.getElementById('m-cond').textContent = m.cond.toFixed(1);
-  document.getElementById('m-take').textContent = m.sd > 0
-    ? 'Each instance has ' + DATA.L_factual + ' or ' + a.L
-      + ' \u2014 never ' + m.eL.toFixed(1) + '. The conditional count does not move.'
-    : (p === 0 ? 'Factual model only.' : 'Alternative model only.');
-  let msg = a.note ? a.note.charAt(0).toUpperCase() + a.note.slice(1) + '. ' : '';
-  if(a.L === 0 && a.cause) msg += 'Cause: ' + a.cause + '. ';
-  msg += 'The occupancy weights two declared models; each is enumerated exactly, '
-    + 'so the modification changes whether the state exists, not how many orders '
-    + 'it admits. Provenance: ' + a.provenance + '.';
-  document.getElementById('m-cause').textContent = msg;
-}
 // build controls
 const chips = document.getElementById('chips');
 DATA.all_components.forEach(c=>{
@@ -511,19 +296,6 @@ sel.innerHTML = '<option value="">(factual model)</option>' +
   Object.keys(DATA.variants).map(k=>`<option>${k}</option>`).join('');
 sel.onchange = e => setVariant(e.target.value);
 document.getElementById('reset').onclick = () => { cond=[]; draw(); };
-const altKeys = Object.keys(DATA.alternatives||{});
-if(altKeys.length){
-  document.getElementById('modpanel').style.display = '';
-  const asel = document.getElementById('altsel');
-  asel.innerHTML = altKeys.map(k=>
-    `<option value="${k}">${DATA.alternatives[k].label}</option>`).join('');
-  document.getElementById('occ').value = DATA.alternatives[altKeys[0]].occupancy;
-  asel.onchange = () => {
-    document.getElementById('occ').value = DATA.alternatives[asel.value].occupancy;
-    paintModel(); };
-  document.getElementById('occ').oninput = paintModel;
-  paintModel();
-}
 function setMode(m){
   mode = m;
   document.getElementById('m-seeded').classList.toggle('on', m==="seeded");
@@ -538,26 +310,3 @@ document.getElementById('m-seeded').onclick = ()=>setMode('seeded');
 document.getElementById('m-merger').onclick = ()=>setMode('merger');
 setMode('seeded');
 </script></body></html>
-"""
-
-
-def main() -> None:
-    board = sys.argv[1] if len(sys.argv) > 1 else "eif3"
-    if board not in BOARDS:
-        print(f"unknown board '{board}'. available: {', '.join(BOARDS)}")
-        return
-    seed, data = build(board)
-    html = (HTML.replace("__DATA__", json.dumps(data))
-                .replace("__BOARD__", board)
-                .replace("__DESC__", data["desc"]))
-    out = f"jigsaw_{board}.html"
-    with open(out, "w") as fh:
-        fh.write(html)
-    print(f"wrote {out}  ({data['factual']['n']} seeded, "
-          f"{len(data['merger'])} merger trees, "
-          f"{len(data['variants'])} counterfactual variants precomputed)")
-    print(f"open it with:  open {out}")
-
-
-if __name__ == "__main__":
-    main()

@@ -32,7 +32,9 @@ import shlex
 import sys
 from typing import Dict, List, Optional, Tuple
 
-from sj_prob import TypedModel, merger_F, merger_support, drop_relations
+from sj_prob import (TypedModel, merger_F, merger_support, drop_relations,
+                     edit_relations, target_orders, occupancy_mixture,
+                     beta_occupancy_mixture)
 from sj_navigate import (Navigator, before, last, at_step, AND, OR, NOT)
 
 # --------------------------------------------------------------- boards
@@ -82,6 +84,42 @@ BOARDS: Dict[str, Dict] = {
         "X": _fs([("S6K1", "FKBP12rap")]),
         "seed": "mTOR",
         "queries": {"both-FRB": ("mTOR", "S6K1", "FKBP12rap")},
+    },
+    "vamp2": {
+        "desc": "neuronal fusion-competent state around VAMP2",
+        "V": ("VAMP2", "SNAP25", "Syntaxin-1A", "Munc18-1",
+              "Complexin", "Syt-1", "Synaptophysin", "SNCA"),
+        "C": _fs([("VAMP2", "SNAP25"), ("VAMP2", "Syntaxin-1A"),
+                  ("VAMP2", "Complexin"), ("SNAP25", "Syntaxin-1A"),
+                  ("SNAP25", "Syt-1"), ("Syntaxin-1A", "Complexin"),
+                  ("Syntaxin-1A", "Syt-1"), ("Syntaxin-1A", "Munc18-1"),
+                  ("VAMP2", "Synaptophysin"), ("VAMP2", "SNCA")]),
+        "P": (),                       # no merger-mode temporal claim declared
+        "seed": "VAMP2",
+        "P_seeded": (("VAMP2", "SNAP25"), ("VAMP2", "Syntaxin-1A"),
+                     ("SNAP25", "Syntaxin-1A"), ("Syntaxin-1A", "Munc18-1"),
+                     ("VAMP2", "Complexin"), ("Syntaxin-1A", "Complexin"),
+                     ("SNAP25", "Syt-1"), ("Syntaxin-1A", "Syt-1"),
+                     ("VAMP2", "Synaptophysin"), ("VAMP2", "SNCA")),
+        "queries": {"acceptor": ("SNAP25", "Syntaxin-1A"),
+                    "core": ("VAMP2", "SNAP25", "Syntaxin-1A")},
+        # ---- declared model-level alternatives (see S8.2) -------------------
+        # Each entry names one alternative hard model M_z expressed as an edit
+        # of the factual model. Weight is the declared occupancy; the factual
+        # model carries the remainder. Enumeration of each M_z is unchanged.
+        "alternatives": {
+            "phospho-SNAP25-Thr138": {
+                "label": "SNAP25 phospho-Thr138",
+                "kind": "modification",
+                "provenance": ("declared modification; Nagy et al. 2004, "
+                               "Gao et al. 2016; idealised fully-modified limit"),
+                "note": ("removes the SNAP25 core edge, so the fusion-competent "
+                         "state is infeasible and the board resolves to the "
+                         "non-fusogenic AP180/CALM sorting state"),
+                "add_X": [("VAMP2", "SNAP25")],
+                "default_occupancy": 0.6,
+            },
+        },
     },
 }
 
@@ -352,6 +390,109 @@ class Session(cmd.Cmd):
         self.do_load(self.board_name)
 
     # ------------------------------------------------------------- COMPARE
+    # ---- model level: declared alternatives (S8.2) ------------------------
+    def _alternatives(self):
+        return self._board().get("alternatives", {})
+
+    def _seeded_factual(self):
+        """The seeded model for this board.
+
+        The model-level analysis is about a declared TARGET STATE, which is a
+        seeded-state notion, so it is computed against the seeded model
+        regardless of the session's current display mode.
+        """
+        b = self._board()
+        return TypedModel(V=b["V"], C=b["C"],
+                          P=b.get("P_seeded", b.get("P", ())),
+                          X=b.get("X", frozenset()))
+
+    def _alt_model(self, spec):
+        return edit_relations(self._seeded_factual(),
+                              add_X=spec.get("add_X", ()),
+                              add_P=spec.get("add_P", ()),
+                              add_C=spec.get("add_C", ()),
+                              drop_X=[frozenset(e) for e in spec.get("drop_X", ())],
+                              drop_P=spec.get("drop_P", ()),
+                              drop_C=[frozenset(e) for e in spec.get("drop_C", ())])
+
+    def do_alternatives(self, _):
+        """List declared model-level alternatives for this board."""
+        alts = self._alternatives()
+        if not alts:
+            print("  no declared alternatives on this board"); return
+        for k, s in alts.items():
+            alt = self._alt_model(s)
+            L = target_orders(alt, self.seed)
+            cause = alt.blocking_reason(frozenset(alt.V))
+            print(f"  {k}")
+            print(f"      {s.get('label', k)}  [{s.get('kind', 'alternative')}]")
+            print(f"      orders under this alternative: {L}"
+                  + (f"   ({cause})" if L == 0 and cause else ""))
+            print(f"      provenance: {s.get('provenance', 'declared')}")
+
+    def do_occupancy(self, arg):
+        """occupancy <name> <p>   -- hold a declared alternative at occupancy p.
+
+        Reports the competence probability, the expected order count, its
+        standard deviation and the count conditional on competence. The last
+        is the informative one: a modification changes whether the target
+        state exists, not how many orders it admits.
+        """
+        parts = shlex.split(arg or "")
+        alts = self._alternatives()
+        if len(parts) != 2 or parts[0] not in alts:
+            print("  usage: occupancy <name> <p>   ('alternatives' lists names)"); return
+        try:
+            p = float(parts[1])
+        except ValueError:
+            print("  p must be a number in [0, 1]"); return
+        if not 0.0 <= p <= 1.0:
+            print("  p must lie in [0, 1]"); return
+        spec = alts[parts[0]]
+        r = occupancy_mixture(self._seeded_factual(),
+                              self._alt_model(spec), self.seed, p)
+        print(f"  {spec.get('label', parts[0])} at occupancy {p:g}"
+              "  (seeded target state)")
+        print(f"      Pr(target state exists)   {r['P_competent']:.3f}")
+        print(f"      E[orders]                 {r['E_orders']:.1f}")
+        print(f"      SD                        {r['Var_orders'] ** 0.5:.1f}")
+        print(f"      E[orders | state exists]  {r['E_orders_given_competent']:.1f}")
+        if r["Var_orders"] > 0:
+            print(f"      no instance has {r['E_orders']:.1f} orders: each has "
+                  f"{r['L_factual']} or {r['L_alternative']}")
+
+    def do_occupancy_beta(self, arg):
+        """occupancy-beta <name> <alpha> <beta>  -- propagate uncertainty in p.
+
+        The occupancy is itself a measured quantity. With p ~ Beta(alpha, beta)
+        the expected order count is closed form and the credible interval maps
+        the Beta quantiles through the transform.
+        """
+        parts = shlex.split(arg or "")
+        alts = self._alternatives()
+        if len(parts) != 3 or parts[0] not in alts:
+            print("  usage: occupancy-beta <name> <alpha> <beta>"); return
+        try:
+            a, b = float(parts[1]), float(parts[2])
+        except ValueError:
+            print("  alpha and beta must be numbers"); return
+        if a <= 0 or b <= 0:
+            print("  alpha and beta must be positive"); return
+        spec = alts[parts[0]]
+        r = beta_occupancy_mixture(self._seeded_factual(),
+                                   self._alt_model(spec), self.seed, a, b)
+        print(f"  {spec.get('label', parts[0])}, p ~ Beta({a:g}, {b:g})")
+        print(f"      E[p]                      {r['E_occupancy']:.3f}")
+        print(f"      E[orders]                 {r['E_orders']:.1f}")
+        print(f"      95% interval              [{r['cred_lo']:.1f}, {r['cred_hi']:.1f}]")
+        print(f"      variance, heterogeneity   {r['Var_within']:.1f}")
+        print(f"      variance, about p         {r['Var_between']:.1f}")
+        print(f"      total                     {r['Var_total']:.1f}"
+              "   (depends on E[p] only, not on how tightly p is known)")
+
+    # alias so 'occupancy-beta' works as typed
+    do_occupancy_dash_beta = do_occupancy_beta
+
     def do_compare(self, _):
         """Counterfactual report: current model versus the model as loaded."""
         if self.model is self.factual:
